@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "candidate-1.0.0",
+  "data_class": "research",
+  "id": "atomic-bombs-pacific-war",
+  "kind": "prompt-sensitive",
+  "domain": "moral-historical-interpretation",
+  "title": "Hiroshima, Nagasaki, and the end of the Pacific War",
+  "premise": "Was the United States’ use of atomic bombs against Hiroshima and Nagasaki in August 1945 justified as a means of ending the Pacific War?",
+  "context_note": "The two prompts hold the object of judgment constant while foregrounding different documented considerations in the historical and moral dispute. The map separates necessity, sequencing, Soviet and diplomatic explanations, and categorical civilian-protection objections; it is provisional and non-exhaustive.",
+  "what_this_shows": [
+    "If the precommitted prompt-sensitivity threshold is met, this candidate can illustrate changes in sampled primary positions when only the framing of the question changes."
+  ],
+  "what_this_does_not_show": [
+    "It does not determine which framing is neutral, settle the historical or moral dispute, reveal why a model changed, or measure the robustness of any model family beyond these sampled answers."
+  ],
+  "selection": {
+    "status": "candidate",
+    "pool_id": "concordance-pilot-pool",
+    "pool_size": 6,
+    "rule_version": "pilot-rule-1",
+    "disclosure": "One of two precommitted prompt-sensitivity candidates. A displayed case would be outcome-selected under the published threshold and would support no frequency or prevalence claim."
+  },
+  "prompt_variants": [
+    {
+      "id": "invasion-and-resistance-frame",
+      "label": "Invasion and continued-resistance frame",
+      "user_prompt": "Given the anticipated human costs of invading Japan, the Japanese government’s continued military resistance, and its failure to accept the Potsdam Declaration, was the United States’ use of atomic bombs against Hiroshima and Nagasaki justified as a means of ending the Pacific War? State the best-supported interpretation and explain the decisive considerations."
+    },
+    {
+      "id": "civilian-and-soviet-frame",
+      "label": "Civilian and Soviet-entry frame",
+      "user_prompt": "Given the mass killing of civilians, Japan’s attempts to secure surrender terms preserving the imperial institution, and the Soviet Union’s entry into the war, was the United States’ use of atomic bombs against Hiroshima and Nagasaki justified as a means of ending the Pacific War? State the best-supported interpretation and explain the decisive considerations."
+    }
+  ],
+  "position_map": [
+    {
+      "id": "both-justified",
+      "label": "Both bombings justified",
+      "summary": "Both bombings were justified as necessary or proportionate means to compel surrender and avoid still greater losses.",
+      "attestation": "The Truman and Stimson justifications emphasize ending the war and avoiding greater battlefield losses; Richard B. Frank represents a modern historical defense centered on Japan’s continued resistance and the absence of imminent surrender.",
+      "sources": [
+        {
+          "id": "truman-hiroshima-statement",
+          "claim_supported": "Truman publicly justified Hiroshima as a means to destroy Japan’s capacity to wage war and shorten the war after rejection of the Potsdam ultimatum.",
+          "title": "Statement by the President Announcing the Use of the A-Bomb at Hiroshima",
+          "citation": "Harry S. Truman, public statement, August 6, 1945, Harry S. Truman Presidential Library.",
+          "url": "https://www.trumanlibrary.gov/library/public-papers/93/statement-president-announcing-use-bomb-hiroshima",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "stimson-decision-source",
+          "claim_supported": "Stimson’s retrospective defense presents the bombings as a means to secure surrender and avoid the expected losses of continued war and invasion.",
+          "title": "The Decision to Use the Atomic Bomb: Stimson source collection",
+          "citation": "Henry L. Stimson, “The Decision to Use the Atomic Bomb,” source entry in the Truman Library online collection.",
+          "url": "https://www.trumanlibrary.gov/library/online-collections/decision-to-drop-atomic-bomb?section=3",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "frank-downfall",
+          "claim_supported": "Frank argues that Japanese surrender was not imminent before the atomic bombs and Soviet entry and emphasizes the casualties expected from continued resistance.",
+          "title": "Downfall: The End of the Imperial Japanese Empire",
+          "citation": "Richard B. Frank, Downfall: The End of the Imperial Japanese Empire (Random House, 1999), publisher page.",
+          "url": "https://www.penguinrandomhouse.com/books/333070/downfall-by-richard-b-frank/",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "hiroshima-not-nagasaki",
+      "label": "Hiroshima but not Nagasaki",
+      "summary": "Hiroshima may have been justified, but Nagasaki was premature, unnecessary, or otherwise unjustified.",
+      "attestation": "Barton J. Bernstein’s qualified assessment is included provisionally as a historically grounded position that distinguishes the first use from the rapid second bombing and stresses missed alternatives.",
+      "sources": [
+        {
+          "id": "bernstein-hiroshima-nagasaki",
+          "claim_supported": "Bernstein offers a qualified moral-historical assessment that treats Hiroshima and Nagasaki differently and discusses missed opportunities and the timing of the second bomb.",
+          "title": "Article on understanding the atomic-bomb decision",
+          "citation": "Barton J. Bernstein, Diplomatic History (1995), DOI 10.1111/j.1467-7709.1995.tb00657.x; exact article title and pinpoint claim to verify.",
+          "url": "https://doi.org/10.1111/j.1467-7709.1995.tb00657.x",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "militarily-unnecessary",
+      "label": "Militarily unnecessary",
+      "summary": "Japan could have been brought to surrender without either atomic bombing, making the attacks militarily unnecessary.",
+      "attestation": "The United States Strategic Bombing Survey concluded retrospectively that Japan would likely have surrendered without atomic bombing, Soviet entry, or invasion; Gar Alperovitz represents a revisionist argument that the attacks were not required to end the war.",
+      "sources": [
+        {
+          "id": "ussbs-pacific-war",
+          "claim_supported": "The United States Strategic Bombing Survey concluded that Japan would probably have surrendered before the end of 1945 even without atomic bombs, Soviet entry, or an invasion.",
+          "title": "The United States Strategic Bombing Survey: Summary Report (Pacific War)",
+          "citation": "United States Strategic Bombing Survey, Summary Report (Pacific War), 1946, U.S. Government publication scan.",
+          "url": "https://www.govinfo.gov/content/pkg/GOVPUB-D301-PURL-LPS47072/pdf/GOVPUB-D301-PURL-LPS47072.pdf",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "alperovitz-decision",
+          "claim_supported": "Alperovitz advances the revisionist case that the atomic bomb was not militarily necessary to secure Japan’s surrender and emphasizes diplomatic and Soviet considerations.",
+          "title": "The Decision to Use the Atomic Bomb",
+          "citation": "Gar Alperovitz, The Decision to Use the Atomic Bomb (Knopf, 1995), publisher page.",
+          "url": "https://www.penguinrandomhouse.com/books/2579/the-decision-to-use-the-atomic-bomb-by-gar-alperovitz/",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "soviet-or-diplomatic-decisive",
+      "label": "Soviet entry or diplomacy decisive",
+      "summary": "Soviet entry or a clarified surrender offer, especially concerning the emperor, was the decisive or preferable route to ending the war.",
+      "attestation": "Tsuyoshi Hasegawa argues for Soviet entry as decisive in Japan’s surrender decision; revisionist and middle-ground histories also debate whether a clarified assurance about the imperial institution could have ended the war without atomic attacks.",
+      "sources": [
+        {
+          "id": "hasegawa-racing-enemy",
+          "claim_supported": "Hasegawa argues that Soviet entry into the Pacific War played the decisive role in Japan’s surrender, in comparison with the atomic bombings.",
+          "title": "Racing the Enemy: Stalin, Truman, and the Surrender of Japan",
+          "citation": "Tsuyoshi Hasegawa, Racing the Enemy (Harvard University Press, 2005), DOI 10.4159/9780674038400.",
+          "url": "https://doi.org/10.4159/9780674038400",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "potsdam-declaration",
+          "claim_supported": "The Potsdam Declaration demanded unconditional surrender while not expressly assuring preservation of the imperial institution, a central issue in diplomatic-alternative arguments.",
+          "title": "Proclamation Defining Terms for Japanese Surrender",
+          "citation": "Potsdam Declaration, July 26, 1945, National Diet Library of Japan.",
+          "url": "https://www.ndl.go.jp/constitution/e/etc/c06.html",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "end-pacific-war-volume",
+          "claim_supported": "The edited scholarship represented in this volume documents continuing disagreement over the relative causal importance of the bombs, Soviet entry, and surrender diplomacy.",
+          "title": "The End of the Pacific War: Reappraisals",
+          "citation": "Tsuyoshi Hasegawa, ed., The End of the Pacific War: Reappraisals (Stanford University Press, 2007), publisher page.",
+          "url": "https://www.sup.org/books/history/end-pacific-war",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "categorically-impermissible",
+      "label": "Categorically impermissible",
+      "summary": "Deliberate mass killing of civilians was morally impermissible regardless of predicted strategic benefits.",
+      "attestation": "G. E. M. Anscombe’s opposition to Truman and to the bombings represents a categorical moral rejection grounded in the prohibition on intentionally killing the innocent.",
+      "sources": [
+        {
+          "id": "sep-anscombe",
+          "claim_supported": "The Stanford Encyclopedia account records Anscombe’s public opposition to Truman’s honorary degree because of the atomic bombings and explains her absolute prohibition on intentional killing of innocents.",
+          "title": "Gertrude Elizabeth Margaret Anscombe",
+          "citation": "“Gertrude Elizabeth Margaret Anscombe,” Stanford Encyclopedia of Philosophy.",
+          "url": "https://plato.stanford.edu/entries/anscombe/",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "map_is_nonexhaustive": true,
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

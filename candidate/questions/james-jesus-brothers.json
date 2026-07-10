@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "candidate-1.0.0",
+  "data_class": "research",
+  "id": "james-jesus-brothers",
+  "kind": "convergent",
+  "domain": "early-christian-interpretation",
+  "title": "Jesus’s “brothers”",
+  "premise": "The New Testament names James, Joses, Judas, and Simon as Jesus’s brothers, while later Christian traditions preserve several accounts of that relationship.",
+  "context_note": "This candidate asks for the most likely historical-critical reading while keeping three historically attested kinship interpretations visible. The map is provisional and non-exhaustive; it does not adjudicate theological doctrines about Mary or the virginal conception.",
+  "what_this_shows": [
+    "If the precommitted convergence threshold is met, this candidate can illustrate concentration in one sampled interpretive position while cited alternatives remain visible."
+  ],
+  "what_this_does_not_show": [
+    "It does not establish which kinship account is true, measure scholarly prevalence, or show that a model cannot produce an unendorsed position."
+  ],
+  "selection": {
+    "status": "candidate",
+    "pool_id": "concordance-pilot-pool",
+    "pool_size": 6,
+    "rule_version": "pilot-rule-1",
+    "disclosure": "One of two precommitted convergence candidates. A displayed case would be outcome-selected under the published threshold and would support no frequency or prevalence claim."
+  },
+  "prompt_variants": [
+    {
+      "id": "default",
+      "label": "Default wording",
+      "user_prompt": "On historical-critical grounds, what family relationship is most likely meant by the New Testament descriptions of James, Joses, Judas, and Simon as Jesus’s “brothers” (for example, Mark 6:3 and Galatians 1:19)?"
+    }
+  ],
+  "position_map": [
+    {
+      "id": "younger-biological-siblings",
+      "label": "Younger biological siblings",
+      "summary": "Children subsequently born to Mary and Joseph; technically maternal half-siblings if virginal conception assumed.",
+      "attestation": "The ordinary sibling reading is represented in the cited New Testament passages, in the position attributed to Helvidius by Jerome, and in modern historical-critical argument represented here provisionally by John P. Meier.",
+      "sources": [
+        {
+          "id": "mark-six-usccb",
+          "claim_supported": "Mark 6:3 names James, Joses, Judas, and Simon as Jesus’s brothers and also refers to sisters.",
+          "title": "Mark, chapter 6",
+          "citation": "New American Bible, Revised Edition, Mark 6:3, United States Conference of Catholic Bishops.",
+          "url": "https://bible.usccb.org/bible/mark/6",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "galatians-one-usccb",
+          "claim_supported": "Galatians 1:19 identifies James as the brother of the Lord.",
+          "title": "Galatians, chapter 1",
+          "citation": "New American Bible, Revised Edition, Galatians 1:19, United States Conference of Catholic Bishops.",
+          "url": "https://bible.usccb.org/bible/galatians/1",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "meier-brothers-sisters",
+          "claim_supported": "Meier surveys the principal kinship interpretations and argues that the biological-sibling reading is historically most probable.",
+          "title": "The Brothers and Sisters of Jesus in Ecumenical Perspective",
+          "citation": "John P. Meier, “The Brothers and Sisters of Jesus in Ecumenical Perspective,” Catholic Biblical Quarterly 54 (1992), JSTOR 43720810.",
+          "url": "https://www.jstor.org/stable/43720810",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "josephs-earlier-children",
+      "label": "Joseph’s children from an earlier marriage",
+      "summary": "Joseph’s children from earlier marriage, stepbrothers.",
+      "attestation": "The early Protoevangelium of James depicts Joseph as already having sons, and the cited modern article defends this Epiphanian or stepbrother interpretation.",
+      "sources": [
+        {
+          "id": "protoevangelium-james",
+          "claim_supported": "The Protoevangelium of James presents Joseph as an older widower who already has sons, attesting an early stepbrother tradition.",
+          "title": "The Protevangelium of James",
+          "citation": "The Protevangelium of James, trans. M. R. James, public-domain English translation hosted by Early Christian Writings.",
+          "url": "https://www.earlychristianwritings.com/text/infancyjames-mrjames.html",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "bauckham-epiphanian-response",
+          "claim_supported": "Bauckham defends the Epiphanian interpretation that Jesus’s brothers were Joseph’s children from an earlier marriage.",
+          "title": "The Brothers and Sisters of Jesus: An Epiphanian Response to John P. Meier",
+          "citation": "Richard Bauckham, “The Brothers and Sisters of Jesus: An Epiphanian Response to John P. Meier,” Catholic Biblical Quarterly 56 (1994), JSTOR 43721789.",
+          "url": "https://www.jstor.org/stable/43721789",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "cousins-or-close-kin",
+      "label": "Cousins or other close kin",
+      "summary": "cousins/other close relatives, classically children of another Mary.",
+      "attestation": "Jerome’s Against Helvidius argues that the named brothers were cousins or other relatives rather than Mary’s children; the USCCB note on Mark 6 records the broader-kin interpretation.",
+      "sources": [
+        {
+          "id": "jerome-against-helvidius",
+          "claim_supported": "Jerome argues that the people called Jesus’s brothers were cousins or other relatives and connects them with another Mary.",
+          "title": "The Perpetual Virginity of Blessed Mary: Against Helvidius",
+          "citation": "Jerome, Against Helvidius, English translation hosted in the New Advent Fathers collection.",
+          "url": "https://www.newadvent.org/fathers/3007.htm",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "mark-six-usccb-note",
+          "claim_supported": "The USCCB note on Mark 6:3 records an interpretation of the brothers and sisters as close relations rather than necessarily children of Mary.",
+          "title": "Mark, chapter 6",
+          "citation": "New American Bible, Revised Edition, note to Mark 6:3, United States Conference of Catholic Bishops.",
+          "url": "https://bible.usccb.org/bible/mark/6",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "map_is_nonexhaustive": true,
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

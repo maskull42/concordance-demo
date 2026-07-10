@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "candidate-1.0.0",
+  "data_class": "research",
+  "id": "junia-romans-16-7",
+  "kind": "convergent",
+  "domain": "new-testament-interpretation",
+  "title": "Junia in Romans 16:7",
+  "premise": "Romans 16:7 has generated distinct readings of Junia’s gender and of the phrase conventionally rendered “prominent among the apostles.”",
+  "context_note": "This candidate combines two separable disputes: whether the accusative name refers to the woman Junia or a proposed man Junias, and whether the Greek phrase includes the pair among the apostles or says they were well known to apostles. The map is provisional and non-exhaustive.",
+  "what_this_shows": [
+    "If the precommitted convergence threshold is met, this candidate can illustrate concentration in one grammatical-historical reading while cited alternatives remain visible."
+  ],
+  "what_this_does_not_show": [
+    "It does not settle the verse’s meaning, determine contemporary ecclesial office, measure scholarly prevalence, or show that an unendorsed reading is unavailable to a model."
+  ],
+  "selection": {
+    "status": "candidate",
+    "pool_id": "concordance-pilot-pool",
+    "pool_size": 6,
+    "rule_version": "pilot-rule-1",
+    "disclosure": "One of two precommitted convergence candidates. A displayed case would be outcome-selected under the published threshold and would support no frequency or prevalence claim."
+  },
+  "prompt_variants": [
+    {
+      "id": "default",
+      "label": "Default wording",
+      "user_prompt": "On grammatical and historical grounds, what does Paul most likely say in Romans 16:7 about Junia’s gender and her relation to “the apostles”?"
+    }
+  ],
+  "position_map": [
+    {
+      "id": "woman-included-among-apostles",
+      "label": "A woman included among the apostles",
+      "summary": "Junia is a woman and is counted as outstanding among the apostles.",
+      "attestation": "This reading appears in the NRSVue translation, is explicit in John Chrysostom’s homily, and is defended in modern grammatical and reception-historical scholarship represented by Belleville and Hartmann.",
+      "sources": [
+        {
+          "id": "romans-sixteen-nrsvue",
+          "claim_supported": "The NRSVue renders the name as Junia and describes Andronicus and Junia as prominent among the apostles.",
+          "title": "Romans 16:7, New Revised Standard Version Updated Edition",
+          "citation": "Romans 16:7, New Revised Standard Version Updated Edition, Bible Gateway.",
+          "url": "https://www.biblegateway.com/passage/?search=Romans+16%3A7&version=NRSVUE",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "chrysostom-romans-thirty-one",
+          "claim_supported": "Chrysostom praises Junia as a woman deemed worthy of the title apostle, attesting an early female-and-inclusive reading.",
+          "title": "Homily 31 on Romans",
+          "citation": "John Chrysostom, Homily 31 on Romans, English translation hosted in the New Advent Fathers collection.",
+          "url": "https://www.newadvent.org/fathers/210231.htm",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "belleville-junia-apostle",
+          "claim_supported": "Belleville argues on lexical and grammatical grounds for reading Junia as a woman included among the apostles.",
+          "title": "ΙΟΥΝΙΑΝ … ΕΠΙΣΗΜΟΙ ΕΝ ΤΟΙΣ ΑΠΟΣΤΟΛΟΙΣ: A Re-examination of Romans 16.7 in Light of Primary Source Materials",
+          "citation": "Linda L. Belleville, New Testament Studies 51 (2005), DOI 10.1017/S0028688505000135.",
+          "url": "https://doi.org/10.1017/S0028688505000135",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "hartmann-junia-translation",
+          "claim_supported": "Hartmann surveys the textual and reception history and presents evidence for the feminine name Junia and the early inclusive reading.",
+          "title": "Junia: A Woman Lost in Translation",
+          "citation": "Ute E. Eisen/Hartmann source record to verify, Open Theology, DOI 10.1515/opth-2020-0138.",
+          "url": "https://doi.org/10.1515/opth-2020-0138",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "woman-known-to-apostles",
+      "label": "A woman well known to the apostles",
+      "summary": "Junia is a woman who is well known to, rather than included among, the apostles.",
+      "attestation": "Burer and Wallace accept the feminine name but argue that the disputed Greek phrase should be read exclusively: the pair were well known to the apostles rather than members of that group.",
+      "sources": [
+        {
+          "id": "burer-wallace-junia",
+          "claim_supported": "Burer and Wallace argue that Junia was a woman but that the construction means she and Andronicus were well known to the apostles.",
+          "title": "Was Junia Really an Apostle? A Re-examination of Rom 16.7",
+          "citation": "Michael H. Burer and Daniel B. Wallace, New Testament Studies 47 (2001), DOI 10.1017/S0028688501000066.",
+          "url": "https://doi.org/10.1017/S0028688501000066",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "man-included-among-apostles",
+      "label": "A man included among the apostles",
+      "summary": "The name refers to a man, Junias, who is counted among the apostles.",
+      "attestation": "A masculine-name interpretation appeared in modern translations and scholarship; the cited Wolters article proposes a Hebrew masculine-name basis for the accusative form in Romans 16:7.",
+      "sources": [
+        {
+          "id": "wolters-iounian",
+          "claim_supported": "Wolters argues that the form in Romans 16:7 may represent a masculine Hebrew name, supporting a male referent rather than the woman Junia.",
+          "title": "ΙΟΥΝΙΑΝ (Romans 16:7) and the Hebrew Name Yĕḥunnī",
+          "citation": "Albert M. Wolters, Journal of Biblical Literature, JSTOR 25610127.",
+          "url": "https://www.jstor.org/stable/25610127",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "map_is_nonexhaustive": true,
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

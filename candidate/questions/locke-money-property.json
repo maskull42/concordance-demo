@@ -1,0 +1,234 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "candidate-1.0.0",
+  "data_class": "research",
+  "id": "locke-money-property",
+  "kind": "divergent",
+  "domain": "political-philosophy",
+  "title": "Locke, money, and property limits",
+  "premise": "Locke’s Second Treatise derives early limits on appropriation and then introduces durable money, consent, inequality, and larger possessions.",
+  "context_note": "The candidate asks whether the introduction of money cancels, modifies, or leaves in place Locke’s spoilage limit, sufficiency proviso, and wider natural-law duties. The five-position map separates interpretations that are often combined, but remains provisional and non-exhaustive.",
+  "what_this_shows": [
+    "If the precommitted divergence threshold is met, this candidate can illustrate sampled models assigning primary weight to different textual and normative accounts of Locke’s transition to money."
+  ],
+  "what_this_does_not_show": [
+    "It does not settle Locke’s theory, measure scholarly prevalence, or establish the justice of contemporary property institutions."
+  ],
+  "selection": {
+    "status": "candidate",
+    "pool_id": "concordance-pilot-pool",
+    "pool_size": 6,
+    "rule_version": "pilot-rule-1",
+    "disclosure": "One of two precommitted divergence candidates. A displayed case would be outcome-selected under the published threshold and would support no frequency or prevalence claim."
+  },
+  "prompt_variants": [
+    {
+      "id": "default",
+      "label": "Default wording",
+      "user_prompt": "In Locke’s Second Treatise of Government, what happens to the moral limits on property accumulation once people consent to the use of money?"
+    }
+  ],
+  "position_map": [
+    {
+      "id": "limits-transcended",
+      "label": "Original limits transcended",
+      "summary": "Consent to money removes or transcends the original spoilage and sufficiency limits, legitimating unequal accumulation.",
+      "attestation": "Locke’s text links tacit consent to money with disproportionate and unequal possession; the Stanford Encyclopedia survey identifies a prominent interpretation, associated especially with C. B. Macpherson, on which money transcends the earlier limits.",
+      "sources": [
+        {
+          "id": "locke-second-treatise",
+          "claim_supported": "Sections 46–50 connect durable money and tacit consent with enlarged and unequal possessions beyond immediate use.",
+          "title": "Second Treatise of Government",
+          "citation": "John Locke, Second Treatise of Government, chapter V, Project Gutenberg edition.",
+          "url": "https://www.gutenberg.org/files/7370/7370-h/7370-h.htm",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "sep-locke-political",
+          "claim_supported": "The Stanford Encyclopedia survey presents competing accounts, including a Macpherson-style view that money enables the transcendence of Locke’s earlier property limits.",
+          "title": "Locke’s Political Philosophy",
+          "citation": "Alex Tuckness, “Locke’s Political Philosophy,” Stanford Encyclopedia of Philosophy, Spring 2014 archive.",
+          "url": "https://plato.stanford.edu/archives/spr2014/entries/locke-political/",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "sufficiency-proviso-remains",
+      "label": "The sufficiency proviso remains",
+      "summary": "Money relaxes spoilage through exchange but does not cancel the requirement to leave enough and as good for others.",
+      "attestation": "Continuing-proviso interpretations distinguish the practical effect of nonperishable money from the separate moral requirement that appropriation not worsen others’ access to freedom or resources.",
+      "sources": [
+        {
+          "id": "locke-enough-and-good",
+          "claim_supported": "Locke states the enough-and-as-good condition on original appropriation and separately discusses spoilage and exchange for durable goods.",
+          "title": "Second Treatise of Government",
+          "citation": "John Locke, Second Treatise of Government, chapter V, especially sections 27, 31, 37, and 46–50, Project Gutenberg edition.",
+          "url": "https://www.gutenberg.org/files/7370/7370-h/7370-h.htm",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "vandervossen-lockean-proviso",
+          "claim_supported": "Van der Vossen develops a continuing Lockean-proviso interpretation tied to others’ freedom, rather than treating monetary consent as cancelling every constraint.",
+          "title": "Article on Locke’s proviso and freedom",
+          "citation": "Bas van der Vossen, Philosophical Quarterly, DOI 10.1093/pq/pqaa025; exact article metadata to verify.",
+          "url": "https://doi.org/10.1093/pq/pqaa025",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "waste-only-acquisition-limit",
+      "label": "Waste is the operative acquisition limit",
+      "summary": "The relevant natural limit is waste rather than a separate sufficiency constraint; durable money permits accumulation because it does not spoil.",
+      "attestation": "This reading emphasizes Locke’s repeated no-spoilage language and interprets the enough-and-as-good clause as a description of initial abundance or a condition other than an independent, continuing acquisition cap.",
+      "sources": [
+        {
+          "id": "locke-spoilage-money",
+          "claim_supported": "Locke repeatedly condemns taking more perishable goods than can be used and explains that durable money may be accumulated without spoilage.",
+          "title": "Second Treatise of Government",
+          "citation": "John Locke, Second Treatise of Government, chapter V, especially sections 31, 37, and 46–50, Project Gutenberg edition.",
+          "url": "https://www.gutenberg.org/files/7370/7370-h/7370-h.htm",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "layman-no-traditional-proviso",
+          "claim_supported": "Layman disputes the traditional necessary sufficiency-proviso reading while locating constraints elsewhere in Locke’s preservation and freedom commitments.",
+          "title": "Article on Locke’s property proviso, preservation, and freedom",
+          "citation": "Daniel Layman, European Journal of Political Theory, DOI 10.1177/1474885115587118; exact article metadata to verify.",
+          "url": "https://doi.org/10.1177/1474885115587118",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "natural-law-regulation-remains",
+      "label": "Natural-law regulation remains",
+      "summary": "Monetary consent changes the mechanism of accumulation without eliminating natural-law duties of preservation, charity, or political regulation.",
+      "attestation": "Natural-law readings treat the property chapter together with Locke’s duties of preservation and charity, allowing money and inequality while retaining moral or political regulation of holdings and use.",
+      "sources": [
+        {
+          "id": "layman-preservation-freedom",
+          "claim_supported": "Layman argues that Lockean property remains constrained by preservation and non-domination or freedom concerns even without the traditional proviso interpretation.",
+          "title": "Article on Locke’s property proviso, preservation, and freedom",
+          "citation": "Daniel Layman, European Journal of Political Theory, DOI 10.1177/1474885115587118; exact article metadata to verify.",
+          "url": "https://doi.org/10.1177/1474885115587118",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "drury-locke-property",
+          "claim_supported": "Drury reads Locke’s property theory through utility and continuing social regulation rather than as an unlimited post-money entitlement.",
+          "title": "Article on Locke’s property theory, utility, and regulation",
+          "citation": "Shadia B. Drury, Political Studies (1982), DOI 10.1111/j.1467-9248.1982.tb00517.x; exact article metadata to verify.",
+          "url": "https://doi.org/10.1111/j.1467-9248.1982.tb00517.x",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "locke-preservation-charity",
+          "claim_supported": "Locke’s wider political theory states duties of preservation and recognizes claims of charity that may qualify the exercise of property rights.",
+          "title": "Second Treatise of Government",
+          "citation": "John Locke, Second Treatise of Government, Project Gutenberg edition; relevant preservation and charity passages require author pin-citation.",
+          "url": "https://www.gutenberg.org/files/7370/7370-h/7370-h.htm",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "unresolved-indeterminacy",
+      "label": "Unresolved textual indeterminacy",
+      "summary": "Locke’s text does not yield one stable post-money settlement; its provisos and justificatory purposes remain internally unsettled.",
+      "attestation": "Ince’s article is included provisionally as an explicit indeterminacy reading: competing justificatory logics in Locke prevent a single determinate account of the effect of money.",
+      "sources": [
+        {
+          "id": "ince-locke-indeterminacy",
+          "claim_supported": "Ince argues that Locke’s account of property contains unresolved indeterminacy rather than one unambiguous post-money rule.",
+          "title": "Article on Locke, property, and indeterminacy",
+          "citation": "Onur Ulas Ince, Review of Politics (2011), DOI 10.1017/S0034670510000859; exact article metadata to verify.",
+          "url": "https://doi.org/10.1017/S0034670510000859",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "map_is_nonexhaustive": true,
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

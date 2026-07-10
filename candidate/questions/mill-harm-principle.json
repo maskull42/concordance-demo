@@ -1,0 +1,182 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "candidate-1.0.0",
+  "data_class": "research",
+  "id": "mill-harm-principle",
+  "kind": "divergent",
+  "domain": "political-philosophy",
+  "title": "Mill’s harm principle and utility",
+  "premise": "On Liberty presents a seemingly categorical limit on coercion and also says that the argument ultimately rests on utility in its largest sense.",
+  "context_note": "The candidate asks how to relate Mill’s language of individual sovereignty, the jurisdictional role of harm to others, opposition to paternalism, and his utilitarian moral framework. The position map isolates three interpretive emphases but is provisional and non-exhaustive.",
+  "what_this_shows": [
+    "If the precommitted divergence threshold is met, this candidate can illustrate sampled models distributing their primary readings across several cited interpretations."
+  ],
+  "what_this_does_not_show": [
+    "It does not establish the correct interpretation of Mill, measure the distribution of scholarly opinion, or imply that each sampled answer is internally consistent."
+  ],
+  "selection": {
+    "status": "candidate",
+    "pool_id": "concordance-pilot-pool",
+    "pool_size": 6,
+    "rule_version": "pilot-rule-1",
+    "disclosure": "One of two precommitted divergence candidates. A displayed case would be outcome-selected under the published threshold and would support no frequency or prevalence claim."
+  },
+  "prompt_variants": [
+    {
+      "id": "default",
+      "label": "Default wording",
+      "user_prompt": "What kind of constraint does John Stuart Mill’s “one very simple principle” in On Liberty place on social coercion, and how should that constraint be reconciled with his appeal to utility?"
+    }
+  ],
+  "position_map": [
+    {
+      "id": "categorical-sovereignty",
+      "label": "Categorical individual sovereignty",
+      "summary": "The principle marks a stringent sphere of individual sovereignty that utility must respect, not merely one consideration in a case-by-case calculation.",
+      "attestation": "Mill’s own formulations of the principle and of individual sovereignty ground this reading; modern scholarship represented in the Stanford Encyclopedia discussion and Riley article treats the self-regarding sphere as strongly protected.",
+      "sources": [
+        {
+          "id": "mill-on-liberty",
+          "claim_supported": "On Liberty states both the one very simple principle, individual sovereignty over self-regarding conduct, and Mill’s appeal to utility in the largest sense.",
+          "title": "On Liberty",
+          "citation": "John Stuart Mill, On Liberty, in Collected Works of John Stuart Mill, vol. XVIII, Liberty Fund Online Library of Liberty.",
+          "url": "https://oll.libertyfund.org/titles/robson-the-collected-works-of-john-stuart-mill-volume-xviii-essays-on-politics-and-society-part-i",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "sep-mill-moral-political",
+          "claim_supported": "The Stanford Encyclopedia survey distinguishes strong protections for self-regarding conduct from interpretations that treat harm as only a necessary condition for coercion.",
+          "title": "Mill’s Moral and Political Philosophy",
+          "citation": "David O. Brink, “Mill’s Moral and Political Philosophy,” Stanford Encyclopedia of Philosophy.",
+          "url": "https://plato.stanford.edu/entries/mill-moral-political/",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "riley-self-regarding-liberty",
+          "claim_supported": "Riley rejects an expansive reading under which the prospect of harm makes self-regarding conduct generally coercible and defends a protected sphere of liberty.",
+          "title": "Article defending Mill’s protected self-regarding sphere",
+          "citation": "Jonathan Riley, Ethics (2015), DOI 10.1086/679556; exact article metadata to verify.",
+          "url": "https://doi.org/10.1086/679556",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "harm-opens-jurisdiction",
+      "label": "Harm opens social jurisdiction",
+      "summary": "Harm to others is a necessary trigger for society’s jurisdiction, after which ordinary utilitarian assessment determines whether coercion is justified.",
+      "attestation": "This necessary-but-not-sufficient interpretation is described in the Stanford Encyclopedia survey and developed in expansive readings represented here provisionally by Piers Norris Turner.",
+      "sources": [
+        {
+          "id": "sep-mill-harm-necessary",
+          "claim_supported": "The Stanford Encyclopedia survey presents an interpretation on which harm to others is necessary but not sufficient for justified interference.",
+          "title": "Mill’s Moral and Political Philosophy",
+          "citation": "David O. Brink, “Mill’s Moral and Political Philosophy,” Stanford Encyclopedia of Philosophy.",
+          "url": "https://plato.stanford.edu/entries/mill-moral-political/",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "turner-expansive-harm",
+          "claim_supported": "Turner develops an expansive reading of the harm principle under which harm establishes social jurisdiction without itself requiring coercion.",
+          "title": "Article on an expansive interpretation of Mill’s harm principle",
+          "citation": "Piers Norris Turner, Ethics (2014), DOI 10.1086/673436; exact article metadata to verify.",
+          "url": "https://doi.org/10.1086/673436",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "mill-on-liberty-jurisdiction",
+          "claim_supported": "Mill distinguishes conduct affecting only the agent from conduct that concerns others and becomes amenable to social judgment.",
+          "title": "On Liberty",
+          "citation": "John Stuart Mill, On Liberty, in Collected Works of John Stuart Mill, vol. XVIII, Liberty Fund Online Library of Liberty.",
+          "url": "https://oll.libertyfund.org/titles/robson-the-collected-works-of-john-stuart-mill-volume-xviii-essays-on-politics-and-society-part-i",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "antipaternalist-competence-rule",
+      "label": "Anti-paternalist competence rule",
+      "summary": "The principle is best read as an absolute or near-absolute bar on paternalistic coercion of competent adults, grounded in a utilitarian account of their epistemic authority over their own good.",
+      "attestation": "Turner’s competence-based interpretation treats Mill’s anti-paternalism as categorical for competent adults while explaining that protection in broadly consequentialist terms; Mill’s text supplies the mature-faculties and own-good formulations.",
+      "sources": [
+        {
+          "id": "turner-competence-absolutism",
+          "claim_supported": "Turner offers a competence-based interpretation of Mill’s anti-paternalism as an absolute or near-absolute constraint for competent adults.",
+          "title": "Article on Mill, competence, and anti-paternalism",
+          "citation": "Piers Norris Turner, Canadian Journal of Philosophy (2013), DOI 10.1080/00455091.2013.847346; exact article metadata to verify.",
+          "url": "https://doi.org/10.1080/00455091.2013.847346",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "mill-on-liberty-paternalism",
+          "claim_supported": "Mill says a person’s own good is not a sufficient warrant for coercion and limits the doctrine to human beings in the maturity of their faculties.",
+          "title": "On Liberty",
+          "citation": "John Stuart Mill, On Liberty, chapter 1, in Collected Works of John Stuart Mill, vol. XVIII, Liberty Fund Online Library of Liberty.",
+          "url": "https://oll.libertyfund.org/titles/robson-the-collected-works-of-john-stuart-mill-volume-xviii-essays-on-politics-and-society-part-i",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "map_is_nonexhaustive": true,
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}
