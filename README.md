@@ -12,12 +12,15 @@ The implementation is staged. Each stage is validated and committed before the n
 
 The default application build uses a conspicuously fictional dataset generated in `sample/`. The placeholder `data/` tree is intentionally unable to pass the production gate.
 
+The sample interface exercises every release state: primary and additional endorsements, mentions, absence, mixed/unclear mappings, linked challenge recovery, prompt-variant movement, and an unavailable response cell. Model text is rendered as inert text beside separately labeled human mappings and complete provenance receipts.
+
 ## Local development
 
 Use Node 22 LTS (recorded in `.nvmrc`), then run:
 
 ```sh
 npm install
+npx playwright install chromium
 node scripts/create-sample-data.mjs
 npm run check
 npm run dev
