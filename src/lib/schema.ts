@@ -269,6 +269,12 @@ export const modelManifestSchema = z
       ["models"],
       "model key",
     );
+    addDuplicateIssues(
+      manifest.models.map((model) => model.family),
+      context,
+      ["models"],
+      "model family",
+    );
   });
 
 const messageSchema = z

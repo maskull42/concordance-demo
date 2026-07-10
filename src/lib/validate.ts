@@ -30,14 +30,14 @@ export interface ValidationOptions {
 }
 
 const APPROVED_MODELS = new Map([
-  ["gemini", { id: "gemini-3.1-pro-preview", provider: "google", route: "google-direct" }],
-  ["claude", { id: "claude-fable-5", provider: "anthropic", route: "anthropic-direct" }],
-  ["cohere", { id: "command-a-plus-05-2026", provider: "cohere", route: "cohere-direct" }],
-  ["qwen", { id: "Qwen/Qwen3.5-397B-A17B", provider: "deepinfra", route: "deepinfra" }],
-  ["deepseek", { id: "deepseek-v4-pro", provider: "deepseek", route: "deepseek-direct" }],
-  ["mistral", { id: "mistral-large-2512", provider: "mistral", route: "mistral-direct" }],
-  ["grok", { id: "grok-4.5", provider: "xai", route: "xai-direct" }],
-  ["gpt", { id: "openai/gpt-5.6-sol", provider: "openrouter", route: "openrouter-openai-pinned" }],
+  ["gemini", { id: "gemini-3.1-pro-preview", provider: "google", route: "google-direct", environment: "GOOGLE_API_KEY" }],
+  ["claude", { id: "claude-fable-5", provider: "anthropic", route: "anthropic-direct", environment: "ANTHROPIC_API_KEY" }],
+  ["cohere", { id: "command-a-plus-05-2026", provider: "cohere", route: "cohere-direct", environment: "COHERE_API_KEY" }],
+  ["qwen", { id: "Qwen/Qwen3.5-397B-A17B", provider: "deepinfra", route: "deepinfra", environment: "DEEPINFRA_API_KEY" }],
+  ["deepseek", { id: "deepseek-v4-pro", provider: "deepseek", route: "deepseek-direct", environment: "DEEPSEEK_API_KEY" }],
+  ["mistral", { id: "mistral-large-2512", provider: "mistral", route: "mistral-direct", environment: "MISTRAL_API_KEY" }],
+  ["grok", { id: "grok-4.5", provider: "xai", route: "xai-direct", environment: "XAI_API_KEY" }],
+  ["gpt", { id: "openai/gpt-5.6-sol", provider: "openrouter", route: "openrouter-openai-pinned", environment: "OPENROUTER_API_KEY" }],
 ]);
 
 export class DatasetValidationError extends Error {
@@ -291,13 +291,32 @@ function validateProduction(
       !model ||
       model.requested_model_id !== approved.id ||
       model.provider !== approved.provider ||
-      model.route !== approved.route
+      model.route !== approved.route ||
+      model.environment_variable !== approved.environment
     ) {
       issues.push(
         `production: approved model ${key} must use ${approved.id} via ${approved.provider}/${approved.route}`,
       );
     } else if (model.preflight.status !== "available") {
       issues.push(`production: model ${key} has not passed availability preflight`);
+    }
+    if (model) {
+      const omitTemperature = key === "gemini" || key === "claude" || key === "gpt";
+      if (
+        (omitTemperature && model.policy.temperature.mode !== "provider-default") ||
+        (!omitTemperature &&
+          (model.policy.temperature.mode !== "fixed" ||
+            model.policy.temperature.value !== 0.2))
+      ) {
+        issues.push(`production: model ${key} temperature policy differs from the approved panel`);
+      }
+      const expectedOutputParameter = key === "gemini" ? "max_output_tokens" : "max_tokens";
+      if (
+        model.policy.visible_output_limit.parameter !== expectedOutputParameter ||
+        model.policy.visible_output_limit.value !== 900
+      ) {
+        issues.push(`production: model ${key} must use the approved 900-token visible output cap`);
+      }
     }
   }
 

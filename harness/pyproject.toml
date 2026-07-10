@@ -1,0 +1,9 @@
+[project]
+name = "concordance-generation-harness"
+version = "1.0.0"
+description = "Offline generation harness for the Concordance cached demo"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.unittest]
+start-directory = "tests"

@@ -16,10 +16,12 @@
     "build:production": "npm run validate:data:production && tsc -b && cross-env VITE_DATASET=production vite build",
     "preview": "vite preview",
     "test": "vitest run",
+    "test:harness": "python3 -m unittest discover -s harness/tests -v",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "lint": "eslint .",
-    "check": "npm run validate:candidates && npm run lint && npm run test && npm run build"
+    "harness:dry-run": "python3 harness/generate.py --dry-run",
+    "check": "npm run validate:candidates && npm run lint && npm run test:harness && npm run test && npm run build"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.2.8",
