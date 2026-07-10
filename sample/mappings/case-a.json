@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0.0",
+  "mapping_version": "sample-1",
+  "mapping_id": "case-a-sample-mapping",
+  "question_id": "case-a",
+  "run_id": "case-a-sample-run",
+  "run_file_sha256": "409c5079a2ff0848fb5f77e385a3300f9db1b39d8ef41d1dee7a077130b9eba9",
+  "rubric_version": "sample-rubric-1",
+  "assignments": [
+    {
+      "response_id": "case-a-alpha-default-answer",
+      "primary_endorsed": "amber-reading",
+      "also_endorsed": [],
+      "mentioned": [
+        "pine-reading"
+      ],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-a-alpha-default-challenge",
+      "primary_endorsed": "pine-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-a-beta-default-answer",
+      "primary_endorsed": "amber-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-a-beta-default-challenge",
+      "primary_endorsed": "amber-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-a-gamma-default-answer",
+      "primary_endorsed": "amber-reading",
+      "also_endorsed": [],
+      "mentioned": [
+        "slate-reading"
+      ],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-a-gamma-default-challenge",
+      "primary_endorsed": null,
+      "also_endorsed": [
+        "slate-reading"
+      ],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-a-delta-default-answer",
+      "primary_endorsed": "amber-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-a-delta-default-challenge",
+      "primary_endorsed": "slate-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

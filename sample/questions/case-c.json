@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "sample-1",
+  "data_class": "sample",
+  "id": "case-c",
+  "kind": "prompt-sensitive",
+  "domain": "illustrative-domain",
+  "title": "A fictional prompt-sensitivity case",
+  "premise": "Changing fictional phrasing moves each illustrative model token.",
+  "context_note": "This development fixture exists only to test variant controls and movement.",
+  "what_this_shows": [
+    "How linked assignments can change with prompt wording."
+  ],
+  "what_this_does_not_show": [
+    "That any real model is predictably sensitive in this way."
+  ],
+  "selection": {
+    "status": "illustrative",
+    "pool_id": null,
+    "pool_size": null,
+    "rule_version": null,
+    "disclosure": "Illustrative fixture. It was designed to exercise the interface."
+  },
+  "prompt_variants": [
+    {
+      "id": "neutral",
+      "label": "Neutral phrasing",
+      "user_prompt": "Choose an illustrative position for fictional case C neutrally."
+    },
+    {
+      "id": "framed",
+      "label": "Framed phrasing",
+      "user_prompt": "Choose an illustrative position for fictional case C with a fictional frame."
+    }
+  ],
+  "position_map": [
+    {
+      "id": "north-reading",
+      "label": "North reading",
+      "summary": "Illustrative summary for North reading. This is not a scholarly claim.",
+      "attestation": "Fictional attestation for local interface development only.",
+      "sources": [
+        {
+          "id": "north-reading-source",
+          "claim_supported": "This is a fictional source entry used only to exercise the interface.",
+          "title": "Illustrative source for north-reading",
+          "citation": "Concordance development fixture (2026).",
+          "url": "https://example.com/concordance/north-reading",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "east-reading",
+      "label": "East reading",
+      "summary": "Illustrative summary for East reading. This is not a scholarly claim.",
+      "attestation": "Fictional attestation for local interface development only.",
+      "sources": [
+        {
+          "id": "east-reading-source",
+          "claim_supported": "This is a fictional source entry used only to exercise the interface.",
+          "title": "Illustrative source for east-reading",
+          "citation": "Concordance development fixture (2026).",
+          "url": "https://example.com/concordance/east-reading",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "west-reading",
+      "label": "West reading",
+      "summary": "Illustrative summary for West reading. This is not a scholarly claim.",
+      "attestation": "Fictional attestation for local interface development only.",
+      "sources": [
+        {
+          "id": "west-reading-source",
+          "claim_supported": "This is a fictional source entry used only to exercise the interface.",
+          "title": "Illustrative source for west-reading",
+          "citation": "Concordance development fixture (2026).",
+          "url": "https://example.com/concordance/west-reading",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "map_is_nonexhaustive": true,
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

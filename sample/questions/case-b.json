@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "sample-1",
+  "data_class": "sample",
+  "id": "case-b",
+  "kind": "divergent",
+  "domain": "illustrative-domain",
+  "title": "A fictional divergence case",
+  "premise": "The illustrative panel distributes across three fictional positions.",
+  "context_note": "This development fixture exists only to test plural layouts.",
+  "what_this_shows": [
+    "How several primary positions can remain visible at once."
+  ],
+  "what_this_does_not_show": [
+    "That diversity is correct, representative, or desirable."
+  ],
+  "selection": {
+    "status": "illustrative",
+    "pool_id": null,
+    "pool_size": null,
+    "rule_version": null,
+    "disclosure": "Illustrative fixture. It was designed to exercise the interface."
+  },
+  "prompt_variants": [
+    {
+      "id": "default",
+      "label": "Default",
+      "user_prompt": "Choose an illustrative position for fictional case B."
+    }
+  ],
+  "position_map": [
+    {
+      "id": "river-reading",
+      "label": "River reading",
+      "summary": "Illustrative summary for River reading. This is not a scholarly claim.",
+      "attestation": "Fictional attestation for local interface development only.",
+      "sources": [
+        {
+          "id": "river-reading-source",
+          "claim_supported": "This is a fictional source entry used only to exercise the interface.",
+          "title": "Illustrative source for river-reading",
+          "citation": "Concordance development fixture (2026).",
+          "url": "https://example.com/concordance/river-reading",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "stone-reading",
+      "label": "Stone reading",
+      "summary": "Illustrative summary for Stone reading. This is not a scholarly claim.",
+      "attestation": "Fictional attestation for local interface development only.",
+      "sources": [
+        {
+          "id": "stone-reading-source",
+          "claim_supported": "This is a fictional source entry used only to exercise the interface.",
+          "title": "Illustrative source for stone-reading",
+          "citation": "Concordance development fixture (2026).",
+          "url": "https://example.com/concordance/stone-reading",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "meadow-reading",
+      "label": "Meadow reading",
+      "summary": "Illustrative summary for Meadow reading. This is not a scholarly claim.",
+      "attestation": "Fictional attestation for local interface development only.",
+      "sources": [
+        {
+          "id": "meadow-reading-source",
+          "claim_supported": "This is a fictional source entry used only to exercise the interface.",
+          "title": "Illustrative source for meadow-reading",
+          "citation": "Concordance development fixture (2026).",
+          "url": "https://example.com/concordance/meadow-reading",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "map_is_nonexhaustive": true,
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "concordance-production",
+  "mode": "candidate",
+  "model_manifest": "manifests/models.json",
+  "questions": []
+}

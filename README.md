@@ -10,6 +10,29 @@ The repository is private while the prototype, provisional scholarly content, an
 
 The implementation is staged. Each stage is validated and committed before the next begins. Live model calls are blocked until the development credentials have been replaced or rotated.
 
+The default application build uses a conspicuously fictional dataset generated in `sample/`. The placeholder `data/` tree is intentionally unable to pass the production gate.
+
+## Local development
+
+Use Node 22 LTS (recorded in `.nvmrc`), then run:
+
+```sh
+npm install
+node scripts/create-sample-data.mjs
+npm run check
+npm run dev
+```
+
+Useful checks:
+
+- `npm run validate:data` validates the indexed sample files, cross-record links, and content hashes.
+- `npm run validate:data:production` applies the stricter release gate to `data/` and is expected to fail until the verified final dataset exists.
+- `npm test` runs schema, derived-state, and component tests.
+- `npm run test:e2e` runs the browser interaction and same-origin network checks once Playwright browsers are installed.
+- `npm run build` always validates sample data before compiling; `npm run build:production` cannot bundle unverified or incomplete data.
+
+The generator harness is isolated from the browser application and is documented separately in `harness/`. Do not point it at credentials that have not been rotated for this project.
+
 ## Release contract
 
 - The deployed application is static and makes no model API calls.
@@ -17,6 +40,7 @@ The implementation is staged. Each stage is validated and committed before the n
 - Questions, position maps, citations, and mappings must be author-verified before release.
 - Raw outputs and human-authored mappings remain visibly distinct.
 - No universal monoculture score or automated citation-truth label is produced.
+- Publication requires a separate author release instruction; development pushes remain in the private repository.
 
 ## Licensing
 

@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "sample-1",
+  "data_class": "sample",
+  "id": "case-a",
+  "kind": "convergent",
+  "domain": "illustrative-domain",
+  "title": "A fictional convergence case",
+  "premise": "Four illustrative model tokens initially gather at one fictional position.",
+  "context_note": "This development fixture exists only to test the convergence layout.",
+  "what_this_shows": [
+    "How a concentrated set of primary endorsements is rendered."
+  ],
+  "what_this_does_not_show": [
+    "Any behavior of a real model or any historical claim."
+  ],
+  "selection": {
+    "status": "illustrative",
+    "pool_id": null,
+    "pool_size": null,
+    "rule_version": null,
+    "disclosure": "Illustrative fixture. It was designed to exercise the interface."
+  },
+  "prompt_variants": [
+    {
+      "id": "default",
+      "label": "Default",
+      "user_prompt": "Choose an illustrative position for fictional case A."
+    }
+  ],
+  "position_map": [
+    {
+      "id": "amber-reading",
+      "label": "Amber reading",
+      "summary": "Illustrative summary for Amber reading. This is not a scholarly claim.",
+      "attestation": "Fictional attestation for local interface development only.",
+      "sources": [
+        {
+          "id": "amber-reading-source",
+          "claim_supported": "This is a fictional source entry used only to exercise the interface.",
+          "title": "Illustrative source for amber-reading",
+          "citation": "Concordance development fixture (2026).",
+          "url": "https://example.com/concordance/amber-reading",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "pine-reading",
+      "label": "Pine reading",
+      "summary": "Illustrative summary for Pine reading. This is not a scholarly claim.",
+      "attestation": "Fictional attestation for local interface development only.",
+      "sources": [
+        {
+          "id": "pine-reading-source",
+          "claim_supported": "This is a fictional source entry used only to exercise the interface.",
+          "title": "Illustrative source for pine-reading",
+          "citation": "Concordance development fixture (2026).",
+          "url": "https://example.com/concordance/pine-reading",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "slate-reading",
+      "label": "Slate reading",
+      "summary": "Illustrative summary for Slate reading. This is not a scholarly claim.",
+      "attestation": "Fictional attestation for local interface development only.",
+      "sources": [
+        {
+          "id": "slate-reading-source",
+          "claim_supported": "This is a fictional source entry used only to exercise the interface.",
+          "title": "Illustrative source for slate-reading",
+          "citation": "Concordance development fixture (2026).",
+          "url": "https://example.com/concordance/slate-reading",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "ochre-reading",
+      "label": "Ochre reading",
+      "summary": "Illustrative summary for Ochre reading. This is not a scholarly claim.",
+      "attestation": "Fictional attestation for local interface development only.",
+      "sources": [
+        {
+          "id": "ochre-reading-source",
+          "claim_supported": "This is a fictional source entry used only to exercise the interface.",
+          "title": "Illustrative source for ochre-reading",
+          "citation": "Concordance development fixture (2026).",
+          "url": "https://example.com/concordance/ochre-reading",
+          "accessed_at": "2026-07-10",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "map_is_nonexhaustive": true,
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

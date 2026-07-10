@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "mapping_version": "sample-1",
+  "mapping_id": "case-b-sample-mapping",
+  "question_id": "case-b",
+  "run_id": "case-b-sample-run",
+  "run_file_sha256": "8604d7462ec39ef9bf834d0ef499b524954ffc898e749444bb9bee75d907471c",
+  "rubric_version": "sample-rubric-1",
+  "assignments": [
+    {
+      "response_id": "case-b-alpha-default-answer",
+      "primary_endorsed": "river-reading",
+      "also_endorsed": [],
+      "mentioned": [
+        "stone-reading"
+      ],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-b-alpha-default-challenge",
+      "primary_endorsed": "stone-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-b-beta-default-answer",
+      "primary_endorsed": "stone-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-b-beta-default-challenge",
+      "primary_endorsed": "meadow-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-b-gamma-default-answer",
+      "primary_endorsed": "meadow-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-b-gamma-default-challenge",
+      "primary_endorsed": "river-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-b-delta-default-answer",
+      "primary_endorsed": "river-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

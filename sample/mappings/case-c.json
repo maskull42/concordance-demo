@@ -1,0 +1,216 @@
+{
+  "schema_version": "1.0.0",
+  "mapping_version": "sample-1",
+  "mapping_id": "case-c-sample-mapping",
+  "question_id": "case-c",
+  "run_id": "case-c-sample-run",
+  "run_file_sha256": "286007a0276c1d8fa90e587fadf3265d7e7aff6f1c36da9d44d5a23935fda4e6",
+  "rubric_version": "sample-rubric-1",
+  "assignments": [
+    {
+      "response_id": "case-c-alpha-neutral-answer",
+      "primary_endorsed": "north-reading",
+      "also_endorsed": [],
+      "mentioned": [
+        "east-reading"
+      ],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-alpha-neutral-challenge",
+      "primary_endorsed": "east-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-beta-neutral-answer",
+      "primary_endorsed": "north-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-beta-neutral-challenge",
+      "primary_endorsed": "west-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-gamma-neutral-answer",
+      "primary_endorsed": "east-reading",
+      "also_endorsed": [],
+      "mentioned": [
+        "west-reading"
+      ],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-gamma-neutral-challenge",
+      "primary_endorsed": "north-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-delta-neutral-answer",
+      "primary_endorsed": "west-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-delta-neutral-challenge",
+      "primary_endorsed": "east-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-alpha-framed-answer",
+      "primary_endorsed": "east-reading",
+      "also_endorsed": [],
+      "mentioned": [
+        "west-reading"
+      ],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-alpha-framed-challenge",
+      "primary_endorsed": "west-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-beta-framed-answer",
+      "primary_endorsed": "east-reading",
+      "also_endorsed": [],
+      "mentioned": [
+        "north-reading"
+      ],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-beta-framed-challenge",
+      "primary_endorsed": "north-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-gamma-framed-answer",
+      "primary_endorsed": "west-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-gamma-framed-challenge",
+      "primary_endorsed": "east-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-delta-framed-answer",
+      "primary_endorsed": "north-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "response_id": "case-c-delta-framed-challenge",
+      "primary_endorsed": "west-reading",
+      "also_endorsed": [],
+      "mentioned": [],
+      "audit_note": "Illustrative mapping for interface development only.",
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

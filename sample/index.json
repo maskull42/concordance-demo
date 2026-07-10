@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "concordance-sample",
+  "mode": "sample",
+  "model_manifest": "manifests/models.json",
+  "questions": [
+    {
+      "question": "questions/case-a.json",
+      "run": "runs/case-a.json",
+      "mapping": "mappings/case-a.json"
+    },
+    {
+      "question": "questions/case-b.json",
+      "run": "runs/case-b.json",
+      "mapping": "mappings/case-b.json"
+    },
+    {
+      "question": "questions/case-c.json",
+      "run": "runs/case-c.json",
+      "mapping": "mappings/case-c.json"
+    }
+  ]
+}
