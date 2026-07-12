@@ -31,8 +31,8 @@ A live pilot is authorized only when all of the following are true:
 3. every candidate uses content version `candidate-1.1.0`, pool size 6, rule `pilot-rule-2`, candidate selection status, and proposed question, position, and source records;
 4. `candidate/pilot-lock.json` conforms to `candidate/pilot-lock.schema.json` and binds the pool, rule, content version, `candidate/PILOT_POOL.md`, the approved `candidate/MAPPING_RUBRIC.md`, six exact question files, their priority and fallback roles, and `config/protocol.json` by SHA-256;
 5. the lock, pool document, mapping rubric, all six locked question files, and locked protocol exist in Git `HEAD` and are unchanged in the working tree, so the required pre-output commit is both present and reproducible;
-6. the complete plan contains exactly 64 answer-only cells across all eight configured models;
-7. output is written inside the ignored repository `.pilot/` directory.
+6. an unfiltered plan contains exactly 64 answer-only cells across all eight configured models, while an explicitly named stage contains exactly eight cells for every selected canonical model;
+7. unfiltered output is written inside the ignored repository `.pilot/` directory, and staged output is written exactly to `.pilot/stages/<ID>`.
 
 The approval flag authorizes this frozen provisional content only for a private threshold-selection pilot. It does not mark any source as author-verified and does not authorize publication. A.G. Elrod approved the exact six prompts and maps and `mapping-rubric-1` on 2026-07-12. The generated lock and every locked input must be validated and committed together before running the pilot. Any later content, rubric, or protocol change requires a new approved lock and commit. Pilot output is ignored by Git and must not be copied into production data.
 
@@ -43,6 +43,29 @@ python3 harness/generate.py --live --run-purpose pilot \
   --credentials-rotated --pilot-content-approved --answer-only \
   --questions candidate/questions --output .pilot
 ```
+
+#### Staged private execution
+
+A model filter in pilot mode is allowed only with an explicit `--pilot-stage ID`. The stage ID isolates its receipts and run files at `.pilot/stages/<ID>`. Each selected canonical model must still answer all eight exact prompt variants across all six locked candidates. Preflight, credential checks, and the model manifest cover only the selected models in that stage.
+
+This runs the currently available seven-model panel while deferring Mistral:
+
+```sh
+python3 harness/generate.py --live --run-purpose pilot \
+  --credentials-rotated --pilot-content-approved --answer-only \
+  --questions candidate/questions \
+  --pilot-stage without-mistral \
+  --output .pilot/stages/without-mistral \
+  --model gemini --model claude --model cohere --model qwen \
+  --model deepseek --model grok --model gpt \
+  --retries 1 --max-calls 63 --max-cost-usd 15
+```
+
+Before generation, the harness writes a one-time `stage.json` receipt containing the stage ID, selected and deferred model keys, expected cell count, pilot-lock and configuration hashes, harness version, cross-stage execution-contract hash, full-plan and stage-plan hashes, model-manifest hash, and creation time. Resume refuses changed source code, prompts, configuration, manifest evidence, or model scope. Staged receipts and run files remain private under the Git-ignored `.pilot/` tree.
+
+All generation calls use a one-hour read timeout. A timeout or network failure is ambiguous after a paid request has been sent, so it is never retried automatically. Only provider-specific complete terminal states are checkpointed as successes. Token-limit, incomplete, or missing finish states are recorded as nonqualifying errors.
+
+A stage is partial, nonqualifying evidence. It cannot support Rule 2 threshold selection or production content by itself. Selection waits until the stages aggregate to all 64 exact model-variant cells, with all eight canonical models and no missing or duplicate cells. The later Mistral stage must use a different stage ID and its own private output directory.
 
 ### Final production run
 
@@ -84,6 +107,7 @@ The harness reads only the eight named environment variables when `--live` is su
 --credentials-rotated      operator attestation required with --live
 --run-purpose pilot|final  select the private-pilot or production contract
 --pilot-content-approved   authorize the frozen proposed Rule 2 private pilot
+--pilot-stage ID           name a private, nonqualifying filtered pilot stage
 ```
 
 Challenge cells always extend the exact parent conversation with the exact parent text as an assistant message and the shared instruction in `config/protocol.json`. The instruction explicitly treats that prior text as untrusted data.

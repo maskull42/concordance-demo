@@ -1,17 +1,23 @@
 from __future__ import annotations
 
 import asyncio
+import http.client
+import ssl
 import sys
 import unittest
+import urllib.error
 from pathlib import Path
+from unittest.mock import Mock, patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from concordance_harness.config import load_harness_config
 from concordance_harness.providers import (
+    HttpRequest,
     ProviderAdapter,
     ProviderError,
     ProviderSubstitutionError,
+    UrllibTransport,
 )
 
 from support import FakeTransport, repository_root, response
@@ -52,6 +58,7 @@ class ProviderTests(unittest.TestCase):
         grok = ProviderAdapter(self.models["grok"], FakeTransport([]))
         grok_request = grok.build_generation_request("secret", self.messages)
         self.assertEqual(grok_request.url, "https://api.x.ai/v1/responses")
+        self.assertEqual(grok_request.timeout_seconds, 3600.0)
         self.assertEqual(
             grok_request.json_body,
             {
@@ -72,7 +79,9 @@ class ProviderTests(unittest.TestCase):
         )
 
         gpt = ProviderAdapter(self.models["gpt"], FakeTransport([]))
-        gpt_body = gpt.build_generation_request("secret", self.messages).json_body
+        gpt_request = gpt.build_generation_request("secret", self.messages)
+        gpt_body = gpt_request.json_body
+        self.assertEqual(gpt_request.timeout_seconds, 3600.0)
         self.assertNotIn("temperature", gpt_body)
         self.assertEqual(gpt_body["max_tokens"], 16_384)
         self.assertEqual(gpt_body["service_tier"], "default")
@@ -80,6 +89,55 @@ class ProviderTests(unittest.TestCase):
             gpt_body["provider"],
             {"only": ["openai"], "allow_fallbacks": False, "require_parameters": True},
         )
+
+    def test_generation_transport_failure_is_not_blindly_retryable(self) -> None:
+        class FailingTransport:
+            async def send(self, request):
+                raise ProviderError(
+                    "provider request timed out",
+                    category="timeout",
+                    retryable=True,
+                )
+
+        adapter = ProviderAdapter(self.models["grok"], FailingTransport())
+        with self.assertRaises(ProviderError) as context:
+            asyncio.run(adapter.generate("secret", self.messages))
+        self.assertEqual(context.exception.category, "timeout")
+        self.assertFalse(context.exception.retryable)
+
+    def test_response_read_failures_are_normalized_as_network_errors(self) -> None:
+        request = HttpRequest(
+            "POST", "https://example.invalid/v1/generate", {}, {}, 1.0
+        )
+        failures = (
+            http.client.IncompleteRead(b"partial", 20),
+            http.client.RemoteDisconnected("disconnected"),
+            ConnectionResetError("reset"),
+            ssl.SSLError("TLS ended"),
+        )
+        for failure in failures:
+            with self.subTest(failure=type(failure).__name__):
+                with patch("urllib.request.urlopen", side_effect=failure):
+                    with self.assertRaises(ProviderError) as context:
+                        UrllibTransport()._send_sync(request)
+                self.assertEqual(context.exception.category, "network")
+                self.assertTrue(context.exception.retryable)
+
+    def test_http_error_body_read_failure_is_normalized(self) -> None:
+        request = HttpRequest(
+            "POST", "https://example.invalid/v1/generate", {}, {}, 1.0
+        )
+        error = urllib.error.HTTPError(
+            request.url, 500, "provider error", {}, None
+        )
+        error.read = Mock(
+            side_effect=http.client.IncompleteRead(b"partial", 20)
+        )
+        with patch("urllib.request.urlopen", side_effect=error):
+            with self.assertRaises(ProviderError) as context:
+                UrllibTransport()._send_sync(request)
+        self.assertEqual(context.exception.category, "network")
+        self.assertTrue(context.exception.retryable)
 
     def test_request_repr_never_exposes_headers_body_or_query_key(self) -> None:
         adapter = ProviderAdapter(self.models["gemini"], FakeTransport([]))
@@ -127,15 +185,14 @@ class ProviderTests(unittest.TestCase):
                             {
                                 "type": "message",
                                 "role": "assistant",
-                                "status": "incomplete",
+                                "status": "completed",
                                 "content": [
                                     {"type": "output_text", "text": "First. "},
                                     {"type": "output_text", "text": "Second."},
                                 ],
                             },
                         ],
-                        "status": "incomplete",
-                        "incomplete_details": {"reason": "max_output_tokens"},
+                        "status": "completed",
                         "usage": {
                             "input_tokens": 120,
                             "input_tokens_details": {"cached_tokens": 40},
@@ -155,7 +212,7 @@ class ProviderTests(unittest.TestCase):
         self.assertEqual(result.response_text, "First. Second.")
         self.assertEqual(result.returned_model_id, "grok-4.5")
         self.assertEqual(result.provider_response_id, "response-1")
-        self.assertEqual(result.finish_reason, "max_output_tokens")
+        self.assertEqual(result.finish_reason, "completed")
         self.assertEqual(
             result.usage,
             {
@@ -171,6 +228,89 @@ class ProviderTests(unittest.TestCase):
             result.effective_params["max_output_tokens"],
             {"state": "known", "value": 16_384, "source": "request"},
         )
+
+    def test_incomplete_finish_state_is_never_a_successful_checkpoint(self) -> None:
+        fixtures = {
+            "gemini": {
+                "modelVersion": "gemini-3.1-pro-preview",
+                "candidates": [
+                    {
+                        "content": {"parts": [{"text": "Partial"}]},
+                        "finishReason": "MAX_TOKENS",
+                    }
+                ],
+                "usageMetadata": {},
+            },
+            "claude": {
+                "id": "response-1",
+                "model": "claude-fable-5",
+                "content": [{"type": "text", "text": "Partial"}],
+                "stop_reason": "max_tokens",
+                "usage": {},
+            },
+            "cohere": {
+                "id": "response-1",
+                "message": {"content": [{"type": "text", "text": "Partial"}]},
+                "finish_reason": "MAX_TOKENS",
+                "usage": {},
+            },
+            "qwen": {
+                "id": "response-1",
+                "model": "Qwen/Qwen3.5-397B-A17B",
+                "choices": [
+                    {"message": {"content": "Partial"}, "finish_reason": "length"}
+                ],
+                "usage": {},
+            },
+            "deepseek": {
+                "id": "response-1",
+                "model": "deepseek-v4-pro",
+                "choices": [
+                    {"message": {"content": "Partial"}, "finish_reason": "length"}
+                ],
+                "usage": {},
+            },
+            "mistral": {
+                "id": "response-1",
+                "model": "mistral-large-2512",
+                "choices": [
+                    {"message": {"content": "Partial"}, "finish_reason": "length"}
+                ],
+                "usage": {},
+            },
+            "grok": {
+                "id": "response-1",
+                "model": "grok-4.5",
+                "output": [
+                    {
+                        "type": "message",
+                        "role": "assistant",
+                        "content": [{"type": "output_text", "text": "Partial"}],
+                    }
+                ],
+                "status": "incomplete",
+                "incomplete_details": {"reason": "max_output_tokens"},
+                "usage": {},
+            },
+            "gpt": {
+                "id": "response-1",
+                "model": "openai/gpt-5.6-sol",
+                "provider": "OpenAI",
+                "choices": [
+                    {"message": {"content": "Partial"}, "finish_reason": "length"}
+                ],
+                "usage": {},
+            },
+        }
+        for model_key, fixture in fixtures.items():
+            with self.subTest(model_key=model_key):
+                adapter = ProviderAdapter(
+                    self.models[model_key], FakeTransport([response(200, fixture)])
+                )
+                with self.assertRaises(ProviderError) as context:
+                    asyncio.run(adapter.generate("secret", self.messages))
+                self.assertEqual(context.exception.category, "incomplete-output")
+                self.assertFalse(context.exception.retryable)
 
     def test_xai_unavailability_stops_without_fallback(self) -> None:
         transport = FakeTransport([response(404, {"error": "not available in region"})])

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import http.client
 import json
 import socket
 import ssl
@@ -13,6 +14,9 @@ from typing import Any, Protocol
 import certifi
 
 from .config import ModelConfig
+
+
+NETWORK_READ_EXCEPTIONS = (http.client.HTTPException, ConnectionError, ssl.SSLError)
 
 
 class ProviderError(RuntimeError):
@@ -126,7 +130,20 @@ class UrllibTransport:
                     body=body,
                 )
         except urllib.error.HTTPError as error:
-            body = error.read(self.MAX_RESPONSE_BYTES + 1)
+            try:
+                body = error.read(self.MAX_RESPONSE_BYTES + 1)
+            except (TimeoutError, socket.timeout) as read_error:
+                raise ProviderError(
+                    "provider request timed out",
+                    category="timeout",
+                    retryable=True,
+                ) from read_error
+            except NETWORK_READ_EXCEPTIONS as read_error:
+                raise ProviderError(
+                    "provider connection failed while reading the error response",
+                    category="network",
+                    retryable=True,
+                ) from read_error
             if len(body) > self.MAX_RESPONSE_BYTES:
                 body = (
                     b'{"error":"provider error body exceeded the receipt size limit"}'
@@ -143,6 +160,12 @@ class UrllibTransport:
         except urllib.error.URLError as error:
             raise ProviderError(
                 f"provider network failure: {error.reason}",
+                category="network",
+                retryable=True,
+            ) from error
+        except NETWORK_READ_EXCEPTIONS as error:
+            raise ProviderError(
+                "provider connection failed while reading the response",
                 category="network",
                 retryable=True,
             ) from error
@@ -185,9 +208,19 @@ class ProviderAdapter:
     async def generate(
         self, secret: str, messages: list[dict[str, str]]
     ) -> ProviderResult:
-        response = await self.transport.send(
-            self.build_generation_request(secret, messages)
-        )
+        try:
+            response = await self.transport.send(
+                self.build_generation_request(secret, messages)
+            )
+        except ProviderError as error:
+            # A transport failure after a generation request is sent is ambiguous:
+            # the provider may still finish and bill it. Never issue a blind paid
+            # duplicate. A reviewed resume can retry the recorded error cell.
+            if error.category in {"timeout", "network"} and error.retryable:
+                raise ProviderError(
+                    str(error), category=error.category, retryable=False
+                ) from error
+            raise
         self._raise_for_status(response)
         result = self._parse_generation(response.json())
         if result.returned_model_id:
@@ -195,6 +228,7 @@ class ProviderAdapter:
         if self.config.model_key == "gpt" and result.provider_name:
             if result.provider_name.casefold() != "openai":
                 raise ProviderSubstitutionError("OpenAI", result.provider_name)
+        self._assert_complete_generation(result)
         if not result.response_text.strip():
             raise ProviderError(
                 "provider returned empty response text",
@@ -212,7 +246,23 @@ class ProviderAdapter:
     ) -> HttpRequest:
         url = self._url(self.config.generation_path, secret)
         body = self._generation_body(messages)
-        return HttpRequest("POST", url, self._headers(secret), body)
+        return HttpRequest("POST", url, self._headers(secret), body, 3600.0)
+
+    def _assert_complete_generation(self, result: ProviderResult) -> None:
+        expected = {
+            "google": "STOP",
+            "anthropic": "end_turn",
+            "cohere": "COMPLETE",
+            "xai-responses": "completed",
+            "openai": "stop",
+        }[self.config.api_style]
+        if result.finish_reason != expected:
+            raise ProviderError(
+                "provider returned incomplete finish state "
+                f"{result.finish_reason!r}; expected {expected!r}",
+                category="incomplete-output",
+                retryable=False,
+            )
 
     def _url(self, template: str, secret: str) -> str:
         model = urllib.parse.quote(self.config.requested_model_id, safe="/")

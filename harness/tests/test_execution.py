@@ -16,6 +16,7 @@ from concordance_harness.execution import (
     BudgetExceeded,
     ExecutionOptions,
     HarnessRunner,
+    ResumeError,
     billed_output_tokens,
 )
 from concordance_harness.planner import build_plan, load_questions
@@ -244,6 +245,23 @@ class ExecutionTests(unittest.TestCase):
         self.assertEqual(len(force_transport.requests), 1)
         self.assertEqual(len(run["cells"]), 1)
         self.assertEqual(run["cells"][0]["response_text"], "Replacement answer")
+
+    def test_resume_rejects_another_harness_version(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            asyncio.run(
+                self.runner(
+                    root,
+                    FakeTransport([self.success("First answer")]),
+                    AttemptBudget(None, None),
+                ).run()
+            )
+            path = root / "runs/case-a.json"
+            run = json.loads(path.read_bytes())
+            run["harness_version"] = "another-version"
+            path.write_text(json.dumps(run), encoding="utf-8")
+            with self.assertRaises(ResumeError):
+                self.runner(root, FakeTransport([]), AttemptBudget(None, None))
 
     def test_sanitizer_removes_headers_query_keys_and_known_values(self) -> None:
         dirty = (

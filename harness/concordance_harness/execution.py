@@ -110,10 +110,14 @@ class RunStore:
             except json.JSONDecodeError as error:
                 raise ResumeError(f"{self.path.name}: malformed checkpoint") from error
             incompatible = (
-                run.get("question_id") != question.question_id
+                run.get("schema_version") != "1.0.0"
+                or run.get("harness_version") != HARNESS_VERSION
+                or run.get("run_purpose") != run_purpose
+                or run.get("question_id") != question.question_id
                 or run.get("question_file_sha256") != question.sha256
                 or run.get("harness_config_sha256") != config_hash
                 or run.get("model_manifest_file_sha256") != model_manifest_hash
+                or run.get("model_manifest_snapshot") != model_manifest
             )
             if incompatible and not force_new:
                 raise ResumeError(
@@ -240,7 +244,15 @@ def create_model_manifest(
                     "provider_returned_model_id": preflight[
                         model.model_key
                     ].returned_model_id,
-                    "sanitized_note": preflight[model.model_key].note,
+                    "sanitized_note": (
+                        preflight[model.model_key].note
+                        or (
+                            "Provider endpoint: "
+                            + preflight[model.model_key].provider_name
+                            if preflight[model.model_key].provider_name
+                            else None
+                        )
+                    ),
                 },
             }
             for model in config.models

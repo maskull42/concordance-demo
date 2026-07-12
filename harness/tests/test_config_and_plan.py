@@ -6,26 +6,51 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from argparse import Namespace
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from concordance_harness.config import ConfigError, load_harness_config
+from concordance_harness.execution import (
+    ResumeError,
+    create_model_manifest,
+    write_model_manifest,
+)
 from concordance_harness.planner import PlanError, build_plan, load_questions
+from concordance_harness.providers import PreflightResult
+
+from generate import (
+    build_pilot_stage_scope,
+    config_for_run,
+    load_existing_manifest,
+    load_pilot_stage_receipt,
+    write_pilot_stage_receipt,
+)
 
 from support import repository_root
 
 
 class ConfigAndPlanTests(unittest.TestCase):
+    STAGED_MODEL_KEYS = (
+        "gemini",
+        "claude",
+        "cohere",
+        "qwen",
+        "deepseek",
+        "grok",
+        "gpt",
+    )
+
     @classmethod
     def setUpClass(cls) -> None:
         root = repository_root()
         cls.config = load_harness_config(root / "harness/config/models.json")
         cls.questions = load_questions(root / "sample/questions")
         cls.candidate_questions = load_questions(root / "candidate/questions")
-        protocol = json.loads((root / "config/protocol.json").read_bytes())
-        cls.system = protocol["system_prompt"]
-        cls.challenge = protocol["standard_challenge_prompt"]
+        cls.protocol = json.loads((root / "config/protocol.json").read_bytes())
+        cls.system = cls.protocol["system_prompt"]
+        cls.challenge = cls.protocol["standard_challenge_prompt"]
 
     def test_approved_panel_and_parameter_policies_are_frozen(self) -> None:
         self.assertEqual(len(self.config.models), 8)
@@ -133,6 +158,216 @@ class ConfigAndPlanTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("Planned logical cells: 64 of 64", result.stdout)
         self.assertIn("environment variables read: 0", result.stdout)
+
+    def test_seven_model_pilot_stage_has_56_exact_private_cells(self) -> None:
+        root = repository_root()
+        result = subprocess.run(
+            [
+                sys.executable,
+                "harness/generate.py",
+                "--dry-run",
+                "--run-purpose",
+                "pilot",
+                "--questions",
+                "candidate/questions",
+                "--answer-only",
+                "--pilot-stage",
+                "without-mistral",
+                "--output",
+                ".pilot/stages/without-mistral",
+                *(
+                    argument
+                    for model_key in self.STAGED_MODEL_KEYS
+                    for argument in ("--model", model_key)
+                ),
+            ],
+            cwd=root,
+            env={"PATH": os.environ.get("PATH", "")},
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Planned logical cells: 56 of 56", result.stdout)
+        self.assertIn("private, partial, and nonqualifying", result.stdout)
+        self.assertIn("aggregate 64 exact model-variant cells", result.stdout)
+        self.assertIn("environment variables read: 0", result.stdout)
+
+    def test_pilot_stage_refuses_missing_stage_wrong_path_and_unknown_model(
+        self,
+    ) -> None:
+        root = repository_root()
+        base = [
+            sys.executable,
+            "harness/generate.py",
+            "--dry-run",
+            "--run-purpose",
+            "pilot",
+            "--questions",
+            "candidate/questions",
+            "--answer-only",
+            "--model",
+            "gemini",
+        ]
+        cases = [
+            ([], "require an explicit --pilot-stage"),
+            (
+                [
+                    "--pilot-stage",
+                    "first-stage",
+                    "--output",
+                    ".pilot/stages/wrong-stage",
+                ],
+                "must write exactly to .pilot/stages/first-stage",
+            ),
+            (
+                [
+                    "--pilot-stage",
+                    "first-stage",
+                    "--output",
+                    ".pilot/stages/first-stage",
+                    "--model",
+                    "not-a-model",
+                ],
+                "unknown model filter(s): not-a-model",
+            ),
+        ]
+        for extra, expected in cases:
+            with self.subTest(expected=expected):
+                result = subprocess.run(
+                    [*base, *extra],
+                    cwd=root,
+                    env={"PATH": os.environ.get("PATH", "")},
+                    text=True,
+                    capture_output=True,
+                    check=False,
+                )
+                self.assertEqual(result.returncode, 2)
+                self.assertIn(expected, result.stderr)
+
+    def test_live_seven_model_stage_requires_only_selected_credentials(self) -> None:
+        root = repository_root()
+        result = subprocess.run(
+            [
+                sys.executable,
+                "harness/generate.py",
+                "--live",
+                "--run-purpose",
+                "pilot",
+                "--credentials-rotated",
+                "--pilot-content-approved",
+                "--questions",
+                "candidate/questions",
+                "--answer-only",
+                "--pilot-stage",
+                "without-mistral",
+                "--output",
+                ".pilot/stages/without-mistral",
+                *(
+                    argument
+                    for model_key in self.STAGED_MODEL_KEYS
+                    for argument in ("--model", model_key)
+                ),
+            ],
+            cwd=root,
+            env={
+                "PATH": os.environ.get("PATH", ""),
+                "HOME": os.environ.get("HOME", ""),
+            },
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("missing required environment variables", result.stderr)
+        self.assertNotIn("MISTRAL_API_KEY", result.stderr)
+        for environment_variable in (
+            "GOOGLE_API_KEY",
+            "ANTHROPIC_API_KEY",
+            "COHERE_API_KEY",
+            "DEEPINFRA_API_KEY",
+            "DEEPSEEK_API_KEY",
+            "XAI_API_KEY",
+            "OPENROUTER_API_KEY",
+        ):
+            self.assertIn(environment_variable, result.stderr)
+
+    def test_stage_receipt_and_manifest_cover_only_selected_models(self) -> None:
+        arguments = Namespace(
+            run_purpose="pilot",
+            pilot_stage="without-mistral",
+            model=list(self.STAGED_MODEL_KEYS),
+        )
+        scoped = config_for_run(self.config, arguments)
+        self.assertEqual(
+            tuple(model.model_key for model in scoped.models), self.STAGED_MODEL_KEYS
+        )
+        preflight = {
+            model.model_key: PreflightResult(
+                model.requested_model_id,
+                "OpenAI" if model.model_key == "gpt" else model.provider,
+                None,
+            )
+            for model in scoped.models
+        }
+        manifest = create_model_manifest(scoped, preflight, "research")
+        self.assertEqual(
+            [model["model_key"] for model in manifest["models"]],
+            list(self.STAGED_MODEL_KEYS),
+        )
+
+        plan = build_plan(
+            self.candidate_questions,
+            scoped.models,
+            self.system,
+            self.challenge,
+            answer_only=True,
+        )
+        scope = build_pilot_stage_scope(
+            "without-mistral",
+            self.config,
+            scoped,
+            self.protocol,
+            self.candidate_questions,
+            plan,
+        )
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary)
+            _, manifest_hash = write_model_manifest(output, manifest)
+            path = write_pilot_stage_receipt(
+                output,
+                scope,
+                manifest_hash,
+            )
+            receipt = json.loads(path.read_bytes())
+            self.assertEqual(receipt["selected_model_keys"], list(self.STAGED_MODEL_KEYS))
+            self.assertEqual(receipt["deferred_model_keys"], ["mistral"])
+            self.assertEqual(receipt["expected_logical_cell_count"], 56)
+            self.assertEqual(receipt["required_aggregate_logical_cell_count"], 64)
+            self.assertEqual(receipt["evidence_status"], "partial-nonqualifying")
+            self.assertEqual(receipt["config_sha256"], self.config.sha256)
+            self.assertEqual(len(receipt["pilot_lock_sha256"]), 64)
+            self.assertEqual(receipt["model_manifest_file_sha256"], manifest_hash)
+            self.assertEqual(len(receipt["execution_contract_sha256"]), 64)
+            self.assertEqual(len(receipt["full_plan_sha256"]), 64)
+            self.assertEqual(len(receipt["stage_plan_sha256"]), 64)
+            self.assertIsInstance(receipt["created_at"], str)
+            self.assertEqual(
+                load_pilot_stage_receipt(output, scope), manifest_hash
+            )
+            loaded = load_existing_manifest(output, scoped)
+            self.assertIsNotNone(loaded)
+            assert loaded is not None
+            loaded_manifest, loaded_hash = loaded
+            self.assertEqual(loaded_manifest, manifest)
+            self.assertEqual(loaded_hash, manifest_hash)
+
+            manifest["models"][0]["route"] = "substituted-route"
+            (output / "manifests/models.json").write_text(
+                json.dumps(manifest), encoding="utf-8"
+            )
+            with self.assertRaises(ResumeError):
+                load_existing_manifest(output, scoped)
 
     def test_case_model_and_answer_only_filters_are_deterministic(self) -> None:
         plan = build_plan(
