@@ -143,6 +143,24 @@ Sealing retains the exact imported bytes and writes a normalized review receipt 
 
 The seal uses the same claim protocol. Run `python3 harness/finalize_author_review.py --recover-incomplete` only after a disclosed interrupted seal.
 
+#### Rule 2 threshold selection
+
+Only a verified, sealed author review unlocks unblinding. The evaluator reconstructs the exact 64-cell run, recomputes every blind ID from the private key, checks both crosswalks and every local-to-canonical position map, then counts only the author-reviewed primary assignment.
+
+Two prose rules are made explicit in the machine receipt. A convergence alternative is “not endorsed” only when it receives zero primary assignments; secondary endorsements never enter thresholds. Prompt-sensitivity clarity requires at least six of the same models to be non-null under both variants, not merely six non-null responses in each variant considered separately.
+
+Commit the evaluator and tests before writing its single-file, write-once receipt.
+
+```sh
+python3 harness/evaluate_pilot_selection.py --check
+python3 harness/evaluate_pilot_selection.py --write
+python3 harness/evaluate_pilot_selection.py --verify
+```
+
+The private receipt is `.pilot/aggregates/rule2-pilot-1/selection-rule2-1.json`. It binds the pilot lock, rubric, run files, mapping files, both crosswalks, author review, 64 canonical assignments, all six candidate metrics, and each priority/fallback result. A behavior with no qualifying candidate remains failed and requires A.G. Elrod’s approval of a disclosed new pool and rule version. Selection does not change proposed scholarship into author-verified material and does not authorize production.
+
+The receipt is published at mode `0600` through an exclusive claim and atomic hard link. If an interrupted write leaves that claim behind, run `python3 harness/evaluate_pilot_selection.py --recover-incomplete`. Recovery preserves changed or unrecognized bytes for inspection.
+
 ### Final production run
 
 A final live run is authorized only when all of the following are true:
