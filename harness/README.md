@@ -101,6 +101,16 @@ python3 harness/prepare_mapping_batches.py --write
 
 Mapper agents receive only one batch manifest, its four envelopes, and `instructions.json`. They must never read `aggregate.json`, either private crosswalk, another batch, or any run receipt.
 
+The offline mapping validator checks the frozen batch receipt, all manifest and envelope hashes, response hashes, assignment schemas, local handles, nonoverlap rules, and verbatim evidence snippets. Partial checks are safe while independent coders are still working. After all 16 files pass and every coder has exited, commit the validator and its tests before sealing the write-once first-pass receipt. No process may still be writing a mapping during sealing.
+
+```sh
+python3 harness/validate_blind_mappings.py --check-partial
+python3 harness/validate_blind_mappings.py --seal
+python3 harness/validate_blind_mappings.py --verify
+```
+
+`first-pass.json` records 64 validated assignments with status `complete-author-review-required`. The verification command must pass before review or any later calculation; it detects post-seal mapping changes. The receipt does not expose model identities, calculate thresholds, or select candidates. A.G. Elrod must review every assignment that can affect a threshold before any unblinding or calculation.
+
 ### Final production run
 
 A final live run is authorized only when all of the following are true:
