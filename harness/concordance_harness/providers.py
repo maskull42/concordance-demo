@@ -13,7 +13,7 @@ from typing import Any, Protocol
 
 import certifi
 
-from .config import ModelConfig
+from .config import ModelConfig, returned_model_id_is_approved
 
 
 NETWORK_READ_EXCEPTIONS = (http.client.HTTPException, ConnectionError, ssl.SSLError)
@@ -624,8 +624,7 @@ class ProviderAdapter:
         return values
 
     def assert_model_identity(self, returned: str) -> None:
-        normalized = returned.removeprefix("models/")
-        if normalized != self.config.requested_model_id:
+        if not returned_model_id_is_approved(self.config, returned):
             raise ProviderSubstitutionError(self.config.requested_model_id, returned)
 
     @staticmethod

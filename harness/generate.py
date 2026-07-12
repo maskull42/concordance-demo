@@ -12,7 +12,11 @@ from pathlib import Path
 from typing import Any
 
 from concordance_harness import HARNESS_VERSION
-from concordance_harness.config import ConfigError, load_harness_config
+from concordance_harness.config import (
+    ConfigError,
+    load_harness_config,
+    returned_model_id_is_approved,
+)
 from concordance_harness.execution import (
     AttemptBudget,
     BudgetExceeded,
@@ -627,7 +631,7 @@ def load_existing_manifest(
             preflight.get("status") != "available"
             or not isinstance(preflight.get("checked_at"), str)
             or not isinstance(returned, str)
-            or returned.removeprefix("models/") != model.requested_model_id
+            or not returned_model_id_is_approved(model, returned)
             or (note is not None and not isinstance(note, str))
             or (
                 model.model_key == "gpt"

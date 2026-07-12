@@ -172,9 +172,9 @@ class ConfigAndPlanTests(unittest.TestCase):
                 "candidate/questions",
                 "--answer-only",
                 "--pilot-stage",
-                "without-mistral",
+                "credential-scope-test",
                 "--output",
-                ".pilot/stages/without-mistral",
+                ".pilot/stages/credential-scope-test",
                 *(
                     argument
                     for model_key in self.STAGED_MODEL_KEYS
@@ -260,9 +260,9 @@ class ConfigAndPlanTests(unittest.TestCase):
                 "candidate/questions",
                 "--answer-only",
                 "--pilot-stage",
-                "without-mistral",
+                "credential-scope-test",
                 "--output",
-                ".pilot/stages/without-mistral",
+                ".pilot/stages/credential-scope-test",
                 *(
                     argument
                     for model_key in self.STAGED_MODEL_KEYS
@@ -304,7 +304,11 @@ class ConfigAndPlanTests(unittest.TestCase):
         )
         preflight = {
             model.model_key: PreflightResult(
-                model.requested_model_id,
+                (
+                    "openai/gpt-5.6-sol-20260709"
+                    if model.model_key == "gpt"
+                    else model.requested_model_id
+                ),
                 "OpenAI" if model.model_key == "gpt" else model.provider,
                 None,
             )
@@ -361,6 +365,12 @@ class ConfigAndPlanTests(unittest.TestCase):
             loaded_manifest, loaded_hash = loaded
             self.assertEqual(loaded_manifest, manifest)
             self.assertEqual(loaded_hash, manifest_hash)
+            self.assertEqual(
+                loaded_manifest["models"][-1]["preflight"][
+                    "provider_returned_model_id"
+                ],
+                "openai/gpt-5.6-sol-20260709",
+            )
 
             manifest["models"][0]["route"] = "substituted-route"
             (output / "manifests/models.json").write_text(

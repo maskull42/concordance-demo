@@ -67,6 +67,20 @@ All generation calls use a one-hour read timeout. A timeout or network failure i
 
 A stage is partial, nonqualifying evidence. It cannot support Rule 2 threshold selection or production content by itself. Selection waits until the stages aggregate to all 64 exact model-variant cells, with all eight canonical models and no missing or duplicate cells. The later Mistral stage must use a different stage ID and its own private output directory.
 
+#### Approved nine-cell repair
+
+The first `without-mistral` pass preserved 47 complete responses and recorded nine terminal errors: eight OpenRouter responses reported the dated canonical GPT identifier, and one DeepSeek response ended in an ambiguous network read. A.G. Elrod approved treating `openai/gpt-5.6-sol-20260709` as the exact canonical resolution of the requested `openai/gpt-5.6-sol` alias on 2026-07-12.
+
+The repair utility validates the byte-exact parent receipt, manifest, and six run files, then derives the nine targets from the canonical 64-cell plan. It reads only the DeepSeek and OpenRouter credentials. The original stage is never modified.
+
+```sh
+python3 harness/repair_pilot.py --live \
+  --repair-id gpt-alias-deepseek-network-1 \
+  --credentials-rotated --approved-gpt-alias-resolution
+```
+
+The fresh repair is hard-coded to two metadata checks, nine single-attempt generation calls, and a $4 planning ceiling. Output is isolated at `.pilot/repairs/<ID>`. `repair.json` binds the approved parent and execution contract. Before each POST, an exclusive intent is durably written. A terminal or stranded intent can never be resent under the same repair ID. `result.json` binds every outcome. Even a complete repair remains private and nonqualifying until Mistral supplies the deferred eight cells.
+
 ### Final production run
 
 A final live run is authorized only when all of the following are true:

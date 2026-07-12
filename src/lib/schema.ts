@@ -386,6 +386,7 @@ export const errorCellSchema = commonCellSchema
           "network",
           "provider-error",
           "response-validation",
+          "incomplete-output",
           "unknown",
         ]),
         retryable: z.boolean(),

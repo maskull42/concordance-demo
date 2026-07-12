@@ -58,6 +58,8 @@ APPROVED_OUTPUT_PARAMETERS = {
     "gemini": "max_output_tokens",
     "grok": "max_output_tokens",
 }
+GPT_FROZEN_REQUESTED_MODEL_ID = "openai/gpt-5.6-sol"
+GPT_APPROVED_CANONICAL_MODEL_ID = "openai/gpt-5.6-sol-20260709"
 
 
 class ConfigError(ValueError):
@@ -145,6 +147,26 @@ class ModelConfig:
     @property
     def pricing_reviewed(self) -> bool:
         return self.planning_pricing.get("review_status") == "author-verified"
+
+
+def returned_model_id_is_approved(
+    model: ModelConfig, returned_model_id: str
+) -> bool:
+    """Apply the closed model-identity policy to a provider receipt."""
+    if returned_model_id == model.requested_model_id:
+        return True
+    if (
+        model.provider == "google"
+        and returned_model_id == f"models/{model.requested_model_id}"
+    ):
+        return True
+    return (
+        model.model_key == "gpt"
+        and model.requested_model_id == GPT_FROZEN_REQUESTED_MODEL_ID
+        and model.provider == "openrouter"
+        and model.route == "openrouter-openai-pinned"
+        and returned_model_id == GPT_APPROVED_CANONICAL_MODEL_ID
+    )
 
 
 @dataclass(frozen=True)

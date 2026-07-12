@@ -40,6 +40,12 @@ const APPROVED_MODELS = new Map([
   ["gpt", { id: "openai/gpt-5.6-sol", provider: "openrouter", route: "openrouter-openai-pinned", environment: "OPENROUTER_API_KEY" }],
 ]);
 
+const GPT_REQUESTED_MODEL_ID = "openai/gpt-5.6-sol";
+const GPT_APPROVED_RETURNED_MODEL_ID = "openai/gpt-5.6-sol-20260709";
+const GPT_OPENAI_ENDPOINT_NOTE = "Provider endpoint: OpenAI";
+const GEMINI_REQUESTED_MODEL_ID = "gemini-3.1-pro-preview";
+const GEMINI_APPROVED_RETURNED_MODEL_ID = "models/gemini-3.1-pro-preview";
+
 export class DatasetValidationError extends Error {
   readonly issues: string[];
 
@@ -190,6 +196,19 @@ function validateCrossReferences(
       }
       if (cell.status === "success") {
         successes.set(cell.response_id, cell);
+        if (
+          cell.provider_returned_model_id !== null &&
+          !returnedModelIdMatches(
+            cell.model_key,
+            cell.provider,
+            cell.requested_model_id,
+            cell.provider_returned_model_id,
+          )
+        ) {
+          issues.push(
+            `cell ${cell.cell_id}: provider-returned model ID ${cell.provider_returned_model_id} does not match requested model ID ${cell.requested_model_id}`,
+          );
+        }
       }
 
       const completedAt =
@@ -297,8 +316,24 @@ function validateProduction(
       issues.push(
         `production: approved model ${key} must use ${approved.id} via ${approved.provider}/${approved.route}`,
       );
-    } else if (model.preflight.status !== "available") {
-      issues.push(`production: model ${key} has not passed availability preflight`);
+    } else {
+      if (model.preflight.status !== "available") {
+        issues.push(`production: model ${key} has not passed availability preflight`);
+      }
+      const returnedModelId = model.preflight.provider_returned_model_id;
+      if (
+        returnedModelId === null ||
+        !returnedModelIdMatches(
+          key,
+          approved.provider,
+          approved.id,
+          returnedModelId,
+        )
+      ) {
+        issues.push(
+          `production: model ${key} preflight must return approved model ID ${approved.id}`,
+        );
+      }
     }
     if (model) {
       const omitTemperature = key === "gemini" || key === "claude" || key === "gpt";
@@ -325,6 +360,11 @@ function validateProduction(
 
   const gpt = manifest.models.find((model) => model.model_key === "gpt");
   const openRouterProvider = gpt?.policy.provider_options.provider;
+  if (gpt && gpt.preflight.sanitized_note !== GPT_OPENAI_ENDPOINT_NOTE) {
+    issues.push(
+      `production: GPT preflight sanitized note must be exactly "${GPT_OPENAI_ENDPOINT_NOTE}"`,
+    );
+  }
   if (
     !isJsonRecord(openRouterProvider) ||
     JSON.stringify(openRouterProvider.only) !== JSON.stringify(["openai"]) ||
@@ -404,4 +444,23 @@ function requireUnique(values: string[], label: string, issues: string[]) {
 
 function isJsonRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function returnedModelIdMatches(
+  modelKey: string,
+  provider: string,
+  requested: string,
+  returned: string,
+): boolean {
+  return (
+    returned === requested ||
+    (modelKey === "gemini" &&
+      provider === "google" &&
+      requested === GEMINI_REQUESTED_MODEL_ID &&
+      returned === GEMINI_APPROVED_RETURNED_MODEL_ID) ||
+    (modelKey === "gpt" &&
+      provider === "openrouter" &&
+      requested === GPT_REQUESTED_MODEL_ID &&
+      returned === GPT_APPROVED_RETURNED_MODEL_ID)
+  );
 }

@@ -6,6 +6,7 @@ import ssl
 import sys
 import unittest
 import urllib.error
+from dataclasses import replace
 from pathlib import Path
 from unittest.mock import Mock, patch
 
@@ -83,12 +84,130 @@ class ProviderTests(unittest.TestCase):
         gpt_body = gpt_request.json_body
         self.assertEqual(gpt_request.timeout_seconds, 3600.0)
         self.assertNotIn("temperature", gpt_body)
+        self.assertEqual(gpt_body["model"], "openai/gpt-5.6-sol")
         self.assertEqual(gpt_body["max_tokens"], 16_384)
         self.assertEqual(gpt_body["service_tier"], "default")
         self.assertEqual(
             gpt_body["provider"],
             {"only": ["openai"], "allow_fallbacks": False, "require_parameters": True},
         )
+
+    def test_openrouter_accepts_approved_canonical_id_in_preflight(self) -> None:
+        transport = FakeTransport(
+            [
+                response(
+                    200,
+                    {
+                        "data": {
+                            "id": "openai/gpt-5.6-sol-20260709",
+                            "endpoints": [{"provider_name": "OpenAI"}],
+                        }
+                    },
+                )
+            ]
+        )
+        result = asyncio.run(
+            ProviderAdapter(self.models["gpt"], transport).preflight("secret")
+        )
+        self.assertEqual(result.returned_model_id, "openai/gpt-5.6-sol-20260709")
+        self.assertEqual(result.provider_name, "OpenAI")
+        self.assertIn(
+            "/models/openai/gpt-5.6-sol/endpoints", transport.requests[0].url
+        )
+
+    def test_openrouter_accepts_approved_canonical_id_in_generation(self) -> None:
+        transport = FakeTransport(
+            [
+                response(
+                    200,
+                    {
+                        "id": "response-1",
+                        "model": "openai/gpt-5.6-sol-20260709",
+                        "provider": "OpenAI",
+                        "choices": [
+                            {
+                                "message": {"content": "Complete answer"},
+                                "finish_reason": "stop",
+                            }
+                        ],
+                        "usage": {},
+                    },
+                )
+            ]
+        )
+        adapter = ProviderAdapter(self.models["gpt"], transport)
+        result = asyncio.run(adapter.generate("secret", self.messages))
+        self.assertEqual(result.returned_model_id, "openai/gpt-5.6-sol-20260709")
+        self.assertEqual(
+            transport.requests[0].json_body["model"], "openai/gpt-5.6-sol"
+        )
+        self.assertEqual(
+            transport.requests[0].json_body["provider"],
+            {
+                "only": ["openai"],
+                "allow_fallbacks": False,
+                "require_parameters": True,
+            },
+        )
+
+    def test_openrouter_canonical_identity_policy_is_closed_and_exact(self) -> None:
+        adapter = ProviderAdapter(self.models["gpt"], FakeTransport([]))
+        for returned in (
+            "openai/gpt-5.6-sol-20260708",
+            "openai/GPT-5.6-sol-20260709",
+            "openai/gpt-5.6-sol-20260709-extra",
+            "models/openai/gpt-5.6-sol-20260709",
+        ):
+            with self.subTest(returned=returned):
+                with self.assertRaises(ProviderSubstitutionError):
+                    adapter.assert_model_identity(returned)
+        for altered_config in (
+            replace(self.models["gpt"], provider="azure"),
+            replace(self.models["gpt"], route="openrouter-unpinned"),
+        ):
+            with self.subTest(
+                provider=altered_config.provider, route=altered_config.route
+            ):
+                with self.assertRaises(ProviderSubstitutionError):
+                    ProviderAdapter(
+                        altered_config, FakeTransport([])
+                    ).assert_model_identity("openai/gpt-5.6-sol-20260709")
+
+    def test_models_prefix_is_accepted_only_for_google(self) -> None:
+        ProviderAdapter(
+            self.models["gemini"], FakeTransport([])
+        ).assert_model_identity("models/gemini-3.1-pro-preview")
+        with self.assertRaises(ProviderSubstitutionError):
+            ProviderAdapter(
+                self.models["grok"], FakeTransport([])
+            ).assert_model_identity("models/grok-4.5")
+
+    def test_openrouter_generation_rejects_azure_provider(self) -> None:
+        transport = FakeTransport(
+            [
+                response(
+                    200,
+                    {
+                        "id": "response-1",
+                        "model": "openai/gpt-5.6-sol-20260709",
+                        "provider": "Azure",
+                        "choices": [
+                            {
+                                "message": {"content": "Complete answer"},
+                                "finish_reason": "stop",
+                            }
+                        ],
+                        "usage": {},
+                    },
+                )
+            ]
+        )
+        with self.assertRaises(ProviderSubstitutionError):
+            asyncio.run(
+                ProviderAdapter(self.models["gpt"], transport).generate(
+                    "secret", self.messages
+                )
+            )
 
     def test_generation_transport_failure_is_not_blindly_retryable(self) -> None:
         class FailingTransport:
