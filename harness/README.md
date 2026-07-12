@@ -81,6 +81,17 @@ python3 harness/repair_pilot.py --live \
 
 The fresh repair is hard-coded to two metadata checks, nine single-attempt generation calls, and a $4 planning ceiling. Output is isolated at `.pilot/repairs/<ID>`. `repair.json` binds the approved parent and execution contract. Before each POST, an exclusive intent is durably written. A terminal or stranded intent can never be resent under the same repair ID. `result.json` binds every outcome. Even a complete repair remains private and nonqualifying until Mistral supplies the deferred eight cells.
 
+#### Complete aggregate and blind export
+
+After the Mistral completion stage, the offline aggregate verifier rebuilds the frozen 64-cell plan, preserves the 47 original successes, overlays the exact nine repaired errors, and adds the eight disjoint Mistral cells. It reads no environment variables and makes no network requests.
+
+```sh
+python3 harness/aggregate_pilot.py --check
+python3 harness/aggregate_pilot.py --write
+```
+
+The write-once output lives at `.pilot/aggregates/rule2-pilot-1`. `aggregate.json` records complete mapping eligibility, source hashes, provenance, and an explicit declaration that thresholds and selection have not been evaluated. Mapper-visible files contain only an opaque blind ID, exact prompt, minimal position map, and verbatim response. The identity crosswalk and random blinding key remain under `private/` and must never enter a mapper context.
+
 ### Final production run
 
 A final live run is authorized only when all of the following are true:
