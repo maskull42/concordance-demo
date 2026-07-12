@@ -92,6 +92,15 @@ python3 harness/aggregate_pilot.py --write
 
 The write-once output lives at `.pilot/aggregates/rule2-pilot-1`. `aggregate.json` records complete mapping eligibility, source hashes, provenance, and an explicit declaration that thresholds and selection have not been evaluated. Mapper-visible files contain only an opaque blind ID, exact prompt, minimal position map, and verbatim response. The identity crosswalk and random blinding key remain under `private/` and must never enter a mapper context.
 
+The second blinding pass creates 16 isolated batches of four. Every batch contains four distinct question families and four distinct underlying models. Canonical position IDs are replaced by task-local `P1`, `P2`, and similar handles.
+
+```sh
+python3 harness/prepare_mapping_batches.py --check
+python3 harness/prepare_mapping_batches.py --write
+```
+
+Mapper agents receive only one batch manifest, its four envelopes, and `instructions.json`. They must never read `aggregate.json`, either private crosswalk, another batch, or any run receipt.
+
 ### Final production run
 
 A final live run is authorized only when all of the following are true:
