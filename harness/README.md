@@ -111,6 +111,38 @@ python3 harness/validate_blind_mappings.py --verify
 
 `first-pass.json` records 64 validated assignments with status `complete-author-review-required`. The verification command must pass before review or any later calculation; it detects post-seal mapping changes. The receipt does not expose model identities, calculate thresholds, or select candidates. A.G. Elrod must review every assignment that can affect a threshold before any unblinding or calculation.
 
+#### Blinded primary author review
+
+A.G. Elrod approved a primary-only mandatory review on 2026-07-12. Every one of the 64 items requires an explicit confirmation or correction of `primary_endorsed` and `primary_reason_code`. Secondary endorsements, mentions, rationale, evidence, confidence, and flags remain visible as context and accept an optional note, but they are not recoded. This matches Rule 2: only the primary field affects thresholds.
+
+Commit the packet generator, browser assets, importer, and tests before writing the private packet. The generator reads only the sealed first pass and mapper-safe batch files. It never opens the aggregate or either private crosswalk.
+
+```sh
+python3 harness/prepare_author_review.py --check
+python3 harness/prepare_author_review.py --write
+python3 harness/prepare_author_review.py --verify
+```
+
+The write-once output lives at `.pilot/aggregates/rule2-pilot-1/author-review-1`. Open `author-review-packet.html` locally. It is a self-contained, request-free file with hash-authorized inline assets and base64-encoded untrusted text. Review one item at a time, export draft JSON whenever useful, then use **Finish and export** after all 64 decisions are complete.
+
+Publication uses a private claim plus no-replace hard links. If the process is interrupted and reports an incomplete publication, the explicit recovery command removes only a recognized partial set or clears the claim from an already complete packet. Unexpected files are preserved for inspection.
+
+```sh
+python3 harness/prepare_author_review.py --recover-incomplete
+```
+
+The exported JSON must be checked before sealing. Replace `PATH` with the browser export supplied by A.G. Elrod.
+
+```sh
+python3 harness/finalize_author_review.py --check PATH
+python3 harness/finalize_author_review.py --seal PATH
+python3 harness/finalize_author_review.py --verify
+```
+
+Sealing retains the exact imported bytes and writes a normalized review receipt under `sealed-primary-review/`. Confirmation must preserve the first-pass primary pair. Correction must change at least one member of the pair. Notes remain optional in both cases. The sealed receipt still records `threshold_evaluation.performed: false` and `selection_status: not-evaluated`. Review closes one gate. It does not cross the next.
+
+The seal uses the same claim protocol. Run `python3 harness/finalize_author_review.py --recover-incomplete` only after a disclosed interrupted seal.
+
 ### Final production run
 
 A final live run is authorized only when all of the following are true:
