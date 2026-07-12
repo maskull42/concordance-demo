@@ -102,9 +102,13 @@ export function sensitivityMovementCount(
   let changed = 0;
 
   for (const { cell, assignment } of right) {
+    const leftPrimary = leftByModel.get(cell.model_key);
+    const rightPrimary = assignment.primary_endorsed;
     if (
-      leftByModel.has(cell.model_key) &&
-      leftByModel.get(cell.model_key) !== assignment.primary_endorsed
+      leftPrimary !== undefined &&
+      leftPrimary !== null &&
+      rightPrimary !== null &&
+      leftPrimary !== rightPrimary
     ) {
       changed += 1;
     }

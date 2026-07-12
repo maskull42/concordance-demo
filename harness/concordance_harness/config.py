@@ -53,6 +53,12 @@ EXPECTED_PANEL = {
     ),
 }
 
+APPROVED_TOTAL_OUTPUT_CAP = 16_384
+APPROVED_OUTPUT_PARAMETERS = {
+    "gemini": "max_output_tokens",
+    "grok": "max_output_tokens",
+}
+
 
 class ConfigError(ValueError):
     """Raised when the frozen model configuration violates its contract."""
@@ -74,7 +80,7 @@ class ModelConfig:
     auth_kind: str
     fallback_allowed: bool
     temperature: dict[str, Any]
-    visible_output_limit: dict[str, Any]
+    output_limit: dict[str, Any]
     reasoning: dict[str, Any]
     provider_options: dict[str, Any]
     requests_per_second: float
@@ -114,8 +120,8 @@ class ModelConfig:
             "temperature": temperature_receipt,
             "output_limit": {
                 "sent": True,
-                "parameter": self.visible_output_limit["parameter"],
-                "value": self.visible_output_limit["value"],
+                "parameter": self.output_limit["parameter"],
+                "value": self.output_limit["value"],
             },
             "reasoning": reasoning_receipt,
             "tools_enabled": False,
@@ -127,14 +133,14 @@ class ModelConfig:
     def manifest_policy(self) -> dict[str, Any]:
         return {
             "temperature": self.temperature,
-            "visible_output_limit": self.visible_output_limit,
+            "output_limit": self.output_limit,
             "reasoning": self.reasoning,
             "provider_options": self.provider_options,
         }
 
     @property
     def output_cap(self) -> int:
-        return int(self.visible_output_limit["value"])
+        return int(self.output_limit["value"])
 
     @property
     def pricing_reviewed(self) -> bool:
@@ -197,6 +203,19 @@ def validate_panel(models: tuple[ModelConfig, ...]) -> None:
             raise ConfigError(f"{model.model_key}: base URL must use HTTPS")
         if model.temperature["mode"] == "fixed" and model.temperature["value"] != 0.2:
             raise ConfigError(f"{model.model_key}: fixed temperature must be 0.2")
+        expected_output_parameter = APPROVED_OUTPUT_PARAMETERS.get(
+            model.model_key, "max_tokens"
+        )
+        expected_output_limit = {
+            "parameter": expected_output_parameter,
+            "value": APPROVED_TOTAL_OUTPUT_CAP,
+        }
+        if model.output_limit != expected_output_limit:
+            raise ConfigError(
+                f"{model.model_key}: total reasoning-and-answer output ceiling must be "
+                f"{expected_output_limit}; the visible-answer target is enforced by the "
+                "protocol"
+            )
 
     for omitted in ("gemini", "claude", "gpt"):
         model = next(item for item in models if item.model_key == omitted)
@@ -208,8 +227,17 @@ def validate_panel(models: tuple[ModelConfig, ...]) -> None:
             "only": ["openai"],
             "allow_fallbacks": False,
             "require_parameters": True,
-        }
+        },
+        "service_tier": "default",
     }:
         raise ConfigError(
-            "gpt: OpenRouter provider pin differs from the approved route"
+            "gpt: OpenRouter provider pin or service tier differs from the approved route"
         )
+    grok = next(item for item in models if item.model_key == "grok")
+    if (
+        grok.api_style != "xai-responses"
+        or grok.generation_path != "/v1/responses"
+        or grok.provider_options
+        != {"store": False, "service_tier": "default"}
+    ):
+        raise ConfigError("grok: xAI Responses API policy differs from the approved route")

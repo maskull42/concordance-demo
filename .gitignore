@@ -17,6 +17,7 @@ test-results/
 
 # Python
 .venv/
+.pilot/
 __pycache__/
 *.py[cod]
 .pytest_cache/

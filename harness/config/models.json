@@ -1,6 +1,6 @@
 {
   "config_version": "1.0.0",
-  "planning_pricing_note": "Conservative operator-set ceilings for offline planning only. Replace with reviewed provider pricing before any live run.",
+  "planning_pricing_note": "Official standard synchronous rates researched and approved by A.G. Elrod on 2026-07-12. Documented in harness/PRICING_REVIEW.md and subject to an immediate pre-run recheck.",
   "models": [
     {
       "model_key": "gemini",
@@ -17,16 +17,16 @@
       "auth_kind": "google-query",
       "fallback_allowed": false,
       "temperature": { "mode": "provider-default", "reason": "Gemini 3.1 Pro documented default" },
-      "visible_output_limit": { "parameter": "max_output_tokens", "value": 900 },
+      "output_limit": { "parameter": "max_output_tokens", "value": 16384 },
       "reasoning": { "mode": "provider-default", "description": "Provider default reasoning behavior" },
       "provider_options": {},
       "requests_per_second": 1.0,
       "planning_pricing": {
         "currency": "USD",
-        "input_per_million": 100.0,
-        "output_per_million": 200.0,
-        "pricing_as_of": "2026-07-10",
-        "review_status": "unverified-conservative-ceiling"
+        "input_per_million": 2.0,
+        "output_per_million": 12.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
       }
     },
     {
@@ -44,16 +44,16 @@
       "auth_kind": "anthropic-key",
       "fallback_allowed": false,
       "temperature": { "mode": "provider-default", "reason": "Temperature omitted for Claude Fable 5" },
-      "visible_output_limit": { "parameter": "max_tokens", "value": 900 },
+      "output_limit": { "parameter": "max_tokens", "value": 16384 },
       "reasoning": { "mode": "provider-default", "description": "Always-on adaptive reasoning; no reasoning parameter sent" },
       "provider_options": {},
       "requests_per_second": 1.0,
       "planning_pricing": {
         "currency": "USD",
-        "input_per_million": 100.0,
-        "output_per_million": 200.0,
-        "pricing_as_of": "2026-07-10",
-        "review_status": "unverified-conservative-ceiling"
+        "input_per_million": 10.0,
+        "output_per_million": 50.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
       }
     },
     {
@@ -71,16 +71,16 @@
       "auth_kind": "bearer",
       "fallback_allowed": false,
       "temperature": { "mode": "fixed", "value": 0.2 },
-      "visible_output_limit": { "parameter": "max_tokens", "value": 900 },
+      "output_limit": { "parameter": "max_tokens", "value": 16384 },
       "reasoning": { "mode": "provider-default", "description": "No separate reasoning parameter sent" },
       "provider_options": {},
       "requests_per_second": 1.0,
       "planning_pricing": {
         "currency": "USD",
-        "input_per_million": 100.0,
-        "output_per_million": 200.0,
-        "pricing_as_of": "2026-07-10",
-        "review_status": "unverified-conservative-ceiling"
+        "input_per_million": 0.0,
+        "output_per_million": 0.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
       }
     },
     {
@@ -93,21 +93,21 @@
       "api_style": "openai",
       "base_url": "https://api.deepinfra.com",
       "generation_path": "/v1/openai/chat/completions",
-      "metadata_path": "/v1/openai/models/{model}",
-      "metadata_mode": "single",
+      "metadata_path": "/v1/models",
+      "metadata_mode": "list",
       "auth_kind": "bearer",
       "fallback_allowed": false,
       "temperature": { "mode": "fixed", "value": 0.2 },
-      "visible_output_limit": { "parameter": "max_tokens", "value": 900 },
+      "output_limit": { "parameter": "max_tokens", "value": 16384 },
       "reasoning": { "mode": "provider-default", "description": "No separate reasoning parameter sent" },
       "provider_options": {},
       "requests_per_second": 1.0,
       "planning_pricing": {
         "currency": "USD",
-        "input_per_million": 100.0,
-        "output_per_million": 200.0,
-        "pricing_as_of": "2026-07-10",
-        "review_status": "unverified-conservative-ceiling"
+        "input_per_million": 0.45,
+        "output_per_million": 3.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
       }
     },
     {
@@ -125,16 +125,16 @@
       "auth_kind": "bearer",
       "fallback_allowed": false,
       "temperature": { "mode": "fixed", "value": 0.2 },
-      "visible_output_limit": { "parameter": "max_tokens", "value": 900 },
+      "output_limit": { "parameter": "max_tokens", "value": 16384 },
       "reasoning": { "mode": "provider-default", "description": "No separate reasoning parameter sent" },
       "provider_options": {},
       "requests_per_second": 1.0,
       "planning_pricing": {
         "currency": "USD",
-        "input_per_million": 100.0,
-        "output_per_million": 200.0,
-        "pricing_as_of": "2026-07-10",
-        "review_status": "unverified-conservative-ceiling"
+        "input_per_million": 0.435,
+        "output_per_million": 0.87,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
       }
     },
     {
@@ -152,16 +152,16 @@
       "auth_kind": "bearer",
       "fallback_allowed": false,
       "temperature": { "mode": "fixed", "value": 0.2 },
-      "visible_output_limit": { "parameter": "max_tokens", "value": 900 },
+      "output_limit": { "parameter": "max_tokens", "value": 16384 },
       "reasoning": { "mode": "provider-default", "description": "No separate reasoning parameter sent" },
       "provider_options": {},
       "requests_per_second": 1.0,
       "planning_pricing": {
         "currency": "USD",
-        "input_per_million": 100.0,
-        "output_per_million": 200.0,
-        "pricing_as_of": "2026-07-10",
-        "review_status": "unverified-conservative-ceiling"
+        "input_per_million": 0.5,
+        "output_per_million": 1.5,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
       }
     },
     {
@@ -171,24 +171,24 @@
       "requested_model_id": "grok-4.5",
       "route": "xai-direct",
       "environment_variable": "XAI_API_KEY",
-      "api_style": "openai",
+      "api_style": "xai-responses",
       "base_url": "https://api.x.ai",
-      "generation_path": "/v1/chat/completions",
+      "generation_path": "/v1/responses",
       "metadata_path": "/v1/models/{model}",
       "metadata_mode": "single",
       "auth_kind": "bearer",
       "fallback_allowed": false,
       "temperature": { "mode": "fixed", "value": 0.2 },
-      "visible_output_limit": { "parameter": "max_tokens", "value": 900 },
-      "reasoning": { "mode": "provider-default", "description": "No separate reasoning parameter sent" },
-      "provider_options": {},
+      "output_limit": { "parameter": "max_output_tokens", "value": 16384 },
+      "reasoning": { "mode": "provider-default", "description": "Mandatory provider-default reasoning shares the max_output_tokens ceiling" },
+      "provider_options": { "store": false, "service_tier": "default" },
       "requests_per_second": 1.0,
       "planning_pricing": {
         "currency": "USD",
-        "input_per_million": 100.0,
-        "output_per_million": 200.0,
-        "pricing_as_of": "2026-07-10",
-        "review_status": "unverified-conservative-ceiling"
+        "input_per_million": 2.0,
+        "output_per_million": 6.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
       }
     },
     {
@@ -206,9 +206,10 @@
       "auth_kind": "bearer",
       "fallback_allowed": false,
       "temperature": { "mode": "provider-default", "reason": "Temperature omitted for GPT-5.6 Sol" },
-      "visible_output_limit": { "parameter": "max_tokens", "value": 900 },
+      "output_limit": { "parameter": "max_tokens", "value": 16384 },
       "reasoning": { "mode": "provider-default", "description": "Provider default reasoning behavior; no reasoning parameter sent" },
       "provider_options": {
+        "service_tier": "default",
         "provider": {
           "only": ["openai"],
           "allow_fallbacks": false,
@@ -218,10 +219,10 @@
       "requests_per_second": 1.0,
       "planning_pricing": {
         "currency": "USD",
-        "input_per_million": 100.0,
-        "output_per_million": 200.0,
-        "pricing_as_of": "2026-07-10",
-        "review_status": "unverified-conservative-ceiling"
+        "input_per_million": 5.0,
+        "output_per_million": 30.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
       }
     }
   ]

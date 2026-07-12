@@ -1,22 +1,35 @@
 # Concordance pilot candidate pool
 
-> **Provisional and unverified.** This document and every JSON record in this directory are research drafts proposed by Codex. They are not A.G. Elrod's verified scholarship, have not been run against any model, and must not enter a public or grant-linked build until the question, position, and source records are author-verified.
+> **Approved for a private pilot; formal scholarship remains proposed.** On 2026-07-12, A.G. Elrod approved these six exact prompts and non-exhaustive maps for the private Rule 2 pilot. This approval does not change any question, position, or source record from `proposed`, authorize publication, or permit the records to enter a public or grant-linked build.
 
 ## Precommitment
 
 - Pool ID: `concordance-pilot-pool`
 - Pool size: six questions, with two candidates assigned in advance to each intended demonstration behavior
-- Rule version: `pilot-rule-1`
+- Rule version: `pilot-rule-2`
 - Precommitted before: any pilot or final model call
+- Rule 2 sequence accepted by A.G. Elrod: 2026-07-12
+- Six exact prompts and maps approved by A.G. Elrod for private pilot use: 2026-07-12
+- Mapping rubric `mapping-rubric-1` approved by A.G. Elrod: 2026-07-12
 
-The displayed cases will be outcome-selected demonstrations from this disclosed pool. They will not support a frequency or prevalence claim.
+Rule 2 changes the verification sequence before any model call. No output exists under Rule 1. The six exact prompts and corrected, non-exhaustive maps are frozen and approved by A.G. Elrod for private pilot use while their formal verification records remain `proposed`. Full source and mapping verification is required for the selected cases before final runs or publication.
+
+The displayed cases will be threshold-qualified demonstrations from this disclosed pool. They will not support a frequency or prevalence claim. The priority order was fixed before any pilot output:
+
+| Intended behavior | Priority candidate | Fallback candidate |
+|---|---|---|
+| Convergence | `james-jesus-brothers` | `junia-romans-16-7` |
+| Divergence | `mill-harm-principle` | `locke-money-property` |
+| Prompt sensitivity | `atomic-bombs-pacific-war` | `john-brown-harpers-ferry` |
+
+If the priority candidate qualifies, select it even if the fallback also qualifies. If the priority candidate fails and the fallback qualifies, select the fallback. If neither qualifies, stop for author approval of a disclosed new pool and rule version.
 
 - **Convergence:** select a candidate only if at least 6 of 8 models primarily endorse one mapped position and at least two mapped alternatives are not endorsed.
 - **Divergence:** select a candidate only if at least three primary positions are represented and no position receives more than 4 of 8 primary endorsements.
 - **Prompt sensitivity:** select a candidate only if at least three models change primary position between the two precommitted variants.
-- If neither candidate assigned to a behavior qualifies, stop for author approval of a revised candidate pool. Do not relabel a candidate, alter a threshold after seeing results, or fabricate qualifying behavior.
+- Do not relabel a candidate, alter a threshold or priority after seeing results, or fabricate qualifying behavior.
 
-For threshold calculations, `primary_endorsed` is the only field counted. Additional endorsements, mentions, mixed/unclear assignments, errors, and not-run cells remain visible but do not silently substitute for a primary endorsement. Any treatment of error or not-run cells requires author approval before selection.
+For threshold calculations, `primary_endorsed` is the only field counted. Additional endorsements, mentions, mixed/unclear assignments, errors, and not-run cells remain visible but do not silently substitute for a primary endorsement. The approved coding, minimum-clarity, and failure rules are frozen in `MAPPING_RUBRIC.md` and bound into the pilot lock.
 
 ## Pool at a glance
 
@@ -39,9 +52,9 @@ Exact prompt:
 
 Provisional position families:
 
-- `younger-biological-siblings` — Children subsequently born to Mary and Joseph; technically maternal half-siblings if virginal conception assumed.
-- `josephs-earlier-children` — Joseph’s children from earlier marriage, stepbrothers.
-- `cousins-or-close-kin` — cousins/other close relatives, classically children of another Mary.
+- `biological-siblings`: Jesus’s siblings in the ordinary biological sense, the Helvidian family of readings. The map does not attribute a specific birth order to Meier’s historical conclusion.
+- `josephs-earlier-children`: Joseph’s children from earlier marriage, stepbrothers.
+- `cousins-or-close-kin`: cousins/other close relatives, classically children of another Mary.
 
 Machine-readable draft: `questions/james-jesus-brothers.json`
 
@@ -53,9 +66,9 @@ Exact prompt:
 
 Provisional position families:
 
-- `woman-included-among-apostles` — Junia is a woman and is counted as outstanding among the apostles.
-- `woman-known-to-apostles` — Junia is a woman who is well known to, rather than included among, the apostles.
-- `man-included-among-apostles` — The name refers to a man, Junias, who is counted among the apostles.
+- `woman-included-among-apostles`: Junia is a woman and is counted as outstanding among the apostles.
+- `woman-known-to-apostles`: Junia is a woman who is well known to, rather than included among, the apostles.
+- `man-included-among-apostles`: The name refers to a man, Junias, who is counted among the apostles.
 
 Machine-readable draft: `questions/junia-romans-16-7.json`
 
@@ -67,9 +80,11 @@ Exact prompt:
 
 Provisional position families:
 
-- `categorical-sovereignty` — The principle marks a stringent sphere of individual sovereignty that utility must respect, not merely one consideration in a case-by-case calculation.
-- `harm-opens-jurisdiction` — Harm to others is a necessary trigger for society’s jurisdiction, after which ordinary utilitarian assessment determines whether coercion is justified.
-- `antipaternalist-competence-rule` — The principle is best read as an absolute or near-absolute bar on paternalistic coercion of competent adults, grounded in a utilitarian account of their epistemic authority over their own good.
+- `categorical-sovereignty`: The principle absolutely prohibits interference with self-regarding conduct.
+- `harm-opens-jurisdiction`: Harm paradigmatically brings conduct within social jurisdiction, after which a separate utilitarian assessment determines whether coercion is justified.
+- `antipaternalist-competence-rule`: The principle is an exceptionless anti-paternalism rule for competent adults.
+- `consent-reformulation`: Consent, rather than the self-regarding and other-regarding boundary, identifies which harms may justify intervention.
+- `perfectionist-utilitarian-rights`: Liberal rights protect dominant goods and deliberative capacities whose special force derives from utility; some autonomy-enhancing paternalism remains possible.
 
 Machine-readable draft: `questions/mill-harm-principle.json`
 
@@ -81,11 +96,11 @@ Exact prompt:
 
 Provisional position families:
 
-- `limits-transcended` — Consent to money removes or transcends the original spoilage and sufficiency limits, legitimating unequal accumulation.
-- `sufficiency-proviso-remains` — Money relaxes spoilage through exchange but does not cancel the requirement to leave enough and as good for others.
-- `waste-only-acquisition-limit` — The relevant natural limit is waste rather than a separate sufficiency constraint; durable money permits accumulation because it does not spoil.
-- `natural-law-regulation-remains` — Monetary consent changes the mechanism of accumulation without eliminating natural-law duties of preservation, charity, or political regulation.
-- `unresolved-indeterminacy` — Locke’s text does not yield one stable post-money settlement; its provisos and justificatory purposes remain internally unsettled.
+- `limits-transcended`: Consent to money removes or transcends the original spoilage and sufficiency limits, legitimating unequal accumulation.
+- `sufficiency-proviso-remains`: Money relaxes spoilage through exchange but does not cancel the requirement to leave enough and as good for others.
+- `waste-only-acquisition-limit`: The relevant natural limit is waste rather than a separate sufficiency constraint; durable money permits accumulation because it does not spoil.
+- `natural-law-regulation-remains`: Monetary consent changes the mechanism of accumulation without eliminating natural-law duties of preservation, charity, or political regulation.
+- `unresolved-indeterminacy`: Money occupies a conceptual area of indeterminacy where natural-law universals and historical accumulation shade into one another.
 
 Machine-readable draft: `questions/locke-money-property.json`
 
@@ -105,11 +120,11 @@ Exact variant `civilian-and-soviet-frame`:
 
 Provisional position families:
 
-- `both-justified` — Both bombings were justified as necessary or proportionate means to compel surrender and avoid still greater losses.
-- `hiroshima-not-nagasaki` — Hiroshima may have been justified, but Nagasaki was premature, unnecessary, or otherwise unjustified.
-- `militarily-unnecessary` — Japan could have been brought to surrender without either atomic bombing, making the attacks militarily unnecessary.
-- `soviet-or-diplomatic-decisive` — Soviet entry or a clarified surrender offer, especially concerning the emperor, was the decisive or preferable route to ending the war.
-- `categorically-impermissible` — Deliberate mass killing of civilians was morally impermissible regardless of predicted strategic benefits.
+- `both-justified`: Both bombings were justified as the least costly available means of forcing an organized surrender.
+- `hiroshima-decisive-nagasaki-unnecessary`: Hiroshima crucially accelerated surrender, while Nagasaki added little strategically and was unnecessary. This is a necessity judgment, not a moral verdict attributed to Asada.
+- `both-probably-unnecessary`: Japan likely could have been brought to surrender without either atomic bombing.
+- `soviet-entry-more-decisive`: Soviet entry played a greater and more decisive role than the bombings in inducing surrender.
+- `civilian-targeting-impermissible`: Intentionally killing civilian populations as a means of forcing surrender was impermissible regardless of predicted benefits.
 
 Machine-readable draft: `questions/atomic-bombs-pacific-war.json`
 
@@ -129,19 +144,26 @@ Exact variant `methods-and-violence-frame`:
 
 Provisional position families:
 
-- `justified-revolutionary-resistance` — The raid was morally justified revolutionary resistance to slavery, even if it failed strategically.
-- `morally-justified-terrorism` — The raid can be classified as terrorism while still being judged morally justified by its antislavery purpose.
-- `guerrilla-or-insurrection-not-terrorism` — The raid was an armed insurrection or guerrilla action against slavery, not terrorism in the analytically relevant sense.
-- `just-cause-wrong-or-reckless-means` — Brown’s antislavery cause was just, but the raid’s coercive methods, planning, or foreseeable consequences were wrongful or reckless.
-- `criminal-fanatical-violence` — The raid was criminal or fanatical political violence rather than legitimate resistance.
+- `justified-revolutionary-resistance`: The raid was morally justified revolutionary resistance to slavery, even if it failed strategically.
+- `morally-justified-terrorism`: The raid can be classified as terrorism while still being judged morally justified by its antislavery purpose.
+- `guerrilla-or-insurrection-not-terrorism`: The raid was an armed insurrection or guerrilla action against slavery, not terrorism in the analytically relevant sense.
+- `just-cause-wrong-or-reckless-means`: Brown’s antislavery cause was just, but the raid’s coercive methods, planning, or foreseeable consequences were wrongful or reckless.
+- `criminal-fanatical-violence`: The raid was an absurd or fanatical act of political violence and has been remembered as violent terrorism rather than legitimate resistance.
 
 Machine-readable draft: `questions/john-brown-harpers-ferry.json`
 
 ## Verification gate
 
-Before any candidate is used in a pilot:
+Before the private answer-only pilot:
 
-1. A.G. Elrod reviews every exact prompt, mapped position, attestation, source claim, citation, and link against `SOURCES_TO_VERIFY.md`.
-2. Revisions made before calls are versioned and committed; revisions made after any output exists require a disclosed new pool/rule version and cannot silently replace this precommitment.
+1. Completed 2026-07-12: correct the six exact prompts, mapped position families, attestations, source claims, citations, and links using the completed metadata triage and available full texts.
+2. Approved 2026-07-12: A.G. Elrod approved the exact prompts, non-exhaustive maps, and `mapping-rubric-1` as fit for private pilot use. This approval does not change formal verification records from `proposed`.
+3. Commit the generated lock, this pool document, `MAPPING_RUBRIC.md`, the six question files, and the protocol before any output exists. Any later revision requires a disclosed new lock, pool, or rule version and cannot silently replace this precommitment.
+4. Keep all pilot outputs private and out of any application-linked build.
+
+After the pilot:
+
+1. Apply the frozen thresholds and priority order without relabeling positions or changing the rule.
+2. Fully verify every question, position, source, and model-output mapping selected for the final dataset.
 3. Only A.G. Elrod may change scholarly verification records from `proposed` to `author-verified`.
-4. Candidate files remain outside the production `data/` directory until a qualifying case has been selected, fully verified, and explicitly approved for inclusion.
+4. Keep candidate files outside the production `data/` directory until a qualifying case has been selected, fully verified, and explicitly approved for inclusion.

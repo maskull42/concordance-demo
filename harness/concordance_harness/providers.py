@@ -3,11 +3,14 @@ from __future__ import annotations
 import asyncio
 import json
 import socket
+import ssl
 import urllib.error
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from typing import Any, Protocol
+
+import certifi
 
 from .config import ModelConfig
 
@@ -84,11 +87,15 @@ class Transport(Protocol):
 class UrllibTransport:
     MAX_RESPONSE_BYTES = 10 * 1024 * 1024
 
+    def __init__(self, ssl_context: ssl.SSLContext | None = None) -> None:
+        self.ssl_context = ssl_context or ssl.create_default_context(
+            cafile=certifi.where()
+        )
+
     async def send(self, request: HttpRequest) -> HttpResponse:
         return await asyncio.to_thread(self._send_sync, request)
 
-    @staticmethod
-    def _send_sync(request: HttpRequest) -> HttpResponse:
+    def _send_sync(self, request: HttpRequest) -> HttpResponse:
         payload = (
             json.dumps(request.json_body, ensure_ascii=False).encode("utf-8")
             if request.json_body is not None
@@ -102,10 +109,12 @@ class UrllibTransport:
         )
         try:
             with urllib.request.urlopen(
-                outgoing, timeout=request.timeout_seconds
+                outgoing,
+                timeout=request.timeout_seconds,
+                context=self.ssl_context,
             ) as response:
-                body = response.read(UrllibTransport.MAX_RESPONSE_BYTES + 1)
-                if len(body) > UrllibTransport.MAX_RESPONSE_BYTES:
+                body = response.read(self.MAX_RESPONSE_BYTES + 1)
+                if len(body) > self.MAX_RESPONSE_BYTES:
                     raise ProviderError(
                         "provider response exceeded the receipt size limit",
                         category="response-validation",
@@ -117,8 +126,8 @@ class UrllibTransport:
                     body=body,
                 )
         except urllib.error.HTTPError as error:
-            body = error.read(UrllibTransport.MAX_RESPONSE_BYTES + 1)
-            if len(body) > UrllibTransport.MAX_RESPONSE_BYTES:
+            body = error.read(self.MAX_RESPONSE_BYTES + 1)
+            if len(body) > self.MAX_RESPONSE_BYTES:
                 body = (
                     b'{"error":"provider error body exceeded the receipt size limit"}'
                 )
@@ -271,8 +280,19 @@ class ProviderAdapter:
             }
             self._add_temperature(body)
             return body
+        if style == "xai-responses":
+            parameter = self.config.output_limit["parameter"]
+            body = {
+                "model": self.config.requested_model_id,
+                "input": messages,
+                parameter: self.config.output_cap,
+                "tools": [],
+                **self.config.provider_options,
+            }
+            self._add_temperature(body)
+            return body
         if style == "openai":
-            parameter = self.config.visible_output_limit["parameter"]
+            parameter = self.config.output_limit["parameter"]
             body = {
                 "model": self.config.requested_model_id,
                 "messages": messages,
@@ -450,6 +470,55 @@ class ProviderAdapter:
                 ),
                 effective_params=self._effective_params(),
             )
+        if style == "xai-responses":
+            output = raw.get("output")
+            text = "".join(
+                block.get("text", "")
+                for item in output or []
+                if isinstance(item, dict)
+                and item.get("type") == "message"
+                and item.get("role") == "assistant"
+                for block in item.get("content") or []
+                if isinstance(block, dict) and block.get("type") == "output_text"
+            )
+            usage = raw.get("usage")
+            if not isinstance(usage, dict):
+                usage = {}
+            output_details = usage.get("output_tokens_details", {})
+            input_details = usage.get("input_tokens_details", {})
+            parsed_usage = {
+                **_usage(
+                    usage.get("input_tokens"),
+                    usage.get("output_tokens"),
+                    (
+                        output_details.get("reasoning_tokens")
+                        if isinstance(output_details, dict)
+                        else None
+                    ),
+                    usage.get("total_tokens"),
+                ),
+                "cache_read_tokens": (
+                    _optional_int(input_details.get("cached_tokens"))
+                    if isinstance(input_details, dict)
+                    else None
+                ),
+            }
+            status = _optional_string(raw.get("status"))
+            incomplete_details = raw.get("incomplete_details")
+            incomplete_reason = (
+                _optional_string(incomplete_details.get("reason"))
+                if isinstance(incomplete_details, dict)
+                else None
+            )
+            return ProviderResult(
+                response_text=text,
+                returned_model_id=_optional_string(raw.get("model")),
+                provider_response_id=_optional_string(raw.get("id")),
+                provider_name="xAI",
+                finish_reason=incomplete_reason or status,
+                usage=parsed_usage,
+                effective_params=self._effective_params(),
+            )
         choices = raw.get("choices")
         choice = choices[0] if isinstance(choices, list) and choices else {}
         message = choice.get("message", {}) if isinstance(choice, dict) else {}
@@ -491,7 +560,7 @@ class ProviderAdapter:
             }
         else:
             values["temperature"] = {"state": "not-reported", "value": None}
-        values[self.config.visible_output_limit["parameter"]] = {
+        values[self.config.output_limit["parameter"]] = {
             "state": "known",
             "value": self.config.output_cap,
             "source": "request",

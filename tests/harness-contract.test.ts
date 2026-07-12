@@ -33,6 +33,10 @@ describe("Python-to-TypeScript harness contract", () => {
       JSON.parse(readFileSync(path.join(output, "runs/case-a.json"), "utf8")),
     );
     expect(manifest.models).toHaveLength(1);
+    expect(manifest.models[0].policy.output_limit).toEqual({
+      parameter: "max_tokens",
+      value: 16_384,
+    });
     expect(run.cells).toHaveLength(2);
     const answer = run.cells.find(
       (cell) => cell.status === "success" && cell.call_type === "answer",

@@ -411,8 +411,12 @@ class HarnessRunner:
     ) -> dict[str, Any]:
         response_hash = sha256_bytes(result.response_text.encode("utf-8"))[:12]
         usage = result.usage
-        input_tokens = usage["input_tokens"] or estimate_message_tokens(messages)
-        output_tokens = usage["output_tokens"] or estimate_tokens(result.response_text)
+        input_tokens = (
+            usage["input_tokens"]
+            if usage["input_tokens"] is not None
+            else estimate_message_tokens(messages)
+        )
+        output_tokens = billed_output_tokens(call.model, usage, result.response_text)
         pricing = call.model.planning_pricing
         cost = (
             input_tokens * float(pricing["input_per_million"])
@@ -471,6 +475,21 @@ class HarnessRunner:
             },
             "failed_at": utc_now(),
         }
+
+
+def billed_output_tokens(
+    model: ModelConfig, usage: dict[str, int | None], response_text: str
+) -> int:
+    """Return provider-billed output without double-counting inclusive totals."""
+    reported_output = usage["output_tokens"]
+    output_tokens = (
+        reported_output
+        if reported_output is not None
+        else estimate_tokens(response_text)
+    )
+    if model.api_style == "google":
+        return output_tokens + (usage["reasoning_tokens"] or 0)
+    return output_tokens
 
 
 def write_model_manifest(

@@ -232,7 +232,7 @@ export const modelSnapshotSchema = z
     policy: z
       .object({
         temperature: temperaturePolicySchema,
-        visible_output_limit: z
+        output_limit: z
           .object({ parameter: trimmed, value: z.number().int().positive() })
           .strict(),
         reasoning: reasoningPolicySchema,

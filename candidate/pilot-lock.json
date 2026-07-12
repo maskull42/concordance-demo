@@ -1,0 +1,64 @@
+{
+  "schema_version": "pilot-lock-1.0.0",
+  "pool_id": "concordance-pilot-pool",
+  "pool_size": 6,
+  "rule_version": "pilot-rule-2",
+  "content_version": "candidate-1.1.0",
+  "pool_document": {
+    "path": "candidate/PILOT_POOL.md",
+    "sha256": "b9dd9c4a3daa42ddb1334d699a08593ef3d84a401e28905f4592654e6250e0ec"
+  },
+  "mapping_rubric": {
+    "path": "candidate/MAPPING_RUBRIC.md",
+    "sha256": "3b9401cc74fc47b60b3e7b9c3d8a60834427a533344fb4b9118c8ca88f93a89d"
+  },
+  "protocol": {
+    "path": "config/protocol.json",
+    "protocol_version": "1.0.0",
+    "sha256": "f5068a25cb4c68eefb0f852f09fcf897fb21f20873eb3fe4eaa3f4bd11280918"
+  },
+  "candidates": [
+    {
+      "id": "james-jesus-brothers",
+      "kind": "convergent",
+      "role": "priority",
+      "path": "candidate/questions/james-jesus-brothers.json",
+      "sha256": "afd7775dafc31487293b542e154dbe2f8325187f7f188ad27bd30aa6a5fe4c88"
+    },
+    {
+      "id": "junia-romans-16-7",
+      "kind": "convergent",
+      "role": "fallback",
+      "path": "candidate/questions/junia-romans-16-7.json",
+      "sha256": "7a100468c935737869d1f264f839fab8d7e717dc6d1aed78ca0ea39d0ab811c6"
+    },
+    {
+      "id": "mill-harm-principle",
+      "kind": "divergent",
+      "role": "priority",
+      "path": "candidate/questions/mill-harm-principle.json",
+      "sha256": "cb9198c2ef13070c3aa92113d3699580c8b18de00cba9735e86a80f6bd4976f4"
+    },
+    {
+      "id": "locke-money-property",
+      "kind": "divergent",
+      "role": "fallback",
+      "path": "candidate/questions/locke-money-property.json",
+      "sha256": "8d91482c6c8ecb7ca0f3099611af505e26525c6ebbb0478c26a903e1f095feaa"
+    },
+    {
+      "id": "atomic-bombs-pacific-war",
+      "kind": "prompt-sensitive",
+      "role": "priority",
+      "path": "candidate/questions/atomic-bombs-pacific-war.json",
+      "sha256": "3f0a43897bc2fa462f4e6641157f901cac0937ad9921fc3578972c50c7e7bda4"
+    },
+    {
+      "id": "john-brown-harpers-ferry",
+      "kind": "prompt-sensitive",
+      "role": "fallback",
+      "path": "candidate/questions/john-brown-harpers-ferry.json",
+      "sha256": "1546af3b562bd0be821c23db46f226f4f727b937cc79d86f8108c389bf777dcf"
+    }
+  ]
+}

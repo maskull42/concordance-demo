@@ -1,61 +1,61 @@
 # Sources to verify for the Concordance pilot pool
 
-> **Every entry below is provisional and unverified.** Inclusion means only that Codex identified the linked item as a candidate source. It does not mean A.G. Elrod has confirmed the bibliographic metadata, read the complete work, accepted the characterization, or endorsed the position map.
+> **Every entry below remains formally proposed.** Some priority-case sources have been checked against full text, while fallback sources may rest only on an open primary text or publisher abstract. Inclusion does not by itself mean A.G. Elrod has author-verified the record.
 
-Access date for every entry: **2026-07-10**.
+Access dates are recorded per entry. Corrected Rule 2 records use **2026-07-12**.
 
 ## Verification procedure
 
-For every entry, the author should confirm:
+Before a selected case enters the final dataset, the author should confirm:
 
 1. the URL resolves to the named work or an authoritative record for it;
 2. author, title, venue, date, edition, and any page or section locator;
-3. the full work—not only an abstract, publisher description, search snippet, or third-party translation—supports the exact claim below;
+3. the full work, not only an abstract, publisher description, search snippet, or third-party translation, supports the exact claim below;
 4. the claim fairly attests the mapped position without implying that the source endorses every part of the position summary;
 5. primary texts and translations are suitable for public citation;
 6. restricted or paywalled items have been inspected through legitimate access before verification.
 
-Only A.G. Elrod may replace a source record’s `proposed` verification state with `author-verified`. If a source fails review, revise or remove the affected claim and position before any pilot call; do not silently alter the pool after outputs exist.
+Only A.G. Elrod may replace a source record’s `proposed` verification state with `author-verified`. Rule 2 permits the frozen, author-approved maps to enter a private answer-only pilot while these records remain proposed. If later full-text review changes a frozen position or source claim, disclose and version the revision before rerunning affected pilot cells. Never silently alter the pool after outputs exist.
 
 ## `james-jesus-brothers`
 
-### `younger-biological-siblings / mark-six-usccb`
+### `biological-siblings / mark-six-usccb`
 
 - Exact claim: Mark 6:3 names James, Joses, Judas, and Simon as Jesus’s brothers and also refers to sisters.
 - Citation: New American Bible, Revised Edition, Mark 6:3, United States Conference of Catholic Bishops.
 - URL: https://bible.usccb.org/bible/mark/6
 - Accessed: 2026-07-10
 
-### `younger-biological-siblings / galatians-one-usccb`
+### `biological-siblings / galatians-one-usccb`
 
 - Exact claim: Galatians 1:19 identifies James as the brother of the Lord.
 - Citation: New American Bible, Revised Edition, Galatians 1:19, United States Conference of Catholic Bishops.
 - URL: https://bible.usccb.org/bible/galatians/1
 - Accessed: 2026-07-10
 
-### `younger-biological-siblings / meier-brothers-sisters`
+### `biological-siblings / meier-brothers-sisters`
 
-- Exact claim: Meier surveys the principal kinship interpretations and argues that the biological-sibling reading is historically most probable.
-- Citation: John P. Meier, “The Brothers and Sisters of Jesus in Ecumenical Perspective,” Catholic Biblical Quarterly 54 (1992), JSTOR 43720810.
+- Exact claim: Meier surveys the three classic kinship interpretations and concludes that the true-siblings reading is the most probable historical judgment when faith and later church teaching are bracketed, while denying that the evidence yields absolute certainty.
+- Citation: John P. Meier, “The Brothers and Sisters of Jesus in Ecumenical Perspective,” The Catholic Biblical Quarterly 54, no. 1 (January 1992): 1-28, esp. 26, JSTOR 43720810.
 - URL: https://www.jstor.org/stable/43720810
-- Accessed: 2026-07-10
-- Verification note: full text appears access-restricted; confirm the article’s complete argument and bibliographic pagination.
+- Accessed: 2026-07-12
+- Verification note: full text has been inspected for this provisional characterization; A.G. Elrod has not yet author-verified it.
 
 ### `josephs-earlier-children / protoevangelium-james`
 
-- Exact claim: The Protoevangelium of James presents Joseph as an older widower who already has sons, attesting an early stepbrother tradition.
+- Exact claim: The Protoevangelium of James presents Joseph as an older man who already has sons, attesting an early stepbrother tradition.
 - Citation: The Protevangelium of James, trans. M. R. James, public-domain English translation hosted by Early Christian Writings.
 - URL: https://www.earlychristianwritings.com/text/infancyjames-mrjames.html
 - Accessed: 2026-07-10
-- Verification note: confirm the host’s text against a critical edition and decide whether “older widower” is fully supported by the cited passage rather than inferred from the tradition.
+- Verification note: confirm the host’s text against a critical edition. The present claim is limited to what the cited passage supports: Joseph is an older man who already has sons.
 
 ### `josephs-earlier-children / bauckham-epiphanian-response`
 
-- Exact claim: Bauckham defends the Epiphanian interpretation that Jesus’s brothers were Joseph’s children from an earlier marriage.
-- Citation: Richard Bauckham, “The Brothers and Sisters of Jesus: An Epiphanian Response to John P. Meier,” Catholic Biblical Quarterly 56 (1994), JSTOR 43721789.
+- Exact claim: Bauckham argues for the Epiphanian interpretation, presents it as the serious alternative to the Helvidian reading, and concludes that the choice between them must remain more open than Meier allows.
+- Citation: Richard Bauckham, “The Brothers and Sisters of Jesus: An Epiphanian Response to John P. Meier,” The Catholic Biblical Quarterly 56, no. 4 (October 1994): 686-700, esp. 686-687, 700, JSTOR 43721789.
 - URL: https://www.jstor.org/stable/43721789
-- Accessed: 2026-07-10
-- Verification note: full text appears access-restricted; confirm the exact scope of Bauckham’s defense and complete bibliographic data.
+- Accessed: 2026-07-12
+- Verification note: full text has been inspected for this provisional characterization; A.G. Elrod has not yet author-verified it.
 
 ### `cousins-or-close-kin / jerome-against-helvidius`
 
@@ -92,104 +92,105 @@ Only A.G. Elrod may replace a source record’s `proposed` verification state wi
 ### `woman-included-among-apostles / belleville-junia-apostle`
 
 - Exact claim: Belleville argues on lexical and grammatical grounds for reading Junia as a woman included among the apostles.
-- Citation: Linda L. Belleville, New Testament Studies 51 (2005), DOI 10.1017/S0028688505000135.
+- Citation: Linda L. Belleville, “ΙΟΥΝΙΑΝ … ΕΠΙΣΗΜΟΙ ΕΝ ΤΟΙΣ ΑΠΟΣΤΟΛΟΙΣ: A Re-examination of Romans 16.7 in Light of Primary Source Materials,” New Testament Studies 51, no. 2 (2005): 231-249, DOI 10.1017/S0028688505000135.
 - URL: https://doi.org/10.1017/S0028688505000135
-- Accessed: 2026-07-10
-- Verification note: confirm the complete title, issue, pages, and claim against the full article.
+- Accessed: 2026-07-12
+- Verification note: bibliographic metadata is confirmed; the paywalled full text remains to be inspected through legitimate access.
 
 ### `woman-included-among-apostles / hartmann-junia-translation`
 
 - Exact claim: Hartmann surveys the textual and reception history and presents evidence for the feminine name Junia and the early inclusive reading.
-- Citation: Ute E. Eisen/Hartmann source record to verify, Open Theology, DOI 10.1515/opth-2020-0138.
+- Citation: Andrea Hartmann, “Junia – A Woman Lost in Translation: The Name IOYNIAN in Romans 16:7 and its History of Interpretation,” Open Theology 6, no. 1 (2020): 646-660, DOI 10.1515/opth-2020-0138.
 - URL: https://doi.org/10.1515/opth-2020-0138
-- Accessed: 2026-07-10
-- Verification note: author attribution and exact title are unresolved in the draft and must be replaced with verified metadata.
+- Accessed: 2026-07-12
 
 ### `woman-known-to-apostles / burer-wallace-junia`
 
 - Exact claim: Burer and Wallace argue that Junia was a woman but that the construction means she and Andronicus were well known to the apostles.
-- Citation: Michael H. Burer and Daniel B. Wallace, New Testament Studies 47 (2001), DOI 10.1017/S0028688501000066.
+- Citation: Michael H. Burer and Daniel B. Wallace, “Was Junia Really an Apostle? A Re-examination of Rom 16.7,” New Testament Studies 47, no. 1 (2001): 76-91, DOI 10.1017/S0028688501000066.
 - URL: https://doi.org/10.1017/S0028688501000066
-- Accessed: 2026-07-10
-- Verification note: confirm the complete title, issue, pages, and precise grammatical conclusion against the full article.
+- Accessed: 2026-07-12
+- Verification note: bibliographic metadata is confirmed; the paywalled full text remains to be inspected through legitimate access.
 
 ### `man-included-among-apostles / wolters-iounian`
 
-- Exact claim: Wolters argues that the form in Romans 16:7 may represent a masculine Hebrew name, supporting a male referent rather than the woman Junia.
-- Citation: Albert M. Wolters, Journal of Biblical Literature, JSTOR 25610127.
+- Exact claim: Wolters argues that the form may represent a masculine Hebrew name and concludes that the evidence can favor a male apostle, while calling the case plausible rather than decisive.
+- Citation: Albert Wolters, “ΙΟΥΝΙΑΝ (Romans 16:7) and the Hebrew Name Yĕḥunnī,” Journal of Biblical Literature 127, no. 2 (Summer 2008): 397-408, JSTOR 25610127.
 - URL: https://www.jstor.org/stable/25610127
-- Accessed: 2026-07-10
-- Verification note: full text appears access-restricted; confirm title, volume, issue, pages, and how strongly Wolters states the conclusion.
+- Accessed: 2026-07-12
+- Verification note: the complete article has been inspected through p. 408. Wolters says the evidence may tip the scales in favor of a male apostle, but he also says a plausible, non-decisive case can be made for either a masculine Hebrew name or a feminine Latin name. A.G. Elrod has not yet author-verified the exact record.
 
 ## `mill-harm-principle`
 
 ### `categorical-sovereignty / mill-on-liberty`
 
-- Exact claim: On Liberty states both the one very simple principle, individual sovereignty over self-regarding conduct, and Mill’s appeal to utility in the largest sense.
-- Citation: John Stuart Mill, On Liberty, in Collected Works of John Stuart Mill, vol. XVIII, Liberty Fund Online Library of Liberty.
+- Exact claim: Mill states the one very simple principle, declares the individual sovereign over body and mind, and identifies utility in its largest sense as the ultimate appeal.
+- Citation: John Stuart Mill, “On Liberty,” in Collected Works of John Stuart Mill, vol. XVIII: Essays on Politics and Society, Part I, ed. John M. Robson, introduction by Alexander Brady (Toronto: University of Toronto Press; London: Routledge and Kegan Paul, 1977), especially chapter I, paragraphs 9-11.
 - URL: https://oll.libertyfund.org/titles/robson-the-collected-works-of-john-stuart-mill-volume-xviii-essays-on-politics-and-society-part-i
-- Accessed: 2026-07-10
-- Verification note: add exact chapter and paragraph or page locators for each proposition.
-
-### `categorical-sovereignty / sep-mill-moral-political`
-
-- Exact claim: The Stanford Encyclopedia survey distinguishes strong protections for self-regarding conduct from interpretations that treat harm as only a necessary condition for coercion.
-- Citation: David O. Brink, “Mill’s Moral and Political Philosophy,” Stanford Encyclopedia of Philosophy.
-- URL: https://plato.stanford.edu/entries/mill-moral-political/
-- Accessed: 2026-07-10
+- Accessed: 2026-07-12
 
 ### `categorical-sovereignty / riley-self-regarding-liberty`
 
-- Exact claim: Riley rejects an expansive reading under which the prospect of harm makes self-regarding conduct generally coercible and defends a protected sphere of liberty.
-- Citation: Jonathan Riley, Ethics (2015), DOI 10.1086/679556; exact article metadata to verify.
+- Exact claim: Riley rejects Turner’s expansive account of harm and argues that Mill absolutely prohibits interference with self-regarding conduct.
+- Citation: Jonathan Riley, “Is Mill an Illiberal Utilitarian?,” Ethics 125, no. 3 (April 2015): 781-796, DOI 10.1086/679556.
 - URL: https://doi.org/10.1086/679556
-- Accessed: 2026-07-10
-- Verification note: full text appears access-restricted; verify title, volume, issue, pages, and exact conclusion.
+- Accessed: 2026-07-12
 
 ### `harm-opens-jurisdiction / sep-mill-harm-necessary`
 
-- Exact claim: The Stanford Encyclopedia survey presents an interpretation on which harm to others is necessary but not sufficient for justified interference.
-- Citation: David O. Brink, “Mill’s Moral and Political Philosophy,” Stanford Encyclopedia of Philosophy.
+- Exact claim: Brink’s survey describes a two-stage interpretation on which harm to others is necessary but not sufficient for justified interference, leaving an all-things-considered utilitarian assessment still to be made.
+- Citation: David Brink, “Mill’s Moral and Political Philosophy,” Stanford Encyclopedia of Philosophy, first published 2007, substantive revision 2022.
 - URL: https://plato.stanford.edu/entries/mill-moral-political/
-- Accessed: 2026-07-10
+- Accessed: 2026-07-12
 
 ### `harm-opens-jurisdiction / turner-expansive-harm`
 
-- Exact claim: Turner develops an expansive reading of the harm principle under which harm establishes social jurisdiction without itself requiring coercion.
-- Citation: Piers Norris Turner, Ethics (2014), DOI 10.1086/673436; exact article metadata to verify.
+- Exact claim: Turner develops an expansive account of harm that can establish social jurisdiction without itself requiring coercion, which remains subject to a separate utilitarian assessment.
+- Citation: Piers Norris Turner, “‘Harm’ and Mill’s Harm Principle,” Ethics 124, no. 2 (January 2014): 299-326, DOI 10.1086/673436.
 - URL: https://doi.org/10.1086/673436
-- Accessed: 2026-07-10
-- Verification note: full text appears access-restricted; verify title, volume, issue, pages, and exact conclusion.
+- Accessed: 2026-07-12
 
 ### `harm-opens-jurisdiction / mill-on-liberty-jurisdiction`
 
 - Exact claim: Mill distinguishes conduct affecting only the agent from conduct that concerns others and becomes amenable to social judgment.
-- Citation: John Stuart Mill, On Liberty, in Collected Works of John Stuart Mill, vol. XVIII, Liberty Fund Online Library of Liberty.
+- Citation: John Stuart Mill, “On Liberty,” in Collected Works of John Stuart Mill, vol. XVIII: Essays on Politics and Society, Part I, ed. John M. Robson, introduction by Alexander Brady (Toronto: University of Toronto Press; London: Routledge and Kegan Paul, 1977).
 - URL: https://oll.libertyfund.org/titles/robson-the-collected-works-of-john-stuart-mill-volume-xviii-essays-on-politics-and-society-part-i
-- Accessed: 2026-07-10
-- Verification note: add exact chapter and paragraph or page locators.
+- Accessed: 2026-07-12
 
 ### `antipaternalist-competence-rule / turner-competence-absolutism`
 
-- Exact claim: Turner offers a competence-based interpretation of Mill’s anti-paternalism as an absolute or near-absolute constraint for competent adults.
-- Citation: Piers Norris Turner, Canadian Journal of Philosophy (2013), DOI 10.1080/00455091.2013.847346; exact article metadata to verify.
+- Exact claim: Turner interprets Mill’s liberty principle as an exceptionless anti-paternalism rule that absolutely restricts paternalistic social interference with competent adults.
+- Citation: Piers Norris Turner, “The absolutism problem in On Liberty,” Canadian Journal of Philosophy 43, no. 3 (2013): 322-340, DOI 10.1080/00455091.2013.847346.
 - URL: https://doi.org/10.1080/00455091.2013.847346
-- Accessed: 2026-07-10
-- Verification note: confirm exact title, volume, issue, pages, and conclusion against the full article.
+- Accessed: 2026-07-12
 
 ### `antipaternalist-competence-rule / mill-on-liberty-paternalism`
 
 - Exact claim: Mill says a person’s own good is not a sufficient warrant for coercion and limits the doctrine to human beings in the maturity of their faculties.
-- Citation: John Stuart Mill, On Liberty, chapter 1, in Collected Works of John Stuart Mill, vol. XVIII, Liberty Fund Online Library of Liberty.
+- Citation: John Stuart Mill, “On Liberty,” chapter I, paragraphs 9-10, in Collected Works of John Stuart Mill, vol. XVIII: Essays on Politics and Society, Part I, ed. John M. Robson, introduction by Alexander Brady (Toronto: University of Toronto Press; London: Routledge and Kegan Paul, 1977).
 - URL: https://oll.libertyfund.org/titles/robson-the-collected-works-of-john-stuart-mill-volume-xviii-essays-on-politics-and-society-part-i
-- Accessed: 2026-07-10
-- Verification note: add exact paragraph or page locators.
+- Accessed: 2026-07-12
+
+### `consent-reformulation / saunders-consent-reformulation`
+
+- Exact claim: Saunders argues that intervention is permissible only to prevent non-consensual harm, regardless of whether the conduct is conventionally classified as self-regarding or other-regarding.
+- Citation: Ben Saunders, “Reformulating Mill’s Harm Principle,” Mind 125, no. 500 (October 2016): 1005-1032, DOI 10.1093/mind/fzv171.
+- URL: https://eprints.soton.ac.uk/390711/
+- Accessed: 2026-07-12
+
+### `perfectionist-utilitarian-rights / brink-progressive-principles`
+
+- Exact claim: Brink interprets harm through important or dominant interests, gives liberal rights a utilitarian foundation, rejects an absolute self-regarding sphere, and argues that Mill permits soft, autonomy-enhancing paternalism.
+- Citation: David O. Brink, Mill’s Progressive Principles (Oxford: Oxford University Press, 2013), especially chapters 6, 8, and 9, DOI 10.1093/acprof:oso/9780199672141.001.0001.
+- URL: https://doi.org/10.1093/acprof:oso/9780199672141.001.0001
+- Accessed: 2026-07-12
+- Verification note: the cited sections have been inspected in a complete user-supplied copy. A.G. Elrod confirmed university-library access to the work on 2026-07-12; author verification of the exact record remains pending.
 
 ## `locke-money-property`
 
 ### `limits-transcended / locke-second-treatise`
 
-- Exact claim: Sections 46–50 connect durable money and tacit consent with enlarged and unequal possessions beyond immediate use.
+- Exact claim: Sections 46-50 connect durable money and tacit consent with enlarged and unequal possessions beyond immediate use.
 - Citation: John Locke, Second Treatise of Government, chapter V, Project Gutenberg edition.
 - URL: https://www.gutenberg.org/files/7370/7370-h/7370-h.htm
 - Accessed: 2026-07-10
@@ -204,234 +205,219 @@ Only A.G. Elrod may replace a source record’s `proposed` verification state wi
 ### `sufficiency-proviso-remains / locke-enough-and-good`
 
 - Exact claim: Locke states the enough-and-as-good condition on original appropriation and separately discusses spoilage and exchange for durable goods.
-- Citation: John Locke, Second Treatise of Government, chapter V, especially sections 27, 31, 37, and 46–50, Project Gutenberg edition.
+- Citation: John Locke, Second Treatise of Government, chapter V, especially sections 27, 31, 37, and 46-50, Project Gutenberg edition.
 - URL: https://www.gutenberg.org/files/7370/7370-h/7370-h.htm
 - Accessed: 2026-07-10
 
 ### `sufficiency-proviso-remains / vandervossen-lockean-proviso`
 
-- Exact claim: Van der Vossen develops a continuing Lockean-proviso interpretation tied to others’ freedom, rather than treating monetary consent as cancelling every constraint.
-- Citation: Bas van der Vossen, Philosophical Quarterly, DOI 10.1093/pq/pqaa025; exact article metadata to verify.
+- Exact claim: Provisional pending full-text review: the published abstract argues that Locke’s proviso is centered on freedom as non-subjection and can be satisfied either by leaving enough and as good literally or through alternatives such as competitive labor markets.
+- Citation: Bas van der Vossen, “As Good As ‘Enough and As Good’,” The Philosophical Quarterly 71, no. 1 (January 2021): 183-203, first published online May 16, 2020, DOI 10.1093/pq/pqaa025.
 - URL: https://doi.org/10.1093/pq/pqaa025
-- Accessed: 2026-07-10
-- Verification note: confirm exact title, volume, issue, pages, and the relation between the article’s argument and Locke’s post-money proviso.
+- Accessed: 2026-07-12
+- Verification note: metadata and abstract checked against the publisher record. Full text remains paywalled; the claim is provisional pending author review.
 
 ### `waste-only-acquisition-limit / locke-spoilage-money`
 
 - Exact claim: Locke repeatedly condemns taking more perishable goods than can be used and explains that durable money may be accumulated without spoilage.
-- Citation: John Locke, Second Treatise of Government, chapter V, especially sections 31, 37, and 46–50, Project Gutenberg edition.
+- Citation: John Locke, Second Treatise of Government, chapter V, especially sections 31, 37, and 46-50, Project Gutenberg edition.
 - URL: https://www.gutenberg.org/files/7370/7370-h/7370-h.htm
 - Accessed: 2026-07-10
 
 ### `waste-only-acquisition-limit / layman-no-traditional-proviso`
 
-- Exact claim: Layman disputes the traditional necessary sufficiency-proviso reading while locating constraints elsewhere in Locke’s preservation and freedom commitments.
-- Citation: Daniel Layman, European Journal of Political Theory, DOI 10.1177/1474885115587118; exact article metadata to verify.
+- Exact claim: Provisional pending full-text review: the published abstract reports a compelling textual case against attributing the traditional sufficiency obligation to Locke, then locates the remaining problem in preservation and arbitrary power.
+- Citation: Daniel M. Layman, “Sufficiency and freedom in Locke’s theory of property,” European Journal of Political Theory 17, no. 2 (April 2018): 152-173, first published online June 2, 2015, DOI 10.1177/1474885115587118.
 - URL: https://doi.org/10.1177/1474885115587118
-- Accessed: 2026-07-10
-- Verification note: confirm the article’s title, publication data, and distinction between its negative and positive arguments.
+- Accessed: 2026-07-12
+- Verification note: metadata and abstract checked against the publisher record. Full text remains paywalled; the claim is provisional pending author review.
 
 ### `natural-law-regulation-remains / layman-preservation-freedom`
 
-- Exact claim: Layman argues that Lockean property remains constrained by preservation and non-domination or freedom concerns even without the traditional proviso interpretation.
-- Citation: Daniel Layman, European Journal of Political Theory, DOI 10.1177/1474885115587118; exact article metadata to verify.
+- Exact claim: Provisional pending full-text review: the published abstract argues that large properties can undermine material and moral preservation by fostering arbitrary power, even without the traditional sufficiency-proviso reading.
+- Citation: Daniel M. Layman, “Sufficiency and freedom in Locke’s theory of property,” European Journal of Political Theory 17, no. 2 (April 2018): 152-173, first published online June 2, 2015, DOI 10.1177/1474885115587118.
 - URL: https://doi.org/10.1177/1474885115587118
-- Accessed: 2026-07-10
-- Verification note: verify the exact terminology and scope of the article’s positive constraints.
+- Accessed: 2026-07-12
+- Verification note: metadata and abstract checked against the publisher record. Full text remains paywalled; the claim is provisional pending author review.
 
 ### `natural-law-regulation-remains / drury-locke-property`
 
-- Exact claim: Drury reads Locke’s property theory through utility and continuing social regulation rather than as an unlimited post-money entitlement.
-- Citation: Shadia B. Drury, Political Studies (1982), DOI 10.1111/j.1467-9248.1982.tb00517.x; exact article metadata to verify.
+- Exact claim: Provisional pending full-text review: the published abstract argues that labor appropriation does not apply after money, that post-money property arrangements rest primarily on utility, and that regulation is necessary for preservation under natural law.
+- Citation: S. B. Drury, “Locke and Nozick on Property,” Political Studies 30, no. 1 (March 1982): 28-41, DOI 10.1111/j.1467-9248.1982.tb00517.x.
 - URL: https://doi.org/10.1111/j.1467-9248.1982.tb00517.x
-- Accessed: 2026-07-10
-- Verification note: full text appears access-restricted; verify title, publication data, and the exact regulatory claim.
+- Accessed: 2026-07-12
+- Verification note: metadata and abstract checked against the publisher record. Full text remains paywalled; the claim is provisional pending author review.
 
 ### `natural-law-regulation-remains / locke-preservation-charity`
 
-- Exact claim: Locke’s wider political theory states duties of preservation and recognizes claims of charity that may qualify the exercise of property rights.
-- Citation: John Locke, Second Treatise of Government, Project Gutenberg edition; relevant preservation and charity passages require author pin-citation.
-- URL: https://www.gutenberg.org/files/7370/7370-h/7370-h.htm
-- Accessed: 2026-07-10
-- Verification note: add exact section locators and confirm whether another Locke text is needed for the charity claim.
+- Exact claim: First Treatise section 42 says charity gives a person in extreme want a title to another person’s surplus, while Second Treatise section 6 states duties of self-preservation and, where compatible, preservation of the rest of mankind.
+- Citation: John Locke, Two Treatises of Government, ed. Thomas Hollis (London: A. Millar et al., 1764), First Treatise, section 42; Second Treatise, section 6, Online Library of Liberty.
+- URL: https://oll.libertyfund.org/titles/hollis-the-two-treatises-of-civil-government-hollis-ed
+- Accessed: 2026-07-12
+- Verification note: the linked Liberty Fund edition contains both cited treatises; author verification remains pending.
 
 ### `unresolved-indeterminacy / ince-locke-indeterminacy`
 
-- Exact claim: Ince argues that Locke’s account of property contains unresolved indeterminacy rather than one unambiguous post-money rule.
-- Citation: Onur Ulas Ince, Review of Politics (2011), DOI 10.1017/S0034670510000859; exact article metadata to verify.
+- Exact claim: Provisional pending full-text review: the published abstract argues that money forms a conceptual area of indeterminacy where natural-law universals and historical accumulation shade into one another, allowing Locke to navigate an antinomy within natural law.
+- Citation: Onur Ulas Ince, “Enclosing in God’s Name, Accumulating for Mankind: Money, Morality, and Accumulation in John Locke’s Theory of Property,” The Review of Politics 73, no. 1 (Winter 2011): 29-54, DOI 10.1017/S0034670510000859.
 - URL: https://doi.org/10.1017/S0034670510000859
-- Accessed: 2026-07-10
-- Verification note: full text appears access-restricted; verify exact title, publication data, and whether “indeterminacy” applies specifically to post-money limits.
+- Accessed: 2026-07-12
+- Verification note: metadata and abstract checked against the publisher record. Full text remains paywalled; the claim is provisional pending author review.
 
 ## `atomic-bombs-pacific-war`
 
-### `both-justified / truman-hiroshima-statement`
-
-- Exact claim: Truman publicly justified Hiroshima as a means to destroy Japan’s capacity to wage war and shorten the war after rejection of the Potsdam ultimatum.
-- Citation: Harry S. Truman, public statement, August 6, 1945, Harry S. Truman Presidential Library.
-- URL: https://www.trumanlibrary.gov/library/public-papers/93/statement-president-announcing-use-bomb-hiroshima
-- Accessed: 2026-07-10
-
 ### `both-justified / stimson-decision-source`
 
-- Exact claim: Stimson’s retrospective defense presents the bombings as a means to secure surrender and avoid the expected losses of continued war and invasion.
-- Citation: Henry L. Stimson, “The Decision to Use the Atomic Bomb,” source entry in the Truman Library online collection.
-- URL: https://www.trumanlibrary.gov/library/online-collections/decision-to-drop-atomic-bomb?section=3
-- Accessed: 2026-07-10
-- Verification note: confirm that the linked section exposes the complete source and add original publication metadata and pinpoint references.
+- Exact claim: Stimson retrospectively defended atomic use as the least abhorrent available means of compelling surrender and avoiding the expected losses of invasion.
+- Citation: Henry L. Stimson, “The Decision to Use the Atomic Bomb,” Harper’s Magazine 194, no. 1161 (February 1947): 97-107.
+- URL: https://catalog.archives.gov/id/310987138
+- Accessed: 2026-07-12
+- Verification note: the complete article has been inspected, especially pp. 100-107, for this provisional characterization; A.G. Elrod has not yet author-verified it.
 
 ### `both-justified / frank-downfall`
 
-- Exact claim: Frank argues that Japanese surrender was not imminent before the atomic bombs and Soviet entry and emphasizes the casualties expected from continued resistance.
-- Citation: Richard B. Frank, Downfall: The End of the Imperial Japanese Empire (Random House, 1999), publisher page.
+- Exact claim: Frank concludes that surrender was not imminent, that atomic use was decisive in securing an organized surrender, and that the decision was vindicated relative to the available alternatives.
+- Citation: Richard B. Frank, Downfall: The End of the Imperial Japanese Empire (New York: Random House, 1999), especially 333-360.
 - URL: https://www.penguinrandomhouse.com/books/333070/downfall-by-richard-b-frank/
-- Accessed: 2026-07-10
-- Verification note: a publisher page is not sufficient for verification; inspect the book and add page references.
+- Accessed: 2026-07-12
+- Verification note: pp. 344-360 have been inspected in a complete user-supplied copy for the claims about diplomacy, organized surrender, alternative costs, and vindication. A.G. Elrod confirmed university-library access to the work on 2026-07-12; author verification of the exact record remains pending.
 
-### `hiroshima-not-nagasaki / bernstein-hiroshima-nagasaki`
+### `hiroshima-decisive-nagasaki-unnecessary / asada-shock-atomic-bomb`
 
-- Exact claim: Bernstein offers a qualified moral-historical assessment that treats Hiroshima and Nagasaki differently and discusses missed opportunities and the timing of the second bomb.
-- Citation: Barton J. Bernstein, Diplomatic History (1995), DOI 10.1111/j.1467-7709.1995.tb00657.x; exact article title and pinpoint claim to verify.
-- URL: https://doi.org/10.1111/j.1467-7709.1995.tb00657.x
-- Accessed: 2026-07-10
-- Verification note: full text appears access-restricted; the exact Hiroshima/Nagasaki distinction is a high-priority claim check.
+- Exact claim: Asada argues that Hiroshima was crucial in accelerating surrender, while Nagasaki, dropped only three days later, had minimal strategic value and was unnecessary to induce surrender.
+- Citation: Sadao Asada, “The Shock of the Atomic Bomb and Japan’s Decision to Surrender: A Reconsideration,” Pacific Historical Review 67, no. 4 (November 1998): 477-512, DOI 10.2307/3641184.
+- URL: https://doi.org/10.2307/3641184
+- Accessed: 2026-07-12
+- Verification note: an author-supplied JSTOR library PDF has been inspected at pp. 492, 500, and 512. Page 500 calls the first atomic bombing crucial in accelerating the peace process; p. 492 calls Nagasaki’s strategic value minimal and the bombing unnecessary to induce surrender; p. 512 places moral justification beyond the essay’s scope. This source supports a causal and strategic asymmetry only; A.G. Elrod has not yet author-verified the exact record.
 
-### `militarily-unnecessary / ussbs-pacific-war`
+### `both-probably-unnecessary / ussbs-pacific-war`
 
-- Exact claim: The United States Strategic Bombing Survey concluded that Japan would probably have surrendered before the end of 1945 even without atomic bombs, Soviet entry, or an invasion.
-- Citation: United States Strategic Bombing Survey, Summary Report (Pacific War), 1946, U.S. Government publication scan.
+- Exact claim: The Survey concluded that Japan probably would have surrendered before 1 November 1945 even without atomic bombing, Soviet entry, or a planned invasion.
+- Citation: United States Strategic Bombing Survey, Summary Report (Pacific War) (Washington, D.C., 1 July 1946), reprinted in The United States Strategic Bombing Surveys (European War) (Pacific War) (Air University Press, 1987), 106.
 - URL: https://www.govinfo.gov/content/pkg/GOVPUB-D301-PURL-LPS47072/pdf/GOVPUB-D301-PURL-LPS47072.pdf
-- Accessed: 2026-07-10
-- Verification note: add exact page and preserve the survey’s retrospective methodology and qualification when characterizing the conclusion.
+- Accessed: 2026-07-12
+- Verification note: the quoted conclusion has been directly verified in the Summary Report at printed p. 106, PDF p. 112. Preserve the Survey’s retrospective methodology and “in all probability” qualification; A.G. Elrod has not yet author-verified this characterization.
 
-### `militarily-unnecessary / alperovitz-decision`
+### `both-probably-unnecessary / alperovitz-decision`
 
-- Exact claim: Alperovitz advances the revisionist case that the atomic bomb was not militarily necessary to secure Japan’s surrender and emphasizes diplomatic and Soviet considerations.
-- Citation: Gar Alperovitz, The Decision to Use the Atomic Bomb (Knopf, 1995), publisher page.
+- Exact claim: Alperovitz argues that atomic bombing was not militarily necessary because decision-makers knew of alternatives involving clarified surrender terms and Soviet entry.
+- Citation: Gar Alperovitz, The Decision to Use the Atomic Bomb and the Architecture of an American Myth (New York: Alfred A. Knopf, 1995; Vintage reprint, 1996).
 - URL: https://www.penguinrandomhouse.com/books/2579/the-decision-to-use-the-atomic-bomb-by-gar-alperovitz/
-- Accessed: 2026-07-10
-- Verification note: inspect the book and add page references; do not verify from the publisher description alone.
+- Accessed: 2026-07-12
+- Verification note: the Introduction, Book One, Part VI, chapter 26, and the Conclusion, “The Complicity of Silence,” have been inspected in a complete user-supplied copy. The military-unnecessity claim is firm, while the precise weight of policymakers’ Soviet-diplomatic motives is treated more cautiously. A.G. Elrod confirmed university-library access to the work on 2026-07-12; author verification of the exact record remains pending.
 
-### `soviet-or-diplomatic-decisive / hasegawa-racing-enemy`
+### `both-probably-unnecessary / bernstein-hiroshima-nagasaki`
 
-- Exact claim: Hasegawa argues that Soviet entry into the Pacific War played the decisive role in Japan’s surrender, in comparison with the atomic bombings.
-- Citation: Tsuyoshi Hasegawa, Racing the Enemy (Harvard University Press, 2005), DOI 10.4159/9780674038400.
+- Exact claim: Bernstein concludes that combined alternatives more likely than not could have ended the war without any atomic bomb before the planned invasion, while calling Nagasaki almost definitely unnecessary.
+- Citation: Barton J. Bernstein, “Understanding the Atomic Bomb and the Japanese Surrender: Missed Opportunities, Little-Known Near Disasters, and Modern Memory,” Diplomatic History 19, no. 2 (Spring 1995): 227-273, DOI 10.1111/j.1467-7709.1995.tb00657.x.
+- URL: https://doi.org/10.1111/j.1467-7709.1995.tb00657.x
+- Accessed: 2026-07-12
+- Verification note: full text has been inspected at pp. 254-256. Bernstein treats both bombings as probably avoidable and Nagasaki as almost definitely unnecessary; he does not defend Hiroshima as morally justified. A.G. Elrod has not yet author-verified this characterization.
+
+### `soviet-entry-more-decisive / hasegawa-racing-enemy`
+
+- Exact claim: Hasegawa argues that Soviet entry played a greater and more decisive role than the atomic bombings in inducing Japan’s surrender.
+- Citation: Tsuyoshi Hasegawa, Racing the Enemy: Stalin, Truman, and the Surrender of Japan (Cambridge, MA: Harvard University Press, 2005), DOI 10.4159/9780674038400.
 - URL: https://doi.org/10.4159/9780674038400
-- Accessed: 2026-07-10
-- Verification note: inspect the book and add page references for the comparative causal claim.
+- Accessed: 2026-07-12
+- Verification note: pp. 3, 5, and 295-298 have been inspected in a complete user-supplied copy. Hasegawa treats the atomic bombings as contributing shocks but Soviet entry as the greater and decisive one. A.G. Elrod confirmed university-library access to the work on 2026-07-12; author verification of the exact record remains pending.
 
-### `soviet-or-diplomatic-decisive / potsdam-declaration`
+### `civilian-targeting-impermissible / sep-anscombe`
 
-- Exact claim: The Potsdam Declaration demanded unconditional surrender while not expressly assuring preservation of the imperial institution, a central issue in diplomatic-alternative arguments.
-- Citation: Potsdam Declaration, July 26, 1945, National Diet Library of Japan.
-- URL: https://www.ndl.go.jp/constitution/e/etc/c06.html
-- Accessed: 2026-07-10
-- Verification note: distinguish what the declaration’s text says from historical claims about Japanese decision-makers’ responses.
-
-### `soviet-or-diplomatic-decisive / end-pacific-war-volume`
-
-- Exact claim: The edited scholarship represented in this volume documents continuing disagreement over the relative causal importance of the bombs, Soviet entry, and surrender diplomacy.
-- Citation: Tsuyoshi Hasegawa, ed., The End of the Pacific War: Reappraisals (Stanford University Press, 2007), publisher page.
-- URL: https://www.sup.org/books/history/end-pacific-war
-- Accessed: 2026-07-10
-- Verification note: inspect the relevant chapters; the publisher page alone cannot verify the range of arguments.
-
-### `categorically-impermissible / sep-anscombe`
-
-- Exact claim: The Stanford Encyclopedia account records Anscombe’s public opposition to Truman’s honorary degree because of the atomic bombings and explains her absolute prohibition on intentional killing of innocents.
-- Citation: “Gertrude Elizabeth Margaret Anscombe,” Stanford Encyclopedia of Philosophy.
+- Exact claim: The entry documents Anscombe’s condemnation of both bombings and explains her categorical prohibition on intentionally killing innocent people as a means.
+- Citation: Eric Wiland and Julia Driver, “Gertrude Elizabeth Margaret Anscombe,” Stanford Encyclopedia of Philosophy, first published 21 July 2009, substantively revised 30 May 2022.
 - URL: https://plato.stanford.edu/entries/anscombe/
-- Accessed: 2026-07-10
-- Verification note: add Anscombe’s primary text as the preferred attestation before author verification.
+- Accessed: 2026-07-12
+- Verification note: the open full text has been inspected in sections 1 and 2, including its discussion of “Mr. Truman’s Degree” at pp. 66-67 of the cited primary text. The entry directly supports the categorical intentional-killing claim; A.G. Elrod has not yet author-verified this characterization.
 
 ## `john-brown-harpers-ferry`
 
 ### `justified-revolutionary-resistance / brown-court-address`
 
-- Exact claim: Brown defended his purpose as freeing enslaved people, denied an intent to murder or commit treason for its own sake, and invoked a higher moral obligation.
-- Citation: John Brown, address to the court before sentencing, November 2, 1859, Library of Congress broadside.
+- Exact claim: Brown said his object was freeing enslaved people, denied intending murder, treason, property destruction, or slave insurrection, and invoked the Golden Rule and Hebrews 13:3.
+- Citation: John Brown, “Address of John Brown to the Virginia Court, when about to receive the sentence of death,” broadside printed by C. C. Mead (Boston, 1859), Library of Congress Printed Ephemera Collection, rbpe.06500500.
 - URL: https://www.loc.gov/resource/rbpe.06500500/
-- Accessed: 2026-07-10
-- Verification note: add a transcription or exact image locator and separate Brown’s self-description from an external moral judgment.
+- Accessed: 2026-07-12
+- Verification note: the Library of Congress record and broadside text support each element of the claim. This is Brown’s self-description, not an independent moral judgment; A.G. Elrod has not yet author-verified the mapping.
 
 ### `justified-revolutionary-resistance / douglass-john-brown`
 
 - Exact claim: Douglass’s retrospective address portrays Brown’s failed raid as a morally serious action that advanced the destruction of slavery.
-- Citation: Frederick Douglass, John Brown: An Address at the Fourteenth Anniversary of Storer College, May 30, 1881, Library of Congress.
+- Citation: Frederick Douglass, John Brown: An Address by Frederick Douglass, at the Fourteenth Anniversary of Storer College, Harper’s Ferry, West Virginia, May 30, 1881 (Dover, NH: Morning Star Job Printing House, 1881), Library of Congress.
 - URL: https://www.loc.gov/item/07012896/
-- Accessed: 2026-07-10
-- Verification note: add page references from the digitized address.
+- Accessed: 2026-07-12
+- Verification note: the work and publication metadata are confirmed, and the address explicitly credits Brown with beginning the war that ended slavery. Add page pinpoints during author verification.
 
 ### `morally-justified-terrorism / reynolds-john-brown`
 
-- Exact claim: Reynolds characterizes Brown as a form of good or morally defensible terrorist whose violence helped destroy slavery, while distinguishing him from indiscriminate modern terrorism.
-- Citation: David S. Reynolds, John Brown, Abolitionist: The Man Who Killed Slavery, Sparked the Civil War, and Seeded Civil Rights (Knopf, 2005), publisher page.
+- Exact claim: Reynolds calls Brown a “good terrorist” who used violence against the exceptionally grave injustice of slavery, while distinguishing him from indiscriminate modern terrorists.
+- Citation: David S. Reynolds, John Brown, Abolitionist: The Man Who Killed Slavery, Sparked the Civil War, and Seeded Civil Rights (New York: Alfred A. Knopf, 2005; Vintage paperback, 2006).
 - URL: https://www.penguinrandomhouse.com/books/140728/john-brown-abolitionist-by-david-s-reynolds/
-- Accessed: 2026-07-10
-- Verification note: inspect the book and add page references; verify the “good terrorist” characterization in context.
+- Accessed: 2026-07-12
+- Verification note: Reynolds states this characterization directly in the author interview on the publisher page and explains both the terrorism analogy and its moral qualification. The complete book has not yet been inspected for a page pinpoint; A.G. Elrod has not yet author-verified the mapping.
 
-### `guerrilla-or-insurrection-not-terrorism / lutz-john-brown-terrorism`
+### `guerrilla-or-insurrection-not-terrorism / finkelman-look-back-john-brown`
 
-- Exact claim: Lutz evaluates Brown under terrorism criteria and supports treating the raid as guerrilla or insurgent violence rather than straightforward terrorism under narrower definitions.
-- Citation: James M. Lutz, Small Wars & Insurgencies (2014), DOI 10.1080/09592318.2014.945678; exact article metadata and conclusion to verify.
-- URL: https://doi.org/10.1080/09592318.2014.945678
-- Accessed: 2026-07-10
-- Verification note: full text appears access-restricted; this conclusion must be checked closely because the source may classify different parts of Brown’s campaign differently.
+- Exact claim: Finkelman explicitly argues that Brown did not act like a terrorist and instead characterizes his violence as guerrilla warfare or revolutionary action, while also calling the Harpers Ferry raid foolish, poorly designed, and incompetently implemented.
+- Citation: Paul Finkelman, “A Look Back at John Brown,” Prologue 43, no. 1 (Spring 2011), U.S. National Archives.
+- URL: https://www.archives.gov/publications/prologue/2011/spring/brown.html
+- Accessed: 2026-07-12
+- Verification note: the open full text has been inspected, especially “Terrorist, Guerrilla Fighter, Revolutionary?” and “Remembering, Honoring, John Brown.” Finkelman repeatedly denies the terrorism label and calls Brown’s violence guerrilla warfare, yet remains sympathetic to Brown’s antislavery purpose while criticizing his leadership, design, and tactics. A.G. Elrod has not yet author-verified the mapping.
+
+### `guerrilla-or-insurrection-not-terrorism / etcheson-john-brown-terrorist`
+
+- Exact claim: Etcheson argues that interpreting Brown as an American terrorist is a misreading and situates him instead within guerrilla warfare and revolutionary antislavery, while acknowledging that he used terrorist tactics.
+- Citation: Nicole Etcheson, “John Brown, Terrorist?,” American Nineteenth Century History 10, no. 1 (March 2009): 29-48, DOI 10.1080/14664650802299735.
+- URL: https://doi.org/10.1080/14664650802299735
+- Accessed: 2026-07-12
+- Verification note: Taylor and Francis confirms the complete metadata, and the abstract states this thesis directly. The full article remains access-restricted and must be inspected before author verification.
 
 ### `guerrilla-or-insurrection-not-terrorism / brown-provisional-constitution`
 
 - Exact claim: Brown’s provisional constitution supplies evidence of an organized political and military project intended to oppose slavery beyond the armory seizure itself.
-- Citation: U.S. Senate, 36th Congress, 1st Session, Report No. 278 (1860), U.S. Senate historical PDF.
+- Citation: U.S. Senate, Select Committee on the Harper’s Ferry Invasion, Report No. 278, 36th Congress, 1st Session, June 15, 1860, with Brown’s Provisional Constitution in the appendix.
 - URL: https://www.senate.gov/artandhistory/history/resources/pdf/HarpersFerryInvestigation1860.pdf
-- Accessed: 2026-07-10
-- Verification note: add exact page locations and distinguish Brown’s document from the Senate committee’s framing.
+- Accessed: 2026-07-12
+- Verification note: the report identifies the provisional government and reproduces Brown’s constitution in its appendix. This source supports the organized political-project claim, not by itself the judgment that Brown was not a terrorist.
 
-### `just-cause-wrong-or-reckless-means / finkelman-man-who-killed-slavery`
+### `just-cause-wrong-or-reckless-means / lincoln-leavenworth`
 
-- Exact claim: Finkelman presents a morally mixed account: Brown struck for freedom and accelerated slavery’s end, while the raid also involved violence, deaths, and grave strategic failures.
-- Citation: Paul Finkelman, Prologue Magazine 43, no. 1 (Spring 2011), U.S. National Archives.
-- URL: https://www.archives.gov/publications/prologue/2011/spring/brown.html
-- Accessed: 2026-07-10
-- Verification note: confirm that the article itself, rather than this draft’s synthesis, supports every part of the mixed characterization.
+- Exact claim: Lincoln said Brown agreed that slavery was wrong but that this did not excuse violence, bloodshed, and treason.
+- Citation: Abraham Lincoln, speech at Leavenworth, Kansas, December 3, 1859, reported in the Daily Illinois State Journal, December 12, 1859, transcript hosted by the Lincoln Presidential Foundation.
+- URL: https://www.lincolnpresidential.org/Resources/1e946379-b956-44dd-9871-e5cb2b2b60ff/Report%20of%20Speech%20Leavenworth%20KS.pdf
+- Accessed: 2026-07-12
+- Verification note: the exact statement appears on p. 5 of the hosted primary-source PDF. The surviving text is a newspaper report of Lincoln’s speech, a provenance limitation to preserve during author verification.
 
 ### `just-cause-wrong-or-reckless-means / mcglone-john-browns-war`
 
 - Exact claim: McGlone reconstructs Brown’s aims, planning, and social context, providing evidence for judging both the antislavery cause and the raid’s means and feasibility.
-- Citation: Robert E. McGlone, John Brown’s War against Slavery (Cambridge University Press, 2009), publisher excerpt.
+- Citation: Robert E. McGlone, John Brown’s War against Slavery (Cambridge: Cambridge University Press, 2009), publisher excerpt.
 - URL: https://assets.cambridge.org/97805215/14439/excerpt/9780521514439_excerpt.pdf
-- Accessed: 2026-07-10
-- Verification note: the excerpt may not support the full claim; inspect the complete book and add pages.
-
-### `just-cause-wrong-or-reckless-means / etcheson-brown-violence`
-
-- Exact claim: Etcheson situates Brown’s violence in Bleeding Kansas and the wider conflict over slavery, supporting a judgment attentive to both cause and methods.
-- Citation: Nicole Etcheson, American Nineteenth Century History (2008), DOI 10.1080/14664650802299735; exact article metadata and claim to verify.
-- URL: https://doi.org/10.1080/14664650802299735
-- Accessed: 2026-07-10
-- Verification note: full text appears access-restricted; verify exact title, publication data, and whether the article addresses Harpers Ferry directly.
+- Accessed: 2026-07-12
+- Verification note: the publisher excerpt and independent bibliographic records confirm the work and its contextual scope, but the excerpt does not independently establish a moral verdict. Inspect the complete book and add pages before author verification.
 
 ### `criminal-fanatical-violence / lincoln-cooper-union`
 
-- Exact claim: Lincoln called John Brown’s Harpers Ferry attempt wrong, denied that Republicans endorsed it, and treated it as the act of a small group rather than legitimate party action.
+- Exact claim: Lincoln denied Republican responsibility for Harpers Ferry, described Brown as an enthusiast who imagined himself divinely commissioned, called the attempt absurd, and compared it to attempts to assassinate rulers.
 - Citation: Abraham Lincoln, Cooper Union Address, February 27, 1860, National Park Service transcript.
 - URL: https://home.nps.gov/liho/learn/historyculture/cooperunionaddress.htm
-- Accessed: 2026-07-10
-- Verification note: preserve Lincoln’s partisan and rhetorical context; the speech’s “wrong” judgment does not by itself attest every stronger term in the mapped label.
+- Accessed: 2026-07-12
+- Verification note: the open transcript supports each narrowed element of the claim. Cooper Union does not call Brown’s raid “wrong”; that judgment appears in the separate Leavenworth speech. Preserve Lincoln’s partisan purpose of denying Republican responsibility.
 
 ### `criminal-fanatical-violence / nps-john-brown-memory`
 
-- Exact claim: The National Park Service series documents sharply opposed memory traditions, including portrayals of Brown as criminal, madman, fanatic, martyr, and freedom fighter.
-- Citation: National Park Service, Harpers Ferry National Historical Park interpretive article series.
+- Exact claim: The National Park Service series documents opposed memory traditions that portray Brown as either a hero or Christ-like martyr, or a lunatic, violent terrorist, or abolitionist who went too far.
+- Citation: National Park Service, “Remembering John Brown,” interpretive article series.
 - URL: https://www.nps.gov/articles/series.htm?id=2A8437AB-A9B8-9227-45218B70511C5831
-- Accessed: 2026-07-10
-- Verification note: confirm the series index still resolves and cite the specific articles that use or document each characterization.
+- Accessed: 2026-07-12
+- Verification note: the series introduction uses this exact contrast. It documents competing memory traditions and does not itself endorse either characterization.
 
 ## Cross-cutting unresolved items
 
-- Several DOI and JSTOR entries are represented from metadata or abstracts because the full text appeared restricted. None may be verified without full-text inspection.
-- The Hartmann/Eisen attribution attached to DOI `10.1515/opth-2020-0138` is unresolved and must be corrected.
-- Several article titles are deliberately described generically in the JSON rather than guessed. Replace them with complete verified titles, authors, volume/issue data, pages, and pinpoints.
-- Publisher pages for books establish that a work exists but do not establish the exact interpretive claim. Check the books themselves.
+- Complete user-supplied copies of Brink’s Mill’s Progressive Principles, Frank’s Downfall, Alperovitz’s The Decision to Use the Atomic Bomb, and Hasegawa’s Racing the Enemy have been inspected. A.G. Elrod confirmed university-library access to all four works on 2026-07-12. No priority-case access gap remains.
+- If Junia is selected, obtain full text for Belleville and Burer and Wallace. Wolters’s complete article has already been inspected.
+- If Locke is selected, obtain full text for van der Vossen, Layman, Drury, and Ince. Those records currently rest on publisher abstracts.
+- If John Brown is selected, obtain full text for Etcheson and the complete books by Reynolds and McGlone. Reynolds uniquely anchors the “morally justified terrorism” family; only his publisher interview has been inspected.
 - The older public-domain translations of Jerome and the Protoevangelium of James should be checked against modern critical translations.
 - The atomic-bomb and John Brown maps mix historical-causal and moral classifications. Verify that each source attests the specific mapped family and that the map does not collapse distinct claims.
 - Position labels are analytic groupings drafted for this prototype. Verification must assess both the source claim and the fairness of grouping it under the stated label.

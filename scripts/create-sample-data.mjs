@@ -38,7 +38,7 @@ const manifest = {
     capabilities: { tools: false, web_search: false, retrieval: false },
     policy: {
       temperature: { mode: "fixed", value: 0.2 },
-      visible_output_limit: { parameter: "max_tokens", value: 900 },
+      output_limit: { parameter: "max_tokens", value: 900 },
       reasoning: { mode: "provider-default", description: "Illustrative fixture" },
       provider_options: {},
     },

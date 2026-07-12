@@ -3,7 +3,7 @@ name = "concordance-generation-harness"
 version = "1.0.0"
 description = "Offline generation harness for the Concordance cached demo"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = ["certifi>=2025.1.31"]
 
 [tool.unittest]
 start-directory = "tests"

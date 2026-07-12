@@ -4,7 +4,7 @@
   "mapping_id": "case-b-sample-mapping",
   "question_id": "case-b",
   "run_id": "case-b-sample-run",
-  "run_file_sha256": "8604d7462ec39ef9bf834d0ef499b524954ffc898e749444bb9bee75d907471c",
+  "run_file_sha256": "435901cbf989d2d2d0bb046422c707d867770f778e0af4b633c8def0a8ec2fe8",
   "rubric_version": "sample-rubric-1",
   "assignments": [
     {

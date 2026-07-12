@@ -122,4 +122,42 @@ describe("dataset validation", () => {
     expect(issues.some((issue) => issue.includes("not author-verified"))).toBe(true);
     expect(issues).toContain("production: expected 64 successful cells, found 31");
   });
+
+  it("distinguishes the production total output ceiling from the visible target", () => {
+    const raw = rawFixture();
+    const manifest = raw.manifest as {
+      data_class: string;
+      models: Array<{
+        model_key: string;
+        provider: string;
+        requested_model_id: string;
+        route: string;
+        environment_variable: string;
+        policy: {
+          temperature: unknown;
+          output_limit: { parameter: string; value: number };
+        };
+      }>;
+    };
+    manifest.data_class = "research";
+    Object.assign(manifest.models[0], {
+      model_key: "gemini",
+      provider: "google",
+      requested_model_id: "gemini-3.1-pro-preview",
+      route: "google-direct",
+      environment_variable: "GOOGLE_API_KEY",
+    });
+    manifest.models[0].policy.temperature = {
+      mode: "provider-default",
+      reason: "Fixture",
+    };
+    manifest.models[0].policy.output_limit = {
+      parameter: "max_output_tokens",
+      value: 900,
+    };
+
+    expect(validationIssues(() => validateDataset(raw, { production: true }))).toContain(
+      "production: model gemini must use the approved 16,384-token total reasoning-and-answer output ceiling; the protocol separately keeps visible answers under 900 tokens",
+    );
+  });
 });

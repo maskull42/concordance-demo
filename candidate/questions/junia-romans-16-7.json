@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "content_version": "candidate-1.0.0",
+  "content_version": "candidate-1.1.0",
   "data_class": "research",
   "id": "junia-romans-16-7",
   "kind": "convergent",
@@ -18,8 +18,8 @@
     "status": "candidate",
     "pool_id": "concordance-pilot-pool",
     "pool_size": 6,
-    "rule_version": "pilot-rule-1",
-    "disclosure": "One of two precommitted convergence candidates. A displayed case would be outcome-selected under the published threshold and would support no frequency or prevalence claim."
+    "rule_version": "pilot-rule-2",
+    "disclosure": "One of two precommitted convergence candidates. A displayed case must meet the frozen threshold and is chosen by the published Rule 2 priority order; it supports no frequency or prevalence claim."
   },
   "prompt_variants": [
     {
@@ -65,9 +65,9 @@
           "id": "belleville-junia-apostle",
           "claim_supported": "Belleville argues on lexical and grammatical grounds for reading Junia as a woman included among the apostles.",
           "title": "ΙΟΥΝΙΑΝ … ΕΠΙΣΗΜΟΙ ΕΝ ΤΟΙΣ ΑΠΟΣΤΟΛΟΙΣ: A Re-examination of Romans 16.7 in Light of Primary Source Materials",
-          "citation": "Linda L. Belleville, New Testament Studies 51 (2005), DOI 10.1017/S0028688505000135.",
+          "citation": "Linda L. Belleville, “ΙΟΥΝΙΑΝ … ΕΠΙΣΗΜΟΙ ΕΝ ΤΟΙΣ ΑΠΟΣΤΟΛΟΙΣ: A Re-examination of Romans 16.7 in Light of Primary Source Materials,” New Testament Studies 51, no. 2 (2005): 231-249, DOI 10.1017/S0028688505000135.",
           "url": "https://doi.org/10.1017/S0028688505000135",
-          "accessed_at": "2026-07-10",
+          "accessed_at": "2026-07-12",
           "verification": {
             "status": "proposed",
             "verified_by": null,
@@ -77,10 +77,10 @@
         {
           "id": "hartmann-junia-translation",
           "claim_supported": "Hartmann surveys the textual and reception history and presents evidence for the feminine name Junia and the early inclusive reading.",
-          "title": "Junia: A Woman Lost in Translation",
-          "citation": "Ute E. Eisen/Hartmann source record to verify, Open Theology, DOI 10.1515/opth-2020-0138.",
+          "title": "Junia – A Woman Lost in Translation: The Name IOYNIAN in Romans 16:7 and its History of Interpretation",
+          "citation": "Andrea Hartmann, “Junia – A Woman Lost in Translation: The Name IOYNIAN in Romans 16:7 and its History of Interpretation,” Open Theology 6, no. 1 (2020): 646-660, DOI 10.1515/opth-2020-0138.",
           "url": "https://doi.org/10.1515/opth-2020-0138",
-          "accessed_at": "2026-07-10",
+          "accessed_at": "2026-07-12",
           "verification": {
             "status": "proposed",
             "verified_by": null,
@@ -104,9 +104,9 @@
           "id": "burer-wallace-junia",
           "claim_supported": "Burer and Wallace argue that Junia was a woman but that the construction means she and Andronicus were well known to the apostles.",
           "title": "Was Junia Really an Apostle? A Re-examination of Rom 16.7",
-          "citation": "Michael H. Burer and Daniel B. Wallace, New Testament Studies 47 (2001), DOI 10.1017/S0028688501000066.",
+          "citation": "Michael H. Burer and Daniel B. Wallace, “Was Junia Really an Apostle? A Re-examination of Rom 16.7,” New Testament Studies 47, no. 1 (2001): 76-91, DOI 10.1017/S0028688501000066.",
           "url": "https://doi.org/10.1017/S0028688501000066",
-          "accessed_at": "2026-07-10",
+          "accessed_at": "2026-07-12",
           "verification": {
             "status": "proposed",
             "verified_by": null,
@@ -124,15 +124,15 @@
       "id": "man-included-among-apostles",
       "label": "A man included among the apostles",
       "summary": "The name refers to a man, Junias, who is counted among the apostles.",
-      "attestation": "A masculine-name interpretation appeared in modern translations and scholarship; the cited Wolters article proposes a Hebrew masculine-name basis for the accusative form in Romans 16:7.",
+      "attestation": "Wolters proposes a Hebrew masculine-name basis for the accusative form and concludes that the evidence can tip the scales in favor of a male apostle, while calling the case plausible rather than decisive.",
       "sources": [
         {
           "id": "wolters-iounian",
-          "claim_supported": "Wolters argues that the form in Romans 16:7 may represent a masculine Hebrew name, supporting a male referent rather than the woman Junia.",
+          "claim_supported": "Wolters argues that the form may represent a masculine Hebrew name and concludes that the evidence can favor a male apostle, while calling the case plausible rather than decisive.",
           "title": "ΙΟΥΝΙΑΝ (Romans 16:7) and the Hebrew Name Yĕḥunnī",
-          "citation": "Albert M. Wolters, Journal of Biblical Literature, JSTOR 25610127.",
+          "citation": "Albert Wolters, “ΙΟΥΝΙΑΝ (Romans 16:7) and the Hebrew Name Yĕḥunnī,” Journal of Biblical Literature 127, no. 2 (Summer 2008): 397-408, JSTOR 25610127.",
           "url": "https://www.jstor.org/stable/25610127",
-          "accessed_at": "2026-07-10",
+          "accessed_at": "2026-07-12",
           "verification": {
             "status": "proposed",
             "verified_by": null,

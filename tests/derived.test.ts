@@ -70,4 +70,24 @@ describe("derived map semantics", () => {
 
     expect(sensitivityMovementCount(neutral, framed)).toBe(4);
   });
+
+  it("counts only distinct non-null primaries as sensitivity movement", () => {
+    const { run, mapping } = records("case-c");
+    const neutral = joinAssignments(run, mapping, "neutral", "answer");
+    const leftPrimaries = ["north-reading", null, "east-reading", null] as const;
+    const rightPrimaries = ["east-reading", "north-reading", null, null] as const;
+    const withPrimaries = (primaries: typeof leftPrimaries | typeof rightPrimaries) =>
+      neutral.map((entry, index) => ({
+        ...entry,
+        assignment: {
+          ...entry.assignment,
+          primary_endorsed: primaries[index],
+        },
+      }));
+    const left = withPrimaries(leftPrimaries);
+    const right = withPrimaries(rightPrimaries);
+
+    expect(sensitivityMovementCount(left, right)).toBe(1);
+    expect(sensitivityMovementCount(right, left)).toBe(1);
+  });
 });

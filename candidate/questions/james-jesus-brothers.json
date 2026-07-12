@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "content_version": "candidate-1.0.0",
+  "content_version": "candidate-1.1.0",
   "data_class": "research",
   "id": "james-jesus-brothers",
   "kind": "convergent",
@@ -18,8 +18,8 @@
     "status": "candidate",
     "pool_id": "concordance-pilot-pool",
     "pool_size": 6,
-    "rule_version": "pilot-rule-1",
-    "disclosure": "One of two precommitted convergence candidates. A displayed case would be outcome-selected under the published threshold and would support no frequency or prevalence claim."
+    "rule_version": "pilot-rule-2",
+    "disclosure": "One of two precommitted convergence candidates. A displayed case must meet the frozen threshold and is chosen by the published Rule 2 priority order; it supports no frequency or prevalence claim."
   },
   "prompt_variants": [
     {
@@ -30,10 +30,10 @@
   ],
   "position_map": [
     {
-      "id": "younger-biological-siblings",
-      "label": "Younger biological siblings",
-      "summary": "Children subsequently born to Mary and Joseph; technically maternal half-siblings if virginal conception assumed.",
-      "attestation": "The ordinary sibling reading is represented in the cited New Testament passages, in the position attributed to Helvidius by Jerome, and in modern historical-critical argument represented here provisionally by John P. Meier.",
+      "id": "biological-siblings",
+      "label": "Biological siblings",
+      "summary": "The named brothers and sisters were Jesus’s biological siblings, the classic Helvidian reading, without using the historical claim to establish their birth order.",
+      "attestation": "The ordinary sibling reading is represented in the cited New Testament passages and in the position attributed to Helvidius by Jerome. John P. Meier considers true siblings the most probable historical conclusion while explicitly bracketing faith and later church teaching.",
       "sources": [
         {
           "id": "mark-six-usccb",
@@ -63,11 +63,11 @@
         },
         {
           "id": "meier-brothers-sisters",
-          "claim_supported": "Meier surveys the principal kinship interpretations and argues that the biological-sibling reading is historically most probable.",
+          "claim_supported": "Meier surveys the three classic kinship interpretations and concludes that the true-siblings reading is the most probable historical judgment when faith and later church teaching are bracketed, while denying that the evidence yields absolute certainty.",
           "title": "The Brothers and Sisters of Jesus in Ecumenical Perspective",
-          "citation": "John P. Meier, “The Brothers and Sisters of Jesus in Ecumenical Perspective,” Catholic Biblical Quarterly 54 (1992), JSTOR 43720810.",
+          "citation": "John P. Meier, “The Brothers and Sisters of Jesus in Ecumenical Perspective,” The Catholic Biblical Quarterly 54, no. 1 (January 1992): 1-28, esp. 26, JSTOR 43720810.",
           "url": "https://www.jstor.org/stable/43720810",
-          "accessed_at": "2026-07-10",
+          "accessed_at": "2026-07-12",
           "verification": {
             "status": "proposed",
             "verified_by": null,
@@ -84,12 +84,12 @@
     {
       "id": "josephs-earlier-children",
       "label": "Joseph’s children from an earlier marriage",
-      "summary": "Joseph’s children from earlier marriage, stepbrothers.",
-      "attestation": "The early Protoevangelium of James depicts Joseph as already having sons, and the cited modern article defends this Epiphanian or stepbrother interpretation.",
+      "summary": "The named brothers and sisters were Joseph’s children from an earlier marriage, the classic Epiphanian reading.",
+      "attestation": "The early Protoevangelium of James depicts Joseph as already having sons. Richard Bauckham argues for this Epiphanian interpretation but concludes that the question remains more open than Meier allows, not that the evidence settles it conclusively.",
       "sources": [
         {
           "id": "protoevangelium-james",
-          "claim_supported": "The Protoevangelium of James presents Joseph as an older widower who already has sons, attesting an early stepbrother tradition.",
+          "claim_supported": "The Protoevangelium of James presents Joseph as an older man who already has sons, attesting an early stepbrother tradition.",
           "title": "The Protevangelium of James",
           "citation": "The Protevangelium of James, trans. M. R. James, public-domain English translation hosted by Early Christian Writings.",
           "url": "https://www.earlychristianwritings.com/text/infancyjames-mrjames.html",
@@ -102,11 +102,11 @@
         },
         {
           "id": "bauckham-epiphanian-response",
-          "claim_supported": "Bauckham defends the Epiphanian interpretation that Jesus’s brothers were Joseph’s children from an earlier marriage.",
+          "claim_supported": "Bauckham argues for the Epiphanian interpretation, presents it as the serious alternative to the Helvidian reading, and concludes that the choice between them must remain more open than Meier allows.",
           "title": "The Brothers and Sisters of Jesus: An Epiphanian Response to John P. Meier",
-          "citation": "Richard Bauckham, “The Brothers and Sisters of Jesus: An Epiphanian Response to John P. Meier,” Catholic Biblical Quarterly 56 (1994), JSTOR 43721789.",
+          "citation": "Richard Bauckham, “The Brothers and Sisters of Jesus: An Epiphanian Response to John P. Meier,” The Catholic Biblical Quarterly 56, no. 4 (October 1994): 686-700, esp. 686-687, 700, JSTOR 43721789.",
           "url": "https://www.jstor.org/stable/43721789",
-          "accessed_at": "2026-07-10",
+          "accessed_at": "2026-07-12",
           "verification": {
             "status": "proposed",
             "verified_by": null,

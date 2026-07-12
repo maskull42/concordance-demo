@@ -24,7 +24,7 @@
           "mode": "fixed",
           "value": 0.2
         },
-        "visible_output_limit": {
+        "output_limit": {
           "parameter": "max_tokens",
           "value": 900
         },
@@ -65,7 +65,7 @@
           "mode": "fixed",
           "value": 0.2
         },
-        "visible_output_limit": {
+        "output_limit": {
           "parameter": "max_tokens",
           "value": 900
         },
@@ -106,7 +106,7 @@
           "mode": "fixed",
           "value": 0.2
         },
-        "visible_output_limit": {
+        "output_limit": {
           "parameter": "max_tokens",
           "value": 900
         },
@@ -147,7 +147,7 @@
           "mode": "fixed",
           "value": 0.2
         },
-        "visible_output_limit": {
+        "output_limit": {
           "parameter": "max_tokens",
           "value": 900
         },

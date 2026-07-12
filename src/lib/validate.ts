@@ -310,12 +310,15 @@ function validateProduction(
       ) {
         issues.push(`production: model ${key} temperature policy differs from the approved panel`);
       }
-      const expectedOutputParameter = key === "gemini" ? "max_output_tokens" : "max_tokens";
+      const expectedOutputParameter =
+        key === "gemini" || key === "grok" ? "max_output_tokens" : "max_tokens";
       if (
-        model.policy.visible_output_limit.parameter !== expectedOutputParameter ||
-        model.policy.visible_output_limit.value !== 900
+        model.policy.output_limit.parameter !== expectedOutputParameter ||
+        model.policy.output_limit.value !== 16_384
       ) {
-        issues.push(`production: model ${key} must use the approved 900-token visible output cap`);
+        issues.push(
+          `production: model ${key} must use the approved 16,384-token total reasoning-and-answer output ceiling; the protocol separately keeps visible answers under 900 tokens`,
+        );
       }
     }
   }
@@ -326,10 +329,21 @@ function validateProduction(
     !isJsonRecord(openRouterProvider) ||
     JSON.stringify(openRouterProvider.only) !== JSON.stringify(["openai"]) ||
     openRouterProvider.allow_fallbacks !== false ||
-    openRouterProvider.require_parameters !== true
+    openRouterProvider.require_parameters !== true ||
+    gpt?.policy.provider_options.service_tier !== "default"
   ) {
     issues.push(
-      "production: GPT OpenRouter route must pin only openai, disable fallbacks, and require parameters",
+      "production: GPT OpenRouter route must pin only openai, disable fallbacks, require parameters, and use the default service tier",
+    );
+  }
+
+  const grok = manifest.models.find((model) => model.model_key === "grok");
+  if (
+    grok?.policy.provider_options.store !== false ||
+    grok.policy.provider_options.service_tier !== "default"
+  ) {
+    issues.push(
+      "production: Grok xAI route must disable storage and use the default service tier",
     );
   }
 

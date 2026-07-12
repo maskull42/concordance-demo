@@ -16,6 +16,7 @@ from concordance_harness.execution import (
     BudgetExceeded,
     ExecutionOptions,
     HarnessRunner,
+    billed_output_tokens,
 )
 from concordance_harness.planner import build_plan, load_questions
 from concordance_harness.util import prompt_sha256, sanitize
@@ -32,7 +33,17 @@ class ExecutionTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         root = repository_root()
         loaded = load_harness_config(root / "harness/config/models.json")
-        fast_model = replace(loaded.by_key()["cohere"], requests_per_second=100_000.0)
+        cls.models = loaded.by_key()
+        cohere = loaded.by_key()["cohere"]
+        fast_model = replace(
+            cohere,
+            requests_per_second=100_000.0,
+            planning_pricing={
+                **cohere.planning_pricing,
+                "input_per_million": 1.0,
+                "output_per_million": 1.0,
+            },
+        )
         cls.config = HarnessConfig(
             path=loaded.path,
             config_version=loaded.config_version,
@@ -184,6 +195,26 @@ class ExecutionTests(unittest.TestCase):
         self.assertEqual(budget.attempts, 1)
         self.assertAlmostEqual(budget.reserved_cost_usd, one_attempt)
         self.assertEqual(len(transport.requests), 1)
+
+    def test_gemini_thought_tokens_are_added_only_to_separate_google_output(
+        self,
+    ) -> None:
+        usage = {
+            "input_tokens": 100,
+            "output_tokens": 20,
+            "reasoning_tokens": 30,
+            "cache_read_tokens": None,
+            "cache_write_tokens": None,
+            "total_tokens": 150,
+        }
+        self.assertEqual(
+            billed_output_tokens(self.models["gemini"], usage, "Answer"), 50
+        )
+        for model_key in ("claude", "cohere", "gpt", "grok"):
+            with self.subTest(model_key=model_key):
+                self.assertEqual(
+                    billed_output_tokens(self.models[model_key], usage, "Answer"), 20
+                )
 
     def test_resume_skips_success_and_force_replaces_it(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

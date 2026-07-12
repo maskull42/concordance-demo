@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://concordance.local/schemas/pilot-lock-1.0.0.json",
+  "title": "Concordance Rule 2 private-pilot lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "pool_id",
+    "pool_size",
+    "rule_version",
+    "content_version",
+    "pool_document",
+    "mapping_rubric",
+    "protocol",
+    "candidates"
+  ],
+  "properties": {
+    "schema_version": { "const": "pilot-lock-1.0.0" },
+    "pool_id": { "const": "concordance-pilot-pool" },
+    "pool_size": { "const": 6 },
+    "rule_version": { "const": "pilot-rule-2" },
+    "content_version": { "const": "candidate-1.1.0" },
+    "pool_document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "const": "candidate/PILOT_POOL.md" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "mapping_rubric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "const": "candidate/MAPPING_RUBRIC.md" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "protocol": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "protocol_version", "sha256"],
+      "properties": {
+        "path": { "const": "config/protocol.json" },
+        "protocol_version": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/candidate",
+          "properties": {
+            "id": { "const": "james-jesus-brothers" },
+            "kind": { "const": "convergent" },
+            "role": { "const": "priority" },
+            "path": { "const": "candidate/questions/james-jesus-brothers.json" }
+          }
+        },
+        {
+          "$ref": "#/$defs/candidate",
+          "properties": {
+            "id": { "const": "junia-romans-16-7" },
+            "kind": { "const": "convergent" },
+            "role": { "const": "fallback" },
+            "path": { "const": "candidate/questions/junia-romans-16-7.json" }
+          }
+        },
+        {
+          "$ref": "#/$defs/candidate",
+          "properties": {
+            "id": { "const": "mill-harm-principle" },
+            "kind": { "const": "divergent" },
+            "role": { "const": "priority" },
+            "path": { "const": "candidate/questions/mill-harm-principle.json" }
+          }
+        },
+        {
+          "$ref": "#/$defs/candidate",
+          "properties": {
+            "id": { "const": "locke-money-property" },
+            "kind": { "const": "divergent" },
+            "role": { "const": "fallback" },
+            "path": { "const": "candidate/questions/locke-money-property.json" }
+          }
+        },
+        {
+          "$ref": "#/$defs/candidate",
+          "properties": {
+            "id": { "const": "atomic-bombs-pacific-war" },
+            "kind": { "const": "prompt-sensitive" },
+            "role": { "const": "priority" },
+            "path": { "const": "candidate/questions/atomic-bombs-pacific-war.json" }
+          }
+        },
+        {
+          "$ref": "#/$defs/candidate",
+          "properties": {
+            "id": { "const": "john-brown-harpers-ferry" },
+            "kind": { "const": "prompt-sensitive" },
+            "role": { "const": "fallback" },
+            "path": { "const": "candidate/questions/john-brown-harpers-ferry.json" }
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "role", "path", "sha256"],
+      "properties": {
+        "id": { "type": "string" },
+        "kind": {
+          "enum": ["convergent", "divergent", "prompt-sensitive"]
+        },
+        "role": { "enum": ["priority", "fallback"] },
+        "path": { "type": "string" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    }
+  }
+}

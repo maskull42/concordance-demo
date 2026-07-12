@@ -101,7 +101,7 @@ function Receipt({ model, view }: { model: ModelViewState; view: CaseViewModel }
                   <Meta label="Cost" value={`$${cell.cost.usd.toFixed(6)} (${cell.cost.source})`} />
                   <Meta label="Pricing date" value={cell.cost.pricing_as_of} />
                 </dl>
-                <RawText label="Raw provider text — unedited" text={cell.response_text} />
+                <RawText label="Raw provider text: unedited" text={cell.response_text} />
               </>
             ) : (
               <div className="receipt-error" role="note">
@@ -159,7 +159,7 @@ function MappingReceipt({
   const mapping = model.assignment;
   return (
     <section className="mapping-receipt">
-      <p className="receipt-label">Human-authored mapping — separate from provider text</p>
+      <p className="receipt-label">Human-authored mapping, separate from provider text</p>
       {mapping ? (
         <dl className="receipt-metadata receipt-metadata--compact">
           <Meta label="Mapping ID" value={view.mapping.mapping_id} code />
