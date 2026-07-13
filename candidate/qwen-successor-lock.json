@@ -733,7 +733,7 @@
     },
     {
       "path": "harness/run_qwen_successor.py",
-      "sha256": "0a552dff314e1f17e5f048f63ac029430f07f62769950b3962b355c61e5959fe"
+      "sha256": "6d3dd0a8f659340053f574f3665e1aeace7a0fa342aac04ef60d77d156a7b147"
     },
     {
       "path": "harness/run_rule3.py",
