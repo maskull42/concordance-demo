@@ -1,0 +1,736 @@
+{
+  "schema_version": "concordance-rule3-recovery-lock-1.0.0",
+  "status": "immutable-successor-recovery-lock-no-spending-authorized",
+  "recovery_id": "cohere-v2-model-id-1",
+  "pool_id": "concordance-divergence-supplement-1",
+  "rule_version": "pilot-rule-3",
+  "candidate_id": "galatians-pistis-christou",
+  "phase": "priority",
+  "private_root": ".pilot/concordance-recovery/cohere-v2-model-id-1",
+  "bindings": {
+    "lock_schema": {
+      "path": "candidate/concordance-recovery-lock.schema.json",
+      "sha256": "7b74cc3dc9c6ab8e729761a132fb8b94c6e4a367a380c713cc6b6e7f332d0a87"
+    },
+    "parent_lock": {
+      "path": "candidate/rule3-lock.json",
+      "sha256": "8f4daf2ae53d07c7c53fc3f38d3ccd11aa18420185db632467fc9c280be523cc"
+    }
+  },
+  "parent": {
+    "git_head": "3f77bf7456a94d18fe2d0d0780a8d0602b4b486b",
+    "lock_schema_version": "rule3-lock-1.0.0",
+    "lock_sha256": "8f4daf2ae53d07c7c53fc3f38d3ccd11aa18420185db632467fc9c280be523cc",
+    "priority_plan_sha256": "c1cdda59dcda1331344a8bc10188913dfcaa06a62f74cc3344fe1f2edb5f6c94",
+    "public_bound_path_count": 34,
+    "public_bound_paths_sha256": "955f43d16bc6e878020e9e98858602c2974bc88e6ce5c08a7f0aa2a36717d08c",
+    "private_root": ".pilot/rule3/concordance-divergence-supplement-1",
+    "private_bindings": [
+      {
+        "path": "budget/intents/galatians-pistis-christou/claude/attempt-1.json",
+        "sha256": "bfb84f1367209b52b1490459d1a1ab079fab15ca5a5059177002372ca5a78101"
+      },
+      {
+        "path": "budget/intents/galatians-pistis-christou/cohere/attempt-1.json",
+        "sha256": "ee2b4d0b0c3ae1eaa0ea694f6ae04b158766012e9d6fec6ba938f7f352182bb9"
+      },
+      {
+        "path": "budget/intents/galatians-pistis-christou/gemini/attempt-1.json",
+        "sha256": "c1a828b4be8d8909ce23d64f7128b85b176f020f1f564418d07b7454daaf128c"
+      },
+      {
+        "path": "manifests/galatians-pistis-christou.json",
+        "sha256": "7dedec143467eebd3e489515cdb23686bd011aa5ae663999a5bc9ceafc37c135"
+      },
+      {
+        "path": "outcomes/galatians-pistis-christou/claude/attempt-1.json",
+        "sha256": "30d1481e3cd12946dcfede4e15984ed2fa3969aeff41e12af2666dafc833f41b"
+      },
+      {
+        "path": "outcomes/galatians-pistis-christou/gemini/attempt-1.json",
+        "sha256": "dc0a96587db718f2014f6e17631447dbafa6970ff5e379f1f29965c63f0dc0e1"
+      },
+      {
+        "path": "paid-authorization.json",
+        "sha256": "30ecdca710d05786bff0b07f632d9208016a605983078d30d27f9547dc5186c1"
+      },
+      {
+        "path": "preflight/intents/galatians-pistis-christou/claude/attempt-1.json",
+        "sha256": "a2e7d2de1d8b6b05c19362a07f78f58448d868e949d329592605f138b66acb4a"
+      },
+      {
+        "path": "preflight/intents/galatians-pistis-christou/cohere/attempt-1.json",
+        "sha256": "f132e2061486d7c38a11aef170026a16873daf9191aee6638c083b269bc60b7c"
+      },
+      {
+        "path": "preflight/intents/galatians-pistis-christou/deepseek/attempt-1.json",
+        "sha256": "507f9ae5a5061c2beef4d969cc9f4093b1d5f9000fa95f6d75a4ffc59349fcd4"
+      },
+      {
+        "path": "preflight/intents/galatians-pistis-christou/gemini/attempt-1.json",
+        "sha256": "289c13ea0c0128401a07095bb339be490cac91805784fbeedbaf11a799dfbb4c"
+      },
+      {
+        "path": "preflight/intents/galatians-pistis-christou/gpt/attempt-1.json",
+        "sha256": "564288ff9cf8a3a3a5aae789cfc71c783b7780c293dfcf744509109cec35548c"
+      },
+      {
+        "path": "preflight/intents/galatians-pistis-christou/grok/attempt-1.json",
+        "sha256": "665df8d9f8ef0bd3114ce31b8359ce46c1f7e7cdf3d18210a207c5f7d1cd3569"
+      },
+      {
+        "path": "preflight/intents/galatians-pistis-christou/mistral/attempt-1.json",
+        "sha256": "34c0bb2c81f5b3d6dd73f915fe6ded905c006356d81a5df0713be5c5d661301a"
+      },
+      {
+        "path": "preflight/intents/galatians-pistis-christou/qwen/attempt-1.json",
+        "sha256": "d10e4690fa59a7b6540dc0633994e237cfe3e4184373af25b5b63bf3635b78a8"
+      },
+      {
+        "path": "preflight/outcomes/galatians-pistis-christou/claude/attempt-1.json",
+        "sha256": "ed1d59ca52451a231f9c5347c94426e40af5ea2e5ed69253e9b55e3b8ff73f26"
+      },
+      {
+        "path": "preflight/outcomes/galatians-pistis-christou/cohere/attempt-1.json",
+        "sha256": "c31894629d425b5036236091656830000da4a692ee130078ad86cb802426064e"
+      },
+      {
+        "path": "preflight/outcomes/galatians-pistis-christou/deepseek/attempt-1.json",
+        "sha256": "8a7b3ef5ef88e23deddbbc12807f08e79a48d667bb263e39343939441bd1fcec"
+      },
+      {
+        "path": "preflight/outcomes/galatians-pistis-christou/gemini/attempt-1.json",
+        "sha256": "12abb1eaa6e7e40db42d6a16d6a732f1137a8f08275b20e6895264eccac1b4e9"
+      },
+      {
+        "path": "preflight/outcomes/galatians-pistis-christou/gpt/attempt-1.json",
+        "sha256": "4ee748319a84be5c9d35e65d1abc3e8332b511774cb2667661479d03aa13eda5"
+      },
+      {
+        "path": "preflight/outcomes/galatians-pistis-christou/grok/attempt-1.json",
+        "sha256": "f8d56a543c7344fb4e174f7c13286b0190388d248b098ba8406ae2b8ab6d52d9"
+      },
+      {
+        "path": "preflight/outcomes/galatians-pistis-christou/mistral/attempt-1.json",
+        "sha256": "04e13ea8bda72092000a0a66c20539f6cf258883039c63b5aa3e754dbe327dab"
+      },
+      {
+        "path": "preflight/outcomes/galatians-pistis-christou/qwen/attempt-1.json",
+        "sha256": "8a04e394e0b5dc7c144935d45cf87c551e80b4de058eafb66eac79804d1ed534"
+      },
+      {
+        "path": "pricing-evidence.json",
+        "sha256": "918e7e904ad3ba13eeb077ec44d0cb34722f2ff9c11d24941d2da6e729cff49a"
+      },
+      {
+        "path": "pricing-recheck.json",
+        "sha256": "285d2624ac3f636e58a25646a1fd255266f9c6d6b03e1c13ba9d4294fbc79483"
+      }
+    ],
+    "private_binding_count": 25,
+    "private_receipts": {
+      "paid_authorization": {
+        "path": "paid-authorization.json",
+        "sha256": "30ecdca710d05786bff0b07f632d9208016a605983078d30d27f9547dc5186c1"
+      },
+      "pricing_evidence": {
+        "path": "pricing-evidence.json",
+        "sha256": "918e7e904ad3ba13eeb077ec44d0cb34722f2ff9c11d24941d2da6e729cff49a"
+      },
+      "pricing_recheck": {
+        "path": "pricing-recheck.json",
+        "sha256": "285d2624ac3f636e58a25646a1fd255266f9c6d6b03e1c13ba9d4294fbc79483"
+      },
+      "model_manifest": {
+        "path": "manifests/galatians-pistis-christou.json",
+        "sha256": "7dedec143467eebd3e489515cdb23686bd011aa5ae663999a5bc9ceafc37c135"
+      }
+    },
+    "private_inventory": {
+      "preflight_intent_paths": [
+        "preflight/intents/galatians-pistis-christou/gemini/attempt-1.json",
+        "preflight/intents/galatians-pistis-christou/claude/attempt-1.json",
+        "preflight/intents/galatians-pistis-christou/cohere/attempt-1.json",
+        "preflight/intents/galatians-pistis-christou/qwen/attempt-1.json",
+        "preflight/intents/galatians-pistis-christou/deepseek/attempt-1.json",
+        "preflight/intents/galatians-pistis-christou/mistral/attempt-1.json",
+        "preflight/intents/galatians-pistis-christou/grok/attempt-1.json",
+        "preflight/intents/galatians-pistis-christou/gpt/attempt-1.json"
+      ],
+      "preflight_outcome_paths": [
+        "preflight/outcomes/galatians-pistis-christou/gemini/attempt-1.json",
+        "preflight/outcomes/galatians-pistis-christou/claude/attempt-1.json",
+        "preflight/outcomes/galatians-pistis-christou/cohere/attempt-1.json",
+        "preflight/outcomes/galatians-pistis-christou/qwen/attempt-1.json",
+        "preflight/outcomes/galatians-pistis-christou/deepseek/attempt-1.json",
+        "preflight/outcomes/galatians-pistis-christou/mistral/attempt-1.json",
+        "preflight/outcomes/galatians-pistis-christou/grok/attempt-1.json",
+        "preflight/outcomes/galatians-pistis-christou/gpt/attempt-1.json"
+      ],
+      "generation_intent_paths": [
+        "budget/intents/galatians-pistis-christou/gemini/attempt-1.json",
+        "budget/intents/galatians-pistis-christou/claude/attempt-1.json",
+        "budget/intents/galatians-pistis-christou/cohere/attempt-1.json"
+      ],
+      "generation_outcome_paths": [
+        "outcomes/galatians-pistis-christou/gemini/attempt-1.json",
+        "outcomes/galatians-pistis-christou/claude/attempt-1.json"
+      ],
+      "required_absent_before_recovery": [
+        "outcomes/galatians-pistis-christou/cohere/attempt-1.json",
+        "runs/galatians-pistis-christou.json"
+      ],
+      "concurrency_lock_paths": [
+        "budget/.reservation.lock",
+        "execution-locks/galatians-pistis-christou.lock"
+      ],
+      "exact_complete_parent_tree_required": true,
+      "untouched_generation_model_keys": [
+        "qwen",
+        "deepseek",
+        "mistral",
+        "grok",
+        "gpt"
+      ],
+      "untouched_generation_state_required_absent": true
+    }
+  },
+  "defect": {
+    "code": "cohere-v2-generation-model-id-absent-validator-mismatch",
+    "durable_state": "generation-intent-without-usable-outcome",
+    "provider_response_text_recovered": false,
+    "original_intent_may_have_reached_provider": true,
+    "original_intent_must_never_be_replayed": true,
+    "recovery_rule": "one-authorized-semantic-attempt-two-replacement"
+  },
+  "preserved_successes": [
+    {
+      "model_key": "gemini",
+      "intent_path": "budget/intents/galatians-pistis-christou/gemini/attempt-1.json",
+      "intent_sha256": "c1a828b4be8d8909ce23d64f7128b85b176f020f1f564418d07b7454daaf128c",
+      "outcome_path": "outcomes/galatians-pistis-christou/gemini/attempt-1.json",
+      "outcome_sha256": "dc0a96587db718f2014f6e17631447dbafa6970ff5e379f1f29965c63f0dc0e1",
+      "response_sha256": "e28a4290cd45152287bc415368cbefff4e6dca9e33d429a86fabd37c8b68de0e",
+      "semantic_attempt_number": 1,
+      "reserved_cost_microdollars": 197012,
+      "actual_estimate_microdollars": 34676
+    },
+    {
+      "model_key": "claude",
+      "intent_path": "budget/intents/galatians-pistis-christou/claude/attempt-1.json",
+      "intent_sha256": "bfb84f1367209b52b1490459d1a1ab079fab15ca5a5059177002372ca5a78101",
+      "outcome_path": "outcomes/galatians-pistis-christou/claude/attempt-1.json",
+      "outcome_sha256": "30d1481e3cd12946dcfede4e15984ed2fa3969aeff41e12af2666dafc833f41b",
+      "response_sha256": "ed9f71cf839d90cc54b0a53282c99e546d7bea79d9a05ae3ed4926f74386ded2",
+      "semantic_attempt_number": 1,
+      "reserved_cost_microdollars": 821220,
+      "actual_estimate_microdollars": 131580
+    }
+  ],
+  "stranded_cohere": {
+    "model_key": "cohere",
+    "cell_id": "galatians-pistis-christou:cohere:default:answer",
+    "intent_path": "budget/intents/galatians-pistis-christou/cohere/attempt-1.json",
+    "intent_sha256": "ee2b4d0b0c3ae1eaa0ea694f6ae04b158766012e9d6fec6ba938f7f352182bb9",
+    "expected_outcome_path": "outcomes/galatians-pistis-christou/cohere/attempt-1.json",
+    "expected_outcome_required_absent": true,
+    "semantic_attempt_number": 1,
+    "reserved_cost_microdollars": 0,
+    "disposition": "consumed-no-usable-outcome-authorized-single-replacement"
+  },
+  "target_plan": {
+    "model_order": [
+      "cohere",
+      "qwen",
+      "deepseek",
+      "mistral",
+      "grok",
+      "gpt"
+    ],
+    "cell_count": 6,
+    "cells": [
+      {
+        "ordinal": 1,
+        "model_key": "cohere",
+        "cell_id": "galatians-pistis-christou:cohere:default:answer",
+        "semantic_attempt_start": 2,
+        "maximum_generation_posts": 1,
+        "reserved_cost_microdollars_per_post": 0,
+        "preflight_attempts": 3,
+        "fresh_preflight_required_before_any_generation": true,
+        "identity_mode": "request-body-plus-fresh-preflight-generation-id-optional",
+        "requested_model_id": "command-a-plus-05-2026",
+        "provider": "cohere",
+        "route": "cohere-direct",
+        "environment_variable": "COHERE_API_KEY",
+        "api_style": "cohere",
+        "base_url": "https://api.cohere.com",
+        "generation_path": "/v2/chat",
+        "metadata_path": "/v1/models/{model}",
+        "metadata_mode": "single",
+        "auth_kind": "bearer",
+        "fallback_allowed": false,
+        "parent_cell_contract_sha256": "17c4eb456c9d295653449528d90bbf2c4cb77f926bfb2711e4f25366df8ae372"
+      },
+      {
+        "ordinal": 2,
+        "model_key": "qwen",
+        "cell_id": "galatians-pistis-christou:qwen:default:answer",
+        "semantic_attempt_start": 1,
+        "maximum_generation_posts": 3,
+        "reserved_cost_microdollars_per_post": 49243,
+        "preflight_attempts": 3,
+        "fresh_preflight_required_before_any_generation": true,
+        "identity_mode": "generation-returned-id-plus-fresh-preflight",
+        "requested_model_id": "Qwen/Qwen3.5-397B-A17B",
+        "provider": "deepinfra",
+        "route": "deepinfra",
+        "environment_variable": "DEEPINFRA_API_KEY",
+        "api_style": "openai",
+        "base_url": "https://api.deepinfra.com",
+        "generation_path": "/v1/openai/chat/completions",
+        "metadata_path": "/v1/models",
+        "metadata_mode": "list",
+        "auth_kind": "bearer",
+        "fallback_allowed": false,
+        "parent_cell_contract_sha256": "b881465046332aca1b386a9330145409f67b11fedf6218075bdd799684e39118"
+      },
+      {
+        "ordinal": 3,
+        "model_key": "deepseek",
+        "cell_id": "galatians-pistis-christou:deepseek:default:answer",
+        "semantic_attempt_start": 1,
+        "maximum_generation_posts": 3,
+        "reserved_cost_microdollars_per_post": 14342,
+        "preflight_attempts": 3,
+        "fresh_preflight_required_before_any_generation": true,
+        "identity_mode": "generation-returned-id-plus-fresh-preflight",
+        "requested_model_id": "deepseek-v4-pro",
+        "provider": "deepseek",
+        "route": "deepseek-direct",
+        "environment_variable": "DEEPSEEK_API_KEY",
+        "api_style": "openai",
+        "base_url": "https://api.deepseek.com",
+        "generation_path": "/chat/completions",
+        "metadata_path": "/models",
+        "metadata_mode": "list",
+        "auth_kind": "bearer",
+        "fallback_allowed": false,
+        "parent_cell_contract_sha256": "36fe984a1fe3cac4aa3e7b71eb18ebf8d71dfd01c5da3734316177028d3b3a52"
+      },
+      {
+        "ordinal": 4,
+        "model_key": "mistral",
+        "cell_id": "galatians-pistis-christou:mistral:default:answer",
+        "semantic_attempt_start": 1,
+        "maximum_generation_posts": 3,
+        "reserved_cost_microdollars_per_post": 24677,
+        "preflight_attempts": 3,
+        "fresh_preflight_required_before_any_generation": true,
+        "identity_mode": "generation-returned-id-plus-fresh-preflight",
+        "requested_model_id": "mistral-large-2512",
+        "provider": "mistral",
+        "route": "mistral-direct",
+        "environment_variable": "MISTRAL_API_KEY",
+        "api_style": "openai",
+        "base_url": "https://api.mistral.ai",
+        "generation_path": "/v1/chat/completions",
+        "metadata_path": "/v1/models/{model}",
+        "metadata_mode": "single",
+        "auth_kind": "bearer",
+        "fallback_allowed": false,
+        "parent_cell_contract_sha256": "3d82bcebb00c9a2812b596b9fa9edf34ce54f6ea431ad2f6848c1aa8cdd14db4"
+      },
+      {
+        "ordinal": 5,
+        "model_key": "grok",
+        "cell_id": "galatians-pistis-christou:grok:default:answer",
+        "semantic_attempt_start": 1,
+        "maximum_generation_posts": 3,
+        "reserved_cost_microdollars_per_post": 98708,
+        "preflight_attempts": 3,
+        "fresh_preflight_required_before_any_generation": true,
+        "identity_mode": "generation-returned-id-plus-fresh-preflight",
+        "requested_model_id": "grok-4.5",
+        "provider": "xai",
+        "route": "xai-direct",
+        "environment_variable": "XAI_API_KEY",
+        "api_style": "xai-responses",
+        "base_url": "https://api.x.ai",
+        "generation_path": "/v1/responses",
+        "metadata_path": "/v1/models/{model}",
+        "metadata_mode": "single",
+        "auth_kind": "bearer",
+        "fallback_allowed": false,
+        "parent_cell_contract_sha256": "c4b409dcddf76eb4b85d3972a59f0b82a1887d94cd17ba67f205361e35bb56f5"
+      },
+      {
+        "ordinal": 6,
+        "model_key": "gpt",
+        "cell_id": "galatians-pistis-christou:gpt:default:answer",
+        "semantic_attempt_start": 1,
+        "maximum_generation_posts": 3,
+        "reserved_cost_microdollars_per_post": 492530,
+        "preflight_attempts": 3,
+        "fresh_preflight_required_before_any_generation": true,
+        "identity_mode": "generation-returned-id-plus-fresh-preflight",
+        "requested_model_id": "openai/gpt-5.6-sol",
+        "provider": "openrouter",
+        "route": "openrouter-openai-pinned",
+        "environment_variable": "OPENROUTER_API_KEY",
+        "api_style": "openai",
+        "base_url": "https://openrouter.ai",
+        "generation_path": "/api/v1/chat/completions",
+        "metadata_path": "/api/v1/models/{model}/endpoints",
+        "metadata_mode": "openrouter-endpoints",
+        "auth_kind": "bearer",
+        "fallback_allowed": false,
+        "parent_cell_contract_sha256": "9c8471bf07545e917f76dcb2e3aa96e434af1f383d822395800071fbce9959b1"
+      }
+    ],
+    "plan_sha256": "24c64a792940c30c071101db1ed36c49b1f97546aa34d50e7f29677c1db1e199"
+  },
+  "preflight_policy": {
+    "model_keys": [
+      "cohere",
+      "qwen",
+      "deepseek",
+      "mistral",
+      "grok",
+      "gpt"
+    ],
+    "authenticated": true,
+    "fresh": true,
+    "all_six_successes_required_before_generation": true,
+    "maximum_attempts_per_model": 3,
+    "maximum_requests": 18,
+    "intent_before_request": true,
+    "raw_response_before_validation": true,
+    "exact_model_identity_required": true,
+    "fallback_allowed": false
+  },
+  "generation_policy": {
+    "model_keys": [
+      "cohere",
+      "qwen",
+      "deepseek",
+      "mistral",
+      "grok",
+      "gpt"
+    ],
+    "cohere_semantic_attempt_number": 2,
+    "cohere_maximum_replacement_posts": 1,
+    "cross_recovery_claim_root": ".pilot/concordance-recovery/claims",
+    "cross_recovery_claim_key": "ee2b4d0b0c3ae1eaa0ea694f6ae04b158766012e9d6fec6ba938f7f352182bb9",
+    "cohere_generation_model_id_may_be_null_only_with_fresh_preflight": true,
+    "untouched_model_keys": [
+      "qwen",
+      "deepseek",
+      "mistral",
+      "grok",
+      "gpt"
+    ],
+    "untouched_maximum_safe_attempts_per_cell": 3,
+    "maximum_posts": 16,
+    "intent_before_post": true,
+    "raw_response_before_validation": true,
+    "ambiguous_post_without_capture_is_terminal": true,
+    "captured_response_without_outcome_finishes_offline": true,
+    "preserved_model_generation_forbidden": [
+      "gemini",
+      "claude"
+    ],
+    "output_token_cap": 16384,
+    "tools_enabled": false,
+    "web_search_enabled": false,
+    "retrieval_enabled": false
+  },
+  "budget": {
+    "parent_reserved_microdollars": 1018232,
+    "per_post_reserved_microdollars": {
+      "cohere": 0,
+      "qwen": 49243,
+      "deepseek": 14342,
+      "mistral": 24677,
+      "grok": 98708,
+      "gpt": 492530
+    },
+    "new_recovery_reserved_cap_microdollars": 2038500,
+    "combined_priority_reserved_cap_microdollars": 3056732,
+    "candidate_cap_microdollars": 6000000,
+    "pool_cap_microdollars": 12000000
+  },
+  "network_policy": {
+    "preflight_method": "GET",
+    "generation_method": "POST",
+    "maximum_preflight_requests": 18,
+    "maximum_generation_posts": 16,
+    "maximum_outbound_requests": 34,
+    "generation_order": [
+      "cohere",
+      "qwen",
+      "deepseek",
+      "mistral",
+      "grok",
+      "gpt"
+    ],
+    "cohere_success_required_before_untouched_generation": true,
+    "fallback_network_access_allowed": false
+  },
+  "state_transition_contract": {
+    "initial_state": "locked-awaiting-recovery-authorization-and-pricing",
+    "transitions": [
+      {
+        "from": "locked-awaiting-recovery-authorization-and-pricing",
+        "event": "exact-authorization-and-fresh-pricing-validated",
+        "to": "recovery-ready"
+      },
+      {
+        "from": "recovery-ready",
+        "event": "six-fresh-authenticated-preflights-complete",
+        "to": "cohere-replacement-ready"
+      },
+      {
+        "from": "cohere-replacement-ready",
+        "event": "cohere-semantic-attempt-two-success",
+        "to": "untouched-five-ready"
+      },
+      {
+        "from": "cohere-replacement-ready",
+        "event": "cohere-single-replacement-not-successful",
+        "to": "terminal-recovery-incomplete"
+      },
+      {
+        "from": "untouched-five-ready",
+        "event": "five-untouched-successes-complete",
+        "to": "priority-eight-successes-complete"
+      },
+      {
+        "from": "untouched-five-ready",
+        "event": "safe-attempts-exhausted-before-five-successes",
+        "to": "terminal-recovery-incomplete"
+      },
+      {
+        "from": "priority-eight-successes-complete",
+        "event": "composite-receipt-sealed",
+        "to": "priority-awaiting-blind-review"
+      }
+    ],
+    "terminal_states": [
+      "terminal-recovery-incomplete",
+      "priority-awaiting-blind-review"
+    ],
+    "fallback_execution_allowed": false,
+    "third_candidate_allowed": false
+  },
+  "paid_authorization": {
+    "required": true,
+    "separate_from_lock": true,
+    "lock_authorizes_spending": false,
+    "receipt_must_bind": [
+      "recovery_lock_sha256",
+      "git_head",
+      "parent_lock_sha256",
+      "parent_authorization_sha256"
+    ],
+    "exact_statement": "A.G. Elrod authorizes this exact committed Concordance Rule 3 successor recovery lock for one private recovery run: preserve the sealed Gemini and Claude successes; treat the original Cohere generation intent as consumed and unusable; authenticate and freshly preflight exactly Cohere, Qwen, DeepSeek, Mistral, Grok, and GPT before any generation; make at most one replacement Cohere generation; only after it succeeds, continue Qwen, DeepSeek, Mistral, Grok, and GPT with no more than three safe attempts per untouched cell; make no Gemini or Claude generation call; do not run the fallback or a third candidate; retain the original $6.00 candidate and $12.00 pool reserved-cost caps; and use no tools, web search, or retrieval.",
+    "exact_statement_sha256": "9cb0237affcf753d7ababa8845349ae088162eb16efecaff6b6f371ca9cacc27",
+    "scope": {
+      "recovery_id": "cohere-v2-model-id-1",
+      "pool_id": "concordance-divergence-supplement-1",
+      "candidate_id": "galatians-pistis-christou",
+      "phase": "priority",
+      "private_root": ".pilot/concordance-recovery/cohere-v2-model-id-1",
+      "claim_root": ".pilot/concordance-recovery/claims",
+      "preserved_model_keys": [
+        "gemini",
+        "claude"
+      ],
+      "target_model_keys": [
+        "cohere",
+        "qwen",
+        "deepseek",
+        "mistral",
+        "grok",
+        "gpt"
+      ],
+      "fresh_preflight_model_keys": [
+        "cohere",
+        "qwen",
+        "deepseek",
+        "mistral",
+        "grok",
+        "gpt"
+      ],
+      "preflight_attempts_per_model": 3,
+      "cohere_semantic_attempt_number": 2,
+      "cohere_maximum_replacement_posts": 1,
+      "untouched_maximum_safe_attempts_per_cell": 3,
+      "parent_reserved_microdollars": 1018232,
+      "new_reserved_cap_microdollars": 2038500,
+      "combined_reserved_cap_microdollars": 3056732,
+      "candidate_reserved_cap_microdollars": 6000000,
+      "pool_reserved_cap_microdollars": 12000000,
+      "fallback_allowed": false,
+      "third_candidate_allowed": false,
+      "tools_enabled": false,
+      "web_search_enabled": false,
+      "retrieval_enabled": false
+    },
+    "immediate_official_pricing_recheck_required": true
+  },
+  "execution_sources": [
+    {
+      "path": "harness/authorize_concordance_recovery.py",
+      "sha256": "e7b2c94e37f6435db1e9fbf4b8ce45b32775bebda555e2a7539caff82b1f1c4f"
+    },
+    {
+      "path": "harness/authorize_rule3.py",
+      "sha256": "e2b0d8f9826fd8d187cb2b35b4ee6969b4842a7eb19790f978121d8c55017853"
+    },
+    {
+      "path": "harness/concordance_harness/__init__.py",
+      "sha256": "91a769d5f0f18268e8cccb07fe239195169a7b8de904286ea4a420da44312c6e"
+    },
+    {
+      "path": "harness/concordance_harness/config.py",
+      "sha256": "558a6acfb5f88a96861a087807a8d1fae5511fd50b2929ce60b49bbffca5c89d"
+    },
+    {
+      "path": "harness/concordance_harness/execution.py",
+      "sha256": "d48fb0c2ba4f32e4b01236f1498ee180fa2bc1a61c457224edc6a5e400123d9d"
+    },
+    {
+      "path": "harness/concordance_harness/pilot_lock.py",
+      "sha256": "6f44d43230b7e46b8d62b7207ba36f7ab27c23a4d2b513ca78c4d235da0ded7e"
+    },
+    {
+      "path": "harness/concordance_harness/planner.py",
+      "sha256": "9b60992c0cdfd9727cf1141a7bc73875614263377897424491c876199a227698"
+    },
+    {
+      "path": "harness/concordance_harness/providers.py",
+      "sha256": "0cd290762f2be33d738b640320d52498d81595590cc7b1efc82381a96830bb9a"
+    },
+    {
+      "path": "harness/concordance_harness/util.py",
+      "sha256": "fa9f45770ba270f0950443e248f89faba86b9c3e9b5c2715000efaedb13e3993"
+    },
+    {
+      "path": "harness/concordance_recovery/__init__.py",
+      "sha256": "c21982b5bf436b0cdeab22c199647dc6d185e0d542d315f482593f49e9067feb"
+    },
+    {
+      "path": "harness/concordance_recovery/authorization.py",
+      "sha256": "b9d2b3cd810a756876f2619ba9a4e50a0e8c57ee2ca1ff2be10c7b2ca2886c8f"
+    },
+    {
+      "path": "harness/concordance_recovery/composite.py",
+      "sha256": "00014c7f97681d80cbdba49bfafb6d04431986ba1c8e91d41badfdf422b0f990"
+    },
+    {
+      "path": "harness/concordance_recovery/contract.py",
+      "sha256": "2685c4f432745fc1d380a0d3b9ed1a10ee18f77be952f4cbc3586061d8a6dac7"
+    },
+    {
+      "path": "harness/concordance_recovery/execute.py",
+      "sha256": "87beb72ca20ffd81f0b5971b3c1bf95695f4f1406dd9ead0feaa0fcbc4c73679"
+    },
+    {
+      "path": "harness/concordance_recovery/journal.py",
+      "sha256": "f1488f919eae3dbd78f6f411499cd2e68ca17f08ce95cae71274f7cd9583b130"
+    },
+    {
+      "path": "harness/concordance_recovery/lock.py",
+      "sha256": "835fad7cdf366a89eec37cd68a7bad434e58c95cbd6d0318086513b23f33960d"
+    },
+    {
+      "path": "harness/concordance_recovery/parent.py",
+      "sha256": "0ea6432f7454f5231b09cb0efe19249d1f285ee597b8c21ea405094039e28804"
+    },
+    {
+      "path": "harness/concordance_recovery/state.py",
+      "sha256": "17ec3342a702d41eb719e7533c04878a23fdff7bcaffffddd4da797238c29fa1"
+    },
+    {
+      "path": "harness/concordance_recovery/transport.py",
+      "sha256": "92aff7bc7721444a26020d666559cf0c511c1ded2425889b1ac8ad96fb57991e"
+    },
+    {
+      "path": "harness/create_concordance_recovery_lock.py",
+      "sha256": "7e985524ee1fed0be841c4cea9d252885b233e5141ee766e81acb0f82dec3e46"
+    },
+    {
+      "path": "harness/create_rule3_lock.py",
+      "sha256": "ccf334c669cfbe6bfa8ea112211276f9c48f0198d72c4b6eea952e99941b0ccc"
+    },
+    {
+      "path": "harness/evaluate_rule3.py",
+      "sha256": "ac65f580417f703af071297c40cd0196614e29871c22056c106fc9ecf3eaeef2"
+    },
+    {
+      "path": "harness/finalize_rule3_review.py",
+      "sha256": "aa1318e342ca1ca07a6578f31741150d3db840709003b886461384b72a9e2bc9"
+    },
+    {
+      "path": "harness/prepare_rule3_review.py",
+      "sha256": "c71c7e78453693df487491bfa52728569ae6c3d56a60e31cb95fd6ee790c1931"
+    },
+    {
+      "path": "harness/private_directory_publication.py",
+      "sha256": "ac2bfd0247eebfe039054b137e97f464d3fe98bc280ba07c2f3935c2ae1d18aa"
+    },
+    {
+      "path": "harness/review_concordance_recovery.py",
+      "sha256": "3b2fef4a8521705fc6400ce622bf4d4cbe605851cf96c7ee2a1c9974a79ef615"
+    },
+    {
+      "path": "harness/rule3/__init__.py",
+      "sha256": "61700c646ab70275e8845beba22baf60af5c24d508fc89f3ff8e683a7548d253"
+    },
+    {
+      "path": "harness/rule3/authorization.py",
+      "sha256": "a27d3bada1b1792bc88a04fb88c2780f01c6f5b600bbe56ed89448d78823230f"
+    },
+    {
+      "path": "harness/rule3/budget.py",
+      "sha256": "49e5b48bf373658420a30ebd34d0b5503381f642d8b4de4568805fbdcf01bfbc"
+    },
+    {
+      "path": "harness/rule3/contract.py",
+      "sha256": "58f153824e488e8fc196815ff0b6098c3350dc5c047e674b18c9fa9ce1e048ac"
+    },
+    {
+      "path": "harness/rule3/evaluate.py",
+      "sha256": "990b95583cfbae9ba2b855cb484a4216b477368c81d6f42046c54d46b591ce0a"
+    },
+    {
+      "path": "harness/rule3/execute.py",
+      "sha256": "6bdc0cb535ac37acc68abe6eb496256bc00948cb844bd47bb4d302885108718d"
+    },
+    {
+      "path": "harness/rule3/lock.py",
+      "sha256": "429e1c471431a4cabfd309cd2580efb1533e5588d08a3dd70680dd912868e0ee"
+    },
+    {
+      "path": "harness/rule3/review.py",
+      "sha256": "0aed54f76c1a99ec6a10311415c0e45ecb1f9acfa9ddc1b1b86b13cf8b208a01"
+    },
+    {
+      "path": "harness/rule3/review_assets/review.css",
+      "sha256": "728f25df5e61d7708a0f85b7e6accbc42304f9e9904976e0099ea3b2bdc5600b"
+    },
+    {
+      "path": "harness/rule3/review_assets/review.js",
+      "sha256": "f0bbed8d7438a6b47c79a02ef1fb6105b4e2b3ff739a716aef6d81c07a531c59"
+    },
+    {
+      "path": "harness/run_concordance_recovery.py",
+      "sha256": "ec01f5edc92831c3be426210143047df2a00659e21d274939d3d96740a962c89"
+    },
+    {
+      "path": "harness/run_rule3.py",
+      "sha256": "8f36a7296e23a9a8a6fe5fb756983a820effafc3419636ec05a29e6ad8a14ba3"
+    }
+  ]
+}

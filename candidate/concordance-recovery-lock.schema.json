@@ -1,0 +1,449 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "concordance-rule3-recovery-lock-1.0.0",
+  "title": "Concordance Rule 3 successor recovery lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "recovery_id",
+    "pool_id",
+    "rule_version",
+    "candidate_id",
+    "phase",
+    "private_root",
+    "bindings",
+    "parent",
+    "defect",
+    "preserved_successes",
+    "stranded_cohere",
+    "target_plan",
+    "preflight_policy",
+    "generation_policy",
+    "budget",
+    "network_policy",
+    "state_transition_contract",
+    "paid_authorization",
+    "execution_sources"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "concordance-rule3-recovery-lock-1.0.0"
+    },
+    "status": {
+      "const": "immutable-successor-recovery-lock-no-spending-authorized"
+    },
+    "recovery_id": { "const": "cohere-v2-model-id-1" },
+    "pool_id": { "const": "concordance-divergence-supplement-1" },
+    "rule_version": { "const": "pilot-rule-3" },
+    "candidate_id": { "const": "galatians-pistis-christou" },
+    "phase": { "const": "priority" },
+    "private_root": {
+      "const": ".pilot/concordance-recovery/cohere-v2-model-id-1"
+    },
+    "bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lock_schema", "parent_lock"],
+      "properties": {
+        "lock_schema": { "$ref": "#/$defs/binding" },
+        "parent_lock": { "$ref": "#/$defs/binding" }
+      }
+    },
+    "parent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "git_head",
+        "lock_schema_version",
+        "lock_sha256",
+        "priority_plan_sha256",
+        "public_bound_path_count",
+        "public_bound_paths_sha256",
+        "private_root",
+        "private_bindings",
+        "private_binding_count",
+        "private_receipts",
+        "private_inventory"
+      ],
+      "properties": {
+        "git_head": { "const": "3f77bf7456a94d18fe2d0d0780a8d0602b4b486b" },
+        "lock_schema_version": { "const": "rule3-lock-1.0.0" },
+        "lock_sha256": {
+          "const": "8f4daf2ae53d07c7c53fc3f38d3ccd11aa18420185db632467fc9c280be523cc"
+        },
+        "priority_plan_sha256": {
+          "const": "c1cdda59dcda1331344a8bc10188913dfcaa06a62f74cc3344fe1f2edb5f6c94"
+        },
+        "public_bound_path_count": { "type": "integer", "minimum": 1 },
+        "public_bound_paths_sha256": { "$ref": "#/$defs/sha256" },
+        "private_root": {
+          "const": ".pilot/rule3/concordance-divergence-supplement-1"
+        },
+        "private_bindings": {
+          "type": "array",
+          "minItems": 25,
+          "maxItems": 25,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/binding" }
+        },
+        "private_binding_count": { "const": 25 },
+        "private_receipts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "paid_authorization",
+            "pricing_evidence",
+            "pricing_recheck",
+            "model_manifest"
+          ],
+          "properties": {
+            "paid_authorization": { "$ref": "#/$defs/binding" },
+            "pricing_evidence": { "$ref": "#/$defs/binding" },
+            "pricing_recheck": { "$ref": "#/$defs/binding" },
+            "model_manifest": { "$ref": "#/$defs/binding" }
+          }
+        },
+        "private_inventory": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "preflight_intent_paths",
+            "preflight_outcome_paths",
+            "generation_intent_paths",
+            "generation_outcome_paths",
+            "required_absent_before_recovery",
+            "concurrency_lock_paths",
+            "exact_complete_parent_tree_required",
+            "untouched_generation_model_keys",
+            "untouched_generation_state_required_absent"
+          ],
+          "properties": {
+            "preflight_intent_paths": {
+              "type": "array",
+              "minItems": 8,
+              "maxItems": 8,
+              "items": { "$ref": "#/$defs/path" },
+              "uniqueItems": true
+            },
+            "preflight_outcome_paths": {
+              "type": "array",
+              "minItems": 8,
+              "maxItems": 8,
+              "items": { "$ref": "#/$defs/path" },
+              "uniqueItems": true
+            },
+            "generation_intent_paths": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": { "$ref": "#/$defs/path" },
+              "uniqueItems": true
+            },
+            "generation_outcome_paths": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": { "$ref": "#/$defs/path" },
+              "uniqueItems": true
+            },
+            "required_absent_before_recovery": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": { "$ref": "#/$defs/path" },
+              "uniqueItems": true
+            },
+            "concurrency_lock_paths": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": { "$ref": "#/$defs/path" },
+              "uniqueItems": true
+            },
+            "exact_complete_parent_tree_required": { "const": true },
+            "untouched_generation_model_keys": {
+              "$ref": "#/$defs/untouchedModelOrder"
+            },
+            "untouched_generation_state_required_absent": { "const": true }
+          }
+        }
+      }
+    },
+    "defect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "durable_state",
+        "provider_response_text_recovered",
+        "original_intent_may_have_reached_provider",
+        "original_intent_must_never_be_replayed",
+        "recovery_rule"
+      ],
+      "properties": {
+        "code": { "const": "cohere-v2-generation-model-id-absent-validator-mismatch" },
+        "durable_state": { "const": "generation-intent-without-usable-outcome" },
+        "provider_response_text_recovered": { "const": false },
+        "original_intent_may_have_reached_provider": { "const": true },
+        "original_intent_must_never_be_replayed": { "const": true },
+        "recovery_rule": { "const": "one-authorized-semantic-attempt-two-replacement" }
+      }
+    },
+    "preserved_successes": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        { "$ref": "#/$defs/preservedSuccess" },
+        { "$ref": "#/$defs/preservedSuccess" }
+      ],
+      "items": false
+    },
+    "stranded_cohere": { "$ref": "#/$defs/strandedCohere" },
+    "target_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model_order", "cell_count", "cells", "plan_sha256"],
+      "properties": {
+        "model_order": { "$ref": "#/$defs/targetModelOrder" },
+        "cell_count": { "const": 6 },
+        "cells": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": { "$ref": "#/$defs/targetCell" }
+        },
+        "plan_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "preflight_policy": { "$ref": "#/$defs/policyObject" },
+    "generation_policy": { "$ref": "#/$defs/policyObject" },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parent_reserved_microdollars",
+        "per_post_reserved_microdollars",
+        "new_recovery_reserved_cap_microdollars",
+        "combined_priority_reserved_cap_microdollars",
+        "candidate_cap_microdollars",
+        "pool_cap_microdollars"
+      ],
+      "properties": {
+        "parent_reserved_microdollars": { "const": 1018232 },
+        "per_post_reserved_microdollars": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["cohere", "qwen", "deepseek", "mistral", "grok", "gpt"],
+          "properties": {
+            "cohere": { "const": 0 },
+            "qwen": { "const": 49243 },
+            "deepseek": { "const": 14342 },
+            "mistral": { "const": 24677 },
+            "grok": { "const": 98708 },
+            "gpt": { "const": 492530 }
+          }
+        },
+        "new_recovery_reserved_cap_microdollars": { "const": 2038500 },
+        "combined_priority_reserved_cap_microdollars": { "const": 3056732 },
+        "candidate_cap_microdollars": { "const": 6000000 },
+        "pool_cap_microdollars": { "const": 12000000 }
+      }
+    },
+    "network_policy": { "$ref": "#/$defs/policyObject" },
+    "state_transition_contract": { "$ref": "#/$defs/policyObject" },
+    "paid_authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "separate_from_lock",
+        "lock_authorizes_spending",
+        "receipt_must_bind",
+        "exact_statement",
+        "exact_statement_sha256",
+        "scope",
+        "immediate_official_pricing_recheck_required"
+      ],
+      "properties": {
+        "required": { "const": true },
+        "separate_from_lock": { "const": true },
+        "lock_authorizes_spending": { "const": false },
+        "receipt_must_bind": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "exact_statement": { "type": "string", "minLength": 200 },
+        "exact_statement_sha256": { "$ref": "#/$defs/sha256" },
+        "scope": { "$ref": "#/$defs/policyObject" },
+        "immediate_official_pricing_recheck_required": { "const": true }
+      }
+    },
+    "execution_sources": {
+      "type": "array",
+      "minItems": 28,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/binding" }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "$ref": "#/$defs/path" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "preservedSuccess": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_key",
+        "intent_path",
+        "intent_sha256",
+        "outcome_path",
+        "outcome_sha256",
+        "response_sha256",
+        "semantic_attempt_number",
+        "reserved_cost_microdollars",
+        "actual_estimate_microdollars"
+      ],
+      "properties": {
+        "model_key": { "enum": ["gemini", "claude"] },
+        "intent_path": { "$ref": "#/$defs/path" },
+        "intent_sha256": { "$ref": "#/$defs/sha256" },
+        "outcome_path": { "$ref": "#/$defs/path" },
+        "outcome_sha256": { "$ref": "#/$defs/sha256" },
+        "response_sha256": { "$ref": "#/$defs/sha256" },
+        "semantic_attempt_number": { "const": 1 },
+        "reserved_cost_microdollars": { "type": "integer", "minimum": 0 },
+        "actual_estimate_microdollars": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "strandedCohere": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_key",
+        "cell_id",
+        "intent_path",
+        "intent_sha256",
+        "expected_outcome_path",
+        "expected_outcome_required_absent",
+        "semantic_attempt_number",
+        "reserved_cost_microdollars",
+        "disposition"
+      ],
+      "properties": {
+        "model_key": { "const": "cohere" },
+        "cell_id": { "const": "galatians-pistis-christou:cohere:default:answer" },
+        "intent_path": { "$ref": "#/$defs/path" },
+        "intent_sha256": { "$ref": "#/$defs/sha256" },
+        "expected_outcome_path": { "$ref": "#/$defs/path" },
+        "expected_outcome_required_absent": { "const": true },
+        "semantic_attempt_number": { "const": 1 },
+        "reserved_cost_microdollars": { "const": 0 },
+        "disposition": { "const": "consumed-no-usable-outcome-authorized-single-replacement" }
+      }
+    },
+    "targetCell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ordinal",
+        "model_key",
+        "cell_id",
+        "semantic_attempt_start",
+        "maximum_generation_posts",
+        "reserved_cost_microdollars_per_post",
+        "preflight_attempts",
+        "fresh_preflight_required_before_any_generation",
+        "identity_mode",
+        "requested_model_id",
+        "provider",
+        "route",
+        "environment_variable",
+        "api_style",
+        "base_url",
+        "generation_path",
+        "metadata_path",
+        "metadata_mode",
+        "auth_kind",
+        "fallback_allowed",
+        "parent_cell_contract_sha256"
+      ],
+      "properties": {
+        "ordinal": { "type": "integer", "minimum": 1, "maximum": 6 },
+        "model_key": {
+          "enum": ["cohere", "qwen", "deepseek", "mistral", "grok", "gpt"]
+        },
+        "cell_id": { "type": "string", "minLength": 1 },
+        "semantic_attempt_start": { "type": "integer", "minimum": 1, "maximum": 2 },
+        "maximum_generation_posts": { "type": "integer", "minimum": 1, "maximum": 3 },
+        "reserved_cost_microdollars_per_post": { "type": "integer", "minimum": 0 },
+        "preflight_attempts": { "const": 3 },
+        "fresh_preflight_required_before_any_generation": { "const": true },
+        "identity_mode": { "type": "string", "minLength": 1 },
+        "requested_model_id": { "type": "string", "minLength": 1 },
+        "provider": { "type": "string", "minLength": 1 },
+        "route": { "type": "string", "minLength": 1 },
+        "environment_variable": { "type": "string", "minLength": 1 },
+        "api_style": { "type": "string", "minLength": 1 },
+        "base_url": { "type": "string", "format": "uri" },
+        "generation_path": { "type": "string", "minLength": 1 },
+        "metadata_path": { "type": "string", "minLength": 1 },
+        "metadata_mode": { "type": "string", "minLength": 1 },
+        "auth_kind": { "type": "string", "minLength": 1 },
+        "fallback_allowed": { "const": false },
+        "parent_cell_contract_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "targetModelOrder": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "prefixItems": [
+        { "const": "cohere" },
+        { "const": "qwen" },
+        { "const": "deepseek" },
+        { "const": "mistral" },
+        { "const": "grok" },
+        { "const": "gpt" }
+      ],
+      "items": false
+    },
+    "untouchedModelOrder": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "prefixItems": [
+        { "const": "qwen" },
+        { "const": "deepseek" },
+        { "const": "mistral" },
+        { "const": "grok" },
+        { "const": "gpt" }
+      ],
+      "items": false
+    },
+    "policyObject": {
+      "type": "object",
+      "minProperties": 1
+    }
+  }
+}
