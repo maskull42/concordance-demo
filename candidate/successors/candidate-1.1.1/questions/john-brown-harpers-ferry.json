@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "candidate-1.1.1",
+  "data_class": "research",
+  "id": "john-brown-harpers-ferry",
+  "kind": "prompt-sensitive",
+  "domain": "moral-historical-interpretation",
+  "title": "John Brown’s raid on Harpers Ferry",
+  "premise": "How should historians morally and politically characterize John Brown’s 1859 raid on Harpers Ferry?",
+  "context_note": "The two prompts hold the raid constant while foregrounding either slavery and resistance or Brown’s coercive methods and intended campaign. The map distinguishes moral judgment from analytical classification because labels such as terrorism, insurrection, and revolutionary resistance can overlap; it is provisional and non-exhaustive.",
+  "what_this_shows": [
+    "If the precommitted prompt-sensitivity threshold is met, this candidate can illustrate changes in sampled primary characterizations when only the framing of the question changes."
+  ],
+  "what_this_does_not_show": [
+    "It does not determine a neutral frame, settle Brown’s moral status, erase disagreement over the definition of terrorism, reveal why a model changed, or measure behavior beyond these sampled answers."
+  ],
+  "selection": {
+    "status": "selected",
+    "pool_id": "concordance-pilot-pool",
+    "pool_size": 6,
+    "rule_version": "pilot-rule-2",
+    "disclosure": "Selected as the fallback prompt-sensitivity case under the published Rule 2 priority order after the priority case failed the frozen prompt-sensitivity threshold. This selected case supports no frequency or prevalence claim."
+  },
+  "prompt_variants": [
+    {
+      "id": "slavery-and-resistance-frame",
+      "label": "Slavery and resistance frame",
+      "user_prompt": "Given the violence of chattel slavery and Brown’s experience of proslavery violence in Bleeding Kansas, how should historians morally and politically characterize his 1859 raid on Harpers Ferry? State the best-supported characterization and explain the decisive considerations."
+    },
+    {
+      "id": "methods-and-violence-frame",
+      "label": "Methods and violence frame",
+      "user_prompt": "Given Brown’s seizure of a federal armory, hostage-taking, use of lethal force, and plan to extend armed liberation raids into slaveholding territory, how should historians morally and politically characterize his 1859 raid on Harpers Ferry? State the best-supported characterization and explain the decisive considerations."
+    }
+  ],
+  "position_map": [
+    {
+      "id": "justified-revolutionary-resistance",
+      "label": "Justified revolutionary resistance",
+      "summary": "The raid was morally justified revolutionary resistance to slavery, even if it failed strategically.",
+      "attestation": "Brown’s courtroom address presents his acts as an effort to free enslaved people in obedience to moral law; Frederick Douglass’s retrospective memorial address condemns slavery and treats Brown’s defeat as a catalytic blow against it.",
+      "sources": [
+        {
+          "id": "brown-court-address",
+          "claim_supported": "Brown said his object was freeing enslaved people, denied intending murder, treason, property destruction, or slave insurrection, and invoked the Golden Rule and Hebrews 13:3.",
+          "title": "Address of John Brown to the Virginia Court",
+          "citation": "John Brown, “Address of John Brown to the Virginia Court, when about to receive the sentence of death,” broadside printed by C. C. Mead (Boston, 1859), Library of Congress Printed Ephemera Collection, rbpe.06500500.",
+          "url": "https://www.loc.gov/resource/rbpe.06500500/",
+          "accessed_at": "2026-07-12",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "douglass-john-brown",
+          "claim_supported": "Douglass’s retrospective address portrays Brown’s failed raid as a morally serious action that advanced the destruction of slavery.",
+          "title": "John Brown: An Address by Frederick Douglass",
+          "citation": "Frederick Douglass, John Brown: An Address by Frederick Douglass, at the Fourteenth Anniversary of Storer College, Harper’s Ferry, West Virginia, May 30, 1881 (Dover, NH: Morning Star Job Printing House, 1881), especially 7-8 and 28, Library of Congress.",
+          "url": "https://www.loc.gov/item/07012896/",
+          "accessed_at": "2026-07-12",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "morally-justified-terrorism",
+      "label": "Morally justified terrorism",
+      "summary": "The raid can be classified as terrorism while still being judged morally justified by its antislavery purpose.",
+      "attestation": "Reynolds explicitly applies “good terrorism” to Pottawatomie. More broadly, he characterizes Brown’s Kansas and Virginia violence as antislavery terrorism, includes Harpers Ferry within that campaign, and morally distinguishes Brown from indiscriminate modern terrorists because slavery was an exceptionally grave injustice.",
+      "sources": [
+        {
+          "id": "reynolds-john-brown",
+          "claim_supported": "Reynolds explicitly applies “good terrorism” to Pottawatomie. More broadly, he characterizes Brown’s Kansas and Virginia violence as antislavery terrorism, includes Harpers Ferry within that campaign, and morally distinguishes Brown from indiscriminate modern terrorists because slavery was an exceptionally grave injustice.",
+          "title": "John Brown, Abolitionist: The Man Who Killed Slavery, Sparked the Civil War, and Seeded Civil Rights",
+          "citation": "David S. Reynolds, John Brown, Abolitionist: The Man Who Killed Slavery, Sparked the Civil War, and Seeded Civil Rights (New York: Alfred A. Knopf, 2005; Vintage paperback, 2006), especially 8-11, 165-166, and 500-506; revised Knopf Doubleday ebook, 2009.",
+          "url": "https://www.penguinrandomhouse.com/books/140728/john-brown-abolitionist-by-david-s-reynolds/",
+          "accessed_at": "2026-07-12",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "guerrilla-or-insurrection-not-terrorism",
+      "label": "Guerrilla action or insurrection, not terrorism",
+      "summary": "The raid was an armed insurrection or guerrilla action against slavery, not terrorism in the analytically relevant sense.",
+      "attestation": "Paul Finkelman explicitly argues that Brown did not act like a terrorist and instead describes his violence as guerrilla warfare and revolutionary action, while acknowledging Brown’s violence, failed leadership, and incompetent tactics. Nicole Etcheson gives guerrilla warfare analytical primacy over terrorism while acknowledging terrorist tactics and elements at Harpers Ferry. Brown’s provisional constitution supplies primary evidence of an organized political project.",
+      "sources": [
+        {
+          "id": "finkelman-look-back-john-brown",
+          "claim_supported": "Finkelman explicitly argues that Brown did not act like a terrorist and instead characterizes his violence as guerrilla warfare or revolutionary action, while also calling the Harpers Ferry raid foolish, poorly designed, and incompetently implemented.",
+          "title": "A Look Back at John Brown",
+          "citation": "Paul Finkelman, “A Look Back at John Brown,” Prologue 43, no. 1 (Spring 2011), U.S. National Archives.",
+          "url": "https://www.archives.gov/publications/prologue/2011/spring/brown.html",
+          "accessed_at": "2026-07-12",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "etcheson-john-brown-terrorist",
+          "claim_supported": "Etcheson argues that interpreting Brown as an American terrorist is a misreading and situates him instead within guerrilla warfare and revolutionary antislavery, while acknowledging that he used terrorist tactics.",
+          "title": "John Brown, Terrorist?",
+          "citation": "Nicole Etcheson, “John Brown, Terrorist?,” American Nineteenth Century History 10, no. 1 (March 2009): 29-48, especially 29, 32, and 35-41, DOI 10.1080/14664650802299735.",
+          "url": "https://doi.org/10.1080/14664650802299735",
+          "accessed_at": "2026-07-12",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "brown-provisional-constitution",
+          "claim_supported": "Brown’s provisional constitution supplies evidence of an organized political and military project intended to oppose slavery beyond the armory seizure itself.",
+          "title": "Report of the Select Committee on the Harper’s Ferry Invasion, including the Provisional Constitution",
+          "citation": "U.S. Senate, Select Committee on the Harper’s Ferry Invasion, Report No. 278, 36th Congress, 1st Session, June 15, 1860, appendix no. 3, “Provisional Constitution and Ordinances for the People of the United States,” 48-59.",
+          "url": "https://www.senate.gov/artandhistory/history/resources/pdf/HarpersFerryInvestigation1860.pdf",
+          "accessed_at": "2026-07-12",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "just-cause-wrong-or-reckless-means",
+      "label": "Just cause, wrongful or reckless means",
+      "summary": "Brown’s antislavery cause was just, but the raid’s coercive methods, planning, or foreseeable consequences were wrongful or reckless.",
+      "attestation": "In his Leavenworth speech, Abraham Lincoln said Brown shared the correct judgment that slavery was wrong but that this could not excuse violence, bloodshed, and treason. McGlone reconstructs Brown’s evolving aims, planning, operational choices, and social context and argues that the raid was principally a political and propagandistic act whose goals conflicted with tactical success. McGlone informs judgments about means and feasibility but does not itself supply a moral verdict.",
+      "sources": [
+        {
+          "id": "lincoln-leavenworth",
+          "claim_supported": "Lincoln said Brown agreed that slavery was wrong but that this did not excuse violence, bloodshed, and treason.",
+          "title": "Report of Speech at Leavenworth, Kansas",
+          "citation": "Abraham Lincoln, speech at Leavenworth, Kansas, December 3, 1859, reported in the Daily Illinois State Journal, December 12, 1859, transcript hosted by the Lincoln Presidential Foundation.",
+          "url": "https://www.lincolnpresidential.org/Resources/1e946379-b956-44dd-9871-e5cb2b2b60ff/Report%20of%20Speech%20Leavenworth%20KS.pdf",
+          "accessed_at": "2026-07-12",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "mcglone-john-browns-war",
+          "claim_supported": "McGlone reconstructs Brown’s evolving aims, planning, operational choices, and social context. He argues that the raid was principally a political and propagandistic act whose goals conflicted with tactical success. The work informs judgments about means and feasibility but does not itself supply a moral verdict.",
+          "title": "John Brown’s War against Slavery",
+          "citation": "Robert E. McGlone, John Brown’s War against Slavery (Cambridge: Cambridge University Press, 2009), especially 7-13, 220-225, 239-249, 258-281, and 293-306.",
+          "url": "https://assets.cambridge.org/97805215/14439/excerpt/9780521514439_excerpt.pdf",
+          "accessed_at": "2026-07-12",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "criminal-fanatical-violence",
+      "label": "Fanatical or terrorist violence",
+      "summary": "The raid was an absurd or fanatical act of political violence and has been remembered as violent terrorism rather than legitimate resistance.",
+      "attestation": "At Cooper Union, Abraham Lincoln denied Republican responsibility, described Brown as an enthusiast who imagined himself divinely commissioned, called the attempt absurd, and compared it to attempts to assassinate rulers. The National Park Service documents the opposed memory of Brown as either a hero or Christ-like martyr, or a lunatic, violent terrorist, or abolitionist who went too far.",
+      "sources": [
+        {
+          "id": "lincoln-cooper-union",
+          "claim_supported": "Lincoln denied Republican responsibility for Harpers Ferry, described Brown as an enthusiast who imagined himself divinely commissioned, called the attempt absurd, and compared it to attempts to assassinate rulers.",
+          "title": "Cooper Union Address",
+          "citation": "Abraham Lincoln, Cooper Union Address, February 27, 1860, National Park Service transcript.",
+          "url": "https://home.nps.gov/liho/learn/historyculture/cooperunionaddress.htm",
+          "accessed_at": "2026-07-12",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "nps-john-brown-memory",
+          "claim_supported": "The National Park Service series documents opposed memory traditions that portray Brown as either a hero or Christ-like martyr, or a lunatic, violent terrorist, or abolitionist who went too far.",
+          "title": "Remembering John Brown",
+          "citation": "National Park Service, “Remembering John Brown,” interpretive article series.",
+          "url": "https://www.nps.gov/articles/series.htm?id=2A8437AB-A9B8-9227-45218B70511C5831",
+          "accessed_at": "2026-07-12",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "map_is_nonexhaustive": true,
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

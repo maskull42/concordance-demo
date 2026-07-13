@@ -12,6 +12,7 @@
     "validate:data": "tsx scripts/validate-data.ts --dataset sample",
     "validate:data:production": "tsx scripts/validate-data.ts --dataset data --production",
     "validate:candidates": "tsx scripts/validate-candidates.ts",
+    "validate:candidates:successor": "tsx scripts/validate-successor-candidates.ts",
     "build": "npm run validate:data && tsc -b && cross-env VITE_DATASET=sample vite build",
     "build:production": "npm run validate:data:production && tsc -b && cross-env VITE_DATASET=production vite build",
     "preview": "vite preview",

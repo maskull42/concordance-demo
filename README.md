@@ -31,6 +31,7 @@ Useful checks:
 - `npm run validate:data` validates the indexed sample files, cross-record links, and content hashes.
 - `npm run validate:data:production` applies the stricter release gate to `data/` and is expected to fail until the verified final dataset exists.
 - `npm run validate:candidates` checks the frozen six-question pilot pool and its provisional verification dossier.
+- `npm run validate:candidates:successor` checks the two selected `candidate-1.1.1` successors, their exact 22-change allowlist, and their lineage back to the frozen lock and superseding Rule 2 receipt.
 - `npm test` runs schema, derived-state, and component tests.
 - `npm run test:e2e` runs the browser interaction and same-origin network checks once Playwright browsers are installed.
 - `npm run build` always validates sample data before compiling; `npm run build:production` cannot bundle unverified or incomplete data.

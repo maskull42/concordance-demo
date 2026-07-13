@@ -180,6 +180,46 @@ python3 harness/evaluate_pilot_selection_amended.py --verify
 
 Both workflows are write-once, private, crash-recoverable, and transitively bound to the unchanged Rule 2 inputs. The amended receipt supersedes only the corrected mapping and its derived metrics. It does not erase Rule 2’s failed divergence result or authorize production.
 
+#### Selected successor and content review
+
+The public `candidate-1.1.1` successor contains only the two Rule 2 selections: Junia and John Brown. It preserves every frozen prompt, position ID, source ID, URL, and non-exhaustive map boundary. Its 22 exact changes are limited to selection status, disclosure, corrected citations, and source wording supported by the full-text audit. All question, position, and source verification records remain proposed. The successor is not production data.
+
+Validate both the frozen pool and the byte-pinned successor before preparing review:
+
+```sh
+npm run validate:candidates
+npm run validate:candidates:successor
+python3 harness/prepare_selected_content_review.py --check
+```
+
+Commit the successor, validator, packet generator, browser assets, finalizer, publication helper, documentation, and tests before writing the private packet. Then run:
+
+```sh
+python3 harness/prepare_selected_content_review.py --write
+python3 harness/prepare_selected_content_review.py --verify
+```
+
+The write-once packet lives at `.pilot/aggregates/rule2-pilot-1/selected-content-review-1/selected-content-review.html`. It displays both complete bound successor records, including their canonical JSON and hashes, plus the 24 unblinded Rule 2 mappings and complete sampled responses. A.G. must make four explicit attestations: content and pilot mappings for each selected case. Those mappings explain selection. They cannot be reused for the final run.
+
+The browser export contains hashes and attestations, not response text. Check and seal the exact exported bytes by replacing `PATH` below:
+
+```sh
+python3 harness/finalize_selected_content_review.py --check PATH
+python3 harness/finalize_selected_content_review.py --seal PATH
+python3 harness/finalize_selected_content_review.py --verify
+```
+
+Sealing authorizes a later, separately reviewed promotion from proposed to author-verified. It does not perform that promotion, solve the missing divergence case, authorize model spending, or unlock production.
+
+Packet and seal publication use an OS-level transaction lock, token-owned staging, hashed payload inventories, no-replace hard links, identity-checked claims, and private cleanup quarantine. A hard interruption releases the lock and leaves a recoverable claim or pre-claim marker. Use only the command matching the interrupted operation:
+
+```sh
+python3 harness/prepare_selected_content_review.py --recover-incomplete
+python3 harness/finalize_selected_content_review.py --recover-incomplete
+```
+
+Recovery removes only an owned partial tree or completes an already verified tree. Changed or foreign paths are preserved for inspection.
+
 ### Final production run
 
 A final live run is authorized only when all of the following are true:

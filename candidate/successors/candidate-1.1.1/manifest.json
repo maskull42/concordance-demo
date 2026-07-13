@@ -1,0 +1,80 @@
+{
+  "schema_version": "candidate-successor-1.0.0",
+  "content_version": "candidate-1.1.1",
+  "created_at": "2026-07-13T06:03:17.000Z",
+  "supersedes": {
+    "content_version": "candidate-1.1.0",
+    "pilot_lock": {
+      "path": "candidate/pilot-lock.json",
+      "sha256": "a9acb26049721e1d1d87b92400f39c5c90c2a875a32ee9eeb944c68bdefde293"
+    }
+  },
+  "selection_receipt": {
+    "schema_version": "pilot-selection-amendment-1.0.0",
+    "selection_id": "rule2-selection-2",
+    "path": ".pilot/aggregates/rule2-pilot-1/selection-rule2-2.json",
+    "sha256": "7a2b1587ebd0daa160870a2948482c3fc17f122829c1311cacb778f49427de13",
+    "availability": "private-local"
+  },
+  "selection_result": {
+    "status": "partial-selection-new-pool-required",
+    "selected_candidate_ids": [
+      "junia-romans-16-7",
+      "john-brown-harpers-ferry"
+    ],
+    "failed_behaviors": [
+      "divergence"
+    ],
+    "scholarship_verification": "proposed",
+    "production_eligible": false
+  },
+  "correction": {
+    "question_id": "john-brown-harpers-ferry",
+    "model_key": "grok",
+    "variant_id": "methods-and-violence-frame",
+    "call_type": "answer",
+    "cell_id": "john-brown-harpers-ferry:grok:methods-and-violence-frame:answer",
+    "response_sha256": "3557ffe9cdd9fa492e11965ecade6157acf853812f1367f57e9aac2ad92b56c8",
+    "from": {
+      "primary_position_id": "criminal-fanatical-violence",
+      "reason_code": "clear_preference"
+    },
+    "to": {
+      "primary_position_id": null,
+      "reason_code": "outside_map"
+    },
+    "paired_non_null_model_count": {
+      "before": 8,
+      "after": 7
+    },
+    "movement_count": {
+      "before": 5,
+      "after": 4
+    },
+    "selection_changed": false
+  },
+  "questions": [
+    {
+      "id": "junia-romans-16-7",
+      "base": {
+        "path": "candidate/questions/junia-romans-16-7.json",
+        "sha256": "7a100468c935737869d1f264f839fab8d7e717dc6d1aed78ca0ea39d0ab811c6"
+      },
+      "successor": {
+        "path": "candidate/successors/candidate-1.1.1/questions/junia-romans-16-7.json",
+        "sha256": "4a2b7115a96e92d7db01d9a0a65b03046b323c0b68425e96083d6d8670eed0e7"
+      }
+    },
+    {
+      "id": "john-brown-harpers-ferry",
+      "base": {
+        "path": "candidate/questions/john-brown-harpers-ferry.json",
+        "sha256": "1546af3b562bd0be821c23db46f226f4f727b937cc79d86f8108c389bf777dcf"
+      },
+      "successor": {
+        "path": "candidate/successors/candidate-1.1.1/questions/john-brown-harpers-ferry.json",
+        "sha256": "a3489188ec29b402a893229bb227255dfd4bdbc10db0f7c020bb7b0944984ac4"
+      }
+    }
+  ]
+}
