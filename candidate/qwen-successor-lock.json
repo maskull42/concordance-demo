@@ -1,0 +1,743 @@
+{
+  "schema_version": "concordance-qwen-successor-lock-1.0.0",
+  "status": "immutable-qwen-successor-lock-no-spending-authorized",
+  "recovery_id": "qwen-deepinfra-no-capture-1",
+  "pool_id": "concordance-divergence-supplement-1",
+  "candidate_id": "galatians-pistis-christou",
+  "phase": "priority",
+  "private_root": ".pilot/qwen-successor/qwen-deepinfra-no-capture-1",
+  "bindings": {
+    "first_recovery_lock": {
+      "path": "candidate/concordance-recovery-lock.json",
+      "sha256": "6bee69c1a553af8ff68528bb344d002d33ac8ce4f5d75506463d29152c6950e8"
+    },
+    "rule3_lock": {
+      "path": "candidate/rule3-lock.json",
+      "sha256": "8f4daf2ae53d07c7c53fc3f38d3ccd11aa18420185db632467fc9c280be523cc"
+    }
+  },
+  "parent": {
+    "first_execution_head": "90447d63f63a4dd727862ec7056151773b50379b",
+    "first_lock_sha256": "6bee69c1a553af8ff68528bb344d002d33ac8ce4f5d75506463d29152c6950e8",
+    "first_private_root": ".pilot/concordance-recovery/cohere-v2-model-id-1",
+    "first_private_bindings": [
+      {
+        "path": "generation/intents/cohere/attempt-2.json",
+        "sha256": "227532e92c4c41e8496220daf1b0821e28824fb0b0df7aa74f0d6439a99ec927"
+      },
+      {
+        "path": "generation/intents/qwen/attempt-1.json",
+        "sha256": "1bfb995e380308c5adc1e549d6c0b0ef87ecf663a6e60d1af6a6c30d00e435da"
+      },
+      {
+        "path": "generation/outcomes/cohere/attempt-2.json",
+        "sha256": "012070830df40d8e40f704675d8fbae78f6e6261d4d5340b92bac49133f77011"
+      },
+      {
+        "path": "generation/raw-responses/cohere/attempt-2.json",
+        "sha256": "4f681943cade57e1ff26d9e23b62046e769714893a2953de77dbcc46426b61f0"
+      },
+      {
+        "path": "manifests/six-model-preflight.json",
+        "sha256": "a46d5982382f78afe3436954bd49fa4edccc716989f1846d74bb5460713e3934"
+      },
+      {
+        "path": "paid-authorization.json",
+        "sha256": "2836b5142d34b7f5927b7b13b9331e781c88d7ea5d31f2197df496a77f6b6d8f"
+      },
+      {
+        "path": "preflight/intents/cohere/attempt-1.json",
+        "sha256": "90e0ae752c627e37ffbfe11b367f5467fabb23c196469fca727fcbc16f486e04"
+      },
+      {
+        "path": "preflight/intents/deepseek/attempt-1.json",
+        "sha256": "3f145ca7c09eba7af91c007b94db353bf21521f9b15655975fdd77b815f5afb6"
+      },
+      {
+        "path": "preflight/intents/gpt/attempt-1.json",
+        "sha256": "5285232f7a6b503dd5497f0def0fc730226490bdc9f3c3e71adaece603fec978"
+      },
+      {
+        "path": "preflight/intents/grok/attempt-1.json",
+        "sha256": "23263d0d8b9a8f423d357420dd92a657e86797098f61b33b7b47a69fcad78f7e"
+      },
+      {
+        "path": "preflight/intents/mistral/attempt-1.json",
+        "sha256": "45e5ec590ae1684ee4e60eda8d650b06a6b96008a1a1644893249be873f0f7cd"
+      },
+      {
+        "path": "preflight/intents/qwen/attempt-1.json",
+        "sha256": "f1f77ea1bc9a616542a451a660647d3956fcb7b928e084d73e454ccb2156e554"
+      },
+      {
+        "path": "preflight/outcomes/cohere/attempt-1.json",
+        "sha256": "013bea3acea7043e94ba736922dd29f9022706e4de488649caeb57371f9a51d6"
+      },
+      {
+        "path": "preflight/outcomes/deepseek/attempt-1.json",
+        "sha256": "3f4765bb8eb5399d07ea1c03967aadbef53ddfdc90515efe214e185add784fbd"
+      },
+      {
+        "path": "preflight/outcomes/gpt/attempt-1.json",
+        "sha256": "b7cdb97278e4b8047c01672d85ed4d7990da77c5952a41a989507e0b456c7688"
+      },
+      {
+        "path": "preflight/outcomes/grok/attempt-1.json",
+        "sha256": "77a5463c22bfd840bd913f5aae60984a9b39320d300d9daca4ff6a25118d45c1"
+      },
+      {
+        "path": "preflight/outcomes/mistral/attempt-1.json",
+        "sha256": "2e3c619d942b280e53edc0eab53bf5958924c4f545d3f16e2921b5bf8e954682"
+      },
+      {
+        "path": "preflight/outcomes/qwen/attempt-1.json",
+        "sha256": "2d7c57487ff5432b5361f8f732adf4a8dee30edd8b4d1b6f38604ee586cda70c"
+      },
+      {
+        "path": "preflight/raw-responses/cohere/attempt-1.json",
+        "sha256": "d1d2fdb1f32beac41a1fca6d6ca0ed2ee782715f4e5627b6daf018c96ed2df00"
+      },
+      {
+        "path": "preflight/raw-responses/deepseek/attempt-1.json",
+        "sha256": "8abe037089eda3a9a402f01b03f5ec52f5c5823525c2b00da891730a40f8dae4"
+      },
+      {
+        "path": "preflight/raw-responses/gpt/attempt-1.json",
+        "sha256": "502b5b21ea50fc7a9608debd5d3e8d922df5f408d23e7771d276048aae1c393c"
+      },
+      {
+        "path": "preflight/raw-responses/grok/attempt-1.json",
+        "sha256": "e20542ff36262008c3ee13f175d0f918e1828f74d5faa70b3373885233abff30"
+      },
+      {
+        "path": "preflight/raw-responses/mistral/attempt-1.json",
+        "sha256": "5fe436bb3f5c67ecae373780e53611ea3e61024b4725b4b4b8db33c7b15ebee9"
+      },
+      {
+        "path": "preflight/raw-responses/qwen/attempt-1.json",
+        "sha256": "741b335b0bb3b7c84c1b370b7a1236382b8337964b642e4ab0cc06a9bb6ec561"
+      },
+      {
+        "path": "pricing-evidence.json",
+        "sha256": "65735124ca596a47c8f26ba07bbe0753831800490cf62b0ddf2359d09c732539"
+      },
+      {
+        "path": "pricing-recheck.json",
+        "sha256": "ea4fe4430f6923da304d9e18865d03a5443bad89a82e262010cce373faa09691"
+      }
+    ],
+    "first_private_binding_count": 26,
+    "first_claim": {
+      "path": ".pilot/concordance-recovery/claims/ee2b4d0b0c3ae1eaa0ea694f6ae04b158766012e9d6fec6ba938f7f352182bb9.json",
+      "sha256": "47c7c65d649cdd63b560fe1a774370389c665b613528f35385ac8374f82d45d5"
+    },
+    "first_phase_lock_path": ".pilot/concordance-recovery/claims/ee2b4d0b0c3ae1eaa0ea694f6ae04b158766012e9d6fec6ba938f7f352182bb9.lock",
+    "required_absent": [
+      "generation/raw-responses/qwen/attempt-1.json",
+      "generation/outcomes/qwen/attempt-1.json",
+      "runs/galatians-pistis-christou.json",
+      "generation/intents/deepseek/attempt-1.json",
+      "generation/intents/mistral/attempt-1.json",
+      "generation/intents/grok/attempt-1.json",
+      "generation/intents/gpt/attempt-1.json",
+      "generation/raw-responses/deepseek/attempt-1.json",
+      "generation/raw-responses/mistral/attempt-1.json",
+      "generation/raw-responses/grok/attempt-1.json",
+      "generation/raw-responses/gpt/attempt-1.json",
+      "generation/outcomes/deepseek/attempt-1.json",
+      "generation/outcomes/mistral/attempt-1.json",
+      "generation/outcomes/grok/attempt-1.json",
+      "generation/outcomes/gpt/attempt-1.json"
+    ],
+    "first_extra_empty_directories": [
+      "generation/raw-responses/qwen"
+    ],
+    "exact_file_and_directory_inventory_required": true,
+    "rule3_lock_sha256": "8f4daf2ae53d07c7c53fc3f38d3ccd11aa18420185db632467fc9c280be523cc",
+    "rule3_plan_sha256": "c1cdda59dcda1331344a8bc10188913dfcaa06a62f74cc3344fe1f2edb5f6c94"
+  },
+  "preserved_successes": [
+    {
+      "model_key": "gemini",
+      "source_lane": "immutable-rule3-parent"
+    },
+    {
+      "model_key": "claude",
+      "source_lane": "immutable-rule3-parent"
+    },
+    {
+      "model_key": "cohere",
+      "source_lane": "immutable-cohere-recovery",
+      "path": "generation/outcomes/cohere/attempt-2.json",
+      "sha256": "012070830df40d8e40f704675d8fbae78f6e6261d4d5340b92bac49133f77011",
+      "response_sha256": "1570b742209c75e18da16b593164acad85210dc8633a9baceab3bd98b7e278a6",
+      "semantic_attempt_number": 2
+    }
+  ],
+  "stranded_qwen": {
+    "model_key": "qwen",
+    "path": "generation/intents/qwen/attempt-1.json",
+    "sha256": "1bfb995e380308c5adc1e549d6c0b0ef87ecf663a6e60d1af6a6c30d00e435da",
+    "semantic_attempt_number": 1,
+    "route": "deepinfra",
+    "requested_model_id": "Qwen/Qwen3.5-397B-A17B",
+    "reserved_cost_microdollars": 49243,
+    "disposition": "consumed-possibly-delivered-possibly-billed-one-replacement"
+  },
+  "target_plan": {
+    "model_order": [
+      "qwen",
+      "deepseek",
+      "mistral",
+      "grok",
+      "gpt"
+    ],
+    "cells": [
+      {
+        "ordinal": 1,
+        "model_key": "qwen",
+        "cell_id": "galatians-pistis-christou:qwen:default:answer",
+        "semantic_attempt_start": 2,
+        "maximum_generation_posts": 1,
+        "reserved_cost_microdollars_per_post": 49243,
+        "preflight_attempts": 3,
+        "fresh_preflight_required_before_any_generation": true,
+        "identity_mode": "generation-returned-id-plus-fresh-preflight",
+        "requested_model_id": "Qwen/Qwen3.5-397B-A17B",
+        "provider": "deepinfra",
+        "route": "deepinfra",
+        "environment_variable": "DEEPINFRA_API_KEY",
+        "api_style": "openai",
+        "base_url": "https://api.deepinfra.com",
+        "generation_path": "/v1/openai/chat/completions",
+        "metadata_path": "/v1/models",
+        "metadata_mode": "list",
+        "auth_kind": "bearer",
+        "fallback_allowed": false,
+        "parent_cell_contract_sha256": "b881465046332aca1b386a9330145409f67b11fedf6218075bdd799684e39118"
+      },
+      {
+        "ordinal": 2,
+        "model_key": "deepseek",
+        "cell_id": "galatians-pistis-christou:deepseek:default:answer",
+        "semantic_attempt_start": 1,
+        "maximum_generation_posts": 3,
+        "reserved_cost_microdollars_per_post": 14342,
+        "preflight_attempts": 3,
+        "fresh_preflight_required_before_any_generation": true,
+        "identity_mode": "generation-returned-id-plus-fresh-preflight",
+        "requested_model_id": "deepseek-v4-pro",
+        "provider": "deepseek",
+        "route": "deepseek-direct",
+        "environment_variable": "DEEPSEEK_API_KEY",
+        "api_style": "openai",
+        "base_url": "https://api.deepseek.com",
+        "generation_path": "/chat/completions",
+        "metadata_path": "/models",
+        "metadata_mode": "list",
+        "auth_kind": "bearer",
+        "fallback_allowed": false,
+        "parent_cell_contract_sha256": "36fe984a1fe3cac4aa3e7b71eb18ebf8d71dfd01c5da3734316177028d3b3a52"
+      },
+      {
+        "ordinal": 3,
+        "model_key": "mistral",
+        "cell_id": "galatians-pistis-christou:mistral:default:answer",
+        "semantic_attempt_start": 1,
+        "maximum_generation_posts": 3,
+        "reserved_cost_microdollars_per_post": 24677,
+        "preflight_attempts": 3,
+        "fresh_preflight_required_before_any_generation": true,
+        "identity_mode": "generation-returned-id-plus-fresh-preflight",
+        "requested_model_id": "mistral-large-2512",
+        "provider": "mistral",
+        "route": "mistral-direct",
+        "environment_variable": "MISTRAL_API_KEY",
+        "api_style": "openai",
+        "base_url": "https://api.mistral.ai",
+        "generation_path": "/v1/chat/completions",
+        "metadata_path": "/v1/models/{model}",
+        "metadata_mode": "single",
+        "auth_kind": "bearer",
+        "fallback_allowed": false,
+        "parent_cell_contract_sha256": "3d82bcebb00c9a2812b596b9fa9edf34ce54f6ea431ad2f6848c1aa8cdd14db4"
+      },
+      {
+        "ordinal": 4,
+        "model_key": "grok",
+        "cell_id": "galatians-pistis-christou:grok:default:answer",
+        "semantic_attempt_start": 1,
+        "maximum_generation_posts": 3,
+        "reserved_cost_microdollars_per_post": 98708,
+        "preflight_attempts": 3,
+        "fresh_preflight_required_before_any_generation": true,
+        "identity_mode": "generation-returned-id-plus-fresh-preflight",
+        "requested_model_id": "grok-4.5",
+        "provider": "xai",
+        "route": "xai-direct",
+        "environment_variable": "XAI_API_KEY",
+        "api_style": "xai-responses",
+        "base_url": "https://api.x.ai",
+        "generation_path": "/v1/responses",
+        "metadata_path": "/v1/models/{model}",
+        "metadata_mode": "single",
+        "auth_kind": "bearer",
+        "fallback_allowed": false,
+        "parent_cell_contract_sha256": "c4b409dcddf76eb4b85d3972a59f0b82a1887d94cd17ba67f205361e35bb56f5"
+      },
+      {
+        "ordinal": 5,
+        "model_key": "gpt",
+        "cell_id": "galatians-pistis-christou:gpt:default:answer",
+        "semantic_attempt_start": 1,
+        "maximum_generation_posts": 3,
+        "reserved_cost_microdollars_per_post": 492530,
+        "preflight_attempts": 3,
+        "fresh_preflight_required_before_any_generation": true,
+        "identity_mode": "generation-returned-id-plus-fresh-preflight",
+        "requested_model_id": "openai/gpt-5.6-sol",
+        "provider": "openrouter",
+        "route": "openrouter-openai-pinned",
+        "environment_variable": "OPENROUTER_API_KEY",
+        "api_style": "openai",
+        "base_url": "https://openrouter.ai",
+        "generation_path": "/api/v1/chat/completions",
+        "metadata_path": "/api/v1/models/{model}/endpoints",
+        "metadata_mode": "openrouter-endpoints",
+        "auth_kind": "bearer",
+        "fallback_allowed": false,
+        "parent_cell_contract_sha256": "9c8471bf07545e917f76dcb2e3aa96e434af1f383d822395800071fbce9959b1"
+      }
+    ],
+    "plan_sha256": "c602e28c22eee232746c4e6c9d8b310f2f79ad7d151aa6528f3cc47cbd391526",
+    "qwen_openrouter_fallback": {
+      "route_key": "qwen-openrouter",
+      "model_key": "qwen",
+      "family": "Qwen",
+      "provider": "openrouter",
+      "requested_model_id": "qwen/qwen3.5-397b-a17b",
+      "accepted_returned_model_ids": [
+        "qwen/qwen3.5-397b-a17b",
+        "qwen/qwen3.5-397b-a17b-20260216"
+      ],
+      "route": "openrouter-qwen-nondeepinfra-fallback",
+      "environment_variable": "OPENROUTER_API_KEY",
+      "api_style": "openai",
+      "base_url": "https://openrouter.ai",
+      "generation_path": "/api/v1/chat/completions",
+      "metadata_path": "/api/v1/models/{model}/endpoints",
+      "metadata_mode": "qwen-openrouter-endpoints",
+      "auth_kind": "bearer",
+      "fallback_allowed": true,
+      "provider_options": {
+        "provider": {
+          "ignore": [
+            "deepinfra"
+          ],
+          "sort": "throughput",
+          "allow_fallbacks": true,
+          "require_parameters": true,
+          "max_price": {
+            "prompt": 0.45,
+            "completion": 3.0
+          }
+        }
+      },
+      "headline_pricing": {
+        "input_per_million": 0.385,
+        "output_per_million": 2.45
+      },
+      "reservation_pricing": {
+        "input_per_million": 0.45,
+        "output_per_million": 3.0
+      },
+      "pricing_as_of": "2026-07-13",
+      "official_source_url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b"
+    }
+  },
+  "preflight_policy": {
+    "route_keys": [
+      "qwen",
+      "qwen-openrouter",
+      "deepseek",
+      "mistral",
+      "grok",
+      "gpt"
+    ],
+    "all_six_route_successes_required_before_generation": true,
+    "maximum_attempts_per_model": 3,
+    "maximum_requests": 18,
+    "authenticated": true,
+    "fresh": true,
+    "intent_before_request": true,
+    "raw_response_before_validation": true
+  },
+  "generation_policy": {
+    "model_order": [
+      "qwen",
+      "deepseek",
+      "mistral",
+      "grok",
+      "gpt"
+    ],
+    "qwen_semantic_attempt_number": 2,
+    "qwen_maximum_replacement_posts": 1,
+    "qwen_route": "deepinfra",
+    "qwen_openrouter_fallback_allowed": true,
+    "qwen_openrouter_fallback": {
+      "route_key": "qwen-openrouter",
+      "model_key": "qwen",
+      "family": "Qwen",
+      "provider": "openrouter",
+      "requested_model_id": "qwen/qwen3.5-397b-a17b",
+      "accepted_returned_model_ids": [
+        "qwen/qwen3.5-397b-a17b",
+        "qwen/qwen3.5-397b-a17b-20260216"
+      ],
+      "route": "openrouter-qwen-nondeepinfra-fallback",
+      "environment_variable": "OPENROUTER_API_KEY",
+      "api_style": "openai",
+      "base_url": "https://openrouter.ai",
+      "generation_path": "/api/v1/chat/completions",
+      "metadata_path": "/api/v1/models/{model}/endpoints",
+      "metadata_mode": "qwen-openrouter-endpoints",
+      "auth_kind": "bearer",
+      "fallback_allowed": true,
+      "provider_options": {
+        "provider": {
+          "ignore": [
+            "deepinfra"
+          ],
+          "sort": "throughput",
+          "allow_fallbacks": true,
+          "require_parameters": true,
+          "max_price": {
+            "prompt": 0.45,
+            "completion": 3.0
+          }
+        }
+      },
+      "headline_pricing": {
+        "input_per_million": 0.385,
+        "output_per_million": 2.45
+      },
+      "reservation_pricing": {
+        "input_per_million": 0.45,
+        "output_per_million": 3.0
+      },
+      "pricing_as_of": "2026-07-13",
+      "official_source_url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b"
+    },
+    "qwen_openrouter_semantic_attempt_number": 3,
+    "qwen_openrouter_maximum_posts": 1,
+    "deepinfra_noncapture_authorizes_openrouter_fallback": true,
+    "qwen_success_required_before_later_generation": true,
+    "untouched_maximum_safe_attempts_per_cell": 3,
+    "maximum_posts": 14,
+    "deepinfra_qwen_attempt_2_without_capture_is_consumed": true,
+    "deepinfra_qwen_attempt_2_without_capture_advances_once_to_openrouter": true,
+    "openrouter_qwen_attempt_3_without_capture_is_terminal": true,
+    "downstream_post_without_capture_is_terminal": true,
+    "preserved_model_generation_forbidden": [
+      "gemini",
+      "claude",
+      "cohere"
+    ],
+    "intent_before_post": true,
+    "raw_response_before_validation": true,
+    "output_token_cap": 16384,
+    "tools_enabled": false,
+    "web_search_enabled": false,
+    "retrieval_enabled": false,
+    "external_context_enabled": false
+  },
+  "budget": {
+    "inherited_reserved_microdollars": 1067475,
+    "per_post_reserved_microdollars": {
+      "qwen": 49243,
+      "deepseek": 14342,
+      "mistral": 24677,
+      "grok": 98708,
+      "gpt": 492530,
+      "qwen-openrouter": 49243
+    },
+    "new_reserved_cap_microdollars": 1989257,
+    "combined_reserved_cap_microdollars": 3056732,
+    "candidate_cap_microdollars": 6000000,
+    "pool_cap_microdollars": 12000000
+  },
+  "network_policy": {
+    "maximum_preflight_gets": 18,
+    "maximum_generation_posts": 14,
+    "maximum_outbound_requests": 32,
+    "authorized_qwen_openrouter_fallback_network_access_allowed": true,
+    "unlisted_fallback_network_access_allowed": false
+  },
+  "paid_authorization": {
+    "required": true,
+    "lock_authorizes_spending": false,
+    "prior_receipt_sha256": "2836b5142d34b7f5927b7b13b9331e781c88d7ea5d31f2197df496a77f6b6d8f",
+    "prior_exact_statement": "A.G. Elrod authorizes this exact committed Concordance Rule 3 successor recovery lock for one private recovery run: preserve the sealed Gemini and Claude successes; treat the original Cohere generation intent as consumed and unusable; authenticate and freshly preflight exactly Cohere, Qwen, DeepSeek, Mistral, Grok, and GPT before any generation; make at most one replacement Cohere generation; only after it succeeds, continue Qwen, DeepSeek, Mistral, Grok, and GPT with no more than three safe attempts per untouched cell; make no Gemini or Claude generation call; do not run the fallback or a third candidate; retain the original $6.00 candidate and $12.00 pool reserved-cost caps; and use no tools, web search, or retrieval.",
+    "prior_exact_statement_sha256": "9cb0237affcf753d7ababa8845349ae088162eb16efecaff6b6f371ca9cacc27",
+    "user_amendment_verbatim": "It's cheap enough. You can abort it and either try again at Deepinfra or through openrouter.",
+    "user_amendment_sha256": "601e8bef85e2c2b16e79f375709c565dffabb7c480c102b785583ddd30a6e0fb",
+    "resolved_exact_statement": "A.G. Elrod authorizes this exact Qwen successor recovery after directing that the stalled Qwen request be aborted and retried: preserve the sealed Gemini, Claude, and Cohere successes; treat DeepInfra Qwen attempt 1, whose intent exists without a captured response, as consumed, possibly delivered, and possibly billed; freshly preflight the DeepInfra and OpenRouter Qwen routes plus DeepSeek, Mistral, Grok, and GPT; make exactly one replacement Qwen generation as semantic attempt 2 through the same DeepInfra route, model, prompt, parameters, and request body; if that replacement does not produce a durably captured successful response for any reason, including an ambiguous timeout or missing capture, make exactly one OpenRouter Qwen fallback as semantic attempt 3 using model qwen/qwen3.5-397b-a17b, accepting only that model ID or its dated alias qwen/qwen3.5-397b-a17b-20260216, excluding DeepInfra, sorting by throughput, requiring parameter support, allowing OpenRouter internal provider failover, and capping route price at $0.45 input and $3.00 output per million tokens; if that fallback does not produce a durably captured successful response, stop without another Qwen call; only after a Qwen route succeeds, continue DeepSeek, Mistral, Grok, and GPT in order with no more than three safe attempts per untouched cell; make no Gemini, Claude, or Cohere generation call; use no Qwen call beyond those two successor routes, no third candidate, and no tools, web search, retrieval, or external context; count the stranded Qwen attempt 1 and every successor Qwen reservation; preserve the original $6.00 candidate and $12.00 pool caps.",
+    "resolved_exact_statement_sha256": "a06acdb9e5b91fd22d364be4f47c1f05ba6eff494148db4cfb3824b7163aad6e",
+    "scope": {
+      "recovery_id": "qwen-deepinfra-no-capture-1",
+      "candidate_id": "galatians-pistis-christou",
+      "private_root": ".pilot/qwen-successor/qwen-deepinfra-no-capture-1",
+      "preserved_model_keys": [
+        "gemini",
+        "claude",
+        "cohere"
+      ],
+      "target_model_keys": [
+        "qwen",
+        "deepseek",
+        "mistral",
+        "grok",
+        "gpt"
+      ],
+      "fresh_preflight_model_keys": [
+        "qwen",
+        "deepseek",
+        "mistral",
+        "grok",
+        "gpt"
+      ],
+      "fresh_preflight_route_keys": [
+        "qwen",
+        "qwen-openrouter",
+        "deepseek",
+        "mistral",
+        "grok",
+        "gpt"
+      ],
+      "qwen_semantic_attempt_number": 2,
+      "qwen_maximum_replacement_posts": 1,
+      "qwen_route": "deepinfra",
+      "qwen_openrouter_fallback_allowed": true,
+      "qwen_openrouter_fallback_semantic_attempt_number": 3,
+      "qwen_openrouter_fallback_maximum_posts": 1,
+      "qwen_openrouter_model_id": "qwen/qwen3.5-397b-a17b",
+      "qwen_openrouter_deepinfra_excluded": true,
+      "qwen_openrouter_internal_provider_failover_allowed": true,
+      "untouched_maximum_safe_attempts_per_cell": 3,
+      "inherited_reserved_microdollars": 1067475,
+      "new_reserved_cap_microdollars": 1989257,
+      "combined_reserved_cap_microdollars": 3056732,
+      "candidate_reserved_cap_microdollars": 6000000,
+      "pool_reserved_cap_microdollars": 12000000,
+      "non_qwen_model_fallback_allowed": false,
+      "third_candidate_allowed": false,
+      "tools_enabled": false,
+      "web_search_enabled": false,
+      "retrieval_enabled": false,
+      "external_context_enabled": false
+    },
+    "fresh_official_pricing_recheck_required": true
+  },
+  "execution_sources": [
+    {
+      "path": "harness/authorize_concordance_recovery.py",
+      "sha256": "e7b2c94e37f6435db1e9fbf4b8ce45b32775bebda555e2a7539caff82b1f1c4f"
+    },
+    {
+      "path": "harness/authorize_qwen_successor.py",
+      "sha256": "49fd1d7a0d2fefc36f516b4705bc8adabe66c78465f6f64ef78857aff51caf4c"
+    },
+    {
+      "path": "harness/authorize_rule3.py",
+      "sha256": "e2b0d8f9826fd8d187cb2b35b4ee6969b4842a7eb19790f978121d8c55017853"
+    },
+    {
+      "path": "harness/concordance_harness/__init__.py",
+      "sha256": "91a769d5f0f18268e8cccb07fe239195169a7b8de904286ea4a420da44312c6e"
+    },
+    {
+      "path": "harness/concordance_harness/config.py",
+      "sha256": "558a6acfb5f88a96861a087807a8d1fae5511fd50b2929ce60b49bbffca5c89d"
+    },
+    {
+      "path": "harness/concordance_harness/execution.py",
+      "sha256": "d48fb0c2ba4f32e4b01236f1498ee180fa2bc1a61c457224edc6a5e400123d9d"
+    },
+    {
+      "path": "harness/concordance_harness/pilot_lock.py",
+      "sha256": "6f44d43230b7e46b8d62b7207ba36f7ab27c23a4d2b513ca78c4d235da0ded7e"
+    },
+    {
+      "path": "harness/concordance_harness/planner.py",
+      "sha256": "9b60992c0cdfd9727cf1141a7bc73875614263377897424491c876199a227698"
+    },
+    {
+      "path": "harness/concordance_harness/providers.py",
+      "sha256": "0cd290762f2be33d738b640320d52498d81595590cc7b1efc82381a96830bb9a"
+    },
+    {
+      "path": "harness/concordance_harness/util.py",
+      "sha256": "fa9f45770ba270f0950443e248f89faba86b9c3e9b5c2715000efaedb13e3993"
+    },
+    {
+      "path": "harness/concordance_recovery/__init__.py",
+      "sha256": "c21982b5bf436b0cdeab22c199647dc6d185e0d542d315f482593f49e9067feb"
+    },
+    {
+      "path": "harness/concordance_recovery/authorization.py",
+      "sha256": "b9d2b3cd810a756876f2619ba9a4e50a0e8c57ee2ca1ff2be10c7b2ca2886c8f"
+    },
+    {
+      "path": "harness/concordance_recovery/composite.py",
+      "sha256": "00014c7f97681d80cbdba49bfafb6d04431986ba1c8e91d41badfdf422b0f990"
+    },
+    {
+      "path": "harness/concordance_recovery/contract.py",
+      "sha256": "2685c4f432745fc1d380a0d3b9ed1a10ee18f77be952f4cbc3586061d8a6dac7"
+    },
+    {
+      "path": "harness/concordance_recovery/execute.py",
+      "sha256": "87beb72ca20ffd81f0b5971b3c1bf95695f4f1406dd9ead0feaa0fcbc4c73679"
+    },
+    {
+      "path": "harness/concordance_recovery/journal.py",
+      "sha256": "f1488f919eae3dbd78f6f411499cd2e68ca17f08ce95cae71274f7cd9583b130"
+    },
+    {
+      "path": "harness/concordance_recovery/lock.py",
+      "sha256": "835fad7cdf366a89eec37cd68a7bad434e58c95cbd6d0318086513b23f33960d"
+    },
+    {
+      "path": "harness/concordance_recovery/parent.py",
+      "sha256": "0ea6432f7454f5231b09cb0efe19249d1f285ee597b8c21ea405094039e28804"
+    },
+    {
+      "path": "harness/concordance_recovery/state.py",
+      "sha256": "17ec3342a702d41eb719e7533c04878a23fdff7bcaffffddd4da797238c29fa1"
+    },
+    {
+      "path": "harness/concordance_recovery/transport.py",
+      "sha256": "92aff7bc7721444a26020d666559cf0c511c1ded2425889b1ac8ad96fb57991e"
+    },
+    {
+      "path": "harness/create_concordance_recovery_lock.py",
+      "sha256": "7e985524ee1fed0be841c4cea9d252885b233e5141ee766e81acb0f82dec3e46"
+    },
+    {
+      "path": "harness/create_qwen_successor_lock.py",
+      "sha256": "115ee0b735cd9b1dc13a2f0a1f34c15db880bdb946037a18e0e1022ae0f83c17"
+    },
+    {
+      "path": "harness/create_rule3_lock.py",
+      "sha256": "ccf334c669cfbe6bfa8ea112211276f9c48f0198d72c4b6eea952e99941b0ccc"
+    },
+    {
+      "path": "harness/evaluate_rule3.py",
+      "sha256": "ac65f580417f703af071297c40cd0196614e29871c22056c106fc9ecf3eaeef2"
+    },
+    {
+      "path": "harness/finalize_rule3_review.py",
+      "sha256": "aa1318e342ca1ca07a6578f31741150d3db840709003b886461384b72a9e2bc9"
+    },
+    {
+      "path": "harness/prepare_rule3_review.py",
+      "sha256": "c71c7e78453693df487491bfa52728569ae6c3d56a60e31cb95fd6ee790c1931"
+    },
+    {
+      "path": "harness/private_directory_publication.py",
+      "sha256": "ac2bfd0247eebfe039054b137e97f464d3fe98bc280ba07c2f3935c2ae1d18aa"
+    },
+    {
+      "path": "harness/qwen_successor/__init__.py",
+      "sha256": "09b8c23e819011015bb9ac57650fbaa19e1e496a4d4d76e99301ce8d6851827f"
+    },
+    {
+      "path": "harness/qwen_successor/authorization.py",
+      "sha256": "7df9957bf57a41d57ffa4edd58503e1101f276d7b57235a45226b255af8476a0"
+    },
+    {
+      "path": "harness/qwen_successor/composite.py",
+      "sha256": "d5832a97652f05f2e729529b0bfc565d6386f94cb83cef83752990a07ddb2c54"
+    },
+    {
+      "path": "harness/qwen_successor/contract.py",
+      "sha256": "08da7185969febe8bee0d76018d7dc2155a8dd3a084b78de99160750b245a985"
+    },
+    {
+      "path": "harness/qwen_successor/execute.py",
+      "sha256": "41d44866f0dfe0af81981e6738124deaf02810765267d5e28d466bfedd668607"
+    },
+    {
+      "path": "harness/qwen_successor/lock.py",
+      "sha256": "ca0eaac15ecabc056d74aea9688c4cf56e4a47a8251c5476f240f043ab9cb9c9"
+    },
+    {
+      "path": "harness/qwen_successor/parent.py",
+      "sha256": "7e4ee3b74f32424b8f0f7394031e30acc279e772a4467412d026d6f87c06fa93"
+    },
+    {
+      "path": "harness/qwen_successor/state.py",
+      "sha256": "3373cf3dc2c92e5878d20085a476d853370f5d143d14ef9946bfa618880584ac"
+    },
+    {
+      "path": "harness/review_concordance_recovery.py",
+      "sha256": "3b2fef4a8521705fc6400ce622bf4d4cbe605851cf96c7ee2a1c9974a79ef615"
+    },
+    {
+      "path": "harness/review_qwen_successor.py",
+      "sha256": "d94c49036aa7427398e1fd75b0cad35867ba8da3cd3b6188bd7d7371a3239be0"
+    },
+    {
+      "path": "harness/rule3/__init__.py",
+      "sha256": "61700c646ab70275e8845beba22baf60af5c24d508fc89f3ff8e683a7548d253"
+    },
+    {
+      "path": "harness/rule3/authorization.py",
+      "sha256": "a27d3bada1b1792bc88a04fb88c2780f01c6f5b600bbe56ed89448d78823230f"
+    },
+    {
+      "path": "harness/rule3/budget.py",
+      "sha256": "49e5b48bf373658420a30ebd34d0b5503381f642d8b4de4568805fbdcf01bfbc"
+    },
+    {
+      "path": "harness/rule3/contract.py",
+      "sha256": "58f153824e488e8fc196815ff0b6098c3350dc5c047e674b18c9fa9ce1e048ac"
+    },
+    {
+      "path": "harness/rule3/evaluate.py",
+      "sha256": "990b95583cfbae9ba2b855cb484a4216b477368c81d6f42046c54d46b591ce0a"
+    },
+    {
+      "path": "harness/rule3/execute.py",
+      "sha256": "6bdc0cb535ac37acc68abe6eb496256bc00948cb844bd47bb4d302885108718d"
+    },
+    {
+      "path": "harness/rule3/lock.py",
+      "sha256": "429e1c471431a4cabfd309cd2580efb1533e5588d08a3dd70680dd912868e0ee"
+    },
+    {
+      "path": "harness/rule3/review.py",
+      "sha256": "0aed54f76c1a99ec6a10311415c0e45ecb1f9acfa9ddc1b1b86b13cf8b208a01"
+    },
+    {
+      "path": "harness/rule3/review_assets/review.css",
+      "sha256": "728f25df5e61d7708a0f85b7e6accbc42304f9e9904976e0099ea3b2bdc5600b"
+    },
+    {
+      "path": "harness/rule3/review_assets/review.js",
+      "sha256": "f0bbed8d7438a6b47c79a02ef1fb6105b4e2b3ff739a716aef6d81c07a531c59"
+    },
+    {
+      "path": "harness/run_concordance_recovery.py",
+      "sha256": "ec01f5edc92831c3be426210143047df2a00659e21d274939d3d96740a962c89"
+    },
+    {
+      "path": "harness/run_qwen_successor.py",
+      "sha256": "0a552dff314e1f17e5f048f63ac029430f07f62769950b3962b355c61e5959fe"
+    },
+    {
+      "path": "harness/run_rule3.py",
+      "sha256": "8f36a7296e23a9a8a6fe5fb756983a820effafc3419636ec05a29e6ad8a14ba3"
+    }
+  ]
+}
