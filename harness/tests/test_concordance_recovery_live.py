@@ -81,51 +81,58 @@ class ConcordanceRecoveryLiveTests(unittest.TestCase):
             check=True,
             env={"PATH": "/usr/bin:/bin", "HOME": str(Path(self.temporary.name))},
         )
-        shutil.copytree(
-            source / "harness/concordance_recovery",
-            self.root / "harness/concordance_recovery",
-        )
-        shutil.copy2(
-            source / "candidate/concordance-recovery-lock.schema.json",
-            self.root / "candidate/concordance-recovery-lock.schema.json",
-        )
-        for path in (source / "harness").glob("*concordance_recovery*.py"):
-            shutil.copy2(path, self.root / "harness" / path.name)
-        write_recovery_lock(self.root)
-        subprocess.run(
-            [
-                "/usr/bin/git",
-                "add",
-                "candidate/concordance-recovery-lock.schema.json",
-                "candidate/concordance-recovery-lock.json",
-                "harness/concordance_recovery",
-                *[
-                    str(path.relative_to(self.root))
-                    for path in (self.root / "harness").glob(
-                        "*concordance_recovery*.py"
-                    )
+        if not (self.root / contract.LOCK_PATH).exists():
+            shutil.copytree(
+                source / "harness/concordance_recovery",
+                self.root / "harness/concordance_recovery",
+            )
+            shutil.copy2(
+                source / "candidate/concordance-recovery-lock.schema.json",
+                self.root / "candidate/concordance-recovery-lock.schema.json",
+            )
+            for path in (source / "harness").glob("*concordance_recovery*.py"):
+                shutil.copy2(path, self.root / "harness" / path.name)
+            write_recovery_lock(self.root)
+            subprocess.run(
+                [
+                    "/usr/bin/git",
+                    "add",
+                    "candidate/concordance-recovery-lock.schema.json",
+                    "candidate/concordance-recovery-lock.json",
+                    "harness/concordance_recovery",
+                    *[
+                        str(path.relative_to(self.root))
+                        for path in (self.root / "harness").glob(
+                            "*concordance_recovery*.py"
+                        )
+                    ],
                 ],
-            ],
-            cwd=self.root,
-            check=True,
-            env={"PATH": "/usr/bin:/bin", "HOME": str(Path(self.temporary.name))},
-        )
-        subprocess.run(
-            [
-                "/usr/bin/git",
-                "-c",
-                "user.name=Concordance Test",
-                "-c",
-                "user.email=concordance-test@example.invalid",
-                "commit",
-                "--quiet",
-                "-m",
-                "test recovery seal",
-            ],
-            cwd=self.root,
-            check=True,
-            env={"PATH": "/usr/bin:/bin", "HOME": str(Path(self.temporary.name))},
-        )
+                cwd=self.root,
+                check=True,
+                env={
+                    "PATH": "/usr/bin:/bin",
+                    "HOME": str(Path(self.temporary.name)),
+                },
+            )
+            subprocess.run(
+                [
+                    "/usr/bin/git",
+                    "-c",
+                    "user.name=Concordance Test",
+                    "-c",
+                    "user.email=concordance-test@example.invalid",
+                    "commit",
+                    "--quiet",
+                    "-m",
+                    "test recovery seal",
+                ],
+                cwd=self.root,
+                check=True,
+                env={
+                    "PATH": "/usr/bin:/bin",
+                    "HOME": str(Path(self.temporary.name)),
+                },
+            )
         parent_source = source / contract.PARENT_PRIVATE_ROOT
         parent_target = self.root / contract.PARENT_PRIVATE_ROOT
         for relative in contract.PARENT_ARTIFACT_SHA256:
