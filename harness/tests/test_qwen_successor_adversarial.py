@@ -487,6 +487,34 @@ class QwenSuccessorBootstrapTests(unittest.TestCase):
         self.assertNotIn("Traceback", result.stderr)
         self.assertFalse(sentinel.exists())
 
+    def test_isolated_gate_rejects_project_package_shadow_without_execution(
+        self,
+    ) -> None:
+        sentinel = self.root / "project-package-shadow-imported"
+        (self.root / "harness/qwen_successor.py").write_text(
+            "from pathlib import Path\n" f"Path({str(sentinel)!r}).write_text('ran')\n",
+            encoding="utf-8",
+        )
+        result = self.run_runner(isolated=True)
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("local import shadow", result.stderr)
+        self.assertNotIn("Traceback", result.stderr)
+        self.assertFalse(sentinel.exists())
+
+    def test_isolated_gate_rejects_unbound_package_module_without_execution(
+        self,
+    ) -> None:
+        sentinel = self.root / "unbound-package-module-imported"
+        (self.root / "harness/qwen_successor/unbound_attack.py").write_text(
+            "from pathlib import Path\n" f"Path({str(sentinel)!r}).write_text('ran')\n",
+            encoding="utf-8",
+        )
+        result = self.run_runner(isolated=True)
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("package contains an unbound import shadow", result.stderr)
+        self.assertNotIn("Traceback", result.stderr)
+        self.assertFalse(sentinel.exists())
+
 
 class FirstRunnerTerminalityTests(unittest.TestCase):
     def test_stranded_old_qwen_intent_stops_before_capture_or_validation(self) -> None:

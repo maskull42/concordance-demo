@@ -85,7 +85,18 @@ _REQUIRED_SOURCES = frozenset(
         "harness/run_rule3.py",
     }
 )
-_PROTECTED_IMPORT_NAMES = frozenset(sys.stdlib_module_names) | {"certifi"}
+_PROJECT_IMPORT_PACKAGES = frozenset(
+    {
+        "concordance_harness",
+        "concordance_recovery",
+        "qwen_successor",
+        "rule3",
+    }
+)
+_PROTECTED_IMPORT_NAMES = (
+    frozenset(sys.stdlib_module_names) | {"certifi"} | _PROJECT_IMPORT_PACKAGES
+)
+_UNBOUND_IMPORT_SUFFIXES = (".py", ".pyc", ".pyo", ".so", ".dylib", ".pyd")
 
 
 class PreImportSuccessorError(RuntimeError):
@@ -260,7 +271,7 @@ def _bindings(lock: dict) -> tuple[dict[str, str], tuple[str, ...]]:
     return declared, (_LOCK_PATH, *declared)
 
 
-def _reject_import_shadows(root: Path) -> None:
+def _reject_import_shadows(root: Path, bound_paths: frozenset[str]) -> None:
     harness = root / "harness"
     try:
         children = tuple(harness.iterdir())
@@ -268,14 +279,48 @@ def _reject_import_shadows(root: Path) -> None:
         raise PreImportSuccessorError(
             f"harness import root cannot be inspected: {error}"
         ) from error
-    shadows = sorted(
-        child.name
-        for child in children
-        if child.name.split(".", 1)[0] in _PROTECTED_IMPORT_NAMES
-    )
+    shadows = []
+    for child in children:
+        base = child.name.split(".", 1)[0]
+        if child.name in _PROJECT_IMPORT_PACKAGES:
+            metadata = child.lstat()
+            if stat.S_ISDIR(metadata.st_mode) and not stat.S_ISLNK(metadata.st_mode):
+                continue
+        if base in _PROTECTED_IMPORT_NAMES:
+            shadows.append(child.name)
     if shadows:
         raise PreImportSuccessorError(
-            "harness contains a local import shadow: " + ", ".join(shadows)
+            "harness contains a local import shadow: " + ", ".join(sorted(shadows))
+        )
+    package_shadows = []
+    for package in sorted(_PROJECT_IMPORT_PACKAGES):
+        package_root = harness / package
+        for directory, directory_names, file_names in os.walk(
+            package_root, topdown=True, followlinks=False
+        ):
+            directory_path = Path(directory)
+            kept = []
+            for name in sorted(directory_names):
+                child = directory_path / name
+                metadata = child.lstat()
+                if stat.S_ISLNK(metadata.st_mode) or name == "__pycache__":
+                    package_shadows.append(child.relative_to(root).as_posix())
+                    continue
+                kept.append(name)
+            directory_names[:] = kept
+            for name in sorted(file_names):
+                child = directory_path / name
+                metadata = child.lstat()
+                relative = child.relative_to(root).as_posix()
+                if stat.S_ISLNK(metadata.st_mode) or (
+                    name.endswith(_UNBOUND_IMPORT_SUFFIXES)
+                    and relative not in bound_paths
+                ):
+                    package_shadows.append(relative)
+    if package_shadows:
+        raise PreImportSuccessorError(
+            "harness package contains an unbound import shadow: "
+            + ", ".join(sorted(package_shadows))
         )
 
 
@@ -293,7 +338,7 @@ def _preimport_bootstrap(repository_root: Path | str) -> str:
     lock_payload = _read_regular(root, _LOCK_PATH)
     lock = _load_lock(lock_payload)
     declared, paths = _bindings(lock)
-    _reject_import_shadows(root)
+    _reject_import_shadows(root, frozenset(declared))
     snapshots = {_LOCK_PATH: lock_payload}
     for relative, expected in declared.items():
         payload = _read_regular(root, relative)
@@ -381,6 +426,7 @@ if __name__ == "__main__":
             file=sys.stderr,
         )
         raise SystemExit(2) from None
+    sys.dont_write_bytecode = True
     sys.path.insert(0, str(REPOSITORY_ROOT / "harness"))
 
 from concordance_harness.config import ConfigError  # noqa: E402
