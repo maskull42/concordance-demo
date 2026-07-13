@@ -161,6 +161,25 @@ The private receipt is `.pilot/aggregates/rule2-pilot-1/selection-rule2-1.json`.
 
 The receipt is published at mode `0600` through an exclusive claim and atomic hard link. If an interrupted write leaves that claim behind, run `python3 harness/evaluate_pilot_selection.py --recover-incomplete`. Recovery preserves changed or unrecognized bytes for inspection.
 
+#### Approved post-selection amendment
+
+A.G. Elrod’s later source audit identified one partial-fit mapping. The Grok methods-frame answer on John Brown clearly selects a terrorism classification but neither calls the raid fanatical nor gives an unqualified moral verdict. On 2026-07-12, A.G. approved treating that answer as outside the frozen map. The original 64-confirmation review and `selection-rule2-1.json` remain immutable historical artifacts.
+
+The amendment workflow proves the exact one-item delta, seals a complete 63-confirmation and 1-correction review under `author-review-2`, and writes a superseding `selection-rule2-2.json`. It changes the reviewed pair from `P3 / clear_preference` to `null / outside_map`. John Brown’s paired non-null count becomes 7 and its movement count becomes 4, so the selected cases do not change.
+
+Commit the amendment code and tests before writing either private artifact. Then run:
+
+```sh
+python3 harness/prepare_author_review_amendment.py --check
+python3 harness/prepare_author_review_amendment.py --write
+python3 harness/prepare_author_review_amendment.py --verify
+python3 harness/evaluate_pilot_selection_amended.py --check
+python3 harness/evaluate_pilot_selection_amended.py --write
+python3 harness/evaluate_pilot_selection_amended.py --verify
+```
+
+Both workflows are write-once, private, crash-recoverable, and transitively bound to the unchanged Rule 2 inputs. The amended receipt supersedes only the corrected mapping and its derived metrics. It does not erase Rule 2’s failed divergence result or authorize production.
+
 ### Final production run
 
 A final live run is authorized only when all of the following are true:

@@ -80,22 +80,25 @@ Only A.G. Elrod may replace a source record’s `proposed` verification state wi
 - Citation: Romans 16:7, New Revised Standard Version Updated Edition, Bible Gateway.
 - URL: https://www.biblegateway.com/passage/?search=Romans+16%3A7&version=NRSVUE
 - Accessed: 2026-07-10
+- Verification note: the linked NRSVue text was inspected. Romans 16:7 names Junia and renders the pair “prominent among the apostles.” This post-selection source check does not change the exact record from proposed; A.G. Elrod’s formal review remains pending.
 
 ### `woman-included-among-apostles / chrysostom-romans-thirty-one`
 
 - Exact claim: Chrysostom praises Junia as a woman deemed worthy of the title apostle, attesting an early female-and-inclusive reading.
-- Citation: John Chrysostom, Homily 31 on Romans, English translation hosted in the New Advent Fathers collection.
+- Frozen Rule 2 citation: John Chrysostom, Homily 31 on Romans, English translation hosted in the New Advent Fathers collection.
+- Verified citation: John Chrysostom, “Homily 31 on Romans,” comment on Romans 16:7, trans. J. Walker, J. Sheppard, and H. Browne, rev. George B. Stevens, in Nicene and Post-Nicene Fathers, First Series, vol. 11, ed. Philip Schaff (Buffalo, NY: Christian Literature Publishing Co., 1889), New Advent.
 - URL: https://www.newadvent.org/fathers/210231.htm
 - Accessed: 2026-07-10
-- Verification note: verify the translation and add a passage locator.
+- Verification note: the complete linked translation was inspected at the comment on Romans 16:7. Chrysostom identifies Junia as a woman and reads the phrase inclusively. This post-selection source check does not change the exact record from proposed; A.G. Elrod’s formal review remains pending.
 
 ### `woman-included-among-apostles / belleville-junia-apostle`
 
 - Exact claim: Belleville argues on lexical and grammatical grounds for reading Junia as a woman included among the apostles.
-- Citation: Linda L. Belleville, “ΙΟΥΝΙΑΝ … ΕΠΙΣΗΜΟΙ ΕΝ ΤΟΙΣ ΑΠΟΣΤΟΛΟΙΣ: A Re-examination of Romans 16.7 in Light of Primary Source Materials,” New Testament Studies 51, no. 2 (2005): 231-249, DOI 10.1017/S0028688505000135.
+- Frozen Rule 2 citation: Linda L. Belleville, “ΙΟΥΝΙΑΝ … ΕΠΙΣΗΜΟΙ ΕΝ ΤΟΙΣ ΑΠΟΣΤΟΛΟΙΣ: A Re-examination of Romans 16.7 in Light of Primary Source Materials,” New Testament Studies 51, no. 2 (2005): 231-249, DOI 10.1017/S0028688505000135.
+- Verified citation: Linda Belleville, “ΙΟΥΝΙΑΝ … ΕΠΙΣΗΜΟΙ ΕΝ ΤΟΙΣ ΑΠΟΣΤΟΛΟΙΣ: A Re-examination of Romans 16.7 in Light of Primary Source Materials,” New Testament Studies 51, no. 2 (2005): 231-249, especially 231-232 and 242-248, DOI 10.1017/S0028688505000135.
 - URL: https://doi.org/10.1017/S0028688505000135
 - Accessed: 2026-07-12
-- Verification note: bibliographic metadata is confirmed; the paywalled full text remains to be inspected through legitimate access.
+- Verification note: the complete Cambridge article was inspected in the user-supplied PDF, SHA-256 `67981fac0e9626b3e80ce45a5b6ee031969a914c4d7204f8cd70d941dbe0b22f`, especially pp. 231-232 and 242-248. Belleville argues for the feminine name and inclusive construction, treats “apostles” as broader than the Twelve on p. 233, and allows the feminine variant Julia on p. 248. This post-selection source check does not change the exact record from proposed; A.G. Elrod’s formal review remains pending.
 
 ### `woman-included-among-apostles / hartmann-junia-translation`
 
@@ -103,22 +106,26 @@ Only A.G. Elrod may replace a source record’s `proposed` verification state wi
 - Citation: Andrea Hartmann, “Junia – A Woman Lost in Translation: The Name IOYNIAN in Romans 16:7 and its History of Interpretation,” Open Theology 6, no. 1 (2020): 646-660, DOI 10.1515/opth-2020-0138.
 - URL: https://doi.org/10.1515/opth-2020-0138
 - Accessed: 2026-07-12
+- Verification note: the complete publisher-hosted open-access article was inspected. Hartmann supports the feminine name and documents the early inclusive reception. This post-selection source check does not change the exact record from proposed; A.G. Elrod’s formal review remains pending.
 
 ### `woman-known-to-apostles / burer-wallace-junia`
 
-- Exact claim: Burer and Wallace argue that Junia was a woman but that the construction means she and Andronicus were well known to the apostles.
-- Citation: Michael H. Burer and Daniel B. Wallace, “Was Junia Really an Apostle? A Re-examination of Rom 16.7,” New Testament Studies 47, no. 1 (2001): 76-91, DOI 10.1017/S0028688501000066.
+- Frozen Rule 2 exact claim: Burer and Wallace argue that Junia was a woman but that the construction means she and Andronicus were well known to the apostles.
+- Verified refinement: Burer and Wallace lean toward reading Junia as a woman but argue that the construction means she and Andronicus were well known to the apostles rather than included among them.
+- Frozen Rule 2 citation: Michael H. Burer and Daniel B. Wallace, “Was Junia Really an Apostle? A Re-examination of Rom 16.7,” New Testament Studies 47, no. 1 (2001): 76-91, DOI 10.1017/S0028688501000066.
+- Verified citation: Michael H. Burer and Daniel B. Wallace, “Was Junia Really an Apostle? A Re-examination of Rom 16.7,” New Testament Studies 47, no. 1 (2001): 76-91, especially 78 and 90, DOI 10.1017/S0028688501000066.
 - URL: https://doi.org/10.1017/S0028688501000066
 - Accessed: 2026-07-12
-- Verification note: bibliographic metadata is confirmed; the paywalled full text remains to be inspected through legitimate access.
+- Verification note: the complete published article was inspected, especially pp. 78 and 90. On p. 78 the authors state that they lean toward the feminine reading; on p. 90 they conclude that the phrase identifies Andronicus and Junia as well known to the apostles rather than members of that group. Cambridge’s publisher metadata and abstract match the inspected article. This post-selection source check does not change the exact record from proposed; A.G. Elrod’s formal review remains pending.
 
 ### `man-included-among-apostles / wolters-iounian`
 
 - Exact claim: Wolters argues that the form may represent a masculine Hebrew name and concludes that the evidence can favor a male apostle, while calling the case plausible rather than decisive.
-- Citation: Albert Wolters, “ΙΟΥΝΙΑΝ (Romans 16:7) and the Hebrew Name Yĕḥunnī,” Journal of Biblical Literature 127, no. 2 (Summer 2008): 397-408, JSTOR 25610127.
+- Frozen Rule 2 citation: Albert Wolters, “ΙΟΥΝΙΑΝ (Romans 16:7) and the Hebrew Name Yĕḥunnī,” Journal of Biblical Literature 127, no. 2 (Summer 2008): 397-408, JSTOR 25610127.
+- Verified citation: Al Wolters, “ΙΟΥΝΙΑΝ (Romans 16:7) and the Hebrew Name Yĕḥunnī,” Journal of Biblical Literature 127, no. 2 (Summer 2008): 397-408, especially 407-408, JSTOR 25610127.
 - URL: https://www.jstor.org/stable/25610127
 - Accessed: 2026-07-12
-- Verification note: the complete article has been inspected through p. 408. Wolters says the evidence may tip the scales in favor of a male apostle, but he also says a plausible, non-decisive case can be made for either a masculine Hebrew name or a feminine Latin name. A.G. Elrod has not yet author-verified the exact record.
+- Verification note: the complete article was inspected, especially pp. 407-408. The printed byline is Al Wolters. He says the evidence may tip the scales for some readers toward a male apostle, while his own judgment is that either the masculine Hebrew or feminine Latin identification remains plausible and neither is decisive. This post-selection source check does not change the exact record from proposed; A.G. Elrod’s formal review remains pending.
 
 ## `mill-harm-principle`
 
@@ -343,18 +350,21 @@ Only A.G. Elrod may replace a source record’s `proposed` verification state wi
 ### `justified-revolutionary-resistance / douglass-john-brown`
 
 - Exact claim: Douglass’s retrospective address portrays Brown’s failed raid as a morally serious action that advanced the destruction of slavery.
-- Citation: Frederick Douglass, John Brown: An Address by Frederick Douglass, at the Fourteenth Anniversary of Storer College, Harper’s Ferry, West Virginia, May 30, 1881 (Dover, NH: Morning Star Job Printing House, 1881), Library of Congress.
+- Frozen Rule 2 citation: Frederick Douglass, John Brown: An Address by Frederick Douglass, at the Fourteenth Anniversary of Storer College, Harper’s Ferry, West Virginia, May 30, 1881 (Dover, NH: Morning Star Job Printing House, 1881), Library of Congress.
+- Verified citation: Frederick Douglass, John Brown: An Address by Frederick Douglass, at the Fourteenth Anniversary of Storer College, Harper’s Ferry, West Virginia, May 30, 1881 (Dover, NH: Morning Star Job Printing House, 1881), especially 7-8 and 28, Library of Congress.
 - URL: https://www.loc.gov/item/07012896/
 - Accessed: 2026-07-12
-- Verification note: the work and publication metadata are confirmed, and the address explicitly credits Brown with beginning the war that ended slavery. Add page pinpoints during author verification.
+- Verification note: the complete Library of Congress scan was inspected. At pp. 7-8, Douglass places the raid within the violence of slavery and presents Brown as an agent of retributive justice. At p. 28, he distinguishes tactical failure from moral and political effect and credits Brown with beginning the war that ended slavery. This post-selection source check does not change the exact record from proposed; A.G. Elrod’s formal review remains pending.
 
 ### `morally-justified-terrorism / reynolds-john-brown`
 
-- Exact claim: Reynolds calls Brown a “good terrorist” who used violence against the exceptionally grave injustice of slavery, while distinguishing him from indiscriminate modern terrorists.
-- Citation: David S. Reynolds, John Brown, Abolitionist: The Man Who Killed Slavery, Sparked the Civil War, and Seeded Civil Rights (New York: Alfred A. Knopf, 2005; Vintage paperback, 2006).
+- Frozen Rule 2 exact claim: Reynolds calls Brown a “good terrorist” who used violence against the exceptionally grave injustice of slavery, while distinguishing him from indiscriminate modern terrorists.
+- Verified refinement: Reynolds explicitly applies “good terrorism” to Pottawatomie. More broadly, he characterizes Brown’s Kansas and Virginia violence as antislavery terrorism, includes Harpers Ferry within that campaign, and morally distinguishes Brown from indiscriminate modern terrorists because slavery was an exceptionally grave injustice.
+- Frozen Rule 2 citation: David S. Reynolds, John Brown, Abolitionist: The Man Who Killed Slavery, Sparked the Civil War, and Seeded Civil Rights (New York: Alfred A. Knopf, 2005; Vintage paperback, 2006).
+- Verified citation: David S. Reynolds, John Brown, Abolitionist: The Man Who Killed Slavery, Sparked the Civil War, and Seeded Civil Rights (New York: Alfred A. Knopf, 2005; Vintage paperback, 2006), especially 8-11, 165-166, and 500-506; revised Knopf Doubleday ebook, 2009.
 - URL: https://www.penguinrandomhouse.com/books/140728/john-brown-abolitionist-by-david-s-reynolds/
 - Accessed: 2026-07-12
-- Verification note: Reynolds states this characterization directly in the author interview on the publisher page and explains both the terrorism analogy and its moral qualification. The complete book has not yet been inspected for a page pinpoint; A.G. Elrod has not yet author-verified the mapping.
+- Verification note: the complete revised 2009 ebook was inspected, SHA-256 `d5ab3be54dd61a432fb2253dfd24f7e2a353269fa87088254a154e3ed9200fbb`. Pages 165-166 apply “good terrorism” directly to Pottawatomie, not specifically to Harpers Ferry. Pages 500-506 classify Brown broadly as an American terrorist, distinguish him from indiscriminate modern terrorists, and defend his violent antislavery campaign through slavery’s exceptional evil. The mapped family rests on this cumulative argument. This post-selection source check does not change the exact record from proposed; A.G. Elrod’s formal review remains pending.
 
 ### `guerrilla-or-insurrection-not-terrorism / finkelman-look-back-john-brown`
 
@@ -367,18 +377,20 @@ Only A.G. Elrod may replace a source record’s `proposed` verification state wi
 ### `guerrilla-or-insurrection-not-terrorism / etcheson-john-brown-terrorist`
 
 - Exact claim: Etcheson argues that interpreting Brown as an American terrorist is a misreading and situates him instead within guerrilla warfare and revolutionary antislavery, while acknowledging that he used terrorist tactics.
-- Citation: Nicole Etcheson, “John Brown, Terrorist?,” American Nineteenth Century History 10, no. 1 (March 2009): 29-48, DOI 10.1080/14664650802299735.
+- Frozen Rule 2 citation: Nicole Etcheson, “John Brown, Terrorist?,” American Nineteenth Century History 10, no. 1 (March 2009): 29-48, DOI 10.1080/14664650802299735.
+- Verified citation: Nicole Etcheson, “John Brown, Terrorist?,” American Nineteenth Century History 10, no. 1 (March 2009): 29-48, especially 29, 32, and 35-41, DOI 10.1080/14664650802299735.
 - URL: https://doi.org/10.1080/14664650802299735
 - Accessed: 2026-07-12
-- Verification note: Taylor and Francis confirms the complete metadata, and the abstract states this thesis directly. The full article remains access-restricted and must be inspected before author verification.
+- Verification note: the complete Taylor and Francis article was inspected in the user-supplied institutional PDF, SHA-256 `b72cef65ee205af946136488e1dc8a5d64eded56955bc7e1b417c1a22e0931a0`. Etcheson argues that guerrilla warfare has greater explanatory value than terrorism, while acknowledging deliberate fear, innocent deaths, hostage-taking as a terrorist tactic, and terrorist elements at Harpers Ferry. The position therefore records analytical primacy, not a categorical denial of terrorism. This post-selection source check does not change the exact record from proposed; A.G. Elrod’s formal review remains pending.
 
 ### `guerrilla-or-insurrection-not-terrorism / brown-provisional-constitution`
 
 - Exact claim: Brown’s provisional constitution supplies evidence of an organized political and military project intended to oppose slavery beyond the armory seizure itself.
-- Citation: U.S. Senate, Select Committee on the Harper’s Ferry Invasion, Report No. 278, 36th Congress, 1st Session, June 15, 1860, with Brown’s Provisional Constitution in the appendix.
+- Frozen Rule 2 citation: U.S. Senate, Select Committee on the Harper’s Ferry Invasion, Report No. 278, 36th Congress, 1st Session, June 15, 1860, with Brown’s Provisional Constitution in the appendix.
+- Verified citation: U.S. Senate, Select Committee on the Harper’s Ferry Invasion, Report No. 278, 36th Congress, 1st Session, June 15, 1860, appendix no. 3, “Provisional Constitution and Ordinances for the People of the United States,” 48-60.
 - URL: https://www.senate.gov/artandhistory/history/resources/pdf/HarpersFerryInvestigation1860.pdf
 - Accessed: 2026-07-12
-- Verification note: the report identifies the provisional government and reproduces Brown’s constitution in its appendix. This source supports the organized political-project claim, not by itself the judgment that Brown was not a terrorist.
+- Verification note: the complete public-domain report was inspected. The committee introduces the Chatham convention and provisional government in the report, then reproduces the convention journal and constitution in the appendix. The constitution’s preamble and institutional articles appear at printed pp. 48-60. This source supports the organized political-project claim, not by itself the judgment that Brown was not a terrorist. This post-selection source check does not change the exact record from proposed; A.G. Elrod’s formal review remains pending.
 
 ### `just-cause-wrong-or-reckless-means / lincoln-leavenworth`
 
@@ -390,11 +402,13 @@ Only A.G. Elrod may replace a source record’s `proposed` verification state wi
 
 ### `just-cause-wrong-or-reckless-means / mcglone-john-browns-war`
 
-- Exact claim: McGlone reconstructs Brown’s aims, planning, and social context, providing evidence for judging both the antislavery cause and the raid’s means and feasibility.
-- Citation: Robert E. McGlone, John Brown’s War against Slavery (Cambridge: Cambridge University Press, 2009), publisher excerpt.
+- Frozen Rule 2 exact claim: McGlone reconstructs Brown’s aims, planning, and social context, providing evidence for judging both the antislavery cause and the raid’s means and feasibility.
+- Verified refinement: McGlone reconstructs Brown’s evolving aims, planning, operational choices, and social context. He argues that the raid was principally a political and propagandistic act whose goals conflicted with tactical success. The work informs judgments about means and feasibility but does not itself supply a moral verdict.
+- Frozen Rule 2 citation: Robert E. McGlone, John Brown’s War against Slavery (Cambridge: Cambridge University Press, 2009), publisher excerpt.
+- Verified citation: Robert E. McGlone, John Brown’s War against Slavery (Cambridge: Cambridge University Press, 2009), especially 7-13, 220-225, 239-249, 258-281, and 293-306.
 - URL: https://assets.cambridge.org/97805215/14439/excerpt/9780521514439_excerpt.pdf
 - Accessed: 2026-07-12
-- Verification note: the publisher excerpt and independent bibliographic records confirm the work and its contextual scope, but the excerpt does not independently establish a moral verdict. Inspect the complete book and add pages before author verification.
+- Verification note: the complete book was inspected in the user-supplied PDF, SHA-256 `a017ac0125ae501b328cb3088b941243f30552997159da55cd9827eb610c2030`. McGlone reconstructs the considered but hazardous plan, political purpose, projected campaign, hostage strategy, tactical errors, and fatal delay. He supplies contextual and strategic evidence, while Lincoln supplies the position family’s direct moral judgment. This post-selection source check does not change the exact record from proposed; A.G. Elrod’s formal review remains pending.
 
 ### `criminal-fanatical-violence / lincoln-cooper-union`
 
@@ -412,12 +426,14 @@ Only A.G. Elrod may replace a source record’s `proposed` verification state wi
 - Accessed: 2026-07-12
 - Verification note: the series introduction uses this exact contrast. It documents competing memory traditions and does not itself endorse either characterization.
 
-## Cross-cutting unresolved items
+## Cross-cutting status and unresolved items
 
 - Complete user-supplied copies of Brink’s Mill’s Progressive Principles, Frank’s Downfall, Alperovitz’s The Decision to Use the Atomic Bomb, and Hasegawa’s Racing the Enemy have been inspected. A.G. Elrod confirmed university-library access to all four works on 2026-07-12. No priority-case access gap remains.
-- If Junia is selected, obtain full text for Belleville and Burer and Wallace. Wolters’s complete article has already been inspected.
+- Junia was selected. Belleville, Burer and Wallace, and Wolters have now been inspected in full. No Junia access gap remains.
 - If Locke is selected, obtain full text for van der Vossen, Layman, Drury, and Ince. Those records currently rest on publisher abstracts.
-- If John Brown is selected, obtain full text for Etcheson and the complete books by Reynolds and McGlone. Reynolds uniquely anchors the “morally justified terrorism” family; only his publisher interview has been inspected.
+- John Brown was selected. Etcheson and the complete books by Reynolds and McGlone have now been inspected. No selected John Brown access gap remains.
+- A.G. Elrod approved keeping the Junia map non-exhaustive and omitting the unattested “man known to the apostles” quadrant on 2026-07-12.
+- A.G. Elrod approved changing the Grok methods-frame primary mapping from `criminal-fanatical-violence` to `null / outside_map` on 2026-07-12. Preserve the original review and selection receipts; bind the correction through superseding audit artifacts.
 - The older public-domain translations of Jerome and the Protoevangelium of James should be checked against modern critical translations.
 - The atomic-bomb and John Brown maps mix historical-causal and moral classifications. Verify that each source attests the specific mapped family and that the map does not collapse distinct claims.
 - Position labels are analytic groupings drafted for this prototype. Verification must assess both the source claim and the fairness of grouping it under the stated label.
