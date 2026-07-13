@@ -211,6 +211,17 @@ python3 harness/finalize_selected_content_review.py --verify
 
 Sealing authorizes a later, separately reviewed promotion from proposed to author-verified. It does not perform that promotion, solve the missing divergence case, authorize model spending, or unlock production.
 
+Once the exact seal exists, promote it into a new public content version:
+
+```sh
+python3 harness/promote_selected_content.py --check
+python3 harness/promote_selected_content.py --write
+python3 harness/promote_selected_content.py --verify
+npm run validate:candidates:author-verified
+```
+
+Generation and Python verification require the exact private seal. The public validator does not. It pins the complete `candidate-1.1.2` bundle and its `candidate-1.1.1` predecessor, validates both question schemas, and proves that only the content version and all 26 verification records changed. The scholarship is author-verified. The product is not production-eligible: divergence still lacks a selected case, and the linked-challenge final run has not been executed.
+
 Packet and seal publication use an OS-level transaction lock, token-owned staging, hashed payload inventories, no-replace hard links, identity-checked claims, and private cleanup quarantine. A hard interruption releases the lock and leaves a recoverable claim or pre-claim marker. Use only the command matching the interrupted operation:
 
 ```sh

@@ -1,0 +1,128 @@
+{
+  "schema_version": "candidate-successor-1.0.0",
+  "content_version": "candidate-1.1.2",
+  "created_at": "2026-07-13T07:36:08.042+00:00",
+  "supersedes": {
+    "content_version": "candidate-1.1.1",
+    "manifest": {
+      "path": "candidate/successors/candidate-1.1.1/manifest.json",
+      "sha256": "783decf0e3cfecd7f22dc5fc6d7e4389153e45f78928a3d7a792d63efd53bdd6"
+    }
+  },
+  "selection_receipt": {
+    "schema_version": "pilot-selection-amendment-1.0.0",
+    "selection_id": "rule2-selection-2",
+    "path": ".pilot/aggregates/rule2-pilot-1/selection-rule2-2.json",
+    "sha256": "7a2b1587ebd0daa160870a2948482c3fc17f122829c1311cacb778f49427de13",
+    "availability": "private-local"
+  },
+  "selection_result": {
+    "status": "partial-selection-new-pool-required",
+    "selected_candidate_ids": [
+      "junia-romans-16-7",
+      "john-brown-harpers-ferry"
+    ],
+    "failed_behaviors": [
+      "divergence"
+    ],
+    "scholarship_verification": "author-verified",
+    "production_eligible": false
+  },
+  "correction": {
+    "question_id": "john-brown-harpers-ferry",
+    "model_key": "grok",
+    "variant_id": "methods-and-violence-frame",
+    "call_type": "answer",
+    "cell_id": "john-brown-harpers-ferry:grok:methods-and-violence-frame:answer",
+    "response_sha256": "3557ffe9cdd9fa492e11965ecade6157acf853812f1367f57e9aac2ad92b56c8",
+    "from": {
+      "primary_position_id": "criminal-fanatical-violence",
+      "reason_code": "clear_preference"
+    },
+    "to": {
+      "primary_position_id": null,
+      "reason_code": "outside_map"
+    },
+    "paired_non_null_model_count": {
+      "before": 8,
+      "after": 7
+    },
+    "movement_count": {
+      "before": 5,
+      "after": 4
+    },
+    "selection_changed": false
+  },
+  "author_review": {
+    "schema_version": "selected-content-review-receipt-1.0.0",
+    "review_id": "selected-review-57e22e96d69998198d061b87d76b3923",
+    "reviewer": {
+      "id": "ag-elrod",
+      "display_name": "A.G. Elrod"
+    },
+    "reviewed_at": "2026-07-13T07:33:29.353Z",
+    "sealed_at": "2026-07-13T07:36:08.042+00:00",
+    "receipt": {
+      "path": ".pilot/aggregates/rule2-pilot-1/selected-content-review-1/sealed-review/review.json",
+      "sha256": "96dd200c5fa15a9206489313d7eea83469cb9d6a841b8e9af5140745e109fa1b",
+      "availability": "private-local"
+    },
+    "draft": {
+      "path": ".pilot/aggregates/rule2-pilot-1/selected-content-review-1/sealed-review/review-draft.json",
+      "sha256": "21e077b0cdf0ae8a935ed3cdd3d934342c5e84d3ea95d19729dcce99fb5bdd3e",
+      "availability": "private-local"
+    },
+    "packet_receipt_sha256": "8ef1f9bca3c7fee77bcbc3f3e4a84d6052053e0e030de5263f85ea153d5278ee",
+    "verified_question_ids": [
+      "junia-romans-16-7",
+      "john-brown-harpers-ferry"
+    ],
+    "content_verification_status": "author-verified"
+  },
+  "production_gate": {
+    "eligible": false,
+    "blockers": [
+      "divergence has no qualifying selected candidate",
+      "the linked-challenge final model run has not been executed"
+    ]
+  },
+  "questions": [
+    {
+      "id": "junia-romans-16-7",
+      "base": {
+        "path": "candidate/successors/candidate-1.1.1/questions/junia-romans-16-7.json",
+        "sha256": "4a2b7115a96e92d7db01d9a0a65b03046b323c0b68425e96083d6d8670eed0e7"
+      },
+      "successor": {
+        "path": "candidate/successors/candidate-1.1.2/questions/junia-romans-16-7.json",
+        "sha256": "6d76a0b38b682ce3b2c0550f4a0e557550edf0b71fe3814905ef748fc09e41e7"
+      }
+    },
+    {
+      "id": "john-brown-harpers-ferry",
+      "base": {
+        "path": "candidate/successors/candidate-1.1.1/questions/john-brown-harpers-ferry.json",
+        "sha256": "a3489188ec29b402a893229bb227255dfd4bdbc10db0f7c020bb7b0944984ac4"
+      },
+      "successor": {
+        "path": "candidate/successors/candidate-1.1.2/questions/john-brown-harpers-ferry.json",
+        "sha256": "4f88f73376d3ae0677af79aaa179a700717b779e806806f80d200e553a1d58ef"
+      }
+    }
+  ],
+  "promoter": {
+    "source_files": {
+      "harness/author_review_assets/review.css": "fe61f86b190dbd64e2998d0cce0794d9db757495e0d2366c512e7160ada88b6b",
+      "harness/concordance_harness/util.py": "fa9f45770ba270f0950443e248f89faba86b9c3e9b5c2715000efaedb13e3993",
+      "harness/evaluate_pilot_selection_amended.py": "148d51e9663e759f46fcdc8c0a8fb197193345ba1ecd7a8803fec5885c4012f6",
+      "harness/finalize_selected_content_review.py": "887bd2385a76599a22739c69caf6994f0a37334f0764bd7db94b34335f8508e0",
+      "harness/prepare_selected_content_review.py": "77fcc9efc306a3f4f1d03e9ab45fcdc180a039d2214d8e845a3b5a5e0ed758bf",
+      "harness/private_directory_publication.py": "ac2bfd0247eebfe039054b137e97f464d3fe98bc280ba07c2f3935c2ae1d18aa",
+      "harness/promote_selected_content.py": "6fcb0cb10dde760bf22d1b270b6606b7c675bd0ce4b40018241a360ab7424595",
+      "harness/selected_content_review_assets/review.css": "e4aebe53a4ff72f9784bf57bd1d77c204507840d1b864ceb16cdf580dfc6d785",
+      "harness/selected_content_review_assets/review.js": "7e04edf91ae69135350a7a9a0c50586080cdc8cef6ff22bf85fbeed581ef8d18",
+      "scripts/validate-successor-candidates.ts": "16a63c28ed4093f7025b720504dd570fe2a3bb94bdba8a5eadda5c6149cc943e"
+    },
+    "execution_sha256": "b644a8fd06ed3e9bd78bb001884d1a210c2069c4566a218ce66cf3e16bd447a9"
+  }
+}

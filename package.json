@@ -13,6 +13,7 @@
     "validate:data:production": "tsx scripts/validate-data.ts --dataset data --production",
     "validate:candidates": "tsx scripts/validate-candidates.ts",
     "validate:candidates:successor": "tsx scripts/validate-successor-candidates.ts",
+    "validate:candidates:author-verified": "tsx scripts/validate-author-verified-successor.ts",
     "build": "npm run validate:data && tsc -b && cross-env VITE_DATASET=sample vite build",
     "build:production": "npm run validate:data:production && tsc -b && cross-env VITE_DATASET=production vite build",
     "preview": "vite preview",
@@ -22,7 +23,7 @@
     "test:e2e": "playwright test",
     "lint": "eslint .",
     "harness:dry-run": "python3 harness/generate.py --dry-run",
-    "check": "npm run validate:candidates && npm run lint && npm run test:harness && npm run test && npm run build"
+    "check": "npm run validate:candidates && npm run validate:candidates:successor && npm run validate:candidates:author-verified && npm run lint && npm run test:harness && npm run test && npm run build"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.2.8",
