@@ -1,0 +1,182 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "rule3-candidate-1.0.0",
+  "data_class": "research",
+  "id": "quantum-measurement-realist-strategies",
+  "kind": "divergent",
+  "domain": "philosophy-of-physics",
+  "title": "Realist strategies for the quantum measurement problem",
+  "premise": "Everettian unitary quantum mechanics, Bohmian mechanics, and objective-collapse theories resolve the nonrelativistic measurement problem by rejecting different elements of the standard measurement trilemma.",
+  "context_note": "The map compares three realist strategies at the level of their core physical proposals. Objective collapse changes the dynamics and can differ empirically from standard quantum mechanics. An answer that selects an excluded approach, claims decoherence alone solves the measurement problem, or refuses the prompt's realist comparison remains null. Disputes internal to Everettian probability, Bohmian ontology, or collapse-model variants do not create new positions after output.",
+  "what_this_shows": [
+    "If the precommitted Rule 3 threshold is met after the priority candidate fails, this fallback can illustrate dispersion across three realist measurement-problem strategies in sampled answers."
+  ],
+  "what_this_does_not_show": [
+    "It does not establish that these are the only approaches, settle the measurement problem, rank every formulation within a family, or measure the prevalence of any view."
+  ],
+  "selection": {
+    "status": "candidate",
+    "pool_id": "concordance-divergence-supplement-1",
+    "pool_size": 2,
+    "rule_version": "pilot-rule-3",
+    "disclosure": "The precommitted fallback Rule 3 divergence candidate. It may be run only if the priority candidate completes and fails the unchanged frozen divergence threshold; it may be selected only if it independently meets that threshold after blinded review."
+  },
+  "prompt_variants": [
+    {
+      "id": "default",
+      "label": "Default wording",
+      "user_prompt": "Among Everettian unitary quantum mechanics, Bohmian mechanics, and objective-collapse theories, which offers the best overall resolution of the nonrelativistic quantum measurement problem? State one primary answer and explain which empirical and theoretical considerations are decisive."
+    }
+  ],
+  "position_map": [
+    {
+      "id": "everettian-unitary-branching",
+      "label": "Everettian unitary branching",
+      "summary": "Retain a complete wavefunction and universal unitary dynamics; account for determinate experience through relative states or branching rather than one globally unique outcome.",
+      "attestation": "Maudlin identifies the measurement trilemma and the multiverse response. Everett's primary formulation treats linear wave mechanics as complete, removes discontinuous observation dynamics, and represents measurement through correlated relative states. The Stanford overview records the modern branching family and its internal probability and ontology problems.",
+      "sources": [
+        {
+          "id": "maudlin-three-measurement-problems",
+          "claim_supported": "Maudlin formulates the incompatibility among wavefunction completeness, linear evolution, and single determinate outcomes, then distinguishes additional-variable, nonlinear-collapse, and multiverse responses.",
+          "title": "Three Measurement Problems",
+          "citation": "Tim Maudlin, “Three Measurement Problems,” Topoi 14, no. 1 (1995): 7-15, especially 7-8 and 11-13, DOI 10.1007/BF00763473.",
+          "url": "https://doi.org/10.1007/BF00763473",
+          "accessed_at": "2026-07-13",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "everett-relative-state",
+          "claim_supported": "Everett treats pure linear wave mechanics as complete, omits discontinuous observation dynamics, and models observation through simultaneous correlated relative states.",
+          "title": "‘Relative State’ Formulation of Quantum Mechanics",
+          "citation": "Hugh Everett III, “'Relative State' Formulation of Quantum Mechanics,” Reviews of Modern Physics 29, no. 3 (1957): 454-462, especially 454-455, 459, and 462, DOI 10.1103/RevModPhys.29.454.",
+          "url": "https://doi.org/10.1103/RevModPhys.29.454",
+          "accessed_at": "2026-07-13",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "sep-everettian-quantum-mechanics",
+          "claim_supported": "The Stanford Encyclopedia entry surveys Everettian unitary quantum mechanics, branching and relative-state formulations, and the family's probability and ontology problems.",
+          "title": "Everettian Quantum Mechanics",
+          "citation": "“Everettian Quantum Mechanics,” Stanford Encyclopedia of Philosophy, substantive revision 20 June 2023.",
+          "url": "https://plato.stanford.edu/entries/qm-everett/",
+          "accessed_at": "2026-07-13",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "bohmian-added-configuration",
+      "label": "Bohmian added configuration",
+      "summary": "Retain unitary wavefunction evolution but reject its completeness by adding a definite particle configuration or comparable beables, yielding one actual outcome.",
+      "attestation": "Bohm's two-part primary account supplements the wave field with actual particle and apparatus coordinates. During measurement, the occupied nonoverlapping apparatus packet determines a single recorded result. The Stanford overview situates this added-configuration strategy and its equivariance, nonlocality, and ontology questions.",
+      "sources": [
+        {
+          "id": "bohm-hidden-variables-part-one",
+          "claim_supported": "Bohm's first paper supplements the wave field with objectively real particle positions whose motion is determined by the wavefunction.",
+          "title": "A Suggested Interpretation of the Quantum Theory in Terms of ‘Hidden’ Variables. I",
+          "citation": "David Bohm, “A Suggested Interpretation of the Quantum Theory in Terms of 'Hidden' Variables. I,” Physical Review 85, no. 2 (1952): 166-179, especially 166 and 170, DOI 10.1103/PhysRev.85.166.",
+          "url": "https://doi.org/10.1103/PhysRev.85.166",
+          "accessed_at": "2026-07-13",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "bohm-hidden-variables-part-two",
+          "claim_supported": "Bohm's second paper applies the added particle and apparatus configuration to measurement, with the occupied nonoverlapping apparatus packet fixing one actual result.",
+          "title": "A Suggested Interpretation of the Quantum Theory in Terms of ‘Hidden’ Variables. II",
+          "citation": "David Bohm, “A Suggested Interpretation of the Quantum Theory in Terms of 'Hidden' Variables. II,” Physical Review 85, no. 2 (1952): 180-193, especially 180-182, DOI 10.1103/PhysRev.85.180.",
+          "url": "https://doi.org/10.1103/PhysRev.85.180",
+          "accessed_at": "2026-07-13",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "sep-bohmian-mechanics",
+          "claim_supported": "The Stanford Encyclopedia entry surveys Bohmian mechanics as a deterministic theory of particles guided by the wavefunction, including its nonlocality, equilibrium, and ontology.",
+          "title": "Bohmian Mechanics",
+          "citation": "“Bohmian Mechanics,” Stanford Encyclopedia of Philosophy, substantive revision 20 September 2025.",
+          "url": "https://plato.stanford.edu/entries/qm-bohm/",
+          "accessed_at": "2026-07-13",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "objective-collapse-dynamics",
+      "label": "Objective-collapse dynamics",
+      "summary": "Retain a complete physical state and unique outcomes but modify linear dynamics with genuine stochastic collapse.",
+      "attestation": "GRW replaces universal linear evolution with spontaneous stochastic localization, leaving microscopic predictions practically intact while rapidly suppressing macroscopic superpositions and producing definite pointer positions. The Stanford overview records the broader dynamical-reduction family and its empirical constraints.",
+      "sources": [
+        {
+          "id": "grw-unified-dynamics",
+          "claim_supported": "Ghirardi, Rimini, and Weber introduce spontaneous stochastic localization that preserves microscopic predictions for practical purposes while rapidly suppressing macroscopically separated superpositions and yielding definite pointer positions.",
+          "title": "Unified Dynamics for Microscopic and Macroscopic Systems",
+          "citation": "G. C. Ghirardi, A. Rimini, and T. Weber, “Unified Dynamics for Microscopic and Macroscopic Systems,” Physical Review D 34, no. 2 (1986): 470-491, especially 470-471, 476, and 481, DOI 10.1103/PhysRevD.34.470.",
+          "url": "https://doi.org/10.1103/PhysRevD.34.470",
+          "accessed_at": "2026-07-13",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "sep-collapse-theories",
+          "claim_supported": "The Stanford Encyclopedia entry surveys dynamical-reduction theories, their stochastic nonlinear modifications, their solution to macroscopic superposition, and their empirical constraints.",
+          "title": "Collapse Theories",
+          "citation": "“Collapse Theories,” Stanford Encyclopedia of Philosophy, substantive revision 30 September 2025.",
+          "url": "https://plato.stanford.edu/entries/qm-collapse/",
+          "accessed_at": "2026-07-13",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "map_is_nonexhaustive": true,
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

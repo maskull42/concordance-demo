@@ -1,0 +1,1082 @@
+{
+  "schema_version": "rule3-lock-1.0.0",
+  "status": "immutable-preexecution-lock-no-spending-authorized",
+  "pool_id": "concordance-divergence-supplement-1",
+  "pool_size": 2,
+  "rule_version": "pilot-rule-3",
+  "content_version": "rule3-candidate-1.0.0",
+  "bindings": {
+    "dossier": {
+      "path": "candidate/DIVERGENCE_SUPPLEMENT_RESEARCH.md",
+      "sha256": "474942c9c81b8c5ac94699c72b9039ee63b01c53452f1c0938a9044b583ccb00"
+    },
+    "source_freeze": {
+      "path": "candidate/rule3/source-freeze.json",
+      "sha256": "2ee5bc2d754b3e2bb199a45de26f2eb4b12cd72f41fd27e4efc3544118a5b8b2"
+    },
+    "mapping_rubric": {
+      "path": "candidate/MAPPING_RUBRIC.md",
+      "sha256": "3b9401cc74fc47b60b3e7b9c3d8a60834427a533344fb4b9118c8ca88f93a89d"
+    },
+    "protocol": {
+      "path": "config/rule3-protocol.json",
+      "protocol_version": "rule3-1.0.0",
+      "sha256": "0eff0061d4b4cee949f4524c3c01be394c6bb1e0e81399792eaa2a421c01ede3"
+    },
+    "models_config": {
+      "path": "harness/config/models.json",
+      "config_version": "1.0.0",
+      "sha256": "c67f043202696a71998d7c5ea9a18ce4c574fe244741717077e45e00acb7fb05"
+    },
+    "pricing_review": {
+      "path": "harness/PRICING_REVIEW.md",
+      "sha256": "5035bea0d6740acd6ea26326ccf3a1e497c868fa30ef9c44fe3f7b84f0b0292c"
+    },
+    "lock_schema": {
+      "path": "candidate/rule3-lock.schema.json",
+      "sha256": "f6c1180c0fc32713c69cb0780ced2ce68073ff5111d0ccac9fcf241b88af16f8"
+    }
+  },
+  "candidates": [
+    {
+      "id": "galatians-pistis-christou",
+      "role": "priority",
+      "kind": "divergent",
+      "path": "candidate/rule3/questions/galatians-pistis-christou.json",
+      "sha256": "4bdd90ee9134dac142a1e1a0df689d8dc29dbb0b673107bbad9721200b7543f6"
+    },
+    {
+      "id": "quantum-measurement-realist-strategies",
+      "role": "fallback",
+      "kind": "divergent",
+      "path": "candidate/rule3/questions/quantum-measurement-realist-strategies.json",
+      "sha256": "d1516759687b491d39c6bd2f33dfc0e6a92cc02ffc0b75fd691bfd83d42a8350"
+    }
+  ],
+  "models": [
+    {
+      "model_key": "gemini",
+      "family": "Gemini",
+      "provider": "google",
+      "requested_model_id": "gemini-3.1-pro-preview",
+      "route": "google-direct",
+      "environment_variable": "GOOGLE_API_KEY",
+      "api_style": "google",
+      "base_url": "https://generativelanguage.googleapis.com",
+      "generation_path": "/v1beta/models/{model}:generateContent",
+      "metadata_path": "/v1beta/models/{model}",
+      "metadata_mode": "single",
+      "auth_kind": "google-query",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": false,
+          "value": null,
+          "reason": "Gemini 3.1 Pro documented default"
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_output_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "Provider default reasoning behavior"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 2.0,
+        "output_per_million": 12.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "claude",
+      "family": "Claude",
+      "provider": "anthropic",
+      "requested_model_id": "claude-fable-5",
+      "route": "anthropic-direct",
+      "environment_variable": "ANTHROPIC_API_KEY",
+      "api_style": "anthropic",
+      "base_url": "https://api.anthropic.com",
+      "generation_path": "/v1/messages",
+      "metadata_path": "/v1/models/{model}",
+      "metadata_mode": "single",
+      "auth_kind": "anthropic-key",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": false,
+          "value": null,
+          "reason": "Temperature omitted for Claude Fable 5"
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "Always-on adaptive reasoning; no reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 10.0,
+        "output_per_million": 50.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "cohere",
+      "family": "Cohere",
+      "provider": "cohere",
+      "requested_model_id": "command-a-plus-05-2026",
+      "route": "cohere-direct",
+      "environment_variable": "COHERE_API_KEY",
+      "api_style": "cohere",
+      "base_url": "https://api.cohere.com",
+      "generation_path": "/v2/chat",
+      "metadata_path": "/v1/models/{model}",
+      "metadata_mode": "single",
+      "auth_kind": "bearer",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": true,
+          "value": 0.2
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "No separate reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 0.0,
+        "output_per_million": 0.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "qwen",
+      "family": "Qwen",
+      "provider": "deepinfra",
+      "requested_model_id": "Qwen/Qwen3.5-397B-A17B",
+      "route": "deepinfra",
+      "environment_variable": "DEEPINFRA_API_KEY",
+      "api_style": "openai",
+      "base_url": "https://api.deepinfra.com",
+      "generation_path": "/v1/openai/chat/completions",
+      "metadata_path": "/v1/models",
+      "metadata_mode": "list",
+      "auth_kind": "bearer",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": true,
+          "value": 0.2
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "No separate reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 0.45,
+        "output_per_million": 3.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "deepseek",
+      "family": "DeepSeek",
+      "provider": "deepseek",
+      "requested_model_id": "deepseek-v4-pro",
+      "route": "deepseek-direct",
+      "environment_variable": "DEEPSEEK_API_KEY",
+      "api_style": "openai",
+      "base_url": "https://api.deepseek.com",
+      "generation_path": "/chat/completions",
+      "metadata_path": "/models",
+      "metadata_mode": "list",
+      "auth_kind": "bearer",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": true,
+          "value": 0.2
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "No separate reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 0.435,
+        "output_per_million": 0.87,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "mistral",
+      "family": "Mistral",
+      "provider": "mistral",
+      "requested_model_id": "mistral-large-2512",
+      "route": "mistral-direct",
+      "environment_variable": "MISTRAL_API_KEY",
+      "api_style": "openai",
+      "base_url": "https://api.mistral.ai",
+      "generation_path": "/v1/chat/completions",
+      "metadata_path": "/v1/models/{model}",
+      "metadata_mode": "single",
+      "auth_kind": "bearer",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": true,
+          "value": 0.2
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "No separate reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 0.5,
+        "output_per_million": 1.5,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "grok",
+      "family": "Grok",
+      "provider": "xai",
+      "requested_model_id": "grok-4.5",
+      "route": "xai-direct",
+      "environment_variable": "XAI_API_KEY",
+      "api_style": "xai-responses",
+      "base_url": "https://api.x.ai",
+      "generation_path": "/v1/responses",
+      "metadata_path": "/v1/models/{model}",
+      "metadata_mode": "single",
+      "auth_kind": "bearer",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": true,
+          "value": 0.2
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_output_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "Mandatory provider-default reasoning shares the max_output_tokens ceiling"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {
+          "store": false,
+          "service_tier": "default"
+        }
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 2.0,
+        "output_per_million": 6.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "gpt",
+      "family": "GPT",
+      "provider": "openrouter",
+      "requested_model_id": "openai/gpt-5.6-sol",
+      "route": "openrouter-openai-pinned",
+      "environment_variable": "OPENROUTER_API_KEY",
+      "api_style": "openai",
+      "base_url": "https://openrouter.ai",
+      "generation_path": "/api/v1/chat/completions",
+      "metadata_path": "/api/v1/models/{model}/endpoints",
+      "metadata_mode": "openrouter-endpoints",
+      "auth_kind": "bearer",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": false,
+          "value": null,
+          "reason": "Temperature omitted for GPT-5.6 Sol"
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "Provider default reasoning behavior; no reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {
+          "service_tier": "default",
+          "provider": {
+            "only": [
+              "openai"
+            ],
+            "allow_fallbacks": false,
+            "require_parameters": true
+          }
+        }
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 5.0,
+        "output_per_million": 30.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    }
+  ],
+  "plans": {
+    "call_type": "answer",
+    "variant_id": "default",
+    "candidate_plans": [
+      {
+        "candidate_id": "galatians-pistis-christou",
+        "role": "priority",
+        "cell_count": 8,
+        "cells": [
+          {
+            "cell_id": "galatians-pistis-christou:gemini:default:answer",
+            "prompt_sha256": "687ae39f93d9400776b9d143d7553c1d609f1eb77997870fd7d0ddb2235b934d",
+            "requested_model_id": "gemini-3.1-pro-preview",
+            "route": "google-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": false,
+                "value": null,
+                "reason": "Gemini 3.1 Pro documented default"
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_output_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "Provider default reasoning behavior"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            }
+          },
+          {
+            "cell_id": "galatians-pistis-christou:claude:default:answer",
+            "prompt_sha256": "687ae39f93d9400776b9d143d7553c1d609f1eb77997870fd7d0ddb2235b934d",
+            "requested_model_id": "claude-fable-5",
+            "route": "anthropic-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": false,
+                "value": null,
+                "reason": "Temperature omitted for Claude Fable 5"
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "Always-on adaptive reasoning; no reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            }
+          },
+          {
+            "cell_id": "galatians-pistis-christou:cohere:default:answer",
+            "prompt_sha256": "687ae39f93d9400776b9d143d7553c1d609f1eb77997870fd7d0ddb2235b934d",
+            "requested_model_id": "command-a-plus-05-2026",
+            "route": "cohere-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "No separate reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            }
+          },
+          {
+            "cell_id": "galatians-pistis-christou:qwen:default:answer",
+            "prompt_sha256": "687ae39f93d9400776b9d143d7553c1d609f1eb77997870fd7d0ddb2235b934d",
+            "requested_model_id": "Qwen/Qwen3.5-397B-A17B",
+            "route": "deepinfra",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "No separate reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            }
+          },
+          {
+            "cell_id": "galatians-pistis-christou:deepseek:default:answer",
+            "prompt_sha256": "687ae39f93d9400776b9d143d7553c1d609f1eb77997870fd7d0ddb2235b934d",
+            "requested_model_id": "deepseek-v4-pro",
+            "route": "deepseek-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "No separate reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            }
+          },
+          {
+            "cell_id": "galatians-pistis-christou:mistral:default:answer",
+            "prompt_sha256": "687ae39f93d9400776b9d143d7553c1d609f1eb77997870fd7d0ddb2235b934d",
+            "requested_model_id": "mistral-large-2512",
+            "route": "mistral-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "No separate reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            }
+          },
+          {
+            "cell_id": "galatians-pistis-christou:grok:default:answer",
+            "prompt_sha256": "687ae39f93d9400776b9d143d7553c1d609f1eb77997870fd7d0ddb2235b934d",
+            "requested_model_id": "grok-4.5",
+            "route": "xai-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_output_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "Mandatory provider-default reasoning shares the max_output_tokens ceiling"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {
+                "store": false,
+                "service_tier": "default"
+              }
+            }
+          },
+          {
+            "cell_id": "galatians-pistis-christou:gpt:default:answer",
+            "prompt_sha256": "687ae39f93d9400776b9d143d7553c1d609f1eb77997870fd7d0ddb2235b934d",
+            "requested_model_id": "openai/gpt-5.6-sol",
+            "route": "openrouter-openai-pinned",
+            "requested_params": {
+              "temperature": {
+                "sent": false,
+                "value": null,
+                "reason": "Temperature omitted for GPT-5.6 Sol"
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "Provider default reasoning behavior; no reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {
+                "service_tier": "default",
+                "provider": {
+                  "only": [
+                    "openai"
+                  ],
+                  "allow_fallbacks": false,
+                  "require_parameters": true
+                }
+              }
+            }
+          }
+        ],
+        "plan_sha256": "c1cdda59dcda1331344a8bc10188913dfcaa06a62f74cc3344fe1f2edb5f6c94"
+      },
+      {
+        "candidate_id": "quantum-measurement-realist-strategies",
+        "role": "fallback",
+        "cell_count": 8,
+        "cells": [
+          {
+            "cell_id": "quantum-measurement-realist-strategies:gemini:default:answer",
+            "prompt_sha256": "a79f5563b86cc09b138b4f29c8c36d72318044b4a3499ff5cf26ff468e21cb01",
+            "requested_model_id": "gemini-3.1-pro-preview",
+            "route": "google-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": false,
+                "value": null,
+                "reason": "Gemini 3.1 Pro documented default"
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_output_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "Provider default reasoning behavior"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            }
+          },
+          {
+            "cell_id": "quantum-measurement-realist-strategies:claude:default:answer",
+            "prompt_sha256": "a79f5563b86cc09b138b4f29c8c36d72318044b4a3499ff5cf26ff468e21cb01",
+            "requested_model_id": "claude-fable-5",
+            "route": "anthropic-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": false,
+                "value": null,
+                "reason": "Temperature omitted for Claude Fable 5"
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "Always-on adaptive reasoning; no reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            }
+          },
+          {
+            "cell_id": "quantum-measurement-realist-strategies:cohere:default:answer",
+            "prompt_sha256": "a79f5563b86cc09b138b4f29c8c36d72318044b4a3499ff5cf26ff468e21cb01",
+            "requested_model_id": "command-a-plus-05-2026",
+            "route": "cohere-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "No separate reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            }
+          },
+          {
+            "cell_id": "quantum-measurement-realist-strategies:qwen:default:answer",
+            "prompt_sha256": "a79f5563b86cc09b138b4f29c8c36d72318044b4a3499ff5cf26ff468e21cb01",
+            "requested_model_id": "Qwen/Qwen3.5-397B-A17B",
+            "route": "deepinfra",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "No separate reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            }
+          },
+          {
+            "cell_id": "quantum-measurement-realist-strategies:deepseek:default:answer",
+            "prompt_sha256": "a79f5563b86cc09b138b4f29c8c36d72318044b4a3499ff5cf26ff468e21cb01",
+            "requested_model_id": "deepseek-v4-pro",
+            "route": "deepseek-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "No separate reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            }
+          },
+          {
+            "cell_id": "quantum-measurement-realist-strategies:mistral:default:answer",
+            "prompt_sha256": "a79f5563b86cc09b138b4f29c8c36d72318044b4a3499ff5cf26ff468e21cb01",
+            "requested_model_id": "mistral-large-2512",
+            "route": "mistral-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "No separate reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            }
+          },
+          {
+            "cell_id": "quantum-measurement-realist-strategies:grok:default:answer",
+            "prompt_sha256": "a79f5563b86cc09b138b4f29c8c36d72318044b4a3499ff5cf26ff468e21cb01",
+            "requested_model_id": "grok-4.5",
+            "route": "xai-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_output_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "Mandatory provider-default reasoning shares the max_output_tokens ceiling"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {
+                "store": false,
+                "service_tier": "default"
+              }
+            }
+          },
+          {
+            "cell_id": "quantum-measurement-realist-strategies:gpt:default:answer",
+            "prompt_sha256": "a79f5563b86cc09b138b4f29c8c36d72318044b4a3499ff5cf26ff468e21cb01",
+            "requested_model_id": "openai/gpt-5.6-sol",
+            "route": "openrouter-openai-pinned",
+            "requested_params": {
+              "temperature": {
+                "sent": false,
+                "value": null,
+                "reason": "Temperature omitted for GPT-5.6 Sol"
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "Provider default reasoning behavior; no reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {
+                "service_tier": "default",
+                "provider": {
+                  "only": [
+                    "openai"
+                  ],
+                  "allow_fallbacks": false,
+                  "require_parameters": true
+                }
+              }
+            }
+          }
+        ],
+        "plan_sha256": "a553e6ea4c0447cc9ab7bf8772d564279bc7370bf7b0500f2fcc23790c2cf456"
+      }
+    ],
+    "ordered_universe_plan_sha256": "c8bf53b01987d6118160d37df47bac1cbc35d61f455e6c0e7fa6efdf255a02a4"
+  },
+  "execution_policy": {
+    "call_type": "answer",
+    "cells_per_candidate": 8,
+    "attempts_per_cell": 3,
+    "output_token_cap": 16384,
+    "candidate_cost_cap_microdollars": 6000000,
+    "total_cost_cap_microdollars": 12000000,
+    "tools_enabled": false,
+    "web_search_enabled": false,
+    "retrieval_enabled": false
+  },
+  "threshold": {
+    "required_completed_responses": 8,
+    "minimum_non_null_primary_endorsements": 6,
+    "minimum_distinct_primary_positions": 3,
+    "maximum_primary_endorsements_per_position": 4
+  },
+  "state_transition_contract": {
+    "initial_state": "locked-awaiting-paid-authorization-and-pricing-recheck",
+    "transitions": [
+      {
+        "from": "locked-awaiting-paid-authorization-and-pricing-recheck",
+        "event": "paid-authorization-and-pricing-recheck-validated",
+        "to": "priority-ready"
+      },
+      {
+        "from": "priority-ready",
+        "event": "priority-run-started",
+        "to": "priority-running"
+      },
+      {
+        "from": "priority-running",
+        "event": "eight-responses-complete",
+        "to": "priority-awaiting-blind-review"
+      },
+      {
+        "from": "priority-running",
+        "event": "attempts-exhausted-before-completion",
+        "to": "terminal-priority-incomplete"
+      },
+      {
+        "from": "priority-awaiting-blind-review",
+        "event": "author-review-sealed-threshold-met",
+        "to": "terminal-priority-selected"
+      },
+      {
+        "from": "priority-awaiting-blind-review",
+        "event": "author-review-sealed-threshold-not-met",
+        "to": "fallback-ready"
+      },
+      {
+        "from": "fallback-ready",
+        "event": "fallback-run-started",
+        "to": "fallback-running"
+      },
+      {
+        "from": "fallback-running",
+        "event": "eight-responses-complete",
+        "to": "fallback-awaiting-blind-review"
+      },
+      {
+        "from": "fallback-running",
+        "event": "attempts-exhausted-before-completion",
+        "to": "terminal-fallback-incomplete"
+      },
+      {
+        "from": "fallback-awaiting-blind-review",
+        "event": "author-review-sealed-threshold-met",
+        "to": "terminal-fallback-selected"
+      },
+      {
+        "from": "fallback-awaiting-blind-review",
+        "event": "author-review-sealed-threshold-not-met",
+        "to": "terminal-two-completed-failures-no-selection"
+      }
+    ],
+    "terminal_states": [
+      "terminal-priority-selected",
+      "terminal-priority-incomplete",
+      "terminal-fallback-selected",
+      "terminal-fallback-incomplete",
+      "terminal-two-completed-failures-no-selection"
+    ],
+    "fallback_requires_completed_priority_threshold_failure": true,
+    "incomplete_is_not_threshold_failure": true,
+    "third_candidate_forbidden": true
+  },
+  "paid_authorization": {
+    "required": true,
+    "separate_from_lock": true,
+    "lock_authorizes_spending": false,
+    "required_before_state": "priority-ready",
+    "receipt_must_bind": [
+      "lock_sha256",
+      "git_head"
+    ],
+    "immediate_price_and_availability_recheck_required": true
+  },
+  "execution_sources": [
+    {
+      "path": "harness/authorize_rule3.py",
+      "sha256": "e2b0d8f9826fd8d187cb2b35b4ee6969b4842a7eb19790f978121d8c55017853"
+    },
+    {
+      "path": "harness/concordance_harness/__init__.py",
+      "sha256": "91a769d5f0f18268e8cccb07fe239195169a7b8de904286ea4a420da44312c6e"
+    },
+    {
+      "path": "harness/concordance_harness/config.py",
+      "sha256": "558a6acfb5f88a96861a087807a8d1fae5511fd50b2929ce60b49bbffca5c89d"
+    },
+    {
+      "path": "harness/concordance_harness/execution.py",
+      "sha256": "d48fb0c2ba4f32e4b01236f1498ee180fa2bc1a61c457224edc6a5e400123d9d"
+    },
+    {
+      "path": "harness/concordance_harness/pilot_lock.py",
+      "sha256": "6f44d43230b7e46b8d62b7207ba36f7ab27c23a4d2b513ca78c4d235da0ded7e"
+    },
+    {
+      "path": "harness/concordance_harness/planner.py",
+      "sha256": "9b60992c0cdfd9727cf1141a7bc73875614263377897424491c876199a227698"
+    },
+    {
+      "path": "harness/concordance_harness/providers.py",
+      "sha256": "0cd290762f2be33d738b640320d52498d81595590cc7b1efc82381a96830bb9a"
+    },
+    {
+      "path": "harness/concordance_harness/util.py",
+      "sha256": "fa9f45770ba270f0950443e248f89faba86b9c3e9b5c2715000efaedb13e3993"
+    },
+    {
+      "path": "harness/create_rule3_lock.py",
+      "sha256": "ccf334c669cfbe6bfa8ea112211276f9c48f0198d72c4b6eea952e99941b0ccc"
+    },
+    {
+      "path": "harness/evaluate_rule3.py",
+      "sha256": "ac65f580417f703af071297c40cd0196614e29871c22056c106fc9ecf3eaeef2"
+    },
+    {
+      "path": "harness/finalize_rule3_review.py",
+      "sha256": "aa1318e342ca1ca07a6578f31741150d3db840709003b886461384b72a9e2bc9"
+    },
+    {
+      "path": "harness/prepare_rule3_review.py",
+      "sha256": "c71c7e78453693df487491bfa52728569ae6c3d56a60e31cb95fd6ee790c1931"
+    },
+    {
+      "path": "harness/private_directory_publication.py",
+      "sha256": "ac2bfd0247eebfe039054b137e97f464d3fe98bc280ba07c2f3935c2ae1d18aa"
+    },
+    {
+      "path": "harness/rule3/__init__.py",
+      "sha256": "61700c646ab70275e8845beba22baf60af5c24d508fc89f3ff8e683a7548d253"
+    },
+    {
+      "path": "harness/rule3/authorization.py",
+      "sha256": "a27d3bada1b1792bc88a04fb88c2780f01c6f5b600bbe56ed89448d78823230f"
+    },
+    {
+      "path": "harness/rule3/budget.py",
+      "sha256": "49e5b48bf373658420a30ebd34d0b5503381f642d8b4de4568805fbdcf01bfbc"
+    },
+    {
+      "path": "harness/rule3/contract.py",
+      "sha256": "58f153824e488e8fc196815ff0b6098c3350dc5c047e674b18c9fa9ce1e048ac"
+    },
+    {
+      "path": "harness/rule3/evaluate.py",
+      "sha256": "990b95583cfbae9ba2b855cb484a4216b477368c81d6f42046c54d46b591ce0a"
+    },
+    {
+      "path": "harness/rule3/execute.py",
+      "sha256": "6bdc0cb535ac37acc68abe6eb496256bc00948cb844bd47bb4d302885108718d"
+    },
+    {
+      "path": "harness/rule3/lock.py",
+      "sha256": "429e1c471431a4cabfd309cd2580efb1533e5588d08a3dd70680dd912868e0ee"
+    },
+    {
+      "path": "harness/rule3/review.py",
+      "sha256": "0aed54f76c1a99ec6a10311415c0e45ecb1f9acfa9ddc1b1b86b13cf8b208a01"
+    },
+    {
+      "path": "harness/rule3/review_assets/review.css",
+      "sha256": "728f25df5e61d7708a0f85b7e6accbc42304f9e9904976e0099ea3b2bdc5600b"
+    },
+    {
+      "path": "harness/rule3/review_assets/review.js",
+      "sha256": "f0bbed8d7438a6b47c79a02ef1fb6105b4e2b3ff739a716aef6d81c07a531c59"
+    },
+    {
+      "path": "harness/run_rule3.py",
+      "sha256": "8f36a7296e23a9a8a6fe5fb756983a820effafc3419636ec05a29e6ad8a14ba3"
+    }
+  ]
+}

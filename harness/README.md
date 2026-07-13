@@ -231,6 +231,88 @@ python3 harness/finalize_selected_content_review.py --recover-incomplete
 
 Recovery removes only an owned partial tree or completes an already verified tree. Changed or foreign paths are preserved for inspection.
 
+### Rule 3 divergence supplement
+
+Rule 2 did not select a divergence case. Rule 3 therefore has its own narrow lane: one priority candidate, one conditional fallback, eight answer-only cells per candidate, and no third candidate. The theology source gate is closed. Both research records remain proposed and private-run eligible, not publication eligible.
+
+The committed lock binds the two ordered candidates, source freeze, rubric, prompt protocol, exact eight-model panel, request parameters, pricing assumptions, review assets, evaluator, budget ledger, and execution code. Its one-time maintainer creation sequence is:
+
+```sh
+npm run validate:candidates:rule3
+python3 harness/create_rule3_lock.py
+python3 harness/create_rule3_lock.py --write
+python3 harness/create_rule3_lock.py --check
+```
+
+The lock and every bound path must be committed together. Routine validation and runtime both require those exact bytes in Git `HEAD`:
+
+```sh
+python3 harness/create_rule3_lock.py --check --require-committed
+python3 -I harness/run_rule3.py --dry-run --phase priority
+```
+
+`run_rule3.py` requires Python isolated mode. Before importing any project code,
+its standard-library bootstrap verifies the canonical committed lock, every
+bound working-tree hash, the fixed Git `HEAD`, and staged and unstaged
+cleanliness. It invokes `/usr/bin/git` with a minimal environment, then adds the
+verified `harness/` directory to the import path. This boundary catches
+accidental dirty import-time code and local standard-library shadow files before
+credentials can be read. A malicious process running as the same OS user could
+rewrite the bootstrap before launch, so that attack is outside this process-local
+boundary.
+
+The lock authorizes no spending. A.G. must separately approve the exact statement printed by this command:
+
+```sh
+python3 harness/authorize_rule3.py --show-statement
+```
+
+Only after that approval may the exact statement be recorded privately with `--write --statement TEXT`. Immediately before execution, recheck all eight official model records and prices. Put the result in a local `rule3-pricing-evidence-1.0.0` JSON file with `checked_at`, `reviewed_by`, and eight ordered `official_evidence` records. Each record must contain `model_key`, `requested_model_id`, the exact locked input and output prices per million tokens, and an official HTTPS source URL. The command reads the local file, not the network or environment:
+
+```sh
+python3 harness/authorize_rule3.py --write-pricing \
+  --pricing-evidence PATH
+python3 harness/authorize_rule3.py --verify-pricing \
+  --pricing-evidence PATH
+```
+
+The private priority run is then explicit:
+
+```sh
+python3 -I harness/run_rule3.py --live --phase priority \
+  --credentials-rotated
+```
+
+Every generation intent is durably reserved before its POST. A stranded intent remains charged and cannot be replayed. The hard ceilings are three attempts per cell, $6.00 reserved per candidate, and $12.00 reserved across the pool. A timeout after a POST is ambiguous and nonretryable. The run is reviewable only after all eight exact model responses complete.
+
+Review stays offline and blinded. `CANDIDATE` is the exact priority or fallback ID, and `PATH` is the complete decision file for the named stage:
+
+The Rule 3 protocol tells every model not to identify itself. If a response
+still contains a cleanly separable self-identification, the raw outcome remains
+unchanged and hash-bound. Only the blind and review copies replace that phrase
+with `[model identity redacted]`. The private crosswalk records the raw hash,
+review-copy hash, exact Unicode-code-point spans, matched-text hashes, and a
+sealed redaction receipt. If identity cannot be separated without touching
+substantive reasoning, the workflow stops for A.G. Elrod's judgment.
+
+```sh
+python3 harness/prepare_rule3_review.py --stage blind \
+  --candidate CANDIDATE --write
+python3 harness/finalize_rule3_review.py --stage first-pass \
+  --candidate CANDIDATE --check --input PATH
+python3 harness/finalize_rule3_review.py --stage first-pass \
+  --candidate CANDIDATE --seal --input PATH
+python3 harness/prepare_rule3_review.py --stage author \
+  --candidate CANDIDATE --write
+python3 harness/finalize_rule3_review.py --stage author \
+  --candidate CANDIDATE --check --input PATH
+python3 harness/finalize_rule3_review.py --stage author \
+  --candidate CANDIDATE --seal --input PATH
+python3 harness/evaluate_rule3.py --candidate CANDIDATE --write
+```
+
+The unchanged divergence threshold requires eight complete responses, at least six non-null primary endorsements, at least three represented positions, and no more than four primary endorsements for any one position. The fallback remains locked unless the canonical evaluator proves a complete, sealed, author-reviewed priority failure. Incomplete execution is terminal, not failure evidence. Two completed threshold failures end the pool without a selection.
+
 ### Final production run
 
 A final live run is authorized only when all of the following are true:

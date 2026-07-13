@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "rule3-candidate-1.0.0",
+  "data_class": "research",
+  "id": "galatians-pistis-christou",
+  "kind": "divergent",
+  "domain": "new-testament-interpretation",
+  "title": "Pistis Christou in Galatians 3:22",
+  "premise": "In Galatians 3:22-26, the phrase πίστις Χριστοῦ in verse 22 admits several materially different semantic readings within Paul's immediate argument.",
+  "context_note": "The map distinguishes an objective reading, a Christ-centered subjective or participatory reading, an attributive system reading, and an eschatological-event reading. Grasso's system and Schliesser's event remain distinct. An answer maps here only if it clearly makes Christ’s faith the semantic and explanatory center. A merely plenary, intentionally ambiguous, or evenly combined subjective-objective answer remains null. Coding follows the phrase's semantic referent, not the response's wider soteriology.",
+  "what_this_shows": [
+    "If the precommitted Rule 3 threshold is met, this candidate can illustrate dispersion across several sourced semantic readings of one Pauline phrase in sampled answers."
+  ],
+  "what_this_does_not_show": [
+    "It does not settle the exegesis, measure scholarly prevalence, establish that each model has one stable Pauline theology, or turn panel disagreement into evidence of truth."
+  ],
+  "selection": {
+    "status": "candidate",
+    "pool_id": "concordance-divergence-supplement-1",
+    "pool_size": 2,
+    "rule_version": "pilot-rule-3",
+    "disclosure": "The precommitted priority Rule 3 divergence candidate. It may be selected only if it meets the unchanged frozen divergence threshold after blinded review; the fallback is not run if this candidate qualifies."
+  },
+  "prompt_variants": [
+    {
+      "id": "default",
+      "label": "Default wording",
+      "user_prompt": "In Galatians 3:22-26, what does Paul most likely mean by πίστις Χριστοῦ in verse 22 when the phrase is read within its immediate argument? State one best-supported primary interpretation and explain the decisive grammatical, lexical, and contextual evidence."
+    }
+  ],
+  "position_map": [
+    {
+      "id": "believers-faith-in-christ",
+      "label": "Believers' faith in Christ",
+      "summary": "The phrase denotes believers' faith or trust directed toward Christ.",
+      "attestation": "Matlock's direct analysis of Galatians 3:22 argues that the Christ-faith phrase and the clause about those who believe both concern believers' faith, selecting the objective-genitive reading. The SBL Greek New Testament supplies the base text for the immediate argument.",
+      "sources": [
+        {
+          "id": "matlock-rhetoric-pistis",
+          "claim_supported": "Matlock argues that Galatians 3:22 coordinates the promise through faith in Jesus Christ with its reception by those who believe, and explicitly concludes that both clauses concern believers' faith and select the objective-genitive reading.",
+          "title": "The Rhetoric of πίστις in Paul: Galatians 2.16, 3.22, Romans 3.22, and Philippians 3.9",
+          "citation": "R. Barry Matlock, “The Rhetoric of πίστις in Paul: Galatians 2.16, 3.22, Romans 3.22, and Philippians 3.9,” Journal for the Study of the New Testament 30, no. 2 (2007): 173-203, especially 187-193 and decisively 192, DOI 10.1177/0142064X07084775.",
+          "url": "https://doi.org/10.1177/0142064X07084775",
+          "accessed_at": "2026-07-13",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "sblgnt-galatians-three",
+          "claim_supported": "The SBL Greek New Testament provides the base Greek text of Galatians 3:22-26, including πίστις Ἰησοῦ Χριστοῦ in verse 22 and the coming and revelation language of faith in verses 23-25.",
+          "title": "The Greek New Testament: SBL Edition, Galatians 3:22-26",
+          "citation": "Michael W. Holmes, ed., The Greek New Testament: SBL Edition (Atlanta: Society of Biblical Literature; Bellingham, WA: Lexham Press, 2010), Galatians 3:22-26, hosted by Bible Gateway.",
+          "url": "https://www.biblegateway.com/passage/?search=Galatians+3%3A22-26&version=SBLGNT",
+          "accessed_at": "2026-07-13",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "christs-own-faithfulness",
+      "label": "Christ's own faith or faithfulness",
+      "summary": "The phrase primarily denotes Christ’s own faith or faithfulness. This includes concentric or participatory accounts in which believers’ answering faith derives from and shares in Christ’s faith.",
+      "attestation": "Hooker argues directly from Galatians 3:22 that the phrase refers to Christ's faith, then develops a concentric and participatory account in which Christ's faith remains primary while believers' answering faith derives from and shares in it.",
+      "sources": [
+        {
+          "id": "hooker-pistis-christou",
+          "claim_supported": "Hooker's Galatians 3 analysis concludes that verse 22 refers to Christ's own faith and that believers share in it; her conclusion defines the phrase concentrically, beginning from Christ's faith while necessarily including believers' answering faith.",
+          "title": "ΠΙΣΤΙΣ ΧΡΙΣΤΟΥ",
+          "citation": "Morna D. Hooker, “ΠΙΣΤΙΣ ΧΡΙΣΤΟΥ,” New Testament Studies 35, no. 3 (1989): 321-342, especially 329-331 and 340-342, DOI 10.1017/S0028688500016817.",
+          "url": "https://doi.org/10.1017/S0028688500016817",
+          "accessed_at": "2026-07-13",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "christ-faith-system",
+      "label": "Christ-defined system of faith",
+      "summary": "The phrase denotes the Christ-defined or Christ-centered faith, understood as a system or body of belief, not a disposition exercised by either believer or Christ.",
+      "attestation": "Grasso defines a third view as the Christ-centered content or system of faith, applies it directly to Galatians 3:22, and concludes that this attributive analysis is the most linguistically plausible reading.",
+      "sources": [
+        {
+          "id": "grasso-linguistic-analysis",
+          "claim_supported": "Grasso argues that πίστις χριστοῦ is best analyzed attributively as the Christ-centered content or system of faith and applies that reading directly to Galatians 3:22.",
+          "title": "A Linguistic Analysis of πίστις χριστοῦ: The Case for the Third View",
+          "citation": "Kevin Grasso, “A Linguistic Analysis of πίστις χριστοῦ: The Case for the Third View,” Journal for the Study of the New Testament 43, no. 1 (2020): 108-144, especially 113, 136-137, and 140, DOI 10.1177/0142064X20949385.",
+          "url": "https://doi.org/10.1177/0142064X20949385",
+          "accessed_at": "2026-07-13",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "christ-faith-event",
+      "label": "Christ-faith as eschatological event",
+      "summary": "In the immediate argument, faith is a newly arrived and revealed reality, not an individual disposition or a belief system.",
+      "attestation": "Schliesser reads the coming and revelation of faith in Galatians 3:23-26 as a trans-subjective eschatological event. He applies that account back to Christ-faith in verse 22 and distinguishes it from Christ's or believers' individual dispositions.",
+      "sources": [
+        {
+          "id": "schliesser-christ-faith-event",
+          "claim_supported": "Schliesser argues that Galatians 3:22-26 presents Christ-faith as a newly arrived, revealed, trans-subjective eschatological event rather than an individual disposition of Christ or a believer.",
+          "title": "‘Christ-Faith’ as an Eschatological Event (Galatians 3.23-26): A ‘Third View’ on Πίστις Χριστοῦ",
+          "citation": "Benjamin Schliesser, “'Christ-Faith' as an Eschatological Event (Galatians 3.23-26): A 'Third View' on Πίστις Χριστοῦ,” Journal for the Study of the New Testament 38, no. 3 (2016): 277-300, especially 277-278, 290-294, and decisively 291 and 293-294, DOI 10.1177/0142064X15621654.",
+          "url": "https://doi.org/10.1177/0142064X15621654",
+          "accessed_at": "2026-07-13",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "map_is_nonexhaustive": true,
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

@@ -8,7 +8,7 @@ Concordance is a cached, static product demonstration for inspecting how a decla
 
 The repository is private while the prototype, provisional scholarly content, and verification workflow are under development. No real model output or unverified scholarly content is published yet.
 
-The implementation is staged. Each stage is validated and committed before the next begins. Live model calls are blocked until the development credentials have been replaced or rotated.
+The implementation is staged. Each stage is validated and committed before the next begins. Live model calls require an exact committed lock, a current pricing receipt, separate paid-run authorization, and credentials replaced or rotated for this project.
 
 The default application build uses a conspicuously fictional dataset generated in `sample/`. The placeholder `data/` tree is intentionally unable to pass the production gate.
 
@@ -31,8 +31,10 @@ Useful checks:
 - `npm run validate:data` validates the indexed sample files, cross-record links, and content hashes.
 - `npm run validate:data:production` applies the stricter release gate to `data/` and is expected to fail until the verified final dataset exists.
 - `npm run validate:candidates` checks the frozen six-question pilot pool and its provisional verification dossier.
+- `npm run validate:candidates:rule3` checks the exact two-candidate Rule 3 supplement, its approved map boundaries, and all 13 source bindings.
 - `npm run validate:candidates:successor` checks the two selected `candidate-1.1.1` successors, their exact 22-change allowlist, and their lineage back to the frozen lock and superseding Rule 2 receipt.
 - `npm run validate:candidates:author-verified` checks the immutable `candidate-1.1.2` promotion, all 26 author-verification records, and the unresolved production gates without requiring private review files.
+- `python3 harness/create_rule3_lock.py --check` validates the Rule 3 execution lock and every byte it binds. Add `--require-committed` before any authorization or live use.
 - `npm test` runs schema, derived-state, and component tests.
 - `npm run test:e2e` runs the browser interaction and same-origin network checks once Playwright browsers are installed.
 - `npm run build` always validates sample data before compiling; `npm run build:production` cannot bundle unverified or incomplete data.

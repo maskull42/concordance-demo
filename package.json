@@ -12,6 +12,8 @@
     "validate:data": "tsx scripts/validate-data.ts --dataset sample",
     "validate:data:production": "tsx scripts/validate-data.ts --dataset data --production",
     "validate:candidates": "tsx scripts/validate-candidates.ts",
+    "validate:candidates:rule3": "tsx scripts/validate-rule3-candidates.ts",
+    "validate:lock:rule3": "python3 harness/create_rule3_lock.py --check",
     "validate:candidates:successor": "tsx scripts/validate-successor-candidates.ts",
     "validate:candidates:author-verified": "tsx scripts/validate-author-verified-successor.ts",
     "build": "npm run validate:data && tsc -b && cross-env VITE_DATASET=sample vite build",
@@ -23,7 +25,7 @@
     "test:e2e": "playwright test",
     "lint": "eslint .",
     "harness:dry-run": "python3 harness/generate.py --dry-run",
-    "check": "npm run validate:candidates && npm run validate:candidates:successor && npm run validate:candidates:author-verified && npm run lint && npm run test:harness && npm run test && npm run build"
+    "check": "npm run validate:candidates && npm run validate:candidates:rule3 && npm run validate:lock:rule3 && npm run validate:candidates:successor && npm run validate:candidates:author-verified && npm run lint && npm run test:harness && npm run test && npm run build"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.2.8",

@@ -6,6 +6,7 @@
 *.pem
 *.p12
 *.pfx
+/sources/
 
 # JavaScript
 node_modules/

@@ -1,0 +1,378 @@
+{
+  "schema_version": "rule3-source-freeze-1.0.0",
+  "content_version": "rule3-candidate-1.0.0",
+  "pool_id": "concordance-divergence-supplement-1",
+  "prepared_on": "2026-07-13",
+  "status": "research-source-freeze-proposed",
+  "integrity_policy": {
+    "hash_algorithm": "sha256",
+    "absolute_paths_forbidden": true,
+    "future_lock_requirement": "The future Rule 3 lock must bind this complete register, both question records, and every source record before any model call.",
+    "unhashed_source_rule": "A source without a retained raw snapshot is identified by its URL and locator with a null SHA-256 and an explicit limitation. No digest is inferred or invented."
+  },
+  "questions": [
+    {
+      "question_id": "galatians-pistis-christou",
+      "question_path": "candidate/rule3/questions/galatians-pistis-christou.json",
+      "sources": [
+        {
+          "source_id": "matlock-rhetoric-pistis",
+          "source_url": "https://doi.org/10.1177/0142064X07084775",
+          "claim_binding": "Matlock argues that Galatians 3:22 coordinates the promise through faith in Jesus Christ with its reception by those who believe, and explicitly concludes that both clauses concern believers' faith and select the objective-genitive reading.",
+          "artifact": {
+            "status": "supplied-complete-file",
+            "filename": "0142064X07084775.pdf",
+            "media_type": "application/pdf",
+            "sha256": "b8f36f800c78f0a30c0cb2ead834d4e141ceff18e710717adca307899aca8d2c",
+            "pdf_page_count": 31,
+            "printed_page_range": "173-203",
+            "redistribution_rights": "not-asserted"
+          },
+          "locators": [
+            {
+              "pdf_pages": "15-21",
+              "printed_pages": "187-193",
+              "support": "Complete direct analysis of Galatians 3:22."
+            },
+            {
+              "pdf_pages": "20",
+              "printed_pages": "192",
+              "support": "Explicitly equates the two faith clauses with believers' faith and selects the objective-genitive reading."
+            },
+            {
+              "pdf_pages": "28",
+              "printed_pages": "200",
+              "support": "Concludes that differing contextual factors across the four passages consistently select the objective reading."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "sblgnt-galatians-three",
+          "source_url": "https://www.biblegateway.com/passage/?search=Galatians+3%3A22-26&version=SBLGNT",
+          "claim_binding": "The SBL Greek New Testament provides the base Greek text of Galatians 3:22-26, including πίστις Ἰησοῦ Χριστοῦ in verse 22 and the coming and revelation language of faith in verses 23-25.",
+          "artifact": {
+            "status": "hash-frozen-external-snapshot",
+            "artifact_url": "https://www.biblegateway.com/passage/?search=Galatians+3%3A22-26&version=SBLGNT",
+            "media_type": "text/html",
+            "sha256": "3d6cf6dd7ee9624167fde1ebc0ba2a1464c2aea6b630f52db436e2aee1c2f49b",
+            "retrieved_on": "2026-07-13"
+          },
+          "locators": [
+            {
+              "passage": "Galatians 3:22-26",
+              "support": "Base Greek text for the complete immediate-argument prompt scope."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "hooker-pistis-christou",
+          "source_url": "https://doi.org/10.1017/S0028688500016817",
+          "claim_binding": "Hooker's Galatians 3 analysis concludes that verse 22 refers to Christ's own faith and that believers share in it; her conclusion defines the phrase concentrically, beginning from Christ's faith while necessarily including believers' answering faith.",
+          "artifact": {
+            "status": "supplied-complete-file",
+            "filename": "S0028688500016817.pdf",
+            "media_type": "application/pdf",
+            "sha256": "7acb7d20cb2bdddbe3568530d14a8117a4c8ba522d6757dba2f959e12cd132b2",
+            "pdf_page_count": 23,
+            "article_pdf_page_range": "2-23",
+            "printed_page_range": "321-342",
+            "redistribution_rights": "not-asserted"
+          },
+          "locators": [
+            {
+              "pdf_pages": "10-12",
+              "printed_pages": "329-331",
+              "support": "Direct Galatians 3:22 analysis concludes that Paul refers to Christ's own faith and that believers share in it."
+            },
+            {
+              "pdf_pages": "21-23",
+              "printed_pages": "340-342",
+              "support": "Concentric and participatory conclusion begins from Christ's faith and includes believers' derived answering faith."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "grasso-linguistic-analysis",
+          "source_url": "https://doi.org/10.1177/0142064X20949385",
+          "claim_binding": "Grasso argues that πίστις χριστοῦ is best analyzed attributively as the Christ-centered content or system of faith and applies that reading directly to Galatians 3:22.",
+          "artifact": {
+            "status": "integrity-limited-no-raw-snapshot",
+            "media_type": null,
+            "sha256": null,
+            "limitation": "The complete licensed version-of-record text was inspected, but no raw source snapshot and hash are presently available. This record binds the DOI, printed-page locators, and claim, not the inspected bytes."
+          },
+          "locators": [
+            {
+              "printed_pages": "113, 136-137, 140",
+              "support": "Defines the attributive third view, applies it to Galatians 3:22, and concludes that it is the most linguistically plausible reading."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "schliesser-christ-faith-event",
+          "source_url": "https://doi.org/10.1177/0142064X15621654",
+          "claim_binding": "Schliesser argues that Galatians 3:22-26 presents Christ-faith as a newly arrived, revealed, trans-subjective eschatological event rather than an individual disposition of Christ or a believer.",
+          "artifact": {
+            "status": "supplied-complete-file",
+            "filename": "0142064X15621654.pdf",
+            "media_type": "application/pdf",
+            "sha256": "b3e4cbe547c111d8382b230bdc376e08b7306f38b31584e4140b8a41a6723fb8",
+            "pdf_page_count": 24,
+            "printed_page_range": "277-300",
+            "redistribution_rights": "not-asserted"
+          },
+          "locators": [
+            {
+              "pdf_pages": "1-2",
+              "printed_pages": "277-278",
+              "support": "Abstract and thesis define Christ-faith as an eschatological event rather than an individual disposition."
+            },
+            {
+              "pdf_pages": "14-18",
+              "printed_pages": "290-294",
+              "support": "Direct Galatians synthesis and conclusion develop the trans-subjective event reading."
+            },
+            {
+              "pdf_pages": "15, 17-18",
+              "printed_pages": "291, 293-294",
+              "support": "Applies the event reading to Galatians 3:22-26 and distinguishes it from Christ's or believers' individual faith."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "quantum-measurement-realist-strategies",
+      "question_path": "candidate/rule3/questions/quantum-measurement-realist-strategies.json",
+      "sources": [
+        {
+          "source_id": "maudlin-three-measurement-problems",
+          "source_url": "https://doi.org/10.1007/BF00763473",
+          "claim_binding": "Maudlin formulates the incompatibility among wavefunction completeness, linear evolution, and single determinate outcomes, then distinguishes additional-variable, nonlinear-collapse, and multiverse responses.",
+          "artifact": {
+            "status": "hash-frozen-external-artifact",
+            "artifact_url": "https://cqi.inf.usi.ch/qic/95_Maudlin.pdf",
+            "media_type": "application/pdf",
+            "sha256": "e8de5c3dfef6210bae6c5866f38979f2e70490253712fecdbab0487c189ee988",
+            "pdf_page_count": 9,
+            "printed_page_range": "7-15",
+            "redistribution_rights": "not-asserted"
+          },
+          "locators": [
+            {
+              "printed_pages": "7-8, 11-13",
+              "support": "States the measurement trilemma and distinguishes added-variable, collapse, and multiverse responses."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "everett-relative-state",
+          "source_url": "https://doi.org/10.1103/RevModPhys.29.454",
+          "claim_binding": "Everett treats pure linear wave mechanics as complete, omits discontinuous observation dynamics, and models observation through simultaneous correlated relative states.",
+          "artifact": {
+            "status": "hash-frozen-external-artifact",
+            "artifact_url": "https://harvest.aps.org/v2/journals/articles/10.1103/RevModPhys.29.454/fulltext",
+            "media_type": "application/pdf",
+            "sha256": "016afb29545d5e1475f660f694e5f7eea8f06f4682e7c0ed3430fe1adcf6b8f8",
+            "pdf_page_count": 9,
+            "printed_page_range": "454-462",
+            "redistribution_rights": "not-asserted"
+          },
+          "locators": [
+            {
+              "printed_pages": "454-455, 459, 462",
+              "support": "States completeness and linearity and represents observation through correlated relative states."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "sep-everettian-quantum-mechanics",
+          "source_url": "https://plato.stanford.edu/entries/qm-everett/",
+          "claim_binding": "The Stanford Encyclopedia entry surveys Everettian unitary quantum mechanics, branching and relative-state formulations, and the family's probability and ontology problems.",
+          "artifact": {
+            "status": "hash-frozen-external-snapshot",
+            "artifact_url": "https://plato.stanford.edu/entries/qm-everett/",
+            "media_type": "text/html",
+            "sha256": "00cc0e9a903456bfb59f92fa823f830c15edfc1bf7e4ffccbbd68a79e6fc58c6",
+            "substantive_revision": "2023-06-20",
+            "retrieved_on": "2026-07-13"
+          },
+          "locators": [
+            {
+              "entry_scope": "complete frozen entry snapshot",
+              "support": "Overview of Everettian approaches and their internal problems."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "bohm-hidden-variables-part-one",
+          "source_url": "https://doi.org/10.1103/PhysRev.85.166",
+          "claim_binding": "Bohm's first paper supplements the wave field with objectively real particle positions whose motion is determined by the wavefunction.",
+          "artifact": {
+            "status": "hash-frozen-external-artifact",
+            "artifact_url": "https://harvest.aps.org/v2/journals/articles/10.1103/PhysRev.85.166/fulltext",
+            "media_type": "application/pdf",
+            "sha256": "a322064233554b472d486a4b38b80a54e4e85d7b9761f283d8b77ff304f68615",
+            "pdf_page_count": 14,
+            "printed_page_range": "166-179",
+            "redistribution_rights": "not-asserted"
+          },
+          "locators": [
+            {
+              "printed_pages": "166, 170",
+              "support": "Introduces the wave field together with actual particle coordinates."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "bohm-hidden-variables-part-two",
+          "source_url": "https://doi.org/10.1103/PhysRev.85.180",
+          "claim_binding": "Bohm's second paper applies the added particle and apparatus configuration to measurement, with the occupied nonoverlapping apparatus packet fixing one actual result.",
+          "artifact": {
+            "status": "hash-frozen-external-artifact",
+            "artifact_url": "https://harvest.aps.org/v2/journals/articles/10.1103/PhysRev.85.180/fulltext",
+            "media_type": "application/pdf",
+            "sha256": "161da4cb4e1341d823fdf4eb0b6504e15086018d59532d86fa048370bd751241",
+            "pdf_page_count": 14,
+            "printed_page_range": "180-193",
+            "redistribution_rights": "not-asserted"
+          },
+          "locators": [
+            {
+              "printed_pages": "180-182",
+              "support": "Applies actual particle and apparatus coordinates to yield one recorded measurement result."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "sep-bohmian-mechanics",
+          "source_url": "https://plato.stanford.edu/entries/qm-bohm/",
+          "claim_binding": "The Stanford Encyclopedia entry surveys Bohmian mechanics as a deterministic theory of particles guided by the wavefunction, including its nonlocality, equilibrium, and ontology.",
+          "artifact": {
+            "status": "hash-frozen-external-snapshot",
+            "artifact_url": "https://plato.stanford.edu/entries/qm-bohm/",
+            "media_type": "text/html",
+            "sha256": "f1465138a4fc510d93667132d5e58db8a06491ccd3b2fbcb9435a8ff43adb0a4",
+            "substantive_revision": "2025-09-20",
+            "retrieved_on": "2026-07-13"
+          },
+          "locators": [
+            {
+              "entry_scope": "complete frozen entry snapshot",
+              "support": "Overview of Bohmian dynamics, ontology, equilibrium, and nonlocality."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "grw-unified-dynamics",
+          "source_url": "https://doi.org/10.1103/PhysRevD.34.470",
+          "claim_binding": "Ghirardi, Rimini, and Weber introduce spontaneous stochastic localization that preserves microscopic predictions for practical purposes while rapidly suppressing macroscopically separated superpositions and yielding definite pointer positions.",
+          "artifact": {
+            "status": "hash-frozen-external-artifact",
+            "artifact_url": "https://harvest.aps.org/v2/journals/articles/10.1103/PhysRevD.34.470/fulltext",
+            "media_type": "application/pdf",
+            "sha256": "655efa13b585709b309028476cdfaebd2aa17902e35696496efdf5ff56ce40da",
+            "pdf_page_count": 22,
+            "printed_page_range": "470-491",
+            "redistribution_rights": "not-asserted"
+          },
+          "locators": [
+            {
+              "printed_pages": "470-471, 476, 481",
+              "support": "Defines stochastic localization, macroscopic suppression, and definite pointer positions while preserving microscopic predictions in practice."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "sep-collapse-theories",
+          "source_url": "https://plato.stanford.edu/entries/qm-collapse/",
+          "claim_binding": "The Stanford Encyclopedia entry surveys dynamical-reduction theories, their stochastic nonlinear modifications, their solution to macroscopic superposition, and their empirical constraints.",
+          "artifact": {
+            "status": "hash-frozen-external-snapshot",
+            "artifact_url": "https://plato.stanford.edu/entries/qm-collapse/",
+            "media_type": "text/html",
+            "sha256": "4403377309688fafc6aebae176c97d812d14cf05377c8b5b9c944b77be2b1cbb",
+            "substantive_revision": "2025-09-30",
+            "retrieved_on": "2026-07-13"
+          },
+          "locators": [
+            {
+              "entry_scope": "complete frozen entry snapshot",
+              "support": "Overview of collapse dynamics, macroscopic outcomes, and empirical constraints."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}

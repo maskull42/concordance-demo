@@ -1,0 +1,819 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rule3-lock-1.0.0",
+  "title": "Concordance immutable Rule 3 execution lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "pool_id",
+    "pool_size",
+    "rule_version",
+    "content_version",
+    "bindings",
+    "candidates",
+    "models",
+    "plans",
+    "execution_policy",
+    "threshold",
+    "state_transition_contract",
+    "paid_authorization",
+    "execution_sources"
+  ],
+  "properties": {
+    "schema_version": { "const": "rule3-lock-1.0.0" },
+    "status": {
+      "const": "immutable-preexecution-lock-no-spending-authorized"
+    },
+    "pool_id": { "const": "concordance-divergence-supplement-1" },
+    "pool_size": { "const": 2 },
+    "rule_version": { "const": "pilot-rule-3" },
+    "content_version": { "const": "rule3-candidate-1.0.0" },
+    "bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dossier",
+        "source_freeze",
+        "mapping_rubric",
+        "protocol",
+        "models_config",
+        "pricing_review",
+        "lock_schema"
+      ],
+      "properties": {
+        "dossier": {
+          "$ref": "#/$defs/binding",
+          "properties": {
+            "path": { "const": "candidate/DIVERGENCE_SUPPLEMENT_RESEARCH.md" }
+          }
+        },
+        "source_freeze": {
+          "$ref": "#/$defs/binding",
+          "properties": {
+            "path": { "const": "candidate/rule3/source-freeze.json" }
+          }
+        },
+        "mapping_rubric": {
+          "$ref": "#/$defs/binding",
+          "properties": {
+            "path": { "const": "candidate/MAPPING_RUBRIC.md" }
+          }
+        },
+        "protocol": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "protocol_version", "sha256"],
+          "properties": {
+            "path": { "const": "config/rule3-protocol.json" },
+            "protocol_version": { "const": "rule3-1.0.0" },
+            "sha256": { "$ref": "#/$defs/sha256" }
+          }
+        },
+        "models_config": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "config_version", "sha256"],
+          "properties": {
+            "path": { "const": "harness/config/models.json" },
+            "config_version": { "const": "1.0.0" },
+            "sha256": { "$ref": "#/$defs/sha256" }
+          }
+        },
+        "pricing_review": {
+          "$ref": "#/$defs/binding",
+          "properties": {
+            "path": { "const": "harness/PRICING_REVIEW.md" }
+          }
+        },
+        "lock_schema": {
+          "$ref": "#/$defs/binding",
+          "properties": {
+            "path": { "const": "candidate/rule3-lock.schema.json" }
+          }
+        }
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "allOf": [
+            { "$ref": "#/$defs/candidate" },
+            {
+              "properties": {
+                "id": { "const": "galatians-pistis-christou" },
+                "role": { "const": "priority" },
+                "kind": { "const": "divergent" },
+                "path": {
+                  "const": "candidate/rule3/questions/galatians-pistis-christou.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            { "$ref": "#/$defs/candidate" },
+            {
+              "properties": {
+                "id": { "const": "quantum-measurement-realist-strategies" },
+                "role": { "const": "fallback" },
+                "kind": { "const": "divergent" },
+                "path": {
+                  "const": "candidate/rule3/questions/quantum-measurement-realist-strategies.json"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "items": false
+    },
+    "models": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "prefixItems": [
+        { "$ref": "#/$defs/gemini" },
+        { "$ref": "#/$defs/claude" },
+        { "$ref": "#/$defs/cohere" },
+        { "$ref": "#/$defs/qwen" },
+        { "$ref": "#/$defs/deepseek" },
+        { "$ref": "#/$defs/mistral" },
+        { "$ref": "#/$defs/grok" },
+        { "$ref": "#/$defs/gpt" }
+      ],
+      "items": false
+    },
+    "plans": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "call_type",
+        "variant_id",
+        "candidate_plans",
+        "ordered_universe_plan_sha256"
+      ],
+      "properties": {
+        "call_type": { "const": "answer" },
+        "variant_id": { "const": "default" },
+        "candidate_plans": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/candidate_plan",
+              "properties": {
+                "candidate_id": { "const": "galatians-pistis-christou" },
+                "role": { "const": "priority" }
+              }
+            },
+            {
+              "$ref": "#/$defs/candidate_plan",
+              "properties": {
+                "candidate_id": {
+                  "const": "quantum-measurement-realist-strategies"
+                },
+                "role": { "const": "fallback" }
+              }
+            }
+          ],
+          "items": false
+        },
+        "ordered_universe_plan_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "execution_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "call_type",
+        "cells_per_candidate",
+        "attempts_per_cell",
+        "output_token_cap",
+        "candidate_cost_cap_microdollars",
+        "total_cost_cap_microdollars",
+        "tools_enabled",
+        "web_search_enabled",
+        "retrieval_enabled"
+      ],
+      "properties": {
+        "call_type": { "const": "answer" },
+        "cells_per_candidate": { "const": 8 },
+        "attempts_per_cell": { "const": 3 },
+        "output_token_cap": { "const": 16384 },
+        "candidate_cost_cap_microdollars": { "const": 6000000 },
+        "total_cost_cap_microdollars": { "const": 12000000 },
+        "tools_enabled": { "const": false },
+        "web_search_enabled": { "const": false },
+        "retrieval_enabled": { "const": false }
+      }
+    },
+    "threshold": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_completed_responses",
+        "minimum_non_null_primary_endorsements",
+        "minimum_distinct_primary_positions",
+        "maximum_primary_endorsements_per_position"
+      ],
+      "properties": {
+        "required_completed_responses": { "const": 8 },
+        "minimum_non_null_primary_endorsements": { "const": 6 },
+        "minimum_distinct_primary_positions": { "const": 3 },
+        "maximum_primary_endorsements_per_position": { "const": 4 }
+      }
+    },
+    "state_transition_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "initial_state",
+        "transitions",
+        "terminal_states",
+        "fallback_requires_completed_priority_threshold_failure",
+        "incomplete_is_not_threshold_failure",
+        "third_candidate_forbidden"
+      ],
+      "properties": {
+        "initial_state": {
+          "const": "locked-awaiting-paid-authorization-and-pricing-recheck"
+        },
+        "transitions": {
+          "type": "array",
+          "minItems": 11,
+          "maxItems": 11,
+          "items": { "$ref": "#/$defs/transition" }
+        },
+        "terminal_states": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "fallback_requires_completed_priority_threshold_failure": {
+          "const": true
+        },
+        "incomplete_is_not_threshold_failure": { "const": true },
+        "third_candidate_forbidden": { "const": true }
+      }
+    },
+    "paid_authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "separate_from_lock",
+        "lock_authorizes_spending",
+        "required_before_state",
+        "receipt_must_bind",
+        "immediate_price_and_availability_recheck_required"
+      ],
+      "properties": {
+        "required": { "const": true },
+        "separate_from_lock": { "const": true },
+        "lock_authorizes_spending": { "const": false },
+        "required_before_state": { "const": "priority-ready" },
+        "receipt_must_bind": {
+          "const": ["lock_sha256", "git_head"]
+        },
+        "immediate_price_and_availability_recheck_required": { "const": true }
+      }
+    },
+    "execution_sources": {
+      "type": "array",
+      "minItems": 23,
+      "items": { "$ref": "#/$defs/binding" },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$"
+        },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "role", "kind", "path", "sha256"],
+      "properties": {
+        "id": { "type": "string" },
+        "role": { "enum": ["priority", "fallback"] },
+        "kind": { "const": "divergent" },
+        "path": { "type": "string" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "requested_params": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "temperature",
+        "output_limit",
+        "reasoning",
+        "tools_enabled",
+        "web_search_enabled",
+        "retrieval_enabled",
+        "provider_options"
+      ],
+      "properties": {
+        "temperature": { "type": "object" },
+        "output_limit": {
+          "type": "object",
+          "required": ["sent", "parameter", "value"],
+          "properties": {
+            "sent": { "const": true },
+            "parameter": { "enum": ["max_tokens", "max_output_tokens"] },
+            "value": { "const": 16384 }
+          }
+        },
+        "reasoning": { "type": "object" },
+        "tools_enabled": { "const": false },
+        "web_search_enabled": { "const": false },
+        "retrieval_enabled": { "const": false },
+        "provider_options": { "type": "object" }
+      }
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_key",
+        "family",
+        "requested_model_id",
+        "provider",
+        "route",
+        "environment_variable",
+        "api_style",
+        "base_url",
+        "generation_path",
+        "metadata_path",
+        "metadata_mode",
+        "auth_kind",
+        "fallback_allowed",
+        "requests_per_second",
+        "requested_params",
+        "planning_pricing"
+      ],
+      "properties": {
+        "model_key": { "type": "string" },
+        "family": { "type": "string" },
+        "requested_model_id": { "type": "string" },
+        "provider": { "type": "string" },
+        "route": { "type": "string" },
+        "environment_variable": { "type": "string" },
+        "api_style": { "type": "string" },
+        "base_url": { "type": "string" },
+        "generation_path": { "type": "string" },
+        "metadata_path": { "type": "string" },
+        "metadata_mode": { "type": "string" },
+        "auth_kind": { "type": "string" },
+        "fallback_allowed": { "const": false },
+        "requests_per_second": { "type": "number", "exclusiveMinimum": 0 },
+        "requested_params": { "$ref": "#/$defs/requested_params" },
+        "planning_pricing": { "$ref": "#/$defs/planning_pricing" }
+      }
+    },
+    "planning_pricing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "currency",
+        "input_per_million",
+        "output_per_million",
+        "pricing_as_of",
+        "review_status"
+      ],
+      "properties": {
+        "currency": { "const": "USD" },
+        "input_per_million": { "type": "number", "minimum": 0 },
+        "output_per_million": { "type": "number", "minimum": 0 },
+        "pricing_as_of": { "const": "2026-07-12" },
+        "review_status": { "const": "author-verified" }
+      }
+    },
+    "gemini": {
+      "$ref": "#/$defs/model",
+      "properties": {
+        "model_key": { "const": "gemini" },
+        "family": { "const": "Gemini" },
+        "requested_model_id": { "const": "gemini-3.1-pro-preview" },
+        "provider": { "const": "google" },
+        "route": { "const": "google-direct" },
+        "environment_variable": { "const": "GOOGLE_API_KEY" },
+        "api_style": { "const": "google" },
+        "base_url": { "const": "https://generativelanguage.googleapis.com" },
+        "generation_path": {
+          "const": "/v1beta/models/{model}:generateContent"
+        },
+        "metadata_path": { "const": "/v1beta/models/{model}" },
+        "metadata_mode": { "const": "single" },
+        "auth_kind": { "const": "google-query" },
+        "fallback_allowed": { "const": false },
+        "requests_per_second": { "const": 1.0 },
+        "requested_params": { "$ref": "#/$defs/gemini_params" },
+        "planning_pricing": {
+          "const": {
+            "currency": "USD",
+            "input_per_million": 2.0,
+            "output_per_million": 12.0,
+            "pricing_as_of": "2026-07-12",
+            "review_status": "author-verified"
+          }
+        }
+      }
+    },
+    "claude": {
+      "$ref": "#/$defs/model",
+      "properties": {
+        "model_key": { "const": "claude" },
+        "family": { "const": "Claude" },
+        "requested_model_id": { "const": "claude-fable-5" },
+        "provider": { "const": "anthropic" },
+        "route": { "const": "anthropic-direct" },
+        "environment_variable": { "const": "ANTHROPIC_API_KEY" },
+        "api_style": { "const": "anthropic" },
+        "base_url": { "const": "https://api.anthropic.com" },
+        "generation_path": { "const": "/v1/messages" },
+        "metadata_path": { "const": "/v1/models/{model}" },
+        "metadata_mode": { "const": "single" },
+        "auth_kind": { "const": "anthropic-key" },
+        "fallback_allowed": { "const": false },
+        "requests_per_second": { "const": 1.0 },
+        "requested_params": { "$ref": "#/$defs/claude_params" },
+        "planning_pricing": {
+          "const": {
+            "currency": "USD",
+            "input_per_million": 10.0,
+            "output_per_million": 50.0,
+            "pricing_as_of": "2026-07-12",
+            "review_status": "author-verified"
+          }
+        }
+      }
+    },
+    "cohere": {
+      "$ref": "#/$defs/model",
+      "properties": {
+        "model_key": { "const": "cohere" },
+        "family": { "const": "Cohere" },
+        "requested_model_id": { "const": "command-a-plus-05-2026" },
+        "provider": { "const": "cohere" },
+        "route": { "const": "cohere-direct" },
+        "environment_variable": { "const": "COHERE_API_KEY" },
+        "api_style": { "const": "cohere" },
+        "base_url": { "const": "https://api.cohere.com" },
+        "generation_path": { "const": "/v2/chat" },
+        "metadata_path": { "const": "/v1/models/{model}" },
+        "metadata_mode": { "const": "single" },
+        "auth_kind": { "const": "bearer" },
+        "fallback_allowed": { "const": false },
+        "requests_per_second": { "const": 1.0 },
+        "requested_params": { "$ref": "#/$defs/standard_fixed_params" },
+        "planning_pricing": {
+          "const": {
+            "currency": "USD",
+            "input_per_million": 0.0,
+            "output_per_million": 0.0,
+            "pricing_as_of": "2026-07-12",
+            "review_status": "author-verified"
+          }
+        }
+      }
+    },
+    "qwen": {
+      "$ref": "#/$defs/model",
+      "properties": {
+        "model_key": { "const": "qwen" },
+        "family": { "const": "Qwen" },
+        "requested_model_id": { "const": "Qwen/Qwen3.5-397B-A17B" },
+        "provider": { "const": "deepinfra" },
+        "route": { "const": "deepinfra" },
+        "environment_variable": { "const": "DEEPINFRA_API_KEY" },
+        "api_style": { "const": "openai" },
+        "base_url": { "const": "https://api.deepinfra.com" },
+        "generation_path": { "const": "/v1/openai/chat/completions" },
+        "metadata_path": { "const": "/v1/models" },
+        "metadata_mode": { "const": "list" },
+        "auth_kind": { "const": "bearer" },
+        "fallback_allowed": { "const": false },
+        "requests_per_second": { "const": 1.0 },
+        "requested_params": { "$ref": "#/$defs/standard_fixed_params" },
+        "planning_pricing": {
+          "const": {
+            "currency": "USD",
+            "input_per_million": 0.45,
+            "output_per_million": 3.0,
+            "pricing_as_of": "2026-07-12",
+            "review_status": "author-verified"
+          }
+        }
+      }
+    },
+    "deepseek": {
+      "$ref": "#/$defs/model",
+      "properties": {
+        "model_key": { "const": "deepseek" },
+        "family": { "const": "DeepSeek" },
+        "requested_model_id": { "const": "deepseek-v4-pro" },
+        "provider": { "const": "deepseek" },
+        "route": { "const": "deepseek-direct" },
+        "environment_variable": { "const": "DEEPSEEK_API_KEY" },
+        "api_style": { "const": "openai" },
+        "base_url": { "const": "https://api.deepseek.com" },
+        "generation_path": { "const": "/chat/completions" },
+        "metadata_path": { "const": "/models" },
+        "metadata_mode": { "const": "list" },
+        "auth_kind": { "const": "bearer" },
+        "fallback_allowed": { "const": false },
+        "requests_per_second": { "const": 1.0 },
+        "requested_params": { "$ref": "#/$defs/standard_fixed_params" },
+        "planning_pricing": {
+          "const": {
+            "currency": "USD",
+            "input_per_million": 0.435,
+            "output_per_million": 0.87,
+            "pricing_as_of": "2026-07-12",
+            "review_status": "author-verified"
+          }
+        }
+      }
+    },
+    "mistral": {
+      "$ref": "#/$defs/model",
+      "properties": {
+        "model_key": { "const": "mistral" },
+        "family": { "const": "Mistral" },
+        "requested_model_id": { "const": "mistral-large-2512" },
+        "provider": { "const": "mistral" },
+        "route": { "const": "mistral-direct" },
+        "environment_variable": { "const": "MISTRAL_API_KEY" },
+        "api_style": { "const": "openai" },
+        "base_url": { "const": "https://api.mistral.ai" },
+        "generation_path": { "const": "/v1/chat/completions" },
+        "metadata_path": { "const": "/v1/models/{model}" },
+        "metadata_mode": { "const": "single" },
+        "auth_kind": { "const": "bearer" },
+        "fallback_allowed": { "const": false },
+        "requests_per_second": { "const": 1.0 },
+        "requested_params": { "$ref": "#/$defs/standard_fixed_params" },
+        "planning_pricing": {
+          "const": {
+            "currency": "USD",
+            "input_per_million": 0.5,
+            "output_per_million": 1.5,
+            "pricing_as_of": "2026-07-12",
+            "review_status": "author-verified"
+          }
+        }
+      }
+    },
+    "grok": {
+      "$ref": "#/$defs/model",
+      "properties": {
+        "model_key": { "const": "grok" },
+        "family": { "const": "Grok" },
+        "requested_model_id": { "const": "grok-4.5" },
+        "provider": { "const": "xai" },
+        "route": { "const": "xai-direct" },
+        "environment_variable": { "const": "XAI_API_KEY" },
+        "api_style": { "const": "xai-responses" },
+        "base_url": { "const": "https://api.x.ai" },
+        "generation_path": { "const": "/v1/responses" },
+        "metadata_path": { "const": "/v1/models/{model}" },
+        "metadata_mode": { "const": "single" },
+        "auth_kind": { "const": "bearer" },
+        "fallback_allowed": { "const": false },
+        "requests_per_second": { "const": 1.0 },
+        "requested_params": { "$ref": "#/$defs/grok_params" },
+        "planning_pricing": {
+          "const": {
+            "currency": "USD",
+            "input_per_million": 2.0,
+            "output_per_million": 6.0,
+            "pricing_as_of": "2026-07-12",
+            "review_status": "author-verified"
+          }
+        }
+      }
+    },
+    "gpt": {
+      "$ref": "#/$defs/model",
+      "properties": {
+        "model_key": { "const": "gpt" },
+        "family": { "const": "GPT" },
+        "requested_model_id": { "const": "openai/gpt-5.6-sol" },
+        "provider": { "const": "openrouter" },
+        "route": { "const": "openrouter-openai-pinned" },
+        "environment_variable": { "const": "OPENROUTER_API_KEY" },
+        "api_style": { "const": "openai" },
+        "base_url": { "const": "https://openrouter.ai" },
+        "generation_path": { "const": "/api/v1/chat/completions" },
+        "metadata_path": {
+          "const": "/api/v1/models/{model}/endpoints"
+        },
+        "metadata_mode": { "const": "openrouter-endpoints" },
+        "auth_kind": { "const": "bearer" },
+        "fallback_allowed": { "const": false },
+        "requests_per_second": { "const": 1.0 },
+        "requested_params": { "$ref": "#/$defs/gpt_params" },
+        "planning_pricing": {
+          "const": {
+            "currency": "USD",
+            "input_per_million": 5.0,
+            "output_per_million": 30.0,
+            "pricing_as_of": "2026-07-12",
+            "review_status": "author-verified"
+          }
+        }
+      }
+    },
+    "gemini_params": {
+      "const": {
+        "temperature": {
+          "sent": false,
+          "value": null,
+          "reason": "Gemini 3.1 Pro documented default"
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_output_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "Provider default reasoning behavior"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      }
+    },
+    "claude_params": {
+      "const": {
+        "temperature": {
+          "sent": false,
+          "value": null,
+          "reason": "Temperature omitted for Claude Fable 5"
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "Always-on adaptive reasoning; no reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      }
+    },
+    "standard_fixed_params": {
+      "const": {
+        "temperature": { "sent": true, "value": 0.2 },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "No separate reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      }
+    },
+    "grok_params": {
+      "const": {
+        "temperature": { "sent": true, "value": 0.2 },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_output_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "Mandatory provider-default reasoning shares the max_output_tokens ceiling"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {
+          "store": false,
+          "service_tier": "default"
+        }
+      }
+    },
+    "gpt_params": {
+      "const": {
+        "temperature": {
+          "sent": false,
+          "value": null,
+          "reason": "Temperature omitted for GPT-5.6 Sol"
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "Provider default reasoning behavior; no reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {
+          "service_tier": "default",
+          "provider": {
+            "only": ["openai"],
+            "allow_fallbacks": false,
+            "require_parameters": true
+          }
+        }
+      }
+    },
+    "cell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cell_id",
+        "prompt_sha256",
+        "requested_model_id",
+        "route",
+        "requested_params"
+      ],
+      "properties": {
+        "cell_id": { "type": "string" },
+        "prompt_sha256": { "$ref": "#/$defs/sha256" },
+        "requested_model_id": { "type": "string" },
+        "route": { "type": "string" },
+        "requested_params": { "$ref": "#/$defs/requested_params" }
+      }
+    },
+    "candidate_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_id",
+        "role",
+        "cell_count",
+        "cells",
+        "plan_sha256"
+      ],
+      "properties": {
+        "candidate_id": { "type": "string" },
+        "role": { "enum": ["priority", "fallback"] },
+        "cell_count": { "const": 8 },
+        "cells": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": { "$ref": "#/$defs/cell" }
+        },
+        "plan_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "event", "to"],
+      "properties": {
+        "from": { "type": "string" },
+        "event": { "type": "string" },
+        "to": { "type": "string" }
+      }
+    }
+  }
+}
