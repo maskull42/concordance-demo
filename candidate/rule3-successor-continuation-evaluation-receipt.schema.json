@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://concordance.local/schemas/divergence-successor-continuation-evaluation-receipt-1.0.0.json",
+  "title": "Private continuation threshold-evaluation receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "pool_id", "candidate_id", "created_at", "source_binding", "bindings", "reviewed_lineage", "position_primary_counts", "null_primary_count", "threshold_contract", "threshold_result", "terminal_result", "offline_attestation"],
+  "properties": {
+    "schema_version": {"const": "divergence-successor-continuation-evaluation-receipt-1.0.0"},
+    "status": {"const": "complete-offline-reviewed-threshold-evaluation"},
+    "pool_id": {"const": "frontier-ai-preflight-correction-1"},
+    "candidate_id": {"const": "frontier-ai-lifecycle-licensing"},
+    "created_at": {"type": "string", "minLength": 1},
+    "source_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evaluator_source_git_head", "evaluation_lock_commit_git_head", "evaluator_sources"],
+      "properties": {
+        "evaluator_source_git_head": {"$ref": "#/$defs/git"},
+        "evaluation_lock_commit_git_head": {"$ref": "#/$defs/git"},
+        "evaluator_sources": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/binding"}}
+      }
+    },
+    "bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evaluation_lock", "successor_lock", "continuation_lock", "continuation_review_lock", "review_anchor", "blind_packet", "blind_crosswalk", "blind_key_sha256", "question", "sealed_author_review", "sealed_author_review_receipt"],
+      "properties": {
+        "evaluation_lock": {"$ref": "#/$defs/binding"},
+        "successor_lock": {"$ref": "#/$defs/binding"},
+        "continuation_lock": {"$ref": "#/$defs/binding"},
+        "continuation_review_lock": {"$ref": "#/$defs/binding"},
+        "review_anchor": {"$ref": "#/$defs/binding"},
+        "blind_packet": {"$ref": "#/$defs/binding"},
+        "blind_crosswalk": {"$ref": "#/$defs/binding"},
+        "blind_key_sha256": {"$ref": "#/$defs/sha"},
+        "question": {"$ref": "#/$defs/binding"},
+        "sealed_author_review": {"$ref": "#/$defs/binding"},
+        "sealed_author_review_receipt": {"$ref": "#/$defs/binding"}
+      }
+    },
+    "reviewed_lineage": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["blind_id", "response_sha256", "first_pass_assignment_sha256", "author_decision_sha256", "decision", "reviewed_at", "reviewed_primary_position_handle", "reviewed_primary_position_id", "reviewed_reason_code", "crosswalk_item_sha256", "outcome_path", "outcome_sha256"],
+        "properties": {
+          "blind_id": {"type": "string", "minLength": 1},
+          "response_sha256": {"$ref": "#/$defs/sha"},
+          "first_pass_assignment_sha256": {"$ref": "#/$defs/sha"},
+          "author_decision_sha256": {"$ref": "#/$defs/sha"},
+          "decision": {"enum": ["confirm", "correct"]},
+          "reviewed_at": {"type": "string", "minLength": 1},
+          "reviewed_primary_position_handle": {"type": ["string", "null"]},
+          "reviewed_primary_position_id": {"type": ["string", "null"]},
+          "reviewed_reason_code": {"enum": ["clear_preference", "mixed", "outside_map", "refusal", "unclear"]},
+          "crosswalk_item_sha256": {"$ref": "#/$defs/sha"},
+          "outcome_path": {"type": "string", "minLength": 1},
+          "outcome_sha256": {"$ref": "#/$defs/sha"}
+        }
+      }
+    },
+    "position_primary_counts": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "integer", "minimum": 0}},
+    "null_primary_count": {"type": "integer", "minimum": 0},
+    "threshold_contract": {"$ref": "#/$defs/threshold"},
+    "threshold_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_complete", "author_review_complete", "qualifies", "completed_response_count", "non_null_primary_count", "represented_position_count", "maximum_position_primary_count", "failure_reasons"],
+      "properties": {
+        "evidence_complete": {"const": true},
+        "author_review_complete": {"const": true},
+        "qualifies": {"type": "boolean"},
+        "completed_response_count": {"const": 8},
+        "non_null_primary_count": {"type": "integer", "minimum": 0, "maximum": 8},
+        "represented_position_count": {"type": "integer", "minimum": 0},
+        "maximum_position_primary_count": {"type": "integer", "minimum": 0, "maximum": 8},
+        "failure_reasons": {"type": "array", "uniqueItems": true, "items": {"enum": ["fewer-than-six-non-null-primary-endorsements", "fewer-than-three-represented-positions", "one-position-has-more-than-four-primary-endorsements"]}}
+      }
+    },
+    "terminal_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["terminal", "candidate_order", "selected_candidate_id", "reason", "additional_candidates_allowed", "fallback_allowed", "third_candidate_allowed"],
+      "properties": {
+        "terminal": {"const": true},
+        "candidate_order": {"const": ["frontier-ai-lifecycle-licensing"]},
+        "selected_candidate_id": {"enum": ["frontier-ai-lifecycle-licensing", null]},
+        "reason": {"enum": ["sole-successor-qualified-terminal-selected", "sole-successor-completed-and-failed-no-selection"]},
+        "additional_candidates_allowed": {"const": false},
+        "fallback_allowed": {"const": false},
+        "third_candidate_allowed": {"const": false}
+      }
+    },
+    "offline_attestation": {
+      "const": {
+        "network_requests": 0,
+        "environment_variables_read": 0,
+        "provider_calls": 0,
+        "internet_accessed": false,
+        "tools_accessed": false,
+        "external_context_accessed": false
+      }
+    }
+  },
+  "$defs": {
+    "sha": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "git": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha"}}
+    },
+    "threshold": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_path", "source_field", "sha256", "required_completed_responses", "minimum_non_null_primary_endorsements", "minimum_distinct_primary_positions", "maximum_primary_endorsements_per_position"],
+      "properties": {
+        "source_path": {"const": "candidate/rule3-successor-lock.json"},
+        "source_field": {"const": "$.threshold"},
+        "sha256": {"$ref": "#/$defs/sha"},
+        "required_completed_responses": {"const": 8},
+        "minimum_non_null_primary_endorsements": {"const": 6},
+        "minimum_distinct_primary_positions": {"const": 3},
+        "maximum_primary_endorsements_per_position": {"const": 4}
+      }
+    }
+  }
+}

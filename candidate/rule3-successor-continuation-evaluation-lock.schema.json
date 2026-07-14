@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://concordance.local/schemas/rule3-successor-continuation-evaluation-lock-1.0.0.json",
+  "title": "Rule 3 successor continuation evaluation gate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "pool_id", "candidate_id", "private_root", "evaluation_root", "lineage", "threshold_contract", "evaluator", "offline_policy"],
+  "properties": {
+    "schema_version": {"const": "rule3-successor-continuation-evaluation-lock-1.0.0"},
+    "status": {"const": "sealed-continuation-evaluation-gate-v1"},
+    "pool_id": {"const": "frontier-ai-preflight-correction-1"},
+    "candidate_id": {"const": "frontier-ai-lifecycle-licensing"},
+    "private_root": {"const": ".pilot/divergence-successor-continuation-author-review/frontier-ai-preflight-correction-1"},
+    "evaluation_root": {"const": ".pilot/divergence-successor-continuation-author-review/frontier-ai-preflight-correction-1/candidates/frontier-ai-lifecycle-licensing/evaluation-v2"},
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["successor_lock", "continuation_lock", "continuation_review_lock", "question", "review_anchor", "blind_packet", "blind_crosswalk", "blind_key_sha256", "sealed_author_review", "sealed_author_review_receipt", "sealed_author_review_sha256", "sealed_author_review_receipt_sha256"],
+      "properties": {
+        "successor_lock": {"$ref": "#/$defs/binding"},
+        "continuation_lock": {"$ref": "#/$defs/binding"},
+        "continuation_review_lock": {"$ref": "#/$defs/binding"},
+        "question": {"$ref": "#/$defs/binding"},
+        "review_anchor": {"$ref": "#/$defs/binding"},
+        "blind_packet": {"$ref": "#/$defs/binding"},
+        "blind_crosswalk": {"$ref": "#/$defs/binding"},
+        "blind_key_sha256": {"$ref": "#/$defs/sha"},
+        "sealed_author_review": {"$ref": "#/$defs/binding"},
+        "sealed_author_review_receipt": {"$ref": "#/$defs/binding"},
+        "sealed_author_review_sha256": {"$ref": "#/$defs/sha"},
+        "sealed_author_review_receipt_sha256": {"$ref": "#/$defs/sha"}
+      }
+    },
+    "threshold_contract": {"$ref": "#/$defs/threshold"},
+    "evaluator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_git_head", "sources"],
+      "properties": {
+        "source_git_head": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+        "sources": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/binding"}}
+      }
+    },
+    "offline_policy": {
+      "const": {
+        "network_requests": 0,
+        "environment_variables_read": 0,
+        "provider_calls": 0,
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "external_context_enabled": false
+      }
+    }
+  },
+  "$defs": {
+    "sha": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha"}
+      }
+    },
+    "threshold": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_path", "source_field", "sha256", "required_completed_responses", "minimum_non_null_primary_endorsements", "minimum_distinct_primary_positions", "maximum_primary_endorsements_per_position"],
+      "properties": {
+        "source_path": {"const": "candidate/rule3-successor-lock.json"},
+        "source_field": {"const": "$.threshold"},
+        "sha256": {"$ref": "#/$defs/sha"},
+        "required_completed_responses": {"const": 8},
+        "minimum_non_null_primary_endorsements": {"const": 6},
+        "minimum_distinct_primary_positions": {"const": 3},
+        "maximum_primary_endorsements_per_position": {"const": 4}
+      }
+    }
+  }
+}
