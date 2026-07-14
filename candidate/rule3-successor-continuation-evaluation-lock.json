@@ -1,0 +1,104 @@
+{
+  "schema_version": "rule3-successor-continuation-evaluation-lock-1.0.0",
+  "status": "sealed-continuation-evaluation-gate-v1",
+  "pool_id": "frontier-ai-preflight-correction-1",
+  "candidate_id": "frontier-ai-lifecycle-licensing",
+  "private_root": ".pilot/divergence-successor-continuation-author-review/frontier-ai-preflight-correction-1",
+  "evaluation_root": ".pilot/divergence-successor-continuation-author-review/frontier-ai-preflight-correction-1/candidates/frontier-ai-lifecycle-licensing/evaluation-v2",
+  "lineage": {
+    "successor_lock": {
+      "path": "candidate/rule3-successor-lock.json",
+      "sha256": "08cbaa1963d88cc0c1b0fe32ac7e74fbd553b4dc9f7a6a1de0cc6866129f8ab9"
+    },
+    "continuation_lock": {
+      "path": "candidate/rule3-successor-continuation-lock.json",
+      "sha256": "5acbb3d7dbeaa03e26441878d9d0d8714fd902474ae3be811fc04a2bd6b1d803"
+    },
+    "continuation_review_lock": {
+      "path": "candidate/rule3-successor-continuation-review-lock.json",
+      "sha256": "573b8fc4caf513430873eabd9afa972e1a0ef76ab50c316075d13be34ab22875"
+    },
+    "question": {
+      "path": "candidate/rule3-successor/questions/frontier-ai-lifecycle-licensing.json",
+      "sha256": "8c8c066e625b50d441f998e3c316a6e293bbed7dffea5aa47c87f77257b91eb5"
+    },
+    "review_anchor": {
+      "path": ".pilot/divergence-successor-continuation-author-review/frontier-ai-preflight-correction-1/candidates/frontier-ai-lifecycle-licensing/anchor-v2/anchor.json",
+      "sha256": "2f4e8bea18c622129d2d5535517d91465b3b85b71bf087f1e9be7c25eb3635a9"
+    },
+    "blind_packet": {
+      "path": ".pilot/divergence-successor-continuation-review/frontier-ai-preflight-correction-1/candidates/frontier-ai-lifecycle-licensing/blind/packet.json",
+      "sha256": "0db90c6e1c414e2a148e7d76a2c47e5835af77371d7f5ebf72ab3c51c37cbaff"
+    },
+    "blind_crosswalk": {
+      "path": ".pilot/divergence-successor-continuation-review/frontier-ai-preflight-correction-1/candidates/frontier-ai-lifecycle-licensing/blind/crosswalk.json",
+      "sha256": "60ae2f47853f4971a7fe2884048103e5d66de7104f889ac511bc8df77aed27de"
+    },
+    "blind_key_sha256": "84d527b237cb2a79adadedab84f3f68e3bf0a4ac65d8bd5d7e5076e5665bc98d",
+    "sealed_author_review": {
+      "path": ".pilot/divergence-successor-continuation-author-review/frontier-ai-preflight-correction-1/candidates/frontier-ai-lifecycle-licensing/author-review-v2/review.json",
+      "sha256": "2f2958967a1940e3f787200978e046a0350768f8bab988a0f0d373a7f9aef25d"
+    },
+    "sealed_author_review_receipt": {
+      "path": ".pilot/divergence-successor-continuation-author-review/frontier-ai-preflight-correction-1/candidates/frontier-ai-lifecycle-licensing/author-review-v2/receipt.json",
+      "sha256": "be3e1ea1cce74272235f78c48fce404d0cbcaa25b95b1415d15fff26ad1a5747"
+    },
+    "sealed_author_review_sha256": "2f2958967a1940e3f787200978e046a0350768f8bab988a0f0d373a7f9aef25d",
+    "sealed_author_review_receipt_sha256": "be3e1ea1cce74272235f78c48fce404d0cbcaa25b95b1415d15fff26ad1a5747"
+  },
+  "threshold_contract": {
+    "source_path": "candidate/rule3-successor-lock.json",
+    "source_field": "$.threshold",
+    "sha256": "696b4a140e3a07f07d27a40a17a143a5b208749c74a5b6adda5db97043c001e7",
+    "required_completed_responses": 8,
+    "minimum_non_null_primary_endorsements": 6,
+    "minimum_distinct_primary_positions": 3,
+    "maximum_primary_endorsements_per_position": 4
+  },
+  "evaluator": {
+    "source_git_head": "c0ebd3322165f219a61caed04a879a8c4dd3a932",
+    "sources": [
+      {
+        "path": "harness/divergence_successor_continuation_evaluation/__init__.py",
+        "sha256": "a6c6106991a1f071ceeddf16d1df835411ad008b75d86479700544e2f00791f2"
+      },
+      {
+        "path": "harness/divergence_successor_continuation_evaluation/contract.py",
+        "sha256": "f81f65fc0da50c9e9512fb6471a397c69ec7abe8bbaefc9c8bbafb65bfc8da90"
+      },
+      {
+        "path": "harness/divergence_successor_continuation_evaluation/lock.py",
+        "sha256": "a3ca9de829d85eaa4a41c6d516cd1c71c01639db238e6c43e2935f63eedae0ff"
+      },
+      {
+        "path": "harness/divergence_successor_continuation_evaluation/evaluate.py",
+        "sha256": "fb8b4fb8243a6cc698cf5c85ea9bb387e8f3ea7e32ebb07bef2782e17d39404d"
+      },
+      {
+        "path": "harness/create_divergence_successor_continuation_evaluation_lock.py",
+        "sha256": "d29c448231a3d6c31b58c3b7fa439871e328d28846d64c439a50bec4cae0d548"
+      },
+      {
+        "path": "harness/evaluate_divergence_successor_continuation.py",
+        "sha256": "651439ab8a9c155c24b0cc78ab0d996c2b0d14330e821269e837ef5edbf41272"
+      },
+      {
+        "path": "candidate/rule3-successor-continuation-evaluation-lock.schema.json",
+        "sha256": "20860b2d81c91141a659433593b2cdcb93f092d7c38a1c86fc80ac5c4cbbea53"
+      },
+      {
+        "path": "candidate/rule3-successor-continuation-evaluation-receipt.schema.json",
+        "sha256": "953accc96e50422b683ad901e261e2fef23fc2f6c50e60338ee5926f90dd3262"
+      }
+    ]
+  },
+  "offline_policy": {
+    "network_requests": 0,
+    "environment_variables_read": 0,
+    "provider_calls": 0,
+    "tools_enabled": false,
+    "web_search_enabled": false,
+    "retrieval_enabled": false,
+    "external_context_enabled": false
+  }
+}
