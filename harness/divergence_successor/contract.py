@@ -456,11 +456,19 @@ PREFLIGHT_REQUESTS_PER_MODEL = 1
 GENERATION_POSTS_PER_MODEL = 1
 AUTOMATIC_RETRIES = 0
 
-# The proposed lock is intentionally non-spending. A later, exact author
-# approval must add the separate PAID_CALLS_AUTHORIZATION_* constants.
+# The pre-execution lock remains non-spending. The exact author approval is
+# separately committed here and must also be recorded in the private receipt.
 AUTHORIZATION_ENABLED = False
 AUTHORIZATION_STATEMENT = None
 AUTHORIZATION_STATEMENT_SHA256 = None
+PAID_CALLS_AUTHORIZATION_ENABLED = True
+PAID_CALLS_AUTHORIZATION_STATEMENT = (
+    "I approve this frozen frontier-AI successor packet and authorize the eight "
+    "provider calls under the stated $6 cap."
+)
+PAID_CALLS_AUTHORIZATION_STATEMENT_SHA256 = (
+    "2e9843c4bc9e34f92f54a70368f77d89485a83f244499a7e510f442d08343ecd"
+)
 
 AUTHORIZED_HOSTS = (
     "generativelanguage.googleapis.com",
