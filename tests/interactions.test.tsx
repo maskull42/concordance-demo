@@ -49,6 +49,9 @@ describe("case interactions", () => {
     const user = userEvent.setup();
     render(<App />);
     const caseB = screen.getByRole("article", { name: /fictional divergence case/i });
+    const receipts = caseB.querySelector("details.receipts-section");
+    if (!(receipts instanceof HTMLDetailsElement)) throw new Error("Receipts missing");
+    await user.click(receipts.querySelector(":scope > summary") as HTMLElement);
     const receipt = caseB.querySelector('details.receipt[data-model="beta"]');
     if (!(receipt instanceof HTMLDetailsElement)) throw new Error("Beta receipt missing");
     const summary = receipt.querySelector("summary");
@@ -68,6 +71,9 @@ describe("case interactions", () => {
     await user.click(
       within(caseB).getByRole("button", { name: "Challenge this consensus" }),
     );
+    const receipts = caseB.querySelector("details.receipts-section");
+    if (!(receipts instanceof HTMLDetailsElement)) throw new Error("Receipts missing");
+    await user.click(receipts.querySelector(":scope > summary") as HTMLElement);
     const receipt = caseB.querySelector('details.receipt[data-model="delta"]');
     if (!(receipt instanceof HTMLDetailsElement)) throw new Error("Delta receipt missing");
 
@@ -102,9 +108,9 @@ describe("case interactions", () => {
     );
 
     expect(
-      screen.getByRole("button", { name: "Challenge sample not run" }),
+      screen.getByRole("button", { name: "No challenge sample" }),
     ).toBeDisabled();
-    expect(screen.getByText(/initial answer samples only/i)).toBeInTheDocument();
+    expect(screen.getByText(/initial answers only/i)).toBeInTheDocument();
   });
 
   it("labels omitted secondary mappings as unreviewed", () => {
@@ -140,6 +146,8 @@ describe("case interactions", () => {
     expect(
       screen.getAllByText("Not reviewed in this prototype").length,
     ).toBeGreaterThan(0);
-    expect(screen.getAllByText("No primary assignment").length).toBeGreaterThan(0);
+    expect(
+      screen.getByText(/documented positions did not appear as a primary conclusion/i),
+    ).toBeInTheDocument();
   });
 });

@@ -40,7 +40,7 @@ test("variant, challenge, and raw receipts work from the keyboard", async ({ pag
   await page.keyboard.press("Space");
   await expect(framed).toBeChecked();
   await expect(caseC.locator('.case-controls [aria-live="polite"]')).toContainText(
-    "Map and receipts updated",
+    "Distribution and receipts updated",
   );
   await expect(caseC.locator(".model-detail")).toContainText("East reading");
 
@@ -53,6 +53,7 @@ test("variant, challenge, and raw receipts work from the keyboard", async ({ pag
   await expect(caseA.getByText(/Recovered under challenge/).first()).toBeVisible();
 
   const betaReceipt = page.locator('#case-b details.receipt[data-model="beta"]');
+  await page.locator("#case-b details.receipts-section > summary").click();
   await betaReceipt.locator("summary").click();
   const raw = betaReceipt.locator("pre[data-raw-response]");
   await expect(raw).toContainText("<strong>not markup</strong>");
@@ -74,7 +75,7 @@ test("mobile layout remains legible without horizontal overflow", async ({ page 
     content: document.documentElement.scrollWidth,
   }));
   expect(dimensions.content).toBeLessThanOrEqual(dimensions.viewport + 1);
-  await expect(page.locator("#case-c .semantic-position").first()).toBeVisible();
+  await expect(page.locator("#case-c .distribution-row").first()).toBeVisible();
 });
 
 test("reduced-motion preference disables smooth scrolling and preserves meaning", async ({

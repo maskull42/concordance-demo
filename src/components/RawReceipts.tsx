@@ -3,23 +3,29 @@ import type { CaseViewModel, ModelViewState } from "../lib/view-model";
 
 export function RawReceipts({ view }: { view: CaseViewModel }) {
   return (
-    <section className="receipts-section" aria-labelledby={`${view.question.id}-receipts`}>
-      <div className="subsection-heading">
-        <div>
-          <p className="micro-label">Raw receipts</p>
-          <h4 id={`${view.question.id}-receipts`}>Inspect the sampled text</h4>
-        </div>
-        <p>
+    <details
+      className="receipts-section evidence-disclosure"
+      aria-labelledby={`${view.question.id}-receipts`}
+    >
+      <summary className="evidence-summary" id={`${view.question.id}-receipts`}>
+        <span>
+          <span className="micro-label">Audit trail</span>
+          <strong>Model answers and run receipts</strong>
+        </span>
+        <span>{view.models.length} model record{view.models.length === 1 ? "" : "s"}</span>
+      </summary>
+      <div className="evidence-body">
+        <p className="evidence-intro">
           Provider text is shown verbatim and inert. Human-authored mappings are
           labeled separately.
         </p>
+        <div className="receipt-list">
+          {view.models.map((model) => (
+            <Receipt key={model.model.model_key} model={model} view={view} />
+          ))}
+        </div>
       </div>
-      <div className="receipt-list">
-        {view.models.map((model) => (
-          <Receipt key={model.model.model_key} model={model} view={view} />
-        ))}
-      </div>
-    </section>
+    </details>
   );
 }
 

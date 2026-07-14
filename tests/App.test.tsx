@@ -12,6 +12,9 @@ describe("application shell", () => {
     expect(screen.getByRole("status")).toHaveTextContent(
       "No answer below is a real model run",
     );
+    expect(
+      screen.getByRole("heading", { name: "Three patterns policy teams should see." }),
+    ).toBeInTheDocument();
     expect(screen.getAllByRole("article")).toHaveLength(3);
   });
 });

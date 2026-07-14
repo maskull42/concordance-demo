@@ -70,7 +70,7 @@ export function CaseStudy({
     setVariantId(nextVariantId);
     setMode(nextMode);
     setAnnouncement(
-      `${next?.label ?? nextVariantId} selected; ${changed} model${changed === 1 ? "" : "s"} changed primary position. Map and receipts updated.`,
+      `${next?.label ?? nextVariantId} selected; ${changed} model${changed === 1 ? "" : "s"} changed primary position. Distribution and receipts updated.`,
     );
   }
 
@@ -104,23 +104,11 @@ export function CaseStudy({
           <p className="case-premise">{question.premise}</p>
         </div>
         <dl className="case-statline">
-          <div><dt>Positions</dt><dd>{question.position_map.length}</dd></div>
-          <div><dt>Panel</dt><dd>{models.length}</dd></div>
-          <div><dt>Cells in view</dt><dd>{view.models.length}</dd></div>
+          <div><dt>Mapped positions</dt><dd>{question.position_map.length}</dd></div>
+          <div><dt>Models</dt><dd>{models.length}</dd></div>
+          <div><dt>Answers shown</dt><dd>{view.models.length}</dd></div>
         </dl>
       </header>
-
-      <div className="case-context-grid">
-        <div>
-          <p className="micro-label">Question context</p>
-          <p>{question.context_note}</p>
-        </div>
-        <aside className="selection-disclosure" role="note">
-          <p className="micro-label">Selection disclosure</p>
-          <p>{question.selection.disclosure}</p>
-          <p><strong>Map scope:</strong> cited and explicitly non-exhaustive.</p>
-        </aside>
-      </div>
 
       <section className="case-controls" aria-label={`Controls for ${question.title}`}>
         {question.prompt_variants.length > 1 ? (
@@ -159,12 +147,12 @@ export function CaseStudy({
             ? mode === "challenge"
               ? "Return to initial answers"
               : "Challenge this consensus"
-            : "Challenge sample not run"}
+            : "No challenge sample"}
         </button>
         <p className="challenge-explainer">
           {challengeAvailable
             ? "The linked follow-up asks for the strongest supportable contrary position. This distinguishes spontaneous omission from a position the model can produce when directly challenged."
-            : "This prototype contains initial answer samples only. No linked challenge call was run for this prompt wording."}
+            : "Initial answers only. No follow-up challenge sample was run for this prompt wording."}
         </p>
         <p className="visually-hidden" aria-live="polite" aria-atomic="true">
           {announcement}
@@ -182,36 +170,50 @@ export function CaseStudy({
         onSelectModel={setSelectedModelKey}
       />
 
-      <RawReceipts view={view} />
+      <aside className="case-limit" role="note">
+        <p className="micro-label">Read this result carefully</p>
+        <ul>
+          {question.what_this_does_not_show.map((item) => <li key={item}>{item}</li>)}
+        </ul>
+      </aside>
 
-      <section className="interpretation-panels">
-        <div className="shows-panel">
-          <p className="micro-label">What this shows</p>
-          <ul>{question.what_this_shows.map((item) => <li key={item}>{item}</li>)}</ul>
-        </div>
-        <div className="does-not-panel">
-          <p className="micro-label">What this does not show</p>
-          <ul>{question.what_this_does_not_show.map((item) => <li key={item}>{item}</li>)}</ul>
-        </div>
-      </section>
-
-      <section className="sources-panel" aria-labelledby={`${question.id}-sources`}>
-        <div className="subsection-heading">
+      <details className="case-context-disclosure">
+        <summary>How this case was framed and selected</summary>
+        <div className="case-context-grid">
           <div>
-            <p className="micro-label">Position-map evidence</p>
-            <h4 id={`${question.id}-sources`}>Sources to inspect</h4>
+            <p className="micro-label">Question context</p>
+            <p>{question.context_note}</p>
           </div>
-          <p>
-            These sources attest mapped positions; they do not validate model answers
-            automatically.
-          </p>
+          <aside className="selection-disclosure" role="note">
+            <p className="micro-label">Selection disclosure</p>
+            <p>{question.selection.disclosure}</p>
+            <p><strong>Map scope:</strong> cited and explicitly non-exhaustive.</p>
+          </aside>
         </div>
-        <ol className="source-list">
-          {sources.map((source) => {
+      </details>
+
+      <details className="sources-panel evidence-disclosure" aria-labelledby={`${question.id}-sources`}>
+        <summary className="evidence-summary" id={`${question.id}-sources`}>
+          <span>
+            <span className="micro-label">Position-map evidence</span>
+            <strong>Sources behind the map</strong>
+          </span>
+          <span>{sources.length} cited source{sources.length === 1 ? "" : "s"}</span>
+        </summary>
+        <div className="evidence-body">
+          <p className="evidence-intro">
+            These sources attest the documented positions. They do not validate model
+            answers automatically.
+          </p>
+          <ol className="source-list">
+          {sources.map((source, index) => {
             const href = safeExternalUrl(source.url);
             return (
               <li key={`${source.id}-${source.url}`}>
-                <div>
+                <span className="source-number" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="source-copy">
                   <p className="source-title">{source.title}</p>
                   <p>{source.citation}</p>
                   <p className="source-claim">Supports map claim: {source.claim_supported}</p>
@@ -229,8 +231,11 @@ export function CaseStudy({
               </li>
             );
           })}
-        </ol>
-      </section>
+          </ol>
+        </div>
+      </details>
+
+      <RawReceipts view={view} />
     </article>
   );
 }
