@@ -19,7 +19,7 @@
     "validate:candidates:successor": "tsx scripts/validate-successor-candidates.ts",
     "validate:candidates:author-verified": "tsx scripts/validate-author-verified-successor.ts",
     "build": "npm run validate:data && tsc -b && cross-env VITE_DATASET=sample vite build",
-    "dev:prototype": "npm run prototype:data && npm run validate:data:prototype && cross-env VITE_DATASET=prototype vite",
+    "dev:prototype": "npm run build:prototype && vite preview --host 127.0.0.1",
     "build:prototype": "npm run prototype:data && npm run validate:data:prototype && tsc -b && cross-env VITE_DATASET=prototype vite build",
     "build:production": "npm run validate:data:production && tsc -b && cross-env VITE_DATASET=production vite build",
     "preview": "vite preview",

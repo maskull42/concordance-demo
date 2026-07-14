@@ -31,6 +31,7 @@ export function ConvergenceMap({
   const compact = useCompactLayout();
   const reducedMotion = useReducedMotion();
   const layout = useMemo(() => createLayout(view, compact), [view, compact]);
+  const primaryOnly = view.mapping.mapping_version === "prototype-primary-1";
   const selected =
     view.models.find((model) => model.model.model_key === selectedModelKey) ??
     view.models[0];
@@ -44,7 +45,7 @@ export function ConvergenceMap({
             <p className="micro-label">Position map</p>
             <h4>Where the sampled answers land</h4>
           </div>
-          <MapLegend />
+          <MapLegend primaryOnly={primaryOnly} />
         </div>
 
         <svg
@@ -58,9 +59,20 @@ export function ConvergenceMap({
             {view.question.title}, {view.mode} view
           </title>
           <desc id={descriptionId}>
-            {view.representedCount} represented positions, {view.mentionedOnlyCount}{" "}
-            mentioned-only positions, {view.absentCount} not represented positions,{" "}
-            {view.mixedModels.length} mixed or unclear answers.
+            {primaryOnly ? (
+              <>
+                {view.representedCount} positions received a primary assignment,{" "}
+                {view.absentCount} received none, and {view.mixedModels.length}{" "}
+                answers were mixed or unclear. Secondary mappings were not reviewed.
+              </>
+            ) : (
+              <>
+                {view.representedCount} represented positions,{" "}
+                {view.mentionedOnlyCount} mentioned-only positions, {view.absentCount}{" "}
+                not represented positions, {view.mixedModels.length} mixed or unclear
+                answers.
+              </>
+            )}
           </desc>
 
           {layout.positions.map(({ state, point }) => (
@@ -71,14 +83,21 @@ export function ConvergenceMap({
             >
               <rect width={NODE_WIDTH} height={NODE_HEIGHT} rx="18" />
               <text className="node-state" x="18" y="27">
-                {representationLabel(state.representation)}
+                {representationLabel(state.representation, primaryOnly)}
               </text>
               <text className="node-title" x="18" y="57">
                 {truncate(state.position.label, 31)}
               </text>
               <text className="node-count" x="18" y="82">
-                {state.primaryModels.length} primary · +{state.additionalModels.length}{" "}
-                additional · M{state.mentioningModels.length}
+                {primaryOnly ? (
+                  <>{state.primaryModels.length} primary</>
+                ) : (
+                  <>
+                    {state.primaryModels.length} primary · +
+                    {state.additionalModels.length} additional · M
+                    {state.mentioningModels.length}
+                  </>
+                )}
               </text>
               {state.recoveredModels.length > 0 ? (
                 <text className="node-recovered" x="18" y="106">
@@ -138,9 +157,9 @@ export function ConvergenceMap({
         </svg>
 
         <p className="map-footnote">
-          Tokens mark primary human assignments only. Additional endorsements and
-          mentions remain visible in the semantic list below. The map is explicitly
-          non-exhaustive.
+          {primaryOnly
+            ? "Tokens mark author-reviewed primary assignments. Secondary endorsements and mentions were not reviewed in this prototype. The map is explicitly non-exhaustive."
+            : "Tokens mark primary human assignments only. Additional endorsements and mentions remain visible in the semantic list below. The map is explicitly non-exhaustive."}
         </p>
       </div>
 
@@ -154,6 +173,7 @@ export function ConvergenceMap({
           <PositionSummary
             key={position.position.id}
             position={position}
+            primaryOnly={primaryOnly}
             selectedModelKey={selectedModelKey}
             onSelectModel={onSelectModel}
           />
@@ -192,30 +212,41 @@ export function ConvergenceMap({
   );
 }
 
-function MapLegend() {
+function MapLegend({ primaryOnly }: { primaryOnly: boolean }) {
   return (
     <ul className="map-legend" aria-label="Map legend">
       <li><span className="legend-swatch legend-swatch--primary" />Primary</li>
-      <li><span className="legend-chip">+</span>Additional</li>
-      <li><span className="legend-chip legend-chip--mention">M</span>Mentioned</li>
-      <li><span className="legend-swatch legend-swatch--absent" />Not represented</li>
+      {primaryOnly ? null : (
+        <>
+          <li><span className="legend-chip">+</span>Additional</li>
+          <li><span className="legend-chip legend-chip--mention">M</span>Mentioned</li>
+        </>
+      )}
+      <li>
+        <span className="legend-swatch legend-swatch--absent" />
+        {primaryOnly ? "No primary assignment" : "Not represented"}
+      </li>
     </ul>
   );
 }
 
 function PositionSummary({
   position,
+  primaryOnly,
   selectedModelKey,
   onSelectModel,
 }: {
   position: PositionViewState;
+  primaryOnly: boolean;
   selectedModelKey: string;
   onSelectModel: (modelKey: string) => void;
 }) {
   return (
     <section className={`semantic-position semantic-position--${position.representation}`}>
       <div className="position-copy">
-        <p className="position-state">{representationLabel(position.representation)}</p>
+        <p className="position-state">
+          {representationLabel(position.representation, primaryOnly)}
+        </p>
         <h5>{position.position.label}</h5>
         <p>{position.position.summary}</p>
         {position.recoveredModels.length > 0 ? (
@@ -385,10 +416,17 @@ function modelMonogram(family: string) {
     : words.slice(0, 2).map((word) => word[0]).join("").toUpperCase();
 }
 
-function representationLabel(value: PositionViewState["representation"]) {
-  if (value === "represented") return "Represented";
-  if (value === "mentioned-only") return "Mentioned, not endorsed";
-  return "Not represented";
+function representationLabel(
+  value: PositionViewState["representation"],
+  primaryOnly = false,
+) {
+  if (value === "represented") {
+    return primaryOnly ? "Primary assigned" : "Represented";
+  }
+  if (value === "mentioned-only") {
+    return primaryOnly ? "No primary assignment" : "Mentioned, not endorsed";
+  }
+  return primaryOnly ? "No primary assignment" : "Not represented";
 }
 
 function truncate(value: string, length: number) {

@@ -106,4 +106,40 @@ describe("case interactions", () => {
     ).toBeDisabled();
     expect(screen.getByText(/initial answer samples only/i)).toBeInTheDocument();
   });
+
+  it("labels omitted secondary mappings as unreviewed", () => {
+    const question = dataset.questions[0];
+    const run = dataset.runs.find((value) => value.question_id === question.id);
+    const sourceMapping = dataset.mappings.find(
+      (value) => value.question_id === question.id,
+    );
+    if (!run || !sourceMapping) throw new Error("Case A fixture is missing");
+    const mapping = {
+      ...sourceMapping,
+      mapping_version: "prototype-primary-1",
+      assignments: sourceMapping.assignments.map((assignment) => ({
+        ...assignment,
+        also_endorsed: [],
+        mentioned: [],
+      })),
+    };
+
+    render(
+      <CaseStudy
+        question={question}
+        run={run}
+        mapping={mapping}
+        models={dataset.manifest.models}
+        label="A"
+      />,
+    );
+
+    expect(
+      screen.getByText(/secondary endorsements and mentions were not reviewed/i),
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByText("Not reviewed in this prototype").length,
+    ).toBeGreaterThan(0);
+    expect(screen.getAllByText("No primary assignment").length).toBeGreaterThan(0);
+  });
 });

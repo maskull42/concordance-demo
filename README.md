@@ -10,7 +10,7 @@ The repository is private while the prototype, provisional scholarly content, an
 
 The implementation is staged. Each stage is validated and committed before the next begins. Live model calls require an exact committed lock, a current pricing receipt, separate paid-run authorization, and credentials replaced or rotated for this project.
 
-The default application build uses a conspicuously fictional dataset generated in `sample/`. The placeholder `data/` tree is intentionally unable to pass the production gate.
+The default application build uses a conspicuously fictional dataset generated in `sample/`. A separate local prototype lane assembles three real, selection-stage cases from sealed private artifacts. It contains 32 initial answers and author-reviewed primary mappings. Challenge samples remain unrun, and the lane does not pass the production gate. The placeholder `data/` tree remains intentionally unable to pass that gate.
 
 The sample interface exercises every release state: primary and additional endorsements, mentions, absence, mixed/unclear mappings, linked challenge recovery, prompt-variant movement, and an unavailable response cell. Model text is rendered as inert text beside separately labeled human mappings and complete provenance receipts.
 
@@ -26,9 +26,19 @@ npm run check
 npm run dev
 ```
 
+To inspect the real-data prototype locally, run:
+
+```sh
+npm run dev:prototype
+```
+
+That command assembles and validates `.pilot/prototype-data/` before starting a CSP-compatible built preview at `http://127.0.0.1:4173`. It performs no provider calls and requires the sealed local `.pilot/` artifacts from the completed selection runs.
+
 Useful checks:
 
 - `npm run validate:data` validates the indexed sample files, cross-record links, and content hashes.
+- `npm run validate:data:prototype` validates the assembled, candidate-mode real-data preview.
+- `npm run build:prototype` assembles, validates, and bundles the local real-data preview.
 - `npm run validate:data:production` applies the stricter release gate to `data/` and is expected to fail until the verified final dataset exists.
 - `npm run validate:candidates` checks the frozen six-question pilot pool and its provisional verification dossier.
 - `npm run validate:candidates:rule3` checks the exact two-candidate Rule 3 supplement, its approved map boundaries, and all 13 source bindings.

@@ -157,6 +157,8 @@ function MappingReceipt({
   view: CaseViewModel;
 }) {
   const mapping = model.assignment;
+  const secondaryMappingReviewed =
+    view.mapping.mapping_version !== "prototype-primary-1";
   return (
     <section className="mapping-receipt">
       <p className="receipt-label">Human-authored mapping, separate from provider text</p>
@@ -167,8 +169,22 @@ function MappingReceipt({
           <Meta label="Rubric version" value={view.mapping.rubric_version} />
           <Meta label="Run file SHA-256" value={view.mapping.run_file_sha256} code />
           <Meta label="Primary endorsed" value={mapping.primary_endorsed ?? "Mixed / unclear"} />
-          <Meta label="Also endorsed" value={mapping.also_endorsed.join(", ") || "None"} />
-          <Meta label="Mentioned" value={mapping.mentioned.join(", ") || "None"} />
+          <Meta
+            label="Also endorsed"
+            value={
+              secondaryMappingReviewed
+                ? mapping.also_endorsed.join(", ") || "None"
+                : "Not reviewed in this prototype"
+            }
+          />
+          <Meta
+            label="Mentioned"
+            value={
+              secondaryMappingReviewed
+                ? mapping.mentioned.join(", ") || "None"
+                : "Not reviewed in this prototype"
+            }
+          />
           <Meta label="Verification" value={mapping.verification.status} />
           <Meta label="Audit note" value={mapping.audit_note ?? "None"} />
         </dl>
