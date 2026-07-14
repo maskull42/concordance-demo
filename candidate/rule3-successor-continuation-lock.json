@@ -1,0 +1,996 @@
+{
+  "schema_version": "rule3-successor-continuation-lock-1.0.0",
+  "status": "immutable-offline-correction-continuation-lock",
+  "pool_id": "frontier-ai-preflight-correction-1",
+  "candidate_id": "frontier-ai-lifecycle-licensing",
+  "private_root": ".pilot/divergence-successor-continuation/frontier-ai-preflight-correction-1",
+  "bindings": {
+    "lock_schema": {
+      "path": "candidate/rule3-successor-continuation-lock.schema.json",
+      "sha256": "dc01fc71ceebdf33fd6a7c901a098eec46626c35ac736c95705cdc40e0da11de"
+    },
+    "question": {
+      "path": "candidate/rule3-successor/questions/frontier-ai-lifecycle-licensing.json",
+      "sha256": "8c8c066e625b50d441f998e3c316a6e293bbed7dffea5aa47c87f77257b91eb5"
+    },
+    "protocol": {
+      "path": "config/rule3-successor-protocol.json",
+      "protocol_version": "rule3-successor-1.0.0",
+      "sha256": "b2046def83f81759cd28edc38ee881d532cef40e50516006d94010b3106a75db"
+    },
+    "models_config": {
+      "path": "harness/config/models.json",
+      "sha256": "c67f043202696a71998d7c5ea9a18ce4c574fe244741717077e45e00acb7fb05"
+    }
+  },
+  "approval": {
+    "authorized_by": {
+      "id": "ag-elrod",
+      "display_name": "A.G. Elrod"
+    },
+    "statement": "I approve option 2 and authorize the offline preflight correction followed by the eight generation calls.",
+    "statement_sha256": "2e0d22554b2e092a3ed2deb2c749c6371964e56d14c29df5c739bf9aee095ac6",
+    "option": 2,
+    "offline_correction_authorized": true,
+    "generation_calls_authorized": 8,
+    "lock_authorizes_spending": false
+  },
+  "parent": {
+    "lock": {
+      "path": "candidate/rule3-successor-lock.json",
+      "sha256": "08cbaa1963d88cc0c1b0fe32ac7e74fbd553b4dc9f7a6a1de0cc6866129f8ab9"
+    },
+    "historical_git_head": "ed17b8f6832a6b338996e3a0d56105958177739d",
+    "authorization": {
+      "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/paid-authorization.json",
+      "sha256": "78f9fc695d5f976b9720f3c35d3134f0b3bbb79472094abc07d16f87473f51b1"
+    },
+    "pricing_recheck": {
+      "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/pricing-recheck.json",
+      "sha256": "d224925e86fedf330246de094278a84065a652ecce32931c8a7e870fefae3f2d"
+    },
+    "preflight_records": [
+      {
+        "model_key": "gemini",
+        "intent": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/intents/gemini/attempt-1.json",
+          "sha256": "79635e08682937ee48d8bde70a8d1e091f3343f4682a200b897749bd7cba7fb8"
+        },
+        "raw_response": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/raw-responses/gemini/attempt-1.json",
+          "sha256": "2b4ef6cf8ae3681042a77904ccf129b392f2e5ffd397292bc03bc1d600af0ef2"
+        },
+        "outcome": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/outcomes/gemini/attempt-1.json",
+          "sha256": "6132085f11deb9c85aedaa52f6e50f120054c9fc402e8cf924280a72d9829ed7"
+        }
+      },
+      {
+        "model_key": "claude",
+        "intent": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/intents/claude/attempt-1.json",
+          "sha256": "a1757bd857221b1498136690177c010c09787dd08ded504624ed9c069695d05e"
+        },
+        "raw_response": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/raw-responses/claude/attempt-1.json",
+          "sha256": "e11c32187baac8985219c3c423763e1c7644e73a5bdef6d8c3c9a6830346312b"
+        },
+        "outcome": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/outcomes/claude/attempt-1.json",
+          "sha256": "d281464d2c182aed642e7ecb9fc99ab1b64c61c49913847d9199bef1d611c551"
+        }
+      },
+      {
+        "model_key": "cohere",
+        "intent": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/intents/cohere/attempt-1.json",
+          "sha256": "51b5c66551328aa09fa5289b2ee4d5c9167ac754e4b9fe4a47f3d1a90a5dbd58"
+        },
+        "raw_response": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/raw-responses/cohere/attempt-1.json",
+          "sha256": "06c618c26c28583a54e92e764ae3df5de301ab1d788ce2150bba91ac008e251c"
+        },
+        "outcome": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/outcomes/cohere/attempt-1.json",
+          "sha256": "4be7398c926aa0e9f02d9eb3e01800d731a38037f304df2cc2c769ae963f30dc"
+        }
+      },
+      {
+        "model_key": "qwen",
+        "intent": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/intents/qwen/attempt-1.json",
+          "sha256": "e0bcc73206d8c05f48e20d66378dcdb8d7b98783969a3d69d5a966b2a265a098"
+        },
+        "raw_response": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/raw-responses/qwen/attempt-1.json",
+          "sha256": "ca89ae699c5de0040969268a9b677f096c947360de979550fb278331ffc16d5c"
+        },
+        "outcome": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/outcomes/qwen/attempt-1.json",
+          "sha256": "7821b18ef64c7198c3b250474f60b8f0106e4d562fd799b0692cba01a56bbb8a"
+        }
+      },
+      {
+        "model_key": "deepseek",
+        "intent": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/intents/deepseek/attempt-1.json",
+          "sha256": "fc31ab5898d2c8008bbc19edb4f11dc2fcb2ce2863feafe0e7d6b167aa451315"
+        },
+        "raw_response": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/raw-responses/deepseek/attempt-1.json",
+          "sha256": "8d49f2e665769d97dcd8c8a80cfd92fdcfceaa9ee3707729cfd67c741fa7df32"
+        },
+        "outcome": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/outcomes/deepseek/attempt-1.json",
+          "sha256": "21de2fface3da50a09adeca2dd46bdf632e6af4f85fdd6c242503661ea4dff5d"
+        }
+      },
+      {
+        "model_key": "mistral",
+        "intent": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/intents/mistral/attempt-1.json",
+          "sha256": "278c8526117af3210cb47a4f96acfbb5367458603462c07244a037e0883f1089"
+        },
+        "raw_response": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/raw-responses/mistral/attempt-1.json",
+          "sha256": "936ca8e9b24224a63e12c6f1d4607d5abac6732b19996a6e2087146ce39beaea"
+        },
+        "outcome": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/outcomes/mistral/attempt-1.json",
+          "sha256": "b31edb16b4f1c8c0f5405106794706b3e4651e23d83eae71741b21704b7a6ede"
+        }
+      },
+      {
+        "model_key": "grok",
+        "intent": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/intents/grok/attempt-1.json",
+          "sha256": "dc976f881a4f5a299709f4ed03ff738975adbdebea988d86ca753afef1762d13"
+        },
+        "raw_response": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/raw-responses/grok/attempt-1.json",
+          "sha256": "a87459f0027759c9b971b584e1254ec577ea90021af8f0067895d644a63c7604"
+        },
+        "outcome": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/outcomes/grok/attempt-1.json",
+          "sha256": "97f6e944760e8ca9cfbd40823559f762b9430086cc6a83e77a0969d706292e69"
+        }
+      },
+      {
+        "model_key": "gpt",
+        "intent": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/intents/gpt/attempt-1.json",
+          "sha256": "5b29ef296beed0db81179bd8aa1c7d927c36b24ff95987fc7ec373b15a084327"
+        },
+        "raw_response": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/raw-responses/gpt/attempt-1.json",
+          "sha256": "af4a164370720295248bfc5ade7ab1a04f7c5cec06d532689f62698ceb9c7162"
+        },
+        "outcome": {
+          "path": ".pilot/divergence-successor/concordance-divergence-replacement-1/preflight/outcomes/gpt/attempt-1.json",
+          "sha256": "6b916ccc2be81316ee0466545a6063f0832538424882c713cf0219ffdbf939d0"
+        }
+      }
+    ],
+    "original_private_inventory_files": 27,
+    "original_artifacts_preserved": true
+  },
+  "offline_correction": {
+    "path": ".pilot/divergence-successor-continuation/frontier-ai-preflight-correction-1/offline-correction.json",
+    "sha256": "e30f8feb849f9deef9e46ad7a3cf8f3cda51941eb4353ced9ef5c754b8f83ee7",
+    "sealed_metadata_responses_reused": 8,
+    "new_metadata_requests": 0,
+    "false_negative_model_keys": [
+      "claude",
+      "gpt"
+    ]
+  },
+  "models": [
+    {
+      "model_key": "gemini",
+      "family": "Gemini",
+      "provider": "google",
+      "requested_model_id": "gemini-3.1-pro-preview",
+      "route": "google-direct",
+      "environment_variable": "GOOGLE_API_KEY",
+      "api_style": "google",
+      "base_url": "https://generativelanguage.googleapis.com",
+      "generation_path": "/v1beta/models/{model}:generateContent",
+      "metadata_path": "/v1beta/models/{model}",
+      "metadata_mode": "single",
+      "auth_kind": "google-query",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": false,
+          "value": null,
+          "reason": "Gemini 3.1 Pro documented default"
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_output_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "Provider default reasoning behavior"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 2.0,
+        "output_per_million": 12.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "claude",
+      "family": "Claude",
+      "provider": "anthropic",
+      "requested_model_id": "claude-fable-5",
+      "route": "anthropic-direct",
+      "environment_variable": "ANTHROPIC_API_KEY",
+      "api_style": "anthropic",
+      "base_url": "https://api.anthropic.com",
+      "generation_path": "/v1/messages",
+      "metadata_path": "/v1/models/{model}",
+      "metadata_mode": "single",
+      "auth_kind": "anthropic-key",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": false,
+          "value": null,
+          "reason": "Temperature omitted for Claude Fable 5"
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "Always-on adaptive reasoning; no reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 10.0,
+        "output_per_million": 50.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "cohere",
+      "family": "Cohere",
+      "provider": "cohere",
+      "requested_model_id": "command-a-plus-05-2026",
+      "route": "cohere-direct",
+      "environment_variable": "COHERE_API_KEY",
+      "api_style": "cohere",
+      "base_url": "https://api.cohere.com",
+      "generation_path": "/v2/chat",
+      "metadata_path": "/v1/models/{model}",
+      "metadata_mode": "single",
+      "auth_kind": "bearer",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": true,
+          "value": 0.2
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "No separate reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 0.0,
+        "output_per_million": 0.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "qwen",
+      "family": "Qwen",
+      "provider": "deepinfra",
+      "requested_model_id": "Qwen/Qwen3.5-397B-A17B",
+      "route": "deepinfra",
+      "environment_variable": "DEEPINFRA_API_KEY",
+      "api_style": "openai",
+      "base_url": "https://api.deepinfra.com",
+      "generation_path": "/v1/openai/chat/completions",
+      "metadata_path": "/v1/models",
+      "metadata_mode": "list",
+      "auth_kind": "bearer",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": true,
+          "value": 0.2
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "No separate reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 0.45,
+        "output_per_million": 3.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "deepseek",
+      "family": "DeepSeek",
+      "provider": "deepseek",
+      "requested_model_id": "deepseek-v4-pro",
+      "route": "deepseek-direct",
+      "environment_variable": "DEEPSEEK_API_KEY",
+      "api_style": "openai",
+      "base_url": "https://api.deepseek.com",
+      "generation_path": "/chat/completions",
+      "metadata_path": "/models",
+      "metadata_mode": "list",
+      "auth_kind": "bearer",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": true,
+          "value": 0.2
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "No separate reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 0.435,
+        "output_per_million": 0.87,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "mistral",
+      "family": "Mistral",
+      "provider": "mistral",
+      "requested_model_id": "mistral-large-2512",
+      "route": "mistral-direct",
+      "environment_variable": "MISTRAL_API_KEY",
+      "api_style": "openai",
+      "base_url": "https://api.mistral.ai",
+      "generation_path": "/v1/chat/completions",
+      "metadata_path": "/v1/models/{model}",
+      "metadata_mode": "single",
+      "auth_kind": "bearer",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": true,
+          "value": 0.2
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "No separate reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {}
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 0.5,
+        "output_per_million": 1.5,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "grok",
+      "family": "Grok",
+      "provider": "xai",
+      "requested_model_id": "grok-4.5",
+      "route": "xai-direct",
+      "environment_variable": "XAI_API_KEY",
+      "api_style": "xai-responses",
+      "base_url": "https://api.x.ai",
+      "generation_path": "/v1/responses",
+      "metadata_path": "/v1/models/{model}",
+      "metadata_mode": "single",
+      "auth_kind": "bearer",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": true,
+          "value": 0.2
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_output_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "Mandatory provider-default reasoning shares the max_output_tokens ceiling"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {
+          "store": false,
+          "service_tier": "default"
+        }
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 2.0,
+        "output_per_million": 6.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    },
+    {
+      "model_key": "gpt",
+      "family": "GPT",
+      "provider": "openrouter",
+      "requested_model_id": "openai/gpt-5.6-sol",
+      "route": "openrouter-openai-pinned",
+      "environment_variable": "OPENROUTER_API_KEY",
+      "api_style": "openai",
+      "base_url": "https://openrouter.ai",
+      "generation_path": "/api/v1/chat/completions",
+      "metadata_path": "/api/v1/models/{model}/endpoints",
+      "metadata_mode": "openrouter-endpoints",
+      "auth_kind": "bearer",
+      "fallback_allowed": false,
+      "requests_per_second": 1.0,
+      "requested_params": {
+        "temperature": {
+          "sent": false,
+          "value": null,
+          "reason": "Temperature omitted for GPT-5.6 Sol"
+        },
+        "output_limit": {
+          "sent": true,
+          "parameter": "max_tokens",
+          "value": 16384
+        },
+        "reasoning": {
+          "sent": false,
+          "setting": null,
+          "reason": "Provider default reasoning behavior; no reasoning parameter sent"
+        },
+        "tools_enabled": false,
+        "web_search_enabled": false,
+        "retrieval_enabled": false,
+        "provider_options": {
+          "service_tier": "default",
+          "provider": {
+            "only": [
+              "openai"
+            ],
+            "allow_fallbacks": false,
+            "require_parameters": true
+          }
+        }
+      },
+      "planning_pricing": {
+        "currency": "USD",
+        "input_per_million": 5.0,
+        "output_per_million": 30.0,
+        "pricing_as_of": "2026-07-12",
+        "review_status": "author-verified"
+      }
+    }
+  ],
+  "plans": {
+    "call_type": "answer",
+    "variant_id": "default",
+    "candidate_plans": [
+      {
+        "candidate_id": "frontier-ai-lifecycle-licensing",
+        "role": "replacement",
+        "cell_count": 8,
+        "cells": [
+          {
+            "cell_id": "frontier-ai-lifecycle-licensing:gemini:default:answer",
+            "model_key": "gemini",
+            "prompt_sha256": "b262942f3e58ac3258b11d9a74598257dba2d63f8c158ee1bf8942aac33d6830",
+            "requested_model_id": "gemini-3.1-pro-preview",
+            "route": "google-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": false,
+                "value": null,
+                "reason": "Gemini 3.1 Pro documented default"
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_output_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "Provider default reasoning behavior"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            },
+            "semantic_attempt_number": 1,
+            "maximum_generation_posts": 1
+          },
+          {
+            "cell_id": "frontier-ai-lifecycle-licensing:claude:default:answer",
+            "model_key": "claude",
+            "prompt_sha256": "b262942f3e58ac3258b11d9a74598257dba2d63f8c158ee1bf8942aac33d6830",
+            "requested_model_id": "claude-fable-5",
+            "route": "anthropic-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": false,
+                "value": null,
+                "reason": "Temperature omitted for Claude Fable 5"
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "Always-on adaptive reasoning; no reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            },
+            "semantic_attempt_number": 1,
+            "maximum_generation_posts": 1
+          },
+          {
+            "cell_id": "frontier-ai-lifecycle-licensing:cohere:default:answer",
+            "model_key": "cohere",
+            "prompt_sha256": "b262942f3e58ac3258b11d9a74598257dba2d63f8c158ee1bf8942aac33d6830",
+            "requested_model_id": "command-a-plus-05-2026",
+            "route": "cohere-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "No separate reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            },
+            "semantic_attempt_number": 1,
+            "maximum_generation_posts": 1
+          },
+          {
+            "cell_id": "frontier-ai-lifecycle-licensing:qwen:default:answer",
+            "model_key": "qwen",
+            "prompt_sha256": "b262942f3e58ac3258b11d9a74598257dba2d63f8c158ee1bf8942aac33d6830",
+            "requested_model_id": "Qwen/Qwen3.5-397B-A17B",
+            "route": "deepinfra",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "No separate reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            },
+            "semantic_attempt_number": 1,
+            "maximum_generation_posts": 1
+          },
+          {
+            "cell_id": "frontier-ai-lifecycle-licensing:deepseek:default:answer",
+            "model_key": "deepseek",
+            "prompt_sha256": "b262942f3e58ac3258b11d9a74598257dba2d63f8c158ee1bf8942aac33d6830",
+            "requested_model_id": "deepseek-v4-pro",
+            "route": "deepseek-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "No separate reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            },
+            "semantic_attempt_number": 1,
+            "maximum_generation_posts": 1
+          },
+          {
+            "cell_id": "frontier-ai-lifecycle-licensing:mistral:default:answer",
+            "model_key": "mistral",
+            "prompt_sha256": "b262942f3e58ac3258b11d9a74598257dba2d63f8c158ee1bf8942aac33d6830",
+            "requested_model_id": "mistral-large-2512",
+            "route": "mistral-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "No separate reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {}
+            },
+            "semantic_attempt_number": 1,
+            "maximum_generation_posts": 1
+          },
+          {
+            "cell_id": "frontier-ai-lifecycle-licensing:grok:default:answer",
+            "model_key": "grok",
+            "prompt_sha256": "b262942f3e58ac3258b11d9a74598257dba2d63f8c158ee1bf8942aac33d6830",
+            "requested_model_id": "grok-4.5",
+            "route": "xai-direct",
+            "requested_params": {
+              "temperature": {
+                "sent": true,
+                "value": 0.2
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_output_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "Mandatory provider-default reasoning shares the max_output_tokens ceiling"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {
+                "store": false,
+                "service_tier": "default"
+              }
+            },
+            "semantic_attempt_number": 1,
+            "maximum_generation_posts": 1
+          },
+          {
+            "cell_id": "frontier-ai-lifecycle-licensing:gpt:default:answer",
+            "model_key": "gpt",
+            "prompt_sha256": "b262942f3e58ac3258b11d9a74598257dba2d63f8c158ee1bf8942aac33d6830",
+            "requested_model_id": "openai/gpt-5.6-sol",
+            "route": "openrouter-openai-pinned",
+            "requested_params": {
+              "temperature": {
+                "sent": false,
+                "value": null,
+                "reason": "Temperature omitted for GPT-5.6 Sol"
+              },
+              "output_limit": {
+                "sent": true,
+                "parameter": "max_tokens",
+                "value": 16384
+              },
+              "reasoning": {
+                "sent": false,
+                "setting": null,
+                "reason": "Provider default reasoning behavior; no reasoning parameter sent"
+              },
+              "tools_enabled": false,
+              "web_search_enabled": false,
+              "retrieval_enabled": false,
+              "provider_options": {
+                "service_tier": "default",
+                "provider": {
+                  "only": [
+                    "openai"
+                  ],
+                  "allow_fallbacks": false,
+                  "require_parameters": true
+                }
+              }
+            },
+            "semantic_attempt_number": 1,
+            "maximum_generation_posts": 1
+          }
+        ],
+        "plan_sha256": "b09b2841e659c5f8a15b34922931d6c02a7079386eda00e8ab0bc27af92f5e62"
+      }
+    ],
+    "ordered_universe_plan_sha256": "b09b2841e659c5f8a15b34922931d6c02a7079386eda00e8ab0bc27af92f5e62"
+  },
+  "execution_policy": {
+    "call_type": "answer",
+    "cells": 8,
+    "metadata_requests": 0,
+    "generation_posts": 8,
+    "semantic_attempts_per_cell": 1,
+    "automatic_retries": 0,
+    "fallback_allowed": false,
+    "all_intents_durable_before_parallel_release": true,
+    "generation_parallel": true,
+    "raw_response_durable_before_validation": true,
+    "stranded_or_failed_cell_is_terminal": true,
+    "output_token_cap": 16384,
+    "tools_enabled": false,
+    "web_search_enabled": false,
+    "retrieval_enabled": false,
+    "external_context_enabled": false
+  },
+  "network_policy": {
+    "maximum_metadata_gets": 0,
+    "maximum_generation_posts": 8,
+    "maximum_outbound_requests": 8,
+    "authorized_hosts": [
+      "generativelanguage.googleapis.com",
+      "api.anthropic.com",
+      "api.cohere.com",
+      "api.deepinfra.com",
+      "api.deepseek.com",
+      "api.mistral.ai",
+      "api.x.ai",
+      "openrouter.ai"
+    ],
+    "unlisted_network_access_allowed": false
+  },
+  "budget": {
+    "reserved_cost_microdollars": 1699588,
+    "candidate_cap_microdollars": 6000000,
+    "pool_cap_microdollars": 6000000,
+    "freshness_window_hours": 24,
+    "historical_pricing_receipt_reused": true,
+    "lock_authorizes_spending": false
+  },
+  "paid_authorization": {
+    "private_receipt_required": true,
+    "private_receipt_present_at_lock_time": false,
+    "provider_calls_allowed_by_lock_alone": false,
+    "exact_approval_bound": true
+  },
+  "execution_sources": [
+    {
+      "path": "harness/divergence_successor_continuation/__init__.py",
+      "sha256": "9015380fb95d70a3734cbed4f9f0789e28801abd455a1b75b9e283123283845e"
+    },
+    {
+      "path": "harness/divergence_successor_continuation/contract.py",
+      "sha256": "0144d26e4ba6438adc5a56574fb5bbad450cfd5b9361c00ebd32ca2b13c69244"
+    },
+    {
+      "path": "harness/divergence_successor_continuation/state.py",
+      "sha256": "61e56e4b0dee8e552319edfdfb156664df42c83aaaaf7db3689aa2ef0e365018"
+    },
+    {
+      "path": "harness/divergence_successor_continuation/correction.py",
+      "sha256": "62738966642ec6bd094b53327474d348e1f86cc80535c66d4b8b9f0433beeb08"
+    },
+    {
+      "path": "harness/divergence_successor_continuation/lock.py",
+      "sha256": "4c3012831bdfdbc47a4e3b838dc32d7f6d105e61ca6d54671646e94a2809f1bb"
+    },
+    {
+      "path": "harness/divergence_successor_continuation/authorization.py",
+      "sha256": "de8fe3e6ea864c2bf4b35dd3b6e33aa809ba3ccee765b33e74d8aeaccd29e19c"
+    },
+    {
+      "path": "harness/divergence_successor_continuation/execute.py",
+      "sha256": "fce8373a45664471259c54db12ef34e292158e372d0c1e8bfcad0071820a9e24"
+    },
+    {
+      "path": "harness/divergence_successor_continuation/transport.py",
+      "sha256": "8fb8987e3ab2ae52ff8b431dbef168cb2cec6dafa2da74c671be7508d677ca07"
+    },
+    {
+      "path": "harness/divergence_successor_continuation/composite.py",
+      "sha256": "4130d5372455238c3afeee55085fe7f07fcf9e71bca73f80dcdab33a81345cb6"
+    },
+    {
+      "path": "harness/divergence_successor_continuation/review.py",
+      "sha256": "d376fffb71deec7c98f1b12fcf02445a372f38ba0712b73e4a22a63bb9c24b2f"
+    },
+    {
+      "path": "harness/divergence_successor/contract.py",
+      "sha256": "40b40ca95bca1fb67ca4b8feb37b1f3cc6146818f544b21f83b3e796116d4e43"
+    },
+    {
+      "path": "harness/divergence_successor/parent.py",
+      "sha256": "e7da5d4df716219726c21eb8d218f4da8bbd01cdf3567fe0ca524687bab36cf8"
+    },
+    {
+      "path": "harness/divergence_successor/state.py",
+      "sha256": "69943641d2e8e5009e499184042b3e79f6316af590a4a4a3780c8ed7b8e833ad"
+    },
+    {
+      "path": "harness/divergence_successor/lock.py",
+      "sha256": "3748d371e80b912cdbab57b77dce8315243c276ddbebb843e23d6301cc939c4d"
+    },
+    {
+      "path": "harness/divergence_successor/authorization.py",
+      "sha256": "524d557350486c6a2c4342eb8ca1b20b1c295d1900eadeef8d596ea86e36fc93"
+    },
+    {
+      "path": "harness/divergence_successor/execute.py",
+      "sha256": "dd0dd3809e3cf6587a46e24bc8a247ad6ce5896c5f4c0673b2082470bad603ab"
+    },
+    {
+      "path": "harness/divergence_successor/engine.py",
+      "sha256": "27d6908ee4be8bda708a2b5b42b0ca660ed2ecfeae00ec4b4d8c092c9106902f"
+    },
+    {
+      "path": "harness/divergence_successor/review.py",
+      "sha256": "ce19ff306ac24033aa523fbbc8fbaff472411fff8eaeda4b7bd27cdf064345de"
+    },
+    {
+      "path": "harness/divergence_successor/review_assets/review.css",
+      "sha256": "728f25df5e61d7708a0f85b7e6accbc42304f9e9904976e0099ea3b2bdc5600b"
+    },
+    {
+      "path": "harness/divergence_successor/review_assets/review.js",
+      "sha256": "923659ac22cab875c408149bd86050ffe0c6c6a36af9493954b3e2df32011c30"
+    },
+    {
+      "path": "harness/concordance_harness/config.py",
+      "sha256": "558a6acfb5f88a96861a087807a8d1fae5511fd50b2929ce60b49bbffca5c89d"
+    },
+    {
+      "path": "harness/concordance_harness/planner.py",
+      "sha256": "9b60992c0cdfd9727cf1141a7bc73875614263377897424491c876199a227698"
+    },
+    {
+      "path": "harness/concordance_harness/providers.py",
+      "sha256": "0cd290762f2be33d738b640320d52498d81595590cc7b1efc82381a96830bb9a"
+    },
+    {
+      "path": "harness/concordance_harness/execution.py",
+      "sha256": "d48fb0c2ba4f32e4b01236f1498ee180fa2bc1a61c457224edc6a5e400123d9d"
+    },
+    {
+      "path": "harness/concordance_harness/util.py",
+      "sha256": "fa9f45770ba270f0950443e248f89faba86b9c3e9b5c2715000efaedb13e3993"
+    },
+    {
+      "path": "harness/concordance_recovery/journal.py",
+      "sha256": "f1488f919eae3dbd78f6f411499cd2e68ca17f08ce95cae71274f7cd9583b130"
+    },
+    {
+      "path": "harness/concordance_recovery/transport.py",
+      "sha256": "92aff7bc7721444a26020d666559cf0c511c1ded2425889b1ac8ad96fb57991e"
+    },
+    {
+      "path": "harness/rule3/budget.py",
+      "sha256": "49e5b48bf373658420a30ebd34d0b5503381f642d8b4de4568805fbdcf01bfbc"
+    },
+    {
+      "path": "harness/private_directory_publication.py",
+      "sha256": "ac2bfd0247eebfe039054b137e97f464d3fe98bc280ba07c2f3935c2ae1d18aa"
+    },
+    {
+      "path": "harness/run_divergence_successor_continuation.py",
+      "sha256": "3953709edb3e01927d7ee59c692a3bd3faafe82aac82b3a3795f02e5fc762fb2"
+    },
+    {
+      "path": "harness/record_divergence_successor_correction.py",
+      "sha256": "7be6c987a8ee00a378bf16ccb0321f4b22296d39f1b5ad746d7189a129664c40"
+    },
+    {
+      "path": "harness/create_divergence_successor_continuation_lock.py",
+      "sha256": "983ba4d0d4283ad028e76b34190fe488fce3a04c719e35b7c28c1125e8e2a5b2"
+    },
+    {
+      "path": "harness/authorize_divergence_successor_continuation.py",
+      "sha256": "e1b12c9cb6f271a3a3d8fe823b5fa3cf75f9246465ed1d0da91e6f037de0df5d"
+    },
+    {
+      "path": "harness/prepare_divergence_successor_continuation_review.py",
+      "sha256": "7c395c2cb6a5e5673e67e26e0fb6072646069635a97070052cb724f984a05a88"
+    }
+  ]
+}
