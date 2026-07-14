@@ -4,8 +4,21 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vitest/config";
 
-const productionDataset = process.env.VITE_DATASET === "production";
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
+const datasetName = process.env.VITE_DATASET ?? "sample";
+const datasetModules = {
+  sample: "src/lib/dataset.sample.ts",
+  prototype: "src/lib/dataset.prototype.ts",
+  production: "src/lib/dataset.production.ts",
+} as const;
+
+if (!(datasetName in datasetModules)) {
+  throw new Error(
+    `Unknown VITE_DATASET "${datasetName}". Expected sample, prototype, or production.`,
+  );
+}
+
+const datasetModule = datasetModules[datasetName as keyof typeof datasetModules];
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
@@ -13,9 +26,7 @@ export default defineConfig({
     alias: {
       "@dataset": path.resolve(
         projectRoot,
-        productionDataset
-          ? "src/lib/dataset.production.ts"
-          : "src/lib/dataset.sample.ts",
+        datasetModule,
       ),
     },
   },

@@ -59,6 +59,14 @@ export function App() {
             Illustrative development data. No answer below is a real model run.
           </p>
         ) : null}
+        {validatedDataset.index.mode === "candidate" ? (
+          <p className="sample-warning prototype-warning" role="status">
+            Prototype display using real selection-stage model answers. It shows
+            initial answers and author-reviewed primary-position mappings only.
+            Challenge samples were not run. These cases have not passed the
+            production validation gate.
+          </p>
+        ) : null}
       </header>
 
       <main className="content-shell" id="cases">

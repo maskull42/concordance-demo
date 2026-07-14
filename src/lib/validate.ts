@@ -83,7 +83,7 @@ export function validateDataset(
   return {
     index,
     manifest,
-    questions: [...questions].sort((left, right) => left.id.localeCompare(right.id)),
+    questions,
     runs,
     mappings,
     modelFamilies: manifest.models.map((model) => model.family),

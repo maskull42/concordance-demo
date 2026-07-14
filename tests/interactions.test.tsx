@@ -2,6 +2,8 @@ import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import { App } from "../src/App";
+import { CaseStudy } from "../src/components/CaseStudy";
+import { dataset } from "../src/lib/dataset.sample";
 
 describe("case interactions", () => {
   it("changes the Case C map and receipts atomically with the prompt variant", async () => {
@@ -73,5 +75,35 @@ describe("case interactions", () => {
     await user.click(receipt.querySelector("summary") as HTMLElement);
     expect(within(receipt).getByText(/Illustrative not-run state/i)).toBeInTheDocument();
     expect(within(receipt).getByText(/No mapping exists/i)).toBeInTheDocument();
+  });
+
+  it("labels an unrun challenge sample and disables its control", () => {
+    const question = dataset.questions[0];
+    const sourceRun = dataset.runs.find(
+      (run) => run.question_id === question.id,
+    );
+    const mapping = dataset.mappings.find(
+      (value) => value.question_id === question.id,
+    );
+    if (!sourceRun || !mapping) throw new Error("Case A fixture is missing");
+    const run = {
+      ...sourceRun,
+      cells: sourceRun.cells.filter((cell) => cell.call_type === "answer"),
+    };
+
+    render(
+      <CaseStudy
+        question={question}
+        run={run}
+        mapping={mapping}
+        models={dataset.manifest.models}
+        label="A"
+      />,
+    );
+
+    expect(
+      screen.getByRole("button", { name: "Challenge sample not run" }),
+    ).toBeDisabled();
+    expect(screen.getByText(/initial answer samples only/i)).toBeInTheDocument();
   });
 });

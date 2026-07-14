@@ -172,6 +172,17 @@ describe("dataset validation", () => {
     ).toHaveLength(1);
   });
 
+  it("preserves the dataset's declared question order", () => {
+    const raw = rawFixture();
+    raw.questions.reverse();
+
+    expect(validateDataset(raw).questions.map((question) => question.id)).toEqual([
+      "case-c",
+      "case-b",
+      "case-a",
+    ]);
+  });
+
   it("points to a malformed required field", () => {
     const raw = rawFixture();
     const question = raw.questions[0] as Record<string, unknown>;

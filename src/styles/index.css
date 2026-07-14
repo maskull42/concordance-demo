@@ -205,6 +205,12 @@ pre {
   font-weight: 700;
 }
 
+.prototype-warning {
+  max-width: 48rem;
+  border-radius: 0.75rem;
+  line-height: 1.5;
+}
+
 .panel-card {
   border: 1px solid var(--color-rule);
   border-radius: 1.25rem;
@@ -510,6 +516,13 @@ pre {
 .challenge-button[aria-pressed="true"] {
   background: var(--color-teal-dark);
   color: white;
+}
+
+.challenge-button:disabled {
+  border-color: var(--color-rule);
+  background: var(--color-paper-deep);
+  color: var(--color-ink-soft);
+  cursor: not-allowed;
 }
 
 .challenge-explainer {

@@ -42,6 +42,10 @@ export function CaseStudy({
   const selectedVariant = question.prompt_variants.find(
     (variant) => variant.id === variantId,
   );
+  const challengeAvailable = run.cells.some(
+    (cell) =>
+      cell.variant_id === variantId && cell.call_type === "challenge",
+  );
   const sources = useMemo(() => uniqueSources(question), [question]);
 
   function selectVariant(nextVariantId: string) {
@@ -49,20 +53,29 @@ export function CaseStudy({
     const next = question.prompt_variants.find(
       (variant) => variant.id === nextVariantId,
     );
+    const nextChallengeAvailable = run.cells.some(
+      (cell) =>
+        cell.variant_id === nextVariantId && cell.call_type === "challenge",
+    );
+    const nextMode = mode === "challenge" && !nextChallengeAvailable
+      ? "answer"
+      : mode;
     const changed = variantMovementCount(
       run,
       mapping,
       variantId,
       nextVariantId,
-      mode,
+      nextMode,
     );
     setVariantId(nextVariantId);
+    setMode(nextMode);
     setAnnouncement(
       `${next?.label ?? nextVariantId} selected; ${changed} model${changed === 1 ? "" : "s"} changed primary position. Map and receipts updated.`,
     );
   }
 
   function toggleChallenge() {
+    if (!challengeAvailable) return;
     const nextMode: ViewMode = mode === "answer" ? "challenge" : "answer";
     const changed = challengeMovementCount(run, mapping, variantId);
     const nextView = buildCaseViewModel(
@@ -136,15 +149,22 @@ export function CaseStudy({
           className="challenge-button"
           type="button"
           aria-pressed={mode === "challenge"}
+          disabled={!challengeAvailable}
           onClick={toggleChallenge}
         >
-          <span aria-hidden="true">{mode === "challenge" ? "↩" : "↗"}</span>
-          {mode === "challenge" ? "Return to initial answers" : "Challenge this consensus"}
+          {challengeAvailable ? (
+            <span aria-hidden="true">{mode === "challenge" ? "↩" : "↗"}</span>
+          ) : null}
+          {challengeAvailable
+            ? mode === "challenge"
+              ? "Return to initial answers"
+              : "Challenge this consensus"
+            : "Challenge sample not run"}
         </button>
         <p className="challenge-explainer">
-          The linked follow-up asks for the strongest supportable contrary position.
-          This distinguishes spontaneous omission from a position the model can produce
-          when directly challenged.
+          {challengeAvailable
+            ? "The linked follow-up asks for the strongest supportable contrary position. This distinguishes spontaneous omission from a position the model can produce when directly challenged."
+            : "This prototype contains initial answer samples only. No linked challenge call was run for this prompt wording."}
         </p>
         <p className="visually-hidden" aria-live="polite" aria-atomic="true">
           {announcement}
