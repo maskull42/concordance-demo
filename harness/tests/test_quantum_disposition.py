@@ -214,13 +214,35 @@ class LiveQuantumHistoryTests(unittest.TestCase):
         self.assertEqual(history.journal_tree_sha256, contract.JOURNAL_TREE_SHA256)
         self.assertEqual(history.review_tree_sha256, contract.REVIEW_TREE_SHA256)
 
-    def test_preview_is_read_only_and_does_not_create_receipt(self) -> None:
+    def test_preview_is_read_only_and_does_not_change_receipt_state(self) -> None:
         output = ROOT / contract.DISPOSITION_ROOT_RELATIVE
-        self.assertFalse(os.path.lexists(output))
+        existed_before = os.path.lexists(output)
+        before = None
+        if existed_before:
+            receipt = output / contract.DISPOSITION_FILE
+            before = (
+                output.stat().st_mode,
+                output.stat().st_mtime_ns,
+                receipt.stat().st_mode,
+                receipt.stat().st_size,
+                receipt.stat().st_mtime_ns,
+                hashlib.sha256(receipt.read_bytes()).hexdigest(),
+            )
         result = record.preview_disposition(ROOT)
         self.assertEqual(result["status"], "ready-to-record-withdrawal")
-        self.assertFalse(result["receipt_exists"])
-        self.assertFalse(os.path.lexists(output))
+        self.assertIs(result["receipt_exists"], existed_before)
+        self.assertIs(os.path.lexists(output), existed_before)
+        if existed_before:
+            receipt = output / contract.DISPOSITION_FILE
+            after = (
+                output.stat().st_mode,
+                output.stat().st_mtime_ns,
+                receipt.stat().st_mode,
+                receipt.stat().st_size,
+                receipt.stat().st_mtime_ns,
+                hashlib.sha256(receipt.read_bytes()).hexdigest(),
+            )
+            self.assertEqual(before, after)
 
 
 class QuantumDispositionValueTests(unittest.TestCase):
