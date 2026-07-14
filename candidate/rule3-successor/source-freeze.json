@@ -1,0 +1,316 @@
+{
+  "schema_version": "rule3-successor-source-freeze-1.0.0",
+  "content_version": "rule3-successor-candidate-1.0.0",
+  "pool_id": "concordance-divergence-replacement-1",
+  "prepared_on": "2026-07-14",
+  "status": "research-source-freeze-proposed",
+  "integrity_policy": {
+    "hash_algorithm": "sha256",
+    "absolute_paths_forbidden": true,
+    "future_lock_requirement": "Any future successor lock must bind this complete register and the exact successor question record before any model call.",
+    "external_artifact_rule": "A digest records the complete external artifact retrieved on 2026-07-14. The source bytes remain outside the repository unless a later approved process retains them.",
+    "unhashed_source_rule": "A source without a retained complete raw snapshot is identified by its stable official URL and locator with a null SHA-256 and an explicit limitation. No digest is inferred or invented."
+  },
+  "access_state": {
+    "university_library_required": false,
+    "status": "closed-open-sources-sufficient",
+    "note": "No university-library source is needed. The proposed map is supported by official legal and policy texts and complete open-access research artifacts."
+  },
+  "questions": [
+    {
+      "question_id": "frontier-ai-lifecycle-licensing",
+      "question_path": "candidate/rule3-successor/questions/frontier-ai-lifecycle-licensing.json",
+      "sources": [
+        {
+          "source_id": "anderljung-frontier-ai-regulation",
+          "source_url": "https://arxiv.org/abs/2307.03718",
+          "accessed_at": "2026-07-14",
+          "claim_binding": "The paper defines licensing as prior governmental permission for high-risk activity, distinguishes licensing at development and deployment, describes a deployment license conditioned on safety standards, and explains why a development license may require approval before a covered training run.",
+          "artifact": {
+            "status": "hash-frozen-external-artifact",
+            "artifact_url": "https://arxiv.org/pdf/2307.03718",
+            "media_type": "application/pdf",
+            "sha256": "42dc01e5ca84a06631a1fc8b3698ea5bee0574e0d923cfbc15e8a34457d24459",
+            "pdf_page_count": 51,
+            "retrieved_on": "2026-07-14",
+            "version_note": "The retrieved PDF identifies itself as arXiv:2307.03718v4, dated 7 November 2023.",
+            "redistribution_rights": "not-asserted"
+          },
+          "locators": [
+            {
+              "pdf_pages": "20-21",
+              "printed_pages": "20-21",
+              "section": "3.3.3, License Frontier AI Development and Deployment",
+              "support": "Defines licensing as governmental permission, separates deployment and development licenses, and describes approval before a new training run."
+            },
+            {
+              "pdf_pages": "21-22",
+              "printed_pages": "21-22",
+              "section": "3.3.4, Pre-conditions for Rigorous Enforcement Mechanisms",
+              "support": "Identifies premature ossification, burdens on less-resourced actors, regulatory expertise, capture, and incumbent power as design constraints."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "ada-safe-before-sale",
+          "source_url": "https://www.adalovelaceinstitute.org/report/safe-before-sale/",
+          "accessed_at": "2026-07-14",
+          "claim_binding": "The report recommends a pre-market approval gate at the point immediately before a foundation model becomes widely available, with a developer burden of proof, mandatory documentation, third-party audits, red teaming, sandbox testing, adaptive guidance, and additional application-layer gates where appropriate.",
+          "artifact": {
+            "status": "hash-frozen-external-artifact",
+            "artifact_url": "https://www.adalovelaceinstitute.org/wp-content/uploads/2023/12/2023_12_ALI_Safe-before-sale_Discussion_paper.pdf",
+            "media_type": "application/pdf",
+            "sha256": "b6c762e5cb7b5123a1c4e5669bba14e919af8f4eb8b3af7a95790a16c97d6a5e",
+            "pdf_page_count": 96,
+            "retrieved_on": "2026-07-14",
+            "license": "CC BY 4.0"
+          },
+          "locators": [
+            {
+              "pdf_pages": "9-10",
+              "printed_pages": "9-10",
+              "section": "Executive summary",
+              "support": "Recommends a foundation-model pre-approval process and a pre-market gate with third-party audits."
+            },
+            {
+              "pdf_pages": "67-70",
+              "printed_pages": "67-70",
+              "section": "A pre-market approval gate for foundation models",
+              "support": "Places the gate just before wide availability, specifies evidence and regulator approval, and discusses uncertainty and tiering."
+            },
+            {
+              "pdf_pages": "80-83",
+              "printed_pages": "80-83",
+              "section": "Recommendations for AI regulators, developers and deployers",
+              "support": "Restates the continuous oversight model, pre-notification, documentation, model-layer approval, and downstream application approval."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "eu-ai-act-articles-51-55",
+          "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+          "accessed_at": "2026-07-14",
+          "claim_binding": "Articles 51-55 establish a dedicated binding upstream regime for general-purpose AI model providers, including systemic-risk classification and notification, technical documentation and transparency, model evaluations, adversarial testing, systemic-risk assessment and mitigation, serious-incident reporting, and cybersecurity, without making a lifecycle license the architecture of those provisions.",
+          "artifact": {
+            "status": "integrity-limited-no-raw-snapshot",
+            "media_type": "text/html",
+            "sha256": null,
+            "limitation": "The official ELI and Publications Office records and the specified articles were inspected, but the official endpoints did not yield a retained complete raw artifact in this workspace. This record binds the official ELI, CELEX 32024R1689, article locators, and claim rather than source bytes."
+          },
+          "locators": [
+            {
+              "articles": "51-52",
+              "support": "Classification, presumption, designation, and provider notification for general-purpose AI models with systemic risk."
+            },
+            {
+              "articles": "53-54",
+              "support": "Provider documentation, downstream information, copyright-policy and training-content-summary duties, plus authorized representatives."
+            },
+            {
+              "article": "55",
+              "support": "Model evaluation, adversarial testing, systemic-risk assessment and mitigation, serious-incident reporting, and cybersecurity duties for systemic-risk models."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "schuett-principles-to-rules",
+          "source_url": "https://arxiv.org/abs/2407.07300",
+          "accessed_at": "2026-07-14",
+          "claim_binding": "The authors recommend binding high-level safety principles for frontier developers, close regulatory and third-party supervision, information access and corrective authority, and rapid capacity building, with more specific rules introduced as risks and safety practices become better understood.",
+          "artifact": {
+            "status": "hash-frozen-external-artifact",
+            "artifact_url": "https://arxiv.org/pdf/2407.07300",
+            "media_type": "application/pdf",
+            "sha256": "61465bd6200718ca135cba7df42bee15880c7ef9ce789284c03bff5b00e83f79",
+            "pdf_page_count": 59,
+            "retrieved_on": "2026-07-14",
+            "redistribution_rights": "not-asserted"
+          },
+          "locators": [
+            {
+              "pdf_page": "1",
+              "section": "Abstract",
+              "support": "Summarizes the proposed sequence of binding principles, close oversight, capacity building, and gradual movement toward rules."
+            },
+            {
+              "pdf_pages": "54-57",
+              "printed_pages": "52-55",
+              "section": "IV.B, Proposing a regulatory approach for frontier AI",
+              "support": "Specifies mandatory principles, supervisory access and corrective power, third-party evaluation, regulatory capacity, and reasons for adaptive specificity."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "executive-order-14409",
+          "source_url": "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
+          "accessed_at": "2026-07-14",
+          "claim_binding": "Executive Order 14409 establishes a voluntary government-developer framework for pre-release access to covered frontier models, expressly disclaims mandatory licensing, preclearance, or permitting under that framework, and prioritizes existing criminal-law enforcement against AI-enabled crimes.",
+          "artifact": {
+            "status": "hash-frozen-external-artifact",
+            "artifact_url": "https://www.whitehouse.gov/wp-content/uploads/2026/06/eo-14409.pdf",
+            "media_type": "application/pdf",
+            "sha256": "4a25c970947e7234f1a4308aca6aba62f327ac956de7caa41204c84f7f2cdcd9",
+            "pdf_page_count": 3,
+            "retrieved_on": "2026-07-14",
+            "federal_register_citation": "91 Fed. Reg. 34,565-34,567"
+          },
+          "locators": [
+            {
+              "pdf_page": "2",
+              "federal_register_page": "34,566",
+              "section": "3(b)-(c), Secure Frontier Model Deployment",
+              "support": "Creates voluntary early access and states that the section does not authorize mandatory licensing, preclearance, or permitting for development or release."
+            },
+            {
+              "pdf_page": "2",
+              "federal_register_page": "34,566",
+              "section": "4, Protection Against Criminal Actors",
+              "support": "Prioritizes enforcement of enumerated and other applicable federal criminal laws against AI-enabled illegal access and related crimes."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "white-house-national-ai-policy-framework-2026",
+          "source_url": "https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/",
+          "accessed_at": "2026-07-14",
+          "claim_binding": "The March 2026 legislative recommendations oppose a new federal AI rulemaking body, favor sector-specific applications governed through existing expert regulators and industry-led standards, preserve generally applicable state laws, and oppose state regulation of AI development.",
+          "artifact": {
+            "status": "hash-frozen-external-artifact",
+            "artifact_url": "https://www.whitehouse.gov/wp-content/uploads/2026/03/03.20.26-National-Policy-Framework-for-Artificial-Intelligence-Legislative-Recommendations.pdf",
+            "media_type": "application/pdf",
+            "sha256": "d4f8973f19d7318137ebba973d03ea63af032123d3e629b5d1831cd24af1d6c0",
+            "pdf_page_count": 4,
+            "retrieved_on": "2026-07-14"
+          },
+          "locators": [
+            {
+              "pdf_page": "3",
+              "section": "V, Enabling Innovation and Ensuring American AI Dominance",
+              "support": "Calls for regulatory sandboxes, rejects a new federal AI rulemaking body, and favors existing subject-matter regulators and industry-led standards."
+            },
+            {
+              "pdf_page": "4",
+              "section": "VII, Establishing a Federal Policy Framework, Preempting Cumbersome State AI Laws",
+              "support": "Preserves generally applicable state law and procurement while opposing state regulation of AI development and developer liability for third-party unlawful conduct."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "ntia-open-model-weights-report",
+          "source_url": "https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report",
+          "accessed_at": "2026-07-14",
+          "claim_binding": "NTIA concludes that evidence did not support immediate restrictions on widely available model weights, recommends continuous evidence collection and adaptive response, emphasizes competition and innovation benefits, and directs policymakers to consider whether downstream interventions address a risk more effectively than weight restrictions.",
+          "artifact": {
+            "status": "hash-frozen-external-artifact",
+            "artifact_url": "https://www.ntia.gov/sites/default/files/publications/ntia-ai-open-model-report.pdf",
+            "media_type": "application/pdf",
+            "sha256": "f9234104727c0cee86cea71dad5aa705e47869dfa3a18db1f9ad0087bcffd04b",
+            "pdf_page_count": 71,
+            "retrieved_on": "2026-07-14"
+          },
+          "locators": [
+            {
+              "pdf_pages": "4-5",
+              "printed_pages": "2-3",
+              "section": "Executive Summary",
+              "support": "States the benefits and risks of open weights, the evidence limitation, and the collect-evaluate-act recommendation."
+            },
+            {
+              "pdf_pages": "38-39",
+              "printed_pages": "36-37",
+              "section": "Policy Approaches",
+              "support": "Declines immediate weight restrictions, favors continuous evaluation, and identifies competition, innovation, research, and enforceability tradeoffs."
+            },
+            {
+              "pdf_pages": "42-48",
+              "printed_pages": "40-46",
+              "section": "Recommendations",
+              "support": "Defines the collect-evaluate-act framework, recommends downstream risk analysis, and reserves targeted future interventions if evidence crosses thresholds."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "source_id": "aisi-frontier-ai-trends-2025",
+          "source_url": "https://www.aisi.gov.uk/frontier-ai-trends-report",
+          "accessed_at": "2026-07-14",
+          "claim_binding": "AISI's two-year evaluation record establishes the candidate's public-safety stakes: rapid capability growth across tested domains, emerging expert-level cyber and scientific performance, a narrowed open-closed capability gap, and persistent safeguard vulnerabilities. The report does not endorse one of the four legal architectures.",
+          "artifact": {
+            "status": "hash-frozen-external-artifact",
+            "artifact_url": "https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/6943e6c11cb5bfd8178443f9_Frontier%20AI%20Trends%20Report%20-%20UK%20AISI%202025%20-%20compressed.pdf",
+            "media_type": "application/pdf",
+            "sha256": "6ed147b66f065722f038c6a933a4b8bb39af9ab2378a72fede629e203c0ab2ae",
+            "pdf_page_count": 54,
+            "retrieved_on": "2026-07-14",
+            "artifact_note": "Compressed PDF linked from the official AISI report page."
+          },
+          "locators": [
+            {
+              "pdf_pages": "3-4",
+              "printed_pages": "1-2",
+              "section": "Executive summary",
+              "support": "Reports rapid capability growth, expert-baseline performance, safeguard vulnerabilities, and a four-to-eight-month open-closed gap."
+            },
+            {
+              "pdf_page": "14",
+              "printed_page": "12",
+              "section": "Capabilities and risks in key domains",
+              "support": "Explains the dual-use stakes in chemistry, biology, and cyber."
+            },
+            {
+              "pdf_pages": "25-26",
+              "printed_pages": "23-24",
+              "section": "Safeguards",
+              "support": "Describes frontier safeguards and reports universal jailbreaks across every system tested."
+            },
+            {
+              "pdf_page": "47",
+              "printed_page": "45",
+              "section": "Conclusion: looking ahead",
+              "support": "Summarizes expert-level capabilities, dual-use benefits and harms, and the need for safeguards and independent evaluation."
+            }
+          ],
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ]
+    }
+  ]
+}

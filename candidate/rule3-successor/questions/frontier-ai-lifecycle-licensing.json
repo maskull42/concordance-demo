@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "rule3-successor-candidate-1.0.0",
+  "data_class": "research",
+  "id": "frontier-ai-lifecycle-licensing",
+  "kind": "divergent",
+  "domain": "ai-governance",
+  "title": "Legal architecture for frontier general-purpose AI",
+  "premise": "Frontier general-purpose AI governance turns on two separable choices: whether government may withhold permission before training or release, and whether binding duties attach upstream to frontier developers or downstream to particular uses and generally applicable law.",
+  "context_note": "Licensing means prior government permission that may be withheld. Apply the following hierarchy in order. Any substantive prior-permission requirement before a covered training run maps to development-stage-licensing, even when a later release license is also required. A mandatory third-party certificate functions as licensing whenever the activity cannot legally proceed without it. With no training veto, required government approval before broad API or commercial deployment or open-weight release maps to deployment-release-licensing. Pre-training notice, registration, documentation, audits, or a waiting period do not change that assignment unless government may withhold permission to train. With no permission gate at either stage, a dedicated binding upstream regime for frontier developers or models maps to binding-frontier-supervision. With neither a permission gate nor a dedicated binding upstream regime, sector and application rules, procurement, tort, consumer, competition, criminal, and other generally applicable law, together with voluntary standards or coordination, map to use-centered-general-law. Application-specific approval maps to use-centered-general-law when the foundation model itself has no lifecycle permission requirement or dedicated upstream regime. An answer remains null when it evenly balances architectures, says only that the choice depends on circumstances, makes authorization entirely discretionary case by case without choosing a default, or never identifies one primary regime. The following answers fall outside the map: a categorical moratorium or ban; nationalization or exclusive public development; an international treaty with no domestic architecture; export controls, copyright, or data-center permitting offered as the complete answer; regulation limited to military or government systems; or refusal of the frontier category.",
+  "what_this_shows": [
+    "If the precommitted successor divergence threshold is met after blinded review, this candidate can show dispersion across four materially different points of legal control in a socially consequential AI-governance debate."
+  ],
+  "what_this_does_not_show": [
+    "It does not establish the best legal regime, exhaust every hybrid architecture, measure public or expert prevalence, predict enacted law, or provide legal advice."
+  ],
+  "selection": {
+    "status": "candidate",
+    "pool_id": "concordance-divergence-replacement-1",
+    "pool_size": 1,
+    "rule_version": "pilot-rule-3-successor-1",
+    "candidate_role": "replacement",
+    "disclosure": "The sole proposed replacement for the withdrawn quantum fallback. It may enter a future paid run only after its exact question, map, sources, protocol, model transports, budget, review chain, and immutable successor lock receive the required approvals."
+  },
+  "prompt_variants": [
+    {
+      "id": "default",
+      "label": "Default wording",
+      "user_prompt": "Which should be the primary legal architecture for private developers of frontier general-purpose AI: a government license before a covered training run; a government license only before broad deployment or open-weight release; binding supervision of frontier developers without a licensing gate; or regulation centered on downstream high-risk uses and generally applicable law? Here, licensing means prior government permission that may be withheld. State one best answer and explain which considerations about potential severe harm, uncertain evaluations, competition, and administrative capacity are decisive."
+    }
+  ],
+  "position_map": [
+    {
+      "id": "development-stage-licensing",
+      "label": "Development-stage licensing",
+      "summary": "A covered training run may proceed only with prior government permission; later deployment or release licensing may also apply.",
+      "attestation": "Anderljung and coauthors distinguish development from deployment licensing, define licensing as prior governmental permission for high-risk activity, and argue that a deployment-only gate may be inadequate when dangerous models can be stolen, leaked, or used before broad release.",
+      "sources": [
+        {
+          "id": "anderljung-frontier-ai-regulation",
+          "claim_supported": "The paper defines governmental licensing as prior permission, distinguishes development-stage and deployment-stage licenses, and describes a development license that can require approval before a new training run.",
+          "title": "Frontier AI Regulation: Managing Emerging Risks to Public Safety",
+          "citation": "Markus Anderljung et al., “Frontier AI Regulation: Managing Emerging Risks to Public Safety,” arXiv:2307.03718v4 (2023), 20-21.",
+          "url": "https://arxiv.org/abs/2307.03718",
+          "accessed_at": "2026-07-14",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "deployment-release-licensing",
+      "label": "Deployment or release licensing",
+      "summary": "Training may proceed without a government veto, while broad API or commercial deployment or open-weight release requires prior government permission.",
+      "attestation": "Anderljung and coauthors describe a license to widely deploy a frontier model after demonstrating compliance with safety standards. The Ada Lovelace Institute proposes a pre-market approval gate immediately before a foundation model becomes widely available, supported by audits, red teaming, sandbox testing, and a developer burden of proof.",
+      "sources": [
+        {
+          "id": "anderljung-frontier-ai-regulation",
+          "claim_supported": "The paper describes deployment licensing under which a frontier model may be widely deployed only after the developer demonstrates compliance with specified safety standards.",
+          "title": "Frontier AI Regulation: Managing Emerging Risks to Public Safety",
+          "citation": "Markus Anderljung et al., “Frontier AI Regulation: Managing Emerging Risks to Public Safety,” arXiv:2307.03718v4 (2023), 20.",
+          "url": "https://arxiv.org/abs/2307.03718",
+          "accessed_at": "2026-07-14",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "ada-safe-before-sale",
+          "claim_supported": "The report recommends a pre-market approval gate immediately before a foundation model is made widely available, with mandatory evidence, third-party scrutiny, and regulator authority to withhold approval.",
+          "title": "Safe before sale: Learnings from the FDA’s model of life sciences oversight for foundation models",
+          "citation": "Ada Lovelace Institute, Merlin Stein and Connor Dunlop, Safe before sale: Learnings from the FDA’s model of life sciences oversight for foundation models (2023), 67-70, 80-83.",
+          "url": "https://www.adalovelaceinstitute.org/report/safe-before-sale/",
+          "accessed_at": "2026-07-14",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "binding-frontier-supervision",
+      "label": "Binding frontier supervision without licensing",
+      "summary": "Frontier developers face a dedicated, enforceable upstream regime of evaluation, risk management, audit, reporting, incident response, cybersecurity, and supervision, while neither training nor deployment or release requires prior permission.",
+      "attestation": "Articles 51-55 of the EU AI Act impose dedicated duties on providers of general-purpose AI models, with stronger evaluation, adversarial testing, systemic-risk mitigation, incident-reporting, and cybersecurity obligations for models with systemic risk. Characterizing those provisions as a nonlicensing architecture is an inference from their enacted structure, not an express statutory rejection of licensing. Schuett and coauthors recommend binding high-level safety principles, close regulatory and third-party oversight, investigative access, and corrective authority while technical practices and regulatory capacity mature.",
+      "sources": [
+        {
+          "id": "eu-ai-act-articles-51-55",
+          "claim_supported": "Articles 51-55 create a binding upstream regime for providers of general-purpose AI models, including classification and notification of systemic-risk models, documentation and transparency duties, model evaluations, adversarial testing, systemic-risk assessment and mitigation, serious-incident reporting, and cybersecurity.",
+          "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+          "citation": "Regulation (EU) 2024/1689 of the European Parliament and of the Council, 2024 O.J. L 1689, arts. 51-55.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+          "accessed_at": "2026-07-14",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "schuett-principles-to-rules",
+          "claim_supported": "The authors recommend binding high-level principles for safe frontier-AI development and deployment, close supervision by regulators and third parties, access to information, corrective authority, and urgent investment in regulatory capacity, with specificity increasing as knowledge matures.",
+          "title": "From Principles to Rules: A Regulatory Approach for Frontier AI",
+          "citation": "Jonas Schuett, Markus Anderljung, Alexis Carlier, Leonie Koessler, and Ben Garfinkel, “From Principles to Rules: A Regulatory Approach for Frontier AI,” arXiv:2407.07300 (2024), forthcoming in The Oxford Handbook on the Foundations and Regulation of Generative AI, 52-55.",
+          "url": "https://arxiv.org/abs/2407.07300",
+          "accessed_at": "2026-07-14",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "use-centered-general-law",
+      "label": "Use-centered and generally applicable law",
+      "summary": "Government relies on high-risk application rules, existing sector regulators, procurement, tort, consumer protection, competition, criminal law, and voluntary coordination, with no lifecycle license or dedicated binding upstream frontier regime.",
+      "attestation": "Executive Order 14409 creates voluntary pre-release cooperation for covered frontier models, expressly disclaims mandatory licensing or preclearance under that framework, and directs enforcement of generally applicable criminal law. The White House’s March 2026 legislative framework favors sector-specific applications, existing expert regulators, industry-led standards, and generally applicable state law. NTIA recommends monitoring, evidence collection, adaptive response, and attention to downstream interventions while declining immediate restrictions on open model weights.",
+      "sources": [
+        {
+          "id": "executive-order-14409",
+          "claim_supported": "Section 3 establishes voluntary government-developer cooperation for covered frontier models and states that the section does not authorize mandatory licensing, preclearance, or permitting for model development or release; section 4 prioritizes enforcement of generally applicable criminal laws against AI-enabled crimes.",
+          "title": "Executive Order 14409: Promoting Advanced Artificial Intelligence Innovation and Security",
+          "citation": "Exec. Order No. 14,409, 91 Fed. Reg. 34,565, 34,566 (June 5, 2026), secs. 3-4.",
+          "url": "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
+          "accessed_at": "2026-07-14",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "white-house-national-ai-policy-framework-2026",
+          "claim_supported": "The March 2026 recommendations reject a new federal AI rulemaking body, favor sector-specific AI applications governed through existing expert regulators and industry-led standards, and preserve generally applicable state laws while opposing state regulation of AI development.",
+          "title": "A National Policy Framework for Artificial Intelligence: Legislative Recommendations",
+          "citation": "The White House, A National Policy Framework for Artificial Intelligence: Legislative Recommendations (March 2026), secs. V and VII.",
+          "url": "https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/",
+          "accessed_at": "2026-07-14",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        },
+        {
+          "id": "ntia-open-model-weights-report",
+          "claim_supported": "NTIA recommends against immediate restrictions on widely available model weights, instead favoring evidence collection, monitoring, threshold-based evaluation, adaptive intervention, innovation, and consideration of downstream mitigations.",
+          "title": "Dual-Use Foundation Models with Widely Available Model Weights Report",
+          "citation": "National Telecommunications and Information Administration, Dual-Use Foundation Models with Widely Available Model Weights Report (July 2024), 36-46.",
+          "url": "https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report",
+          "accessed_at": "2026-07-14",
+          "verification": {
+            "status": "proposed",
+            "verified_by": null,
+            "verified_at": null
+          }
+        }
+      ],
+      "verification": {
+        "status": "proposed",
+        "verified_by": null,
+        "verified_at": null
+      }
+    }
+  ],
+  "map_is_nonexhaustive": true,
+  "verification": {
+    "status": "proposed",
+    "verified_by": null,
+    "verified_at": null
+  }
+}
