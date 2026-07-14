@@ -1,0 +1,193 @@
+{
+  "schema_version": "rule3-successor-continuation-review-lock-2.0.0",
+  "status": "sealed-continuation-author-review-v2",
+  "pool_id": "frontier-ai-preflight-correction-1",
+  "candidate_id": "frontier-ai-lifecycle-licensing",
+  "private_root": ".pilot/divergence-successor-continuation-author-review/frontier-ai-preflight-correction-1",
+  "lineage": {
+    "historical_git_head": "d9ed2b90f7dabc9fea76c74758fe321b3be4a70a",
+    "base_public_bindings": {
+      "lock_schema": {
+        "path": "candidate/rule3-successor-continuation-lock.schema.json",
+        "sha256": "dc01fc71ceebdf33fd6a7c901a098eec46626c35ac736c95705cdc40e0da11de"
+      },
+      "question": {
+        "path": "candidate/rule3-successor/questions/frontier-ai-lifecycle-licensing.json",
+        "sha256": "8c8c066e625b50d441f998e3c316a6e293bbed7dffea5aa47c87f77257b91eb5"
+      },
+      "protocol": {
+        "path": "config/rule3-successor-protocol.json",
+        "sha256": "b2046def83f81759cd28edc38ee881d532cef40e50516006d94010b3106a75db"
+      },
+      "models_config": {
+        "path": "harness/config/models.json",
+        "sha256": "c67f043202696a71998d7c5ea9a18ce4c574fe244741717077e45e00acb7fb05"
+      }
+    },
+    "base_continuation_lock": {
+      "path": "candidate/rule3-successor-continuation-lock.json",
+      "sha256": "5acbb3d7dbeaa03e26441878d9d0d8714fd902474ae3be811fc04a2bd6b1d803"
+    },
+    "composite": {
+      "path": ".pilot/divergence-successor-continuation/frontier-ai-preflight-correction-1/runs/frontier-ai-lifecycle-licensing.json",
+      "sha256": "cf485da16667638b82e00c3d091d2c04eac9e061a9c37761a7314851bed3fc63"
+    },
+    "blind_packet": {
+      "path": ".pilot/divergence-successor-continuation-review/frontier-ai-preflight-correction-1/candidates/frontier-ai-lifecycle-licensing/blind/packet.json",
+      "sha256": "0db90c6e1c414e2a148e7d76a2c47e5835af77371d7f5ebf72ab3c51c37cbaff"
+    },
+    "blind_crosswalk": {
+      "path": ".pilot/divergence-successor-continuation-review/frontier-ai-preflight-correction-1/candidates/frontier-ai-lifecycle-licensing/blind/crosswalk.json",
+      "sha256": "60ae2f47853f4971a7fe2884048103e5d66de7104f889ac511bc8df77aed27de"
+    },
+    "blind_key_sha256": "84d527b237cb2a79adadedab84f3f68e3bf0a4ac65d8bd5d7e5076e5665bc98d",
+    "question_sha256": "8c8c066e625b50d441f998e3c316a6e293bbed7dffea5aa47c87f77257b91eb5",
+    "plan_sha256": "b09b2841e659c5f8a15b34922931d6c02a7079386eda00e8ab0bc27af92f5e62",
+    "authorization_receipt_sha256": "5afce766fb1969a426ea7abed9134e2039404c77e07d504d94a074e51d501991",
+    "pricing_recheck_receipt_sha256": "d224925e86fedf330246de094278a84065a652ecce32931c8a7e870fefae3f2d",
+    "offline_correction_sha256": "e30f8feb849f9deef9e46ad7a3cf8f3cda51941eb4353ced9ef5c754b8f83ee7"
+  },
+  "private_inputs": {
+    "review_anchor": {
+      "path": ".pilot/divergence-successor-continuation-author-review/frontier-ai-preflight-correction-1/candidates/frontier-ai-lifecycle-licensing/anchor-v2/anchor.json",
+      "sha256": "2f4e8bea18c622129d2d5535517d91465b3b85b71bf087f1e9be7c25eb3635a9"
+    },
+    "first_pass_mapping": {
+      "path": ".pilot/divergence-successor-continuation-author-review/frontier-ai-preflight-correction-1/candidates/frontier-ai-lifecycle-licensing/first-pass-v2/mapping.json",
+      "sha256": "6d23155c2f88c13e6d98740dced3a417eb546d1463011ae9abf52051e58f9a24"
+    },
+    "first_pass_receipt": {
+      "path": ".pilot/divergence-successor-continuation-author-review/frontier-ai-preflight-correction-1/candidates/frontier-ai-lifecycle-licensing/first-pass-v2/receipt.json",
+      "sha256": "b3280148b1cf8cc6040916cb967d6cd9838b378481556b6e39e0bf6aba094986"
+    }
+  },
+  "consensus": {
+    "mapper_role": "two-independent-blinded-mappers-consensus-v2",
+    "item_count": 8,
+    "packet_order_preserved": true,
+    "assignment_hashes": [
+      "d4dfd437c37ff52b0dd3568a52f56abb766232c50c295ad9f3033a3c895a6b3b",
+      "0d7725f606373807e29c27a29601534ff615a8724dc55466df45b74aab2a75a8",
+      "a3744f64c737a3b5787cfd47baf119deb85723b67d4bd362c4fc5b0beeba24d6",
+      "d17de15a7208267fd9ae034a02305d9a322a647fbe465d3e97b89a931f151e8a",
+      "cb5ae825273be05b17963240b596b7b11f9324f63070e24b402d558510fe6712",
+      "188e071f9f281e80f35704785a24301b124426a6a9f444bc78533009cebfb6db",
+      "71ac545666f16c5ad02c48dd98c521bcb2d200fb72cbf93411a854ed453af6d2",
+      "c2678186d76644f9f643b34e819ebbf38bbfc7a93f2740d406f1ec82a79560fb"
+    ]
+  },
+  "review_contract": {
+    "reviewer": {
+      "id": "ag-elrod",
+      "display_name": "A.G. Elrod"
+    },
+    "author_packet_schema": "divergence-successor-author-review-packet-2.0.0",
+    "author_export_schema": "divergence-successor-author-review-draft-2.0.0",
+    "author_receipt_schema": "divergence-successor-author-review-receipt-2.0.0",
+    "decision_values": [
+      "confirm",
+      "correct"
+    ],
+    "reason_codes": [
+      "clear_preference",
+      "mixed",
+      "outside_map",
+      "refusal",
+      "unclear"
+    ],
+    "identity_blinded": true,
+    "canonical_position_ids_allowed": false,
+    "response_text_exported": false,
+    "author_packet_requires_committed_review_lock": true
+  },
+  "offline_policy": {
+    "network_requests": 0,
+    "environment_variables_read": 0,
+    "provider_calls": 0,
+    "tools_enabled": false,
+    "web_search_enabled": false,
+    "retrieval_enabled": false,
+    "external_context_enabled": false,
+    "threshold_evaluation": {
+      "performed": false
+    }
+  },
+  "assets": {
+    "locked_sources": [
+      {
+        "path": "harness/divergence_successor/review_assets/review.css",
+        "sha256": "728f25df5e61d7708a0f85b7e6accbc42304f9e9904976e0099ea3b2bdc5600b"
+      },
+      {
+        "path": "harness/divergence_successor/review_assets/review.js",
+        "sha256": "923659ac22cab875c408149bd86050ffe0c6c6a36af9493954b3e2df32011c30"
+      }
+    ],
+    "versioned_derivatives": [
+      {
+        "path": "harness/divergence_successor_continuation_author_review/review_assets/review.css",
+        "sha256": "728f25df5e61d7708a0f85b7e6accbc42304f9e9904976e0099ea3b2bdc5600b"
+      },
+      {
+        "path": "harness/divergence_successor_continuation_author_review/review_assets/review.js",
+        "sha256": "be041fd05f712ffba716c9cb1eb0bfc5d0a46c31874095d241df3c8f5f9c51a2"
+      }
+    ],
+    "css_derivation": "byte-identical",
+    "javascript_derivation": "three-exact-literal-v2-adapter"
+  },
+  "sources": [
+    {
+      "path": "harness/divergence_successor_continuation_author_review/__init__.py",
+      "sha256": "ad0418c33a5cfc7d08af0e48ad6b04b37e3bb09faf99a808a70792c3b7805d2c"
+    },
+    {
+      "path": "harness/divergence_successor_continuation_author_review/contract.py",
+      "sha256": "1657f2f627b00bc190ed93a986f4c3f503053126cc4db2a4486d1aeb09fda3f4"
+    },
+    {
+      "path": "harness/divergence_successor_continuation_author_review/anchor.py",
+      "sha256": "d070523a5b41e50453775561b5bd4288b5311008ac585e6fbb99610b03ec1d84"
+    },
+    {
+      "path": "harness/divergence_successor_continuation_author_review/review.py",
+      "sha256": "504ebe6468aa1420e00dfd3203033e38c79aa46a8e2b8edfd82bf3579e4200bf"
+    },
+    {
+      "path": "harness/divergence_successor_continuation_author_review/lock.py",
+      "sha256": "a61c28d726e29cf5a518f76886b0ad562771acf220ec74e0facbd9ec3cd39974"
+    },
+    {
+      "path": "harness/divergence_successor_continuation_author_review/review_assets/review.css",
+      "sha256": "728f25df5e61d7708a0f85b7e6accbc42304f9e9904976e0099ea3b2bdc5600b"
+    },
+    {
+      "path": "harness/divergence_successor_continuation_author_review/review_assets/review.js",
+      "sha256": "be041fd05f712ffba716c9cb1eb0bfc5d0a46c31874095d241df3c8f5f9c51a2"
+    },
+    {
+      "path": "harness/seal_divergence_successor_continuation_first_pass.py",
+      "sha256": "22701b6b3729a577c1158676710d007426fbe208a5ff0d994c5f492b118a722b"
+    },
+    {
+      "path": "harness/prepare_divergence_successor_continuation_author_packet.py",
+      "sha256": "d0e98362767d357b9195189b7d03f4fd8f9a4b4af7fa182b46aeaab43c574be2"
+    },
+    {
+      "path": "harness/finalize_divergence_successor_continuation_author_review.py",
+      "sha256": "0d77ccb4d4b10b2fd7d4ebd81ec94db820571e2209c4ba75719c149861fe5513"
+    },
+    {
+      "path": "harness/create_divergence_successor_continuation_review_lock.py",
+      "sha256": "e66f28cef0ad34ce60045430920228a39086a691fc72e6d9f3b6b1a20244d881"
+    },
+    {
+      "path": "harness/anchor_divergence_successor_continuation_review.py",
+      "sha256": "5180f8afd048970dfe99cb0fc027efca405045f60759fe663ac6f7762680d10f"
+    },
+    {
+      "path": "candidate/rule3-successor-continuation-review-lock.schema.json",
+      "sha256": "b56389eae99ac36818c3b8f82f9ece5223f4d5594f0d953480a9565a2b8e0549"
+    }
+  ]
+}
