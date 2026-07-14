@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://concordance.local/schemas/rule3-successor-continuation-lock.schema.json",
+  "title": "Rule 3 successor offline-correction continuation lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "pool_id",
+    "candidate_id",
+    "private_root",
+    "bindings",
+    "approval",
+    "parent",
+    "offline_correction",
+    "models",
+    "plans",
+    "execution_policy",
+    "network_policy",
+    "budget",
+    "paid_authorization",
+    "execution_sources"
+  ],
+  "properties": {
+    "schema_version": {"const": "rule3-successor-continuation-lock-1.0.0"},
+    "status": {"const": "immutable-offline-correction-continuation-lock"},
+    "pool_id": {"const": "frontier-ai-preflight-correction-1"},
+    "candidate_id": {"const": "frontier-ai-lifecycle-licensing"},
+    "private_root": {"const": ".pilot/divergence-successor-continuation/frontier-ai-preflight-correction-1"},
+    "bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lock_schema", "question", "protocol", "models_config"],
+      "properties": {
+        "lock_schema": {"$ref": "#/$defs/binding"},
+        "question": {"$ref": "#/$defs/binding"},
+        "protocol": {
+          "type": "object",
+          "required": ["path", "protocol_version", "sha256"],
+          "properties": {
+            "path": {"type": "string"},
+            "protocol_version": {"type": "string"},
+            "sha256": {"$ref": "#/$defs/sha256"}
+          },
+          "additionalProperties": false
+        },
+        "models_config": {"$ref": "#/$defs/binding"}
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authorized_by", "statement", "statement_sha256", "option", "offline_correction_authorized", "generation_calls_authorized", "lock_authorizes_spending"],
+      "properties": {
+        "authorized_by": {"type": "object"},
+        "statement": {"const": "I approve option 2 and authorize the offline preflight correction followed by the eight generation calls."},
+        "statement_sha256": {"const": "2e0d22554b2e092a3ed2deb2c749c6371964e56d14c29df5c739bf9aee095ac6"},
+        "option": {"const": 2},
+        "offline_correction_authorized": {"const": true},
+        "generation_calls_authorized": {"const": 8},
+        "lock_authorizes_spending": {"const": false}
+      }
+    },
+    "parent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lock", "historical_git_head", "authorization", "pricing_recheck", "preflight_records", "original_private_inventory_files", "original_artifacts_preserved"],
+      "properties": {
+        "lock": {"$ref": "#/$defs/binding"},
+        "historical_git_head": {"type": "string", "pattern": "^[0-9a-f]{40,64}$"},
+        "authorization": {"$ref": "#/$defs/binding"},
+        "pricing_recheck": {"$ref": "#/$defs/binding"},
+        "preflight_records": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["model_key", "intent", "raw_response", "outcome"],
+            "properties": {
+              "model_key": {"enum": ["gemini", "claude", "cohere", "qwen", "deepseek", "mistral", "grok", "gpt"]},
+              "intent": {"$ref": "#/$defs/binding"},
+              "raw_response": {"$ref": "#/$defs/binding"},
+              "outcome": {"$ref": "#/$defs/binding"}
+            }
+          }
+        },
+        "original_private_inventory_files": {"const": 27},
+        "original_artifacts_preserved": {"const": true}
+      }
+    },
+    "offline_correction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "sealed_metadata_responses_reused", "new_metadata_requests", "false_negative_model_keys"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "sealed_metadata_responses_reused": {"const": 8},
+        "new_metadata_requests": {"const": 0},
+        "false_negative_model_keys": {"const": ["claude", "gpt"]}
+      }
+    },
+    "models": {"type": "array", "minItems": 8, "maxItems": 8},
+    "plans": {"type": "object"},
+    "execution_policy": {
+      "type": "object",
+      "required": ["metadata_requests", "generation_posts", "semantic_attempts_per_cell", "automatic_retries", "fallback_allowed", "all_intents_durable_before_parallel_release", "generation_parallel", "raw_response_durable_before_validation", "stranded_or_failed_cell_is_terminal", "tools_enabled", "web_search_enabled", "retrieval_enabled", "external_context_enabled"],
+      "properties": {
+        "metadata_requests": {"const": 0},
+        "generation_posts": {"const": 8},
+        "semantic_attempts_per_cell": {"const": 1},
+        "automatic_retries": {"const": 0},
+        "fallback_allowed": {"const": false},
+        "all_intents_durable_before_parallel_release": {"const": true},
+        "generation_parallel": {"const": true},
+        "raw_response_durable_before_validation": {"const": true},
+        "stranded_or_failed_cell_is_terminal": {"const": true},
+        "tools_enabled": {"const": false},
+        "web_search_enabled": {"const": false},
+        "retrieval_enabled": {"const": false},
+        "external_context_enabled": {"const": false}
+      }
+    },
+    "network_policy": {
+      "type": "object",
+      "required": ["maximum_metadata_gets", "maximum_generation_posts", "maximum_outbound_requests", "authorized_hosts", "unlisted_network_access_allowed"],
+      "properties": {
+        "maximum_metadata_gets": {"const": 0},
+        "maximum_generation_posts": {"const": 8},
+        "maximum_outbound_requests": {"const": 8},
+        "authorized_hosts": {"type": "array", "minItems": 8, "maxItems": 8},
+        "unlisted_network_access_allowed": {"const": false}
+      }
+    },
+    "budget": {"type": "object"},
+    "paid_authorization": {"type": "object"},
+    "execution_sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/binding"}
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}
