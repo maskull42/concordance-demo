@@ -13,7 +13,7 @@ This record builds the proposed socially significant replacement for the withdra
 | Pool ID | `concordance-divergence-replacement-1` |
 | Pool size | `1` |
 | Rule version | `pilot-rule-3-successor-1` |
-| Content version | `rule3-successor-candidate-1.0.0` |
+| Content version | `rule3-successor-candidate-1.0.1` |
 | Kind | `divergent` |
 | Domain | AI governance |
 
@@ -43,14 +43,18 @@ Apply these rules in order. The earliest satisfied rule controls.
 3. With no permission gate at either stage, a dedicated binding upstream regime for frontier developers or models maps to `binding-frontier-supervision`.
 4. With neither a permission gate nor a dedicated binding upstream regime, sector and application rules, procurement, tort, consumer, competition, criminal, and other generally applicable law, together with voluntary standards or coordination, map to `use-centered-general-law`.
 
-A mandatory third-party certificate functions as licensing whenever the relevant activity cannot legally proceed without it. Pre-training notice, registration, documentation, audits, or a waiting period do not create development-stage licensing unless government may withhold permission to train. Application-specific approval remains P4 when the foundation model itself has no lifecycle permission requirement or dedicated upstream regime.
+A mandatory third-party certificate functions as licensing only when a government or state-delegated authority may withhold the legal permission needed to train, deploy, or release. The lifecycle stage then determines whether P1 or P2 applies. A private certificate that merely demonstrates compliance creates no licensing gate and follows the P3/P4 upstream rule.
+
+Pre-training notice, registration, documentation, audits, or a waiting period do not by themselves create P1. A release veto still maps to P2. A dedicated binding upstream regime without either veto maps to P3. Duties arising only through generally applicable law, together with voluntary coordination, map to P4. Application-specific approval remains P4 when the foundation model itself has no lifecycle permission requirement or dedicated upstream regime.
 
 ### Null and outside-map boundary
 
 | Result | Boundary |
 |---|---|
-| `null` | The answer evenly balances architectures, says only that the choice depends on circumstances, makes authorization entirely discretionary case by case without choosing a default, or never identifies one primary regime. |
-| Outside map | A categorical moratorium or ban; nationalization or exclusive public development; an international treaty with no domestic architecture; export controls, copyright, or data-center permitting offered as the complete answer; regulation limited to military or government systems; refusal of the frontier category. |
+| `null` | The answer evenly balances architectures, says only that the choice depends on circumstances, proposes case-by-case selection among architectures or lifecycle stages without choosing a primary default, or never identifies one primary regime. |
+| Outside map | A categorical moratorium or ban; nationalization or exclusive public development; an international treaty with no domestic architecture; export controls, copyright, or ordinary generally applicable land-use or environmental data-center permitting offered as the complete answer; regulation limited to military or government systems; or a bare refusal of the frontier category that selects no use-centered or general-law architecture. |
+
+A frontier-compute or data-center permit that legally authorizes a covered training run is P1. Rejecting the frontier category while selecting downstream high-risk-use regulation or generally applicable law is P4.
 
 ### Coding checks
 
@@ -59,7 +63,10 @@ A mandatory third-party certificate functions as licensing whenever the relevant
 | “License every covered training run and require approval again before release.” | P1 | A training veto controls under the first rule. |
 | “Require notice before training, then allow release only after agency approval.” | P2 | Notice supplies visibility. The release veto supplies the first permission gate. |
 | “Mandate safety cases, evaluations, incident reporting, audits, and corrective orders, with fines for breach.” | P3 | Binding duties target frontier developers upstream without prior permission. |
+| “Require a private audit certificate before release, but give neither the auditor nor government authority to approve or block release.” | P3 | The certificate demonstrates compliance. It supplies no legal permission gate. |
 | “Use medical-device approval for clinical applications, ordinary tort for harms, and competition law for market power.” | P4 | Application rules and generally applicable law govern; the foundation model itself has no upstream regime. |
+| “Reject the frontier category and regulate high-risk applications under sector law.” | P4 | The answer rejects a special upstream category while selecting the use-centered architecture. |
+| “Require a frontier-compute permit that government may deny before a covered training run.” | P1 | The permit legally authorizes training, regardless of whether it is styled as a data-center or compute permit. |
 | “Pause all frontier training indefinitely.” | Outside map | A categorical moratorium is a separate architecture. |
 | “P1 or P3 could work depending on the agency.” | `null` | The answer selects no primary regime. |
 
@@ -75,10 +82,10 @@ All access checks and artifact retrievals occurred on 2026-07-14. Every verifica
 | Jonas Schuett et al., [“From Principles to Rules: A Regulatory Approach for Frontier AI”](https://arxiv.org/abs/2407.07300) (2024) | P3 | PDF 54-57, printed 52-55, recommends binding high-level principles, close supervision, information access, corrective authority, third-party scrutiny, capacity building, and adaptive specificity. | Complete 59-page open PDF, SHA-256 `61465bd6200718ca135cba7df42bee15880c7ef9ce789284c03bff5b00e83f79` |
 | [Executive Order 14409](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/), 91 Fed. Reg. 34,565 (2026) | P4 | PDF 2, section 3(b)-(c), establishes voluntary pre-release cooperation and disclaims mandatory licensing, preclearance, or permitting under that framework. Section 4 directs enforcement of existing criminal law. | Complete official 3-page PDF, SHA-256 `4a25c970947e7234f1a4308aca6aba62f327ac956de7caa41204c84f7f2cdcd9` |
 | The White House, [*A National Policy Framework for Artificial Intelligence: Legislative Recommendations*](https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/) (March 2026) | P4 | PDF 3, section V, rejects a new federal AI rulemaking body and favors existing expert regulators and industry standards. PDF 4, section VII, preserves generally applicable state law while opposing state regulation of AI development. | Complete official 4-page PDF, SHA-256 `d4f8973f19d7318137ebba973d03ea63af032123d3e629b5d1831cd24af1d6c0` |
-| NTIA, [*Dual-Use Foundation Models with Widely Available Model Weights Report*](https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report) (July 2024) | P4 | PDF 38-39, printed 36-37, declines immediate weight restrictions and recommends continuous evaluation. PDF 42-48, printed 40-46, gives the collect-evaluate-act framework and directs attention to downstream interventions. | Complete official 71-page PDF, SHA-256 `f9234104727c0cee86cea71dad5aa705e47869dfa3a18db1f9ad0087bcffd04b` |
+| NTIA, [*Dual-Use Foundation Models with Widely Available Model Weights Report*](https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report) (July 2024) | Cross-cutting tradeoff evidence | PDF 38-39, printed 36-37, declines immediate weight restrictions and recommends continuous evaluation. PDF 42-48, printed 40-46, addresses downstream intervention while also recommending compelled audits and pre-release testing criteria for some models and preserving possible future access restrictions or licensing. | Complete official 71-page PDF, SHA-256 `f9234104727c0cee86cea71dad5aa705e47869dfa3a18db1f9ad0087bcffd04b` |
 | UK AI Security Institute, [*Frontier AI Trends Report*](https://www.aisi.gov.uk/frontier-ai-trends-report) (2025) | Stakes | PDF 3-4 reports rapid capability growth, emerging expert-level performance, safeguard vulnerabilities, and a narrowed open-closed gap. PDF 14 and 25-26 show dual-use cyber and scientific stakes and persistent jailbreaks. | Complete 54-page compressed PDF linked by AISI, SHA-256 `6ed147b66f065722f038c6a933a4b8bb39af9ab2378a72fede629e203c0ab2ae` |
 
-The source roles are deliberately narrow. Scholarship and enacted law establish coherent architectures. Current government documents establish live policy alternatives. AISI establishes the stakes. None of these sources determines which architecture is best.
+The source roles are deliberately narrow. Scholarship and enacted law establish coherent architectures. Current government documents establish live policy alternatives. NTIA supplies cross-cutting tradeoff evidence rather than a clean P4 exemplar. AISI establishes the stakes. None of these sources determines which architecture is best.
 
 ## Social significance and domain fit
 

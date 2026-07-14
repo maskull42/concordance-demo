@@ -1,6 +1,6 @@
 {
   "schema_version": "rule3-successor-source-freeze-1.0.0",
-  "content_version": "rule3-successor-candidate-1.0.0",
+  "content_version": "rule3-successor-candidate-1.0.1",
   "pool_id": "concordance-divergence-replacement-1",
   "prepared_on": "2026-07-14",
   "status": "research-source-freeze-proposed",
@@ -229,7 +229,8 @@
           "source_id": "ntia-open-model-weights-report",
           "source_url": "https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report",
           "accessed_at": "2026-07-14",
-          "claim_binding": "NTIA concludes that evidence did not support immediate restrictions on widely available model weights, recommends continuous evidence collection and adaptive response, emphasizes competition and innovation benefits, and directs policymakers to consider whether downstream interventions address a risk more effectively than weight restrictions.",
+          "evidentiary_role": "cross-cutting-tradeoff-evidence",
+          "claim_binding": "NTIA provides cross-cutting evidence about uncertainty, competition, innovation, government capacity, downstream intervention, and adaptive escalation. It is not a clean use-centered-general-law exemplar: the report also recommends compelled audits and pre-release testing criteria for some foundation models and preserves possible future model-access restrictions or licensing.",
           "artifact": {
             "status": "hash-frozen-external-artifact",
             "artifact_url": "https://www.ntia.gov/sites/default/files/publications/ntia-ai-open-model-report.pdf",
@@ -255,7 +256,7 @@
               "pdf_pages": "42-48",
               "printed_pages": "40-46",
               "section": "Recommendations",
-              "support": "Defines the collect-evaluate-act framework, recommends downstream risk analysis, and reserves targeted future interventions if evidence crosses thresholds."
+              "support": "Defines the collect-evaluate-act framework, recommends downstream risk analysis, also recommends compelled audits and pre-release testing criteria for some models, and reserves targeted access restrictions or licensing if evidence crosses thresholds."
             }
           ],
           "verification": {

@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
-  "content_version": "rule3-successor-candidate-1.0.0",
+  "content_version": "rule3-successor-candidate-1.0.1",
   "data_class": "research",
   "id": "frontier-ai-lifecycle-licensing",
   "kind": "divergent",
   "domain": "ai-governance",
   "title": "Legal architecture for frontier general-purpose AI",
   "premise": "Frontier general-purpose AI governance turns on two separable choices: whether government may withhold permission before training or release, and whether binding duties attach upstream to frontier developers or downstream to particular uses and generally applicable law.",
-  "context_note": "Licensing means prior government permission that may be withheld. Apply the following hierarchy in order. Any substantive prior-permission requirement before a covered training run maps to development-stage-licensing, even when a later release license is also required. A mandatory third-party certificate functions as licensing whenever the activity cannot legally proceed without it. With no training veto, required government approval before broad API or commercial deployment or open-weight release maps to deployment-release-licensing. Pre-training notice, registration, documentation, audits, or a waiting period do not change that assignment unless government may withhold permission to train. With no permission gate at either stage, a dedicated binding upstream regime for frontier developers or models maps to binding-frontier-supervision. With neither a permission gate nor a dedicated binding upstream regime, sector and application rules, procurement, tort, consumer, competition, criminal, and other generally applicable law, together with voluntary standards or coordination, map to use-centered-general-law. Application-specific approval maps to use-centered-general-law when the foundation model itself has no lifecycle permission requirement or dedicated upstream regime. An answer remains null when it evenly balances architectures, says only that the choice depends on circumstances, makes authorization entirely discretionary case by case without choosing a default, or never identifies one primary regime. The following answers fall outside the map: a categorical moratorium or ban; nationalization or exclusive public development; an international treaty with no domestic architecture; export controls, copyright, or data-center permitting offered as the complete answer; regulation limited to military or government systems; or refusal of the frontier category.",
+  "context_note": "Licensing means prior government permission that may be withheld. Apply the following hierarchy in order. Any substantive prior-permission requirement before a covered training run maps to development-stage-licensing, even when a later release license is also required. With no training veto, required government approval before broad API or commercial deployment or open-weight release maps to deployment-release-licensing. A mandatory third-party certificate functions as licensing only when a government or state-delegated authority may withhold the legal permission needed to train, deploy, or release; the lifecycle stage determines whether it maps to development-stage-licensing or deployment-release-licensing. A private certificate that merely demonstrates compliance does not itself create a licensing gate and instead follows the P3/P4 rules below. Pre-training notice, registration, documentation, audits, or a waiting period do not by themselves create development-stage licensing, and a later release veto still maps to deployment-release-licensing. With no permission gate at either stage, a dedicated binding upstream regime for frontier developers or models, including a frontier-specific binding notice, registration, documentation, audit, or waiting-period regime, maps to binding-frontier-supervision. With neither a permission gate nor a dedicated binding upstream regime, sector and application rules, procurement, tort, consumer, competition, criminal, and other generally applicable law, together with voluntary standards or coordination, map to use-centered-general-law. Application-specific approval maps to use-centered-general-law when the foundation model itself has no lifecycle permission requirement or dedicated upstream regime. A frontier-compute or data-center permit that legally authorizes a covered training run maps to development-stage-licensing. Rejecting the frontier category while selecting downstream high-risk-use regulation or generally applicable law maps to use-centered-general-law. An answer remains null when it evenly balances architectures, says only that the choice depends on circumstances, proposes case-by-case selection among architectures or lifecycle stages without choosing a primary default, or never identifies one primary regime. The following answers fall outside the map: a categorical moratorium or ban; nationalization or exclusive public development; an international treaty with no domestic architecture; export controls, copyright, or ordinary generally applicable land-use or environmental data-center permitting offered as the complete answer; regulation limited to military or government systems; or a bare refusal of the frontier category that selects no use-centered or general-law architecture.",
   "what_this_shows": [
     "If the precommitted successor divergence threshold is met after blinded review, this candidate can show dispersion across four materially different points of legal control in a socially consequential AI-governance debate."
   ],
@@ -138,7 +138,7 @@
       "id": "use-centered-general-law",
       "label": "Use-centered and generally applicable law",
       "summary": "Government relies on high-risk application rules, existing sector regulators, procurement, tort, consumer protection, competition, criminal law, and voluntary coordination, with no lifecycle license or dedicated binding upstream frontier regime.",
-      "attestation": "Executive Order 14409 creates voluntary pre-release cooperation for covered frontier models, expressly disclaims mandatory licensing or preclearance under that framework, and directs enforcement of generally applicable criminal law. The White House’s March 2026 legislative framework favors sector-specific applications, existing expert regulators, industry-led standards, and generally applicable state law. NTIA recommends monitoring, evidence collection, adaptive response, and attention to downstream interventions while declining immediate restrictions on open model weights.",
+      "attestation": "Executive Order 14409 creates voluntary pre-release cooperation for covered frontier models, expressly disclaims mandatory licensing or preclearance under that framework, and directs enforcement of generally applicable criminal law. The White House’s March 2026 legislative framework favors sector-specific applications, existing expert regulators, industry-led standards, and generally applicable state law.",
       "sources": [
         {
           "id": "executive-order-14409",
@@ -159,19 +159,6 @@
           "title": "A National Policy Framework for Artificial Intelligence: Legislative Recommendations",
           "citation": "The White House, A National Policy Framework for Artificial Intelligence: Legislative Recommendations (March 2026), secs. V and VII.",
           "url": "https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/",
-          "accessed_at": "2026-07-14",
-          "verification": {
-            "status": "proposed",
-            "verified_by": null,
-            "verified_at": null
-          }
-        },
-        {
-          "id": "ntia-open-model-weights-report",
-          "claim_supported": "NTIA recommends against immediate restrictions on widely available model weights, instead favoring evidence collection, monitoring, threshold-based evaluation, adaptive intervention, innovation, and consideration of downstream mitigations.",
-          "title": "Dual-Use Foundation Models with Widely Available Model Weights Report",
-          "citation": "National Telecommunications and Information Administration, Dual-Use Foundation Models with Widely Available Model Weights Report (July 2024), 36-46.",
-          "url": "https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report",
           "accessed_at": "2026-07-14",
           "verification": {
             "status": "proposed",

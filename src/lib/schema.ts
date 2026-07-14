@@ -108,6 +108,7 @@ const selectionSchema = z
     pool_id: kebabId.nullable(),
     pool_size: z.number().int().positive().nullable(),
     rule_version: trimmed.nullable(),
+    candidate_role: z.enum(["priority", "fallback", "replacement"]).optional(),
     disclosure: trimmed,
   })
   .strict()
