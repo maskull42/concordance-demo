@@ -4,6 +4,7 @@ import type {
   PositionViewState,
 } from "../lib/view-model";
 import { variantMovementCount } from "../lib/view-model";
+import { ModelFlag } from "./ModelFlag";
 
 interface ConvergenceMapProps {
   view: CaseViewModel;
@@ -218,6 +219,7 @@ function ModelStrip({
           aria-label={`${model.model.family}: ${label}`}
           onClick={() => onSelectModel(model.model.model_key)}
         >
+          <ModelFlag modelKey={model.model.model_key} />
           {model.model.family}
         </button>
       ))}
@@ -235,7 +237,9 @@ function ModelDetail({ model, mode }: { model: ModelViewState; mode: string }) {
   return (
     <div className="model-detail-grid">
       <div>
-        <h5>{model.model.family}</h5>
+        <h5>
+          <ModelFlag modelKey={model.model.model_key} /> {model.model.family}
+        </h5>
         <p className="model-route">
           {model.model.requested_model_id} · {model.model.provider}
         </p>

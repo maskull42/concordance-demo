@@ -22,18 +22,42 @@ export function CaseStudy({
   mapping,
   models,
   label,
+  initialVariantId,
+  initialMode,
+  initialSelectedModelKey,
+  openReceipts = false,
+  openReceiptsForModel,
 }: {
   question: Question;
   run: RunManifest;
   mapping: Mapping;
   models: ModelSnapshot[];
   label: string;
+  initialVariantId?: string;
+  initialMode?: ViewMode;
+  initialSelectedModelKey?: string;
+  openReceipts?: boolean;
+  openReceiptsForModel?: string;
 }) {
-  const [variantId, setVariantId] = useState(question.prompt_variants[0].id);
-  const [mode, setMode] = useState<ViewMode>("answer");
-  const [selectedModelKey, setSelectedModelKey] = useState(models[0].model_key);
+  const initialVariant =
+    question.prompt_variants.find((variant) => variant.id === initialVariantId) ??
+    question.prompt_variants[0];
+  const initialChallengeAvailable = run.cells.some(
+    (cell) =>
+      cell.variant_id === initialVariant.id && cell.call_type === "challenge",
+  );
+  const [variantId, setVariantId] = useState(initialVariant.id);
+  const [mode, setMode] = useState<ViewMode>(
+    initialMode === "challenge" && initialChallengeAvailable
+      ? "challenge"
+      : "answer",
+  );
+  const [selectedModelKey, setSelectedModelKey] = useState(
+    models.find((model) => model.model_key === initialSelectedModelKey)
+      ?.model_key ?? models[0].model_key,
+  );
   const [announcement, setAnnouncement] = useState(
-    `${question.prompt_variants[0].label} selected. Initial answers shown.`,
+    `${initialVariant.label} selected. Initial answers shown.`,
   );
   const view = useMemo(
     () => buildCaseViewModel(question, run, mapping, models, variantId, mode),
@@ -133,22 +157,19 @@ export function CaseStudy({
             <strong>{selectedVariant?.label}</strong>
           </div>
         )}
-        <button
-          className="challenge-button"
-          type="button"
-          aria-pressed={mode === "challenge"}
-          disabled={!challengeAvailable}
-          onClick={toggleChallenge}
-        >
-          {challengeAvailable ? (
+        {challengeAvailable ? (
+          <button
+            className="challenge-button"
+            type="button"
+            aria-pressed={mode === "challenge"}
+            onClick={toggleChallenge}
+          >
             <span aria-hidden="true">{mode === "challenge" ? "↩" : "↗"}</span>
-          ) : null}
-          {challengeAvailable
-            ? mode === "challenge"
+            {mode === "challenge"
               ? "Return to initial answers"
-              : "Challenge this consensus"
-            : "No challenge sample"}
-        </button>
+              : "Challenge this consensus"}
+          </button>
+        ) : null}
         <p className="challenge-explainer">
           {challengeAvailable
             ? "The linked follow-up asks for the strongest supportable contrary position. This distinguishes spontaneous omission from a position the model can produce when directly challenged."
@@ -235,7 +256,11 @@ export function CaseStudy({
         </div>
       </details>
 
-      <RawReceipts view={view} />
+      <RawReceipts
+        view={view}
+        openReceipts={openReceipts}
+        openModelKey={openReceiptsForModel}
+      />
     </article>
   );
 }

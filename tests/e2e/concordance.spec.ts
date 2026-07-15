@@ -32,8 +32,20 @@ test("has no detectable WCAG A or AA violations", async ({ page }, testInfo) => 
   ).toEqual([]);
 });
 
+test("inspect mode has no detectable WCAG A or AA violations", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "chromium", "One desktop scan covers the shared DOM");
+  await page.goto("/#/inspect");
+  const results = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+    .analyze();
+  expect(
+    results.violations,
+    results.violations.map((violation) => `${violation.id}: ${violation.help}`).join("\n"),
+  ).toEqual([]);
+});
+
 test("variant, challenge, and raw receipts work from the keyboard", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/#/inspect");
   const caseC = page.locator("#case-c");
   const framed = caseC.getByRole("radio", { name: "Framed phrasing" });
   await framed.focus();
@@ -54,14 +66,14 @@ test("variant, challenge, and raw receipts work from the keyboard", async ({ pag
 
   const betaReceipt = page.locator('#case-b details.receipt[data-model="beta"]');
   await page.locator("#case-b details.receipts-section > summary").click();
-  await betaReceipt.locator("summary").click();
+  await betaReceipt.locator(":scope > summary").click();
   const raw = betaReceipt.locator("pre[data-raw-response]");
   await expect(raw).toContainText("<strong>not markup</strong>");
   await expect(raw.locator("strong")).toHaveCount(0);
 });
 
 test("mobile layout remains legible without horizontal overflow", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/#/inspect");
   await page.locator("#case-c").scrollIntoViewIfNeeded();
   const framed = page
     .locator("#case-c")
@@ -82,7 +94,7 @@ test("reduced-motion preference disables smooth scrolling and preserves meaning"
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await page.goto("/");
+  await page.goto("/#/inspect");
 
   expect(
     await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior),

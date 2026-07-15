@@ -1,11 +1,21 @@
 import type { SuccessCell } from "../lib/types";
 import type { CaseViewModel, ModelViewState } from "../lib/view-model";
+import { ModelFlag } from "./ModelFlag";
 
-export function RawReceipts({ view }: { view: CaseViewModel }) {
+export function RawReceipts({
+  view,
+  openReceipts = false,
+  openModelKey,
+}: {
+  view: CaseViewModel;
+  openReceipts?: boolean;
+  openModelKey?: string;
+}) {
   return (
     <details
       className="receipts-section evidence-disclosure"
       aria-labelledby={`${view.question.id}-receipts`}
+      open={openReceipts || openModelKey !== undefined || undefined}
     >
       <summary className="evidence-summary" id={`${view.question.id}-receipts`}>
         <span>
@@ -21,7 +31,12 @@ export function RawReceipts({ view }: { view: CaseViewModel }) {
         </p>
         <div className="receipt-list">
           {view.models.map((model) => (
-            <Receipt key={model.model.model_key} model={model} view={view} />
+            <Receipt
+              key={model.model.model_key}
+              model={model}
+              view={view}
+              defaultOpen={model.model.model_key === openModelKey}
+            />
           ))}
         </div>
       </div>
@@ -29,7 +44,15 @@ export function RawReceipts({ view }: { view: CaseViewModel }) {
   );
 }
 
-function Receipt({ model, view }: { model: ModelViewState; view: CaseViewModel }) {
+function Receipt({
+  model,
+  view,
+  defaultOpen = false,
+}: {
+  model: ModelViewState;
+  view: CaseViewModel;
+  defaultOpen?: boolean;
+}) {
   const cell = model.cell;
   const parent =
     cell?.call_type === "challenge" && cell.parent_response_id
@@ -42,9 +65,15 @@ function Receipt({ model, view }: { model: ModelViewState; view: CaseViewModel }
   const status = !cell ? "Not run" : cell.status === "success" ? "Complete" : "Unavailable";
 
   return (
-    <details className="receipt" data-model={model.model.model_key}>
+    <details
+      className="receipt"
+      data-model={model.model.model_key}
+      open={defaultOpen || undefined}
+    >
       <summary>
-        <span className="receipt-model">{model.model.family}</span>
+        <span className="receipt-model">
+          <ModelFlag modelKey={model.model.model_key} /> {model.model.family}
+        </span>
         <span className={`receipt-status receipt-status--${status.toLowerCase().replace(" ", "-")}`}>
           {status}
         </span>
@@ -67,17 +96,23 @@ function Receipt({ model, view }: { model: ModelViewState; view: CaseViewModel }
               <Meta label="Variant" value={cell.variant_id} />
               <Meta label="Attempted" value={cell.attempted_at} />
               <Meta label="Attempts" value={String(cell.attempt_count)} />
-              <Meta label="Run ID" value={view.run.run_id} code />
-              <Meta label="Prompt SHA-256" value={cell.prompt_sha256} code />
-              <Meta label="Question file SHA-256" value={view.run.question_file_sha256} code />
-              <Meta label="Harness config SHA-256" value={view.run.harness_config_sha256} code />
-              <Meta label="Model manifest SHA-256" value={view.run.model_manifest_file_sha256} code />
-              <Meta label="Manifest captured" value={view.run.model_manifest_snapshot.captured_at} />
-              <Meta label="Cell ID" value={cell.cell_id} code />
-              {cell.parent_response_id ? (
-                <Meta label="Parent response" value={cell.parent_response_id} code />
-              ) : null}
             </dl>
+
+            <details className="receipt-provenance">
+              <summary>Cryptographic provenance</summary>
+              <dl className="receipt-metadata">
+                <Meta label="Run ID" value={view.run.run_id} code />
+                <Meta label="Prompt SHA-256" value={cell.prompt_sha256} code />
+                <Meta label="Question file SHA-256" value={view.run.question_file_sha256} code />
+                <Meta label="Harness config SHA-256" value={view.run.harness_config_sha256} code />
+                <Meta label="Model manifest SHA-256" value={view.run.model_manifest_file_sha256} code />
+                <Meta label="Manifest captured" value={view.run.model_manifest_snapshot.captured_at} />
+                <Meta label="Cell ID" value={cell.cell_id} code />
+                {cell.parent_response_id ? (
+                  <Meta label="Parent response" value={cell.parent_response_id} code />
+                ) : null}
+              </dl>
+            </details>
 
             <MessageReceipt messages={cell.messages} />
 
