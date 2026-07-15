@@ -2,7 +2,7 @@
 
 Concordance is a cached, static product demonstration for inspecting how a declared, versioned panel of AI models answers contested interpretive questions.
 
-> Concordance shows patterns in sampled answers from a declared panel of AI models. Agreement is not truth. "Not represented" means absent from these sampled answers relative to a cited, non-exhaustive map, not that a model cannot produce the position. This is a product demonstration, not a validated measure.
+> Concordance shows patterns in sampled answers from a declared panel of AI models. Agreement is not truth. A position missing from the distribution did not receive a primary mapping in this sample; a model may still produce it under another prompt. This is a product demonstration, not a validated measure.
 
 ## Development status
 
