@@ -220,6 +220,11 @@ class DivergenceSuccessorLiveTests(unittest.TestCase):
         self.root = Path(self.temporary.name).resolve()
         os.chmod(self.root, 0o700)
         self.patchers = [
+            # Freeze the freshness clock so the synthetic 2026-07-14 pricing
+            # receipt below never ages out of the 24-hour window.
+            mock.patch.object(
+                authorization, "utc_now", return_value="2026-07-14T10:05:00Z"
+            ),
             mock.patch.object(
                 contract, "PAID_CALLS_AUTHORIZATION_ENABLED", True, create=True
             ),
