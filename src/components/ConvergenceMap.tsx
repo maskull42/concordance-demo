@@ -3,7 +3,10 @@ import type {
   ModelViewState,
   PositionViewState,
 } from "../lib/view-model";
-import { variantMovementCount } from "../lib/view-model";
+import {
+  variantMovementCount,
+  variantUnmappedTransitionCount,
+} from "../lib/view-model";
 import { ModelFlag } from "./ModelFlag";
 
 interface ConvergenceMapProps {
@@ -308,7 +311,18 @@ function relevanceCopy(view: CaseViewModel): string {
       variants[1].id,
       "answer",
     );
-    return ` ${movement} of ${total} models changed their primary conclusion when the framing changed. Question design becomes part of the policy analysis.`;
+    const unmapped = variantUnmappedTransitionCount(
+      view.run,
+      view.mapping,
+      variants[0].id,
+      variants[1].id,
+      "answer",
+    );
+    const unmappedNote =
+      unmapped > 0
+        ? ` ${unmapped} more shifted between a mapped primary and no primary mapping.`
+        : "";
+    return ` ${movement} of ${total} models moved to a different mapped primary position when the framing changed.${unmappedNote} Question design becomes part of the policy analysis.`;
   }
   return " The distribution shows which primary conclusions surfaced in this sample and which documented alternatives did not.";
 }

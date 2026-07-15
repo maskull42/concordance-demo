@@ -11,6 +11,7 @@ export interface FramingCopy {
   convergenceSuffix: string;
   reframeLine: string;
   movementSuffix: string;
+  unmappedTransitionLine: (count: number) => string;
   fixedLine: string;
 }
 
@@ -24,7 +25,12 @@ const framingDefaults: FramingCopy = {
     " sampled answers received the same primary mapping, while other documented positions received none in this sample. The greyed rows keep their citations.",
   reframeLine:
     "Then we changed only the framing of the question. The underlying facts stayed identical.",
-  movementSuffix: " primary conclusions moved between the two framings.",
+  movementSuffix:
+    " primary conclusions moved to a different mapped position between the two framings.",
+  unmappedTransitionLine: (count: number) =>
+    count === 1
+      ? "One more answer shifted between a mapped primary and no primary mapping in this sample."
+      : `${count} more answers shifted between a mapped primary and no primary mapping in this sample.`,
   fixedLine: "The map changed because the prompt changed, nothing else.",
 };
 
@@ -40,7 +46,7 @@ const framingById: Record<string, Partial<FramingCopy>> = {
     reframeLine:
       "Then we changed only the framing of the question. The historical record stayed identical.",
     movementSuffix:
-      " of the panel's primary conclusions moved with the framing.",
+      " of the panel's primary conclusions moved to a different mapped position when the framing changed.",
   },
 };
 

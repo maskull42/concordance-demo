@@ -55,7 +55,7 @@ export function summarizeCase(record: CaseRecord, source: Dataset): CaseSummary 
   return {
     pattern: "Framing effect",
     metric: `${movement} of ${view.models.length}`,
-    result: "changed primary conclusion with the framing",
+    result: "moved to a different mapped primary position with the framing",
   };
 }
 

@@ -1,7 +1,11 @@
 import { useCallback, useMemo, useState } from "react";
 import type { CaseRecord } from "../../lib/case-summary";
 import type { ModelSnapshot } from "../../lib/types";
-import { buildCaseViewModel, variantMovementCount } from "../../lib/view-model";
+import {
+  buildCaseViewModel,
+  variantMovementCount,
+  variantUnmappedTransitionCount,
+} from "../../lib/view-model";
 import { ClaimFigure, ReceiptLink } from "./ClaimFigure";
 import { StoryDistribution, type StoryStage } from "./StoryDistribution";
 import { StoryScene, StoryStep } from "./StoryScene";
@@ -35,6 +39,19 @@ export function SceneFraming({
     () =>
       secondVariant
         ? variantMovementCount(run, mapping, firstVariant.id, secondVariant.id, "answer")
+        : 0,
+    [run, mapping, firstVariant.id, secondVariant],
+  );
+  const unmappedTransitions = useMemo(
+    () =>
+      secondVariant
+        ? variantUnmappedTransitionCount(
+            run,
+            mapping,
+            firstVariant.id,
+            secondVariant.id,
+            "answer",
+          )
         : 0,
     [run, mapping, firstVariant.id, secondVariant],
   );
@@ -89,7 +106,11 @@ export function SceneFraming({
           <StoryStep index={4} onActive={onActive} active={activeStep === 4}>
             <p className="story-step-copy">
               <ClaimFigure value={`${movement} of ${total}`} />
-              {copy.movementSuffix} {copy.fixedLine}{" "}
+              {copy.movementSuffix}{" "}
+              {unmappedTransitions > 0
+                ? `${copy.unmappedTransitionLine(unmappedTransitions)} `
+                : ""}
+              {copy.fixedLine}{" "}
               <ReceiptLink
                 inspect={{
                   questionId: question.id,

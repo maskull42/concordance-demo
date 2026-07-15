@@ -4,6 +4,7 @@ import {
   joinAssignments,
   recoveredPositions,
   sensitivityMovementCount,
+  sensitivityUnmappedTransitionCount,
 } from "./derived";
 import type {
   Mapping,
@@ -200,6 +201,19 @@ export function variantMovementCount(
   mode: ViewMode,
 ): number {
   return sensitivityMovementCount(
+    joinAssignments(run, mapping, leftVariantId, mode),
+    joinAssignments(run, mapping, rightVariantId, mode),
+  );
+}
+
+export function variantUnmappedTransitionCount(
+  run: RunManifest,
+  mapping: Mapping,
+  leftVariantId: string,
+  rightVariantId: string,
+  mode: ViewMode,
+): number {
+  return sensitivityUnmappedTransitionCount(
     joinAssignments(run, mapping, leftVariantId, mode),
     joinAssignments(run, mapping, rightVariantId, mode),
   );

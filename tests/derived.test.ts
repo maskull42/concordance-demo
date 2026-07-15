@@ -4,6 +4,7 @@ import {
   joinAssignments,
   recoveredPositions,
   sensitivityMovementCount,
+  sensitivityUnmappedTransitionCount,
 } from "../src/lib/derived";
 import { dataset } from "../src/lib/dataset.sample";
 
@@ -89,5 +90,26 @@ describe("derived map semantics", () => {
 
     expect(sensitivityMovementCount(left, right)).toBe(1);
     expect(sensitivityMovementCount(right, left)).toBe(1);
+  });
+
+  it("counts transitions between a mapped primary and no primary mapping", () => {
+    const { run, mapping } = records("case-c");
+    const neutral = joinAssignments(run, mapping, "neutral", "answer");
+    const leftPrimaries = ["north-reading", null, "east-reading", null] as const;
+    const rightPrimaries = ["east-reading", "north-reading", null, null] as const;
+    const withPrimaries = (primaries: typeof leftPrimaries | typeof rightPrimaries) =>
+      neutral.map((entry, index) => ({
+        ...entry,
+        assignment: {
+          ...entry.assignment,
+          primary_endorsed: primaries[index],
+        },
+      }));
+    const left = withPrimaries(leftPrimaries);
+    const right = withPrimaries(rightPrimaries);
+
+    expect(sensitivityUnmappedTransitionCount(left, right)).toBe(2);
+    expect(sensitivityUnmappedTransitionCount(right, left)).toBe(2);
+    expect(sensitivityUnmappedTransitionCount(neutral, neutral)).toBe(0);
   });
 });

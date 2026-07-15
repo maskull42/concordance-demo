@@ -115,3 +115,25 @@ export function sensitivityMovementCount(
   }
   return changed;
 }
+
+export function sensitivityUnmappedTransitionCount(
+  left: JoinedAssignment[],
+  right: JoinedAssignment[],
+): number {
+  const leftByModel = new Map(
+    left.map(({ cell, assignment }) => [cell.model_key, assignment.primary_endorsed]),
+  );
+  let transitions = 0;
+
+  for (const { cell, assignment } of right) {
+    const leftPrimary = leftByModel.get(cell.model_key);
+    const rightPrimary = assignment.primary_endorsed;
+    if (
+      leftPrimary !== undefined &&
+      (leftPrimary === null) !== (rightPrimary === null)
+    ) {
+      transitions += 1;
+    }
+  }
+  return transitions;
+}
