@@ -9,10 +9,6 @@ test("loads only same-origin static resources", async ({ page, baseURL }) => {
 
   await page.goto("/", { waitUntil: "networkidle" });
 
-  await expect(page.getByLabel("Methodological limitation")).toContainText(
-    "Agreement is not truth",
-  );
-  await expect(page.getByRole("status")).toContainText("No answer below is a real model run");
   expect(pageErrors).toEqual([]);
   const expectedOrigin = new URL(baseURL ?? "http://127.0.0.1:4173").origin;
   expect(

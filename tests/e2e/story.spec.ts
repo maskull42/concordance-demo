@@ -1,14 +1,8 @@
 import { expect, test } from "@playwright/test";
 
-test("story landing keeps honesty surfaces and orders scenes by kind", async ({ page }) => {
+test("story landing orders scenes by kind", async ({ page }) => {
   await page.goto("/");
 
-  await expect(page.getByLabel("Methodological limitation")).toContainText(
-    "Agreement is not truth",
-  );
-  await expect(page.getByRole("status")).toContainText(
-    "No answer below is a real model run",
-  );
   await expect(page.getByRole("main", { name: "Concordance story" })).toBeVisible();
 
   const sceneTitles = await page.locator(".story-scene-header h2").allTextContents();

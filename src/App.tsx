@@ -1,7 +1,5 @@
 import { dataset } from "@dataset";
 import { LazyMotion, MotionConfig, domMax } from "framer-motion";
-import { DatasetStatusNotice } from "./components/DatasetStatusNotice";
-import { HonestyBanner } from "./components/HonestyBanner";
 import { InspectPage } from "./components/InspectPage";
 import { StoryPage } from "./components/story/StoryPage";
 import { useHashRoute } from "./lib/router";
@@ -16,9 +14,6 @@ export function App() {
     <LazyMotion features={domMax} strict>
       <MotionConfig reducedMotion="user">
         <div className="min-h-screen bg-paper text-ink">
-          <HonestyBanner />
-          <DatasetStatusNotice dataset={validatedDataset} />
-
           {route.mode === "story" ? (
             <StoryPage dataset={validatedDataset} />
           ) : (
